@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6547683528349448727}
   - component: {fileID: 6547683528349448726}
   m_Layer: 7
-  m_Name: Eat Salad 1
+  m_Name: Dropped
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

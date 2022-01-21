@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerWeaponController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerWeaponController : MonoBehaviour
     public int EquippedWeaponID {get; private set;}
     [SerializeField]
     private GameObject droppedWeaponPrefab;
+    [SerializeField]
+    private Text weaponIDText;
     private bool placingTrap, validLocation;
     private Vector3 placingTrapPos, placeOffset;
     private Transform ghostTrap;
@@ -20,31 +23,34 @@ public class PlayerWeaponController : MonoBehaviour
     private void Start()
     {
 
-        
+        mask = LayerMask.NameToLayer("Player") + LayerMask.NameToLayer("Traps");
 
     }
 
     public void PickedUpWeapon(int weaponID)
     {
 
-        Instantiate(droppedWeaponPrefab, transform.position, Quaternion.identity).GetComponent<WeaponPickup>().WeaponID = EquippedWeaponID;
+        if(EquippedWeaponID != 0)
+            Instantiate(droppedWeaponPrefab, transform.position, Quaternion.identity).GetComponent<WeaponPickup>().WeaponID = EquippedWeaponID;
+        
         EquippedWeaponID = weaponID;
 
     }
 
-    private void ScaleTrapToRoom()
+    private void ScaleTrapToRoom(Vector3 tempPos)
     {
 
         RaycastHit hit;
 
-        if(Physics.Raycast(placingTrapPos, Vector3.down, out hit, PlacementCheckRange, mask, QueryTriggerInteraction.Ignore))
+        if(Physics.Raycast(tempPos, Vector3.down, out hit, PlacementCheckRange, mask, QueryTriggerInteraction.Ignore))
         {
 
-            placingTrapPos = new Vector3(placingTrapPos.x, hit.point.y, placingTrapPos.z);
+            tempPos = new Vector3(tempPos.x, hit.point.y + (ghostBounds.y * 2), tempPos.z);
 
         }
 
-        ghostTrap.position = placingTrapPos;
+        ghostTrap.position = tempPos;
+        placingTrapPos = tempPos;
 
     }
 
@@ -60,13 +66,14 @@ public class PlayerWeaponController : MonoBehaviour
                 placingTrap = true;
                 GameObject temp = Instantiate(WeaponPrefabs[EquippedWeaponID], transform.position, Quaternion.identity);
                 ghostBounds = temp.GetComponent<BoxCollider>().bounds.extents;
+                ghostTrap = temp.transform;
 
             }
             else
             {
 
                 placingTrap = false;
-                Destroy(ghostTrap);
+                Destroy(ghostTrap.gameObject);
                 ghostTrap = null;
                 Instantiate(WeaponPrefabs[EquippedWeaponID], placingTrapPos + placeOffset, Quaternion.identity);
                 EquippedWeaponID = 0;
@@ -74,6 +81,8 @@ public class PlayerWeaponController : MonoBehaviour
             }
 
         }
+
+        weaponIDText.text = "^ " + EquippedWeaponID;
 
     }
 
@@ -83,21 +92,22 @@ public class PlayerWeaponController : MonoBehaviour
         if(placingTrap && EquippedWeaponID != 0)
         {
 
+            Vector3 tempV3;
             RaycastHit hit;
             if(Physics.Raycast(transform.position, Vector3.forward, out hit, TrapPlaceDistance, mask, QueryTriggerInteraction.Ignore))
             {
 
-                placingTrapPos = hit.point;
+                tempV3 = hit.point;
 
             }
             else
             {
 
-                placingTrapPos = transform.position + (transform.forward * TrapPlaceDistance);
+                tempV3 = transform.position + (transform.forward * TrapPlaceDistance);
 
             }
 
-            ScaleTrapToRoom();
+            ScaleTrapToRoom(tempV3);
 
         }
         else if(EquippedWeaponID == 0)

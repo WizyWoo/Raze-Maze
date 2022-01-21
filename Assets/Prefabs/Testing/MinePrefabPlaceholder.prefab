@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5133223602402595178}
   - component: {fileID: 5133223602402595179}
   - component: {fileID: 5133223602402595176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 5789962381062630219}
   - component: {fileID: 5133223601993688523}
   - component: {fileID: 5133223601993688520}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MinePrefabPlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
