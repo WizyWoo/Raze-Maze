@@ -27,7 +27,7 @@ public class PlayerInteraction : MonoBehaviour
         if(Physics.Raycast(transform.position, transform.forward, out hit, interactionDistance, interactMask))
         {
 
-            hoverText.text = hit.transform.name;
+            hoverText.text = "^ " + hit.transform.name + " ^";
 
             if(Input.GetKeyDown(KeyCode.E) && hit.transform.TryGetComponent<IInteractable>(out IInteractable _IInteractable))
             {

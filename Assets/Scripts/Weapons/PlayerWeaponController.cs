@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,10 +43,46 @@ public class PlayerWeaponController : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Physics.Raycast(tempPos, Vector3.down, out hit, PlacementCheckRange, mask, QueryTriggerInteraction.Ignore))
+        if(Physics.Raycast((tempPos + (Vector3.up * 2)), Vector3.down, out hit, PlacementCheckRange, mask, QueryTriggerInteraction.Ignore))
         {
 
-            tempPos = new Vector3(tempPos.x, hit.point.y + (ghostBounds.y * 2), tempPos.z);
+            tempPos = new Vector3(tempPos.x, hit.point.y + ghostBounds.y, tempPos.z);
+
+        }
+
+        if(TrapRescaledOnUse[EquippedWeaponID])
+        {
+
+            float rightDist = 0, leftDist = 0;
+
+            if(Physics.Raycast(tempPos, ghostTrap.right, out hit, PlacementCheckRange, mask, QueryTriggerInteraction.Ignore))
+            {
+
+                rightDist = Vector3.Distance(tempPos, hit.point);
+
+            }
+            if(Physics.Raycast(tempPos, ghostTrap.right * -1, out hit, PlacementCheckRange, mask, QueryTriggerInteraction.Ignore))
+            {
+
+                leftDist = Vector3.Distance(tempPos, hit.point);
+
+            }
+
+            if(rightDist != 0 && leftDist != 0)
+            {
+
+                float scale;
+
+                if(rightDist > leftDist)
+                    scale = leftDist * 2;
+                else
+                    scale = rightDist * 2;
+
+                ghostTrap.localScale = new Vector3(scale, 1, 1);
+
+            }
+            else
+                ghostTrap.localScale = Vector3.one;
 
         }
 
@@ -82,7 +119,7 @@ public class PlayerWeaponController : MonoBehaviour
 
         }
 
-        weaponIDText.text = "^ " + EquippedWeaponID;
+        weaponIDText.text = "^ " + EquippedWeaponID + " ^";
 
     }
 
@@ -94,7 +131,7 @@ public class PlayerWeaponController : MonoBehaviour
 
             Vector3 tempV3;
             RaycastHit hit;
-            if(Physics.Raycast(transform.position, Vector3.forward, out hit, TrapPlaceDistance, mask, QueryTriggerInteraction.Ignore))
+            if(Physics.Raycast(transform.position, transform.forward, out hit, TrapPlaceDistance, mask, QueryTriggerInteraction.Ignore))
             {
 
                 tempV3 = hit.point;

@@ -13,6 +13,8 @@ public class WeaponPickup : MonoBehaviour , IInteractable
         Debug.Log(player.name + " picked up");
         player.GetComponent<PlayerWeaponController>().PickedUpWeapon(WeaponID);
 
+        Destroy(gameObject);
+
     }
 
 }
