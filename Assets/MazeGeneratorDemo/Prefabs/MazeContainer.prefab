@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2633803528606079445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2633803528606079447}
+  - component: {fileID: 9210815790100745318}
+  m_Layer: 0
+  m_Name: MazeContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2633803528606079447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633803528606079445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9210815790100745318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633803528606079445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41596029689f42d4e9bdd15b2761da6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 0, z: 0}
+  MazeMode: 0
+  wallPrefab: {fileID: 2703200583841163668, guid: 713d898026f45fb4e86114c53551f084,
+    type: 3}
+  MazeWidth: 10
+  MazeHeight: 10
+  TunnelWidth: 3
+  WallWidth: 1
+  IsCreateGround: 1
+  groundPrefab: {fileID: 6577844023037347048, guid: 628fc9d6b6d30ba4a80de294e6a3e0de,
+    type: 3}
+  IsCreateCeiling: 0
+  ceilingPrefab: {fileID: 6577844023037347048, guid: 628fc9d6b6d30ba4a80de294e6a3e0de,
+    type: 3}
+  IsCreateMazeOnStart: 1
+  UseStartEndWall: 0
+  StartWallPrefab: {fileID: 649126209178050073, guid: 393762237e08544489bd00cf7f92b51a,
+    type: 3}
+  EndWallPrefab: {fileID: 1399749364244769926, guid: 030b1b78f8646d04abc404a6bfb18bf3,
+    type: 3}
