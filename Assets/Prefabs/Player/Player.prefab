@@ -127,7 +127,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416359710976390386}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 034a13482e0921845ad9e2815db44913, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -279,7 +279,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bddc51983dcaae43a008e277e4592a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 350
   _camSpeed: 15
+  _moveInput: {x: 0, y: 0}
+  _camInput: {x: 0, y: 0}
   minClamp: -45
   maxClamp: 45
