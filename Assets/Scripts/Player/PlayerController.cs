@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private float _speed = 10, _camSpeed = 45;
     private PlayerInputActions _playerActions;
     private Rigidbody _rb;
-    private Vector2 _moveInput, _camInput;
+    public Vector2 _moveInput, _camInput;
     private Camera cam;
     public float minClamp = -45f, maxClamp = 45f;
     private float cameraX;
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
+        cam.transform.localRotation = Quaternion.Euler(0,0,0);
     }
     private void FixedUpdate() {
         // Get control inputs
@@ -39,8 +39,9 @@ public class PlayerController : MonoBehaviour
         _camInput = _playerActions.Player.Look.ReadValue<Vector2>();
     
         // Movement
-        transform.Translate(new Vector3(_moveInput.x * _speed * Time.fixedDeltaTime, 0, _moveInput.y * _speed * Time.fixedDeltaTime));
-        
+        //transform.Translate(new Vector3(_moveInput.x * _speed * Time.fixedDeltaTime, 0, _moveInput.y * _speed * Time.fixedDeltaTime));
+        //_rb.velocity = new Vector3(_moveInput.x * _speed * Time.fixedDeltaTime, 0, _moveInput.y * _speed * Time.fixedDeltaTime);
+        _rb.velocity = transform.forward * _moveInput.y * _speed * Time.fixedDeltaTime + transform.right * _moveInput.x * _speed * Time.fixedDeltaTime + transform.up * _rb.velocity.y;
         
         // Camera rotating y
         transform.RotateAround(transform.position,Vector3.up,_camInput.x * _camSpeed * Time.fixedDeltaTime);
