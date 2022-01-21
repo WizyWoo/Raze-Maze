@@ -24,12 +24,13 @@ public class PlayerController : MonoBehaviour
         TryGetComponent<Rigidbody>(out _rb);
 
         cam = GetComponentInChildren<Camera>();
-        Cursor.visible = false;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
     private void FixedUpdate() {
@@ -38,8 +39,8 @@ public class PlayerController : MonoBehaviour
         _camInput = _playerActions.Player.Look.ReadValue<Vector2>();
     
         // Movement
-        _rb.AddForce(transform.forward * _moveInput.y * _speed, ForceMode.Force);
-        _rb.AddForce(transform.right * _moveInput.x * _speed, ForceMode.Force);
+        transform.Translate(new Vector3(_moveInput.x * _speed * Time.fixedDeltaTime, 0, _moveInput.y * _speed * Time.fixedDeltaTime));
+        
         
         // Camera rotating y
         transform.RotateAround(transform.position,Vector3.up,_camInput.x * _camSpeed * Time.fixedDeltaTime);
