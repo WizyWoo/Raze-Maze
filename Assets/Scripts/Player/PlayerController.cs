@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 10, _camSpeed = 45;
+    private float _speed = 10, _plMaxSpeed = 10, _camSpeed = 45;
     private PlayerInputActions _playerActions;
     private Rigidbody _rb;
     public Vector2 _moveInput, _camInput;
@@ -41,7 +41,11 @@ public class PlayerController : MonoBehaviour
         // Movement
         //transform.Translate(new Vector3(_moveInput.x * _speed * Time.fixedDeltaTime, 0, _moveInput.y * _speed * Time.fixedDeltaTime));
         //_rb.velocity = new Vector3(_moveInput.x * _speed * Time.fixedDeltaTime, 0, _moveInput.y * _speed * Time.fixedDeltaTime);
-        _rb.velocity = transform.forward * _moveInput.y * _speed * Time.fixedDeltaTime + transform.right * _moveInput.x * _speed * Time.fixedDeltaTime + transform.up * _rb.velocity.y;
+        _rb.velocity += transform.forward * _moveInput.y * _speed * Time.fixedDeltaTime + transform.right * _moveInput.x * _speed * Time.fixedDeltaTime + transform.up * _rb.velocity.y * Time.fixedDeltaTime;
+        
+        if(_rb.velocity.magnitude > _plMaxSpeed){
+            _rb.velocity = _rb.velocity.normalized * _plMaxSpeed;
+        }
         
         // Camera rotating y
         transform.RotateAround(transform.position,Vector3.up,_camInput.x * _camSpeed * Time.fixedDeltaTime);
