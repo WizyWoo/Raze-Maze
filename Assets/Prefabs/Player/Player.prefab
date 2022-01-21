@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1416359710973482898}
   - component: {fileID: 1416359710976488028}
   - component: {fileID: 1416359710964547891}
+  - component: {fileID: 8924066410276262111}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -285,3 +286,15 @@ MonoBehaviour:
   _camInput: {x: 0, y: 0}
   minClamp: -45
   maxClamp: 45
+--- !u!114 &8924066410276262111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416359710976390386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f0d147d884223f4182c465aa1579f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
