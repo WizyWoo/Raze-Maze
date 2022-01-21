@@ -13,6 +13,9 @@ public class TriggerTrap : MonoBehaviour
         if(other.tag == "Player"){
             GameObject trap = Instantiate(_objectToSpawn, transform.position, Quaternion.identity);
             other.transform.parent = trap.transform;
+            if(trap.TryGetComponent(out BalloonFunctionality bf)){
+                bf.positions.AddRange(other.gameObject.GetComponent<PlayerPositionLog>().playerPosHistory);
+            }
 
             // Removes the trap
             Destroy(gameObject);
