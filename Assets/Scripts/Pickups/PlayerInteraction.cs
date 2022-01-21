@@ -13,7 +13,7 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
 
-        interactMask = LayerMask.NameToLayer("Interactables");
+        interactMask = ~LayerMask.NameToLayer("Interactables");
         
     }
 
@@ -22,7 +22,7 @@ public class PlayerInteraction : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Physics.Raycast(transform.position, transform.forward, out hit, InteractionDistance, interactMask, QueryTriggerInteraction.Collide))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, InteractionDistance, interactMask))
         {
 
             HoverText.text = hit.transform.name;
