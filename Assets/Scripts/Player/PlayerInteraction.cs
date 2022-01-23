@@ -15,7 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
 
-        interactMask = ~LayerMask.NameToLayer("Interactables");
+        interactMask = 1 << LayerMask.NameToLayer("Interactables");
         
     }
 
