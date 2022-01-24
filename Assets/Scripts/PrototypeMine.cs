@@ -20,5 +20,9 @@ public class PrototypeMine : MonoBehaviour
     {
         ps.Play();
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        ps.Play();
+    }
 }
