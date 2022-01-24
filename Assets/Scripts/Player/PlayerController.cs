@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     private Camera cam;
     public float minClamp = -45f, maxClamp = 45f;
     private float cameraX;
+    public int lives = 3;
+
+    public GameOverScreenScript gameOver;
+
     private void OnEnable() {
         _playerActions.Player.Enable();
     }
@@ -69,7 +73,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        PlayerDeath();
+    }
+
+    public void PlayerDeath()
+    {
+        if(lives <= 0)
+        {
+            gameOver.SetUp();
+        }
     }
     
 }
