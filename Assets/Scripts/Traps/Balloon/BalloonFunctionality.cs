@@ -18,31 +18,36 @@ public class BalloonFunctionality : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(positions.Count > 5){
-            timer += Time.fixedDeltaTime;
-            switch (timer)
+        if(positions.Count < 5){
+            int length = positions.Count;
+            for (int i = length - 1; i < 6 - length; i++)
             {
-                case < 1:
-                transform.position = Vector3.Lerp(startPos, positions[positions.Count - 1], timer);
-                break;
-                case < 2:
-                transform.position = Vector3.Lerp(positions[positions.Count - 1], positions[positions.Count - 2], timer - 1);
-                break;
-                case < 3:
-                transform.position = Vector3.Lerp(positions[positions.Count - 2], positions[positions.Count - 3], timer - 2);
-                break;
-                case < 4:
-                transform.position = Vector3.Lerp(positions[positions.Count - 3], positions[positions.Count - 4], timer - 3);
-                break;
-                case < 5:
-                transform.position = Vector3.Lerp(positions[positions.Count - 4], positions[positions.Count - 5], timer - 4);
-                break;
-                case < 6:
-                GetComponentInChildren<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
-                GetComponentInChildren<PlayerPositionLog>().transform.parent = null;
-                Destroy(gameObject);
-                break;
-            }
+                positions.Add(positions[i-1]);    
+            }        
+        }
+        timer += Time.fixedDeltaTime;
+        switch (timer)
+        {
+            case < 1:
+            transform.position = Vector3.Lerp(startPos, positions[positions.Count - 1], timer);
+            break;
+            case < 2:
+            transform.position = Vector3.Lerp(positions[positions.Count - 1], positions[positions.Count - 2], timer - 1);
+            break;
+            case < 3:
+            transform.position = Vector3.Lerp(positions[positions.Count - 2], positions[positions.Count - 3], timer - 2);
+            break;
+            case < 4:
+            transform.position = Vector3.Lerp(positions[positions.Count - 3], positions[positions.Count - 4], timer - 3);
+            break;
+            case < 5:
+            transform.position = Vector3.Lerp(positions[positions.Count - 4], positions[positions.Count - 5], timer - 4);
+            break;
+            case < 6:
+            GetComponentInChildren<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
+            GetComponentInChildren<PlayerPositionLog>().transform.parent = null;
+            Destroy(gameObject);
+            break;
         }
     }
 }
