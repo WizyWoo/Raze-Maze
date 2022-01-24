@@ -60,6 +60,9 @@ public class PlayerController : MonoBehaviour
         }
         // Camera rotating x
         cam.transform.localRotation = cam.transform.localRotation * Quaternion.Euler(_camSpeed * Time.fixedDeltaTime * -_camInput.y, 0,0);
+        if(Mathf.Abs(transform.rotation.x) >= 0.5f || Mathf.Abs(transform.rotation.z) >= 0.5f){
+            transform.Rotate(new Vector3(-transform.localRotation.x, 0, -transform.localRotation.z));
+        }
     }
 
     // Update is called once per frame
