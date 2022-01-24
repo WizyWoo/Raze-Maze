@@ -127,6 +127,7 @@ public class PlayerWeaponController : MonoBehaviour
                 placingTrap = true;
                 ghostTrap = Instantiate(WeaponPrefabs[EquippedWeaponID], transform.position, Quaternion.identity).transform;
                 ghostBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
+                Debug.Log("y = " + ghostTrap.GetComponent<BoxCollider>().center.y);
 
             }
             else
