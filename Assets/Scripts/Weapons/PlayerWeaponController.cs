@@ -26,6 +26,7 @@ public class PlayerWeaponController : MonoBehaviour
     {
 
         mask = ~((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Traps")));
+        placingScale = Vector3.one;
 
     }
 
@@ -100,7 +101,12 @@ public class PlayerWeaponController : MonoBehaviour
 
             }
             else
+            {
+
                 ghostTrap.localScale = Vector3.one;
+                placingScale = Vector3.one;
+
+            }
 
         }
 
