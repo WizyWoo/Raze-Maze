@@ -16,6 +16,7 @@ public class PlayerWeaponController : MonoBehaviour
     [SerializeField]
     private Text weaponIDText;
     private bool placingTrap, validLocation;
+    [SerializeField]
     private Vector3 placingTrapPos, placeOffset, placingScale;
     private Quaternion placingRotation;
     private Transform ghostTrap;
@@ -110,7 +111,7 @@ public class PlayerWeaponController : MonoBehaviour
 
         }
 
-        ghostTrap.position = tempPos;
+        ghostTrap.position = tempPos - placeOffset;
         placingTrapPos = tempPos;
 
     }
@@ -127,14 +128,14 @@ public class PlayerWeaponController : MonoBehaviour
                 placingTrap = true;
                 ghostTrap = Instantiate(WeaponPrefabs[EquippedWeaponID], transform.position, Quaternion.identity).transform;
                 ghostBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
-                Debug.Log("y = " + ghostTrap.GetComponent<BoxCollider>().center.y);
+                placeOffset = ghostTrap.GetComponent<BoxCollider>().center;
 
             }
             else
             {
 
                 placingTrap = false;
-                GameObject temp = Instantiate(WeaponPrefabs[EquippedWeaponID], placingTrapPos + placeOffset, placingRotation);
+                GameObject temp = Instantiate(WeaponPrefabs[EquippedWeaponID], placingTrapPos - placeOffset, placingRotation);
                 temp.transform.localScale = placingScale;
                 EquippedWeaponID = 0;
                 Destroy(ghostTrap.gameObject);
