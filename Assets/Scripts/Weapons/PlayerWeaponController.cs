@@ -7,6 +7,15 @@ using UnityEngine.UI;
 public class PlayerWeaponController : MonoBehaviour
 {
 
+    public enum ScalingMode
+    {
+
+        Normal,
+        Forward,
+        Sideways
+
+    }
+
     public GameObject[] WeaponPrefabs;
     public bool[] TrapRescaledOnUse;
     public float TrapPlaceDistance, PlacementCheckRange;
