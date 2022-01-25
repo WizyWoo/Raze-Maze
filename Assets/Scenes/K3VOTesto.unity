@@ -601,6 +601,22 @@ PrefabInstance:
       propertyPath: weaponIDText
       value: 
       objectReference: {fileID: 897384379}
+    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
+        type: 3}
+      propertyPath: WeaponPrefabs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
+        type: 3}
+      propertyPath: WeaponPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8487462431692626334, guid: 776e1e24b011b5940a599a6b8d0a665b,
+        type: 3}
+    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
+        type: 3}
+      propertyPath: TrapRescaledOnUse.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4621191464674350207, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
       propertyPath: hoverText
