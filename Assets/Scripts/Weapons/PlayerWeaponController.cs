@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class PlayerWeaponController : MonoBehaviour
 {
+    //TODO
+    /*
+    - Sepperate functions for the different scaling
+    - Make forward scaling
+    - Have a "Weapon editor" where you can change settings for individual weapons
+    */
 
     public enum ScalingMode
     {
@@ -117,6 +123,13 @@ public class PlayerWeaponController : MonoBehaviour
                 placingScale = Vector3.one;
 
             }
+
+        }
+        else
+        {
+
+            ghostTrap.localScale = Vector3.one;
+            placingScale = Vector3.one;
 
         }
 
