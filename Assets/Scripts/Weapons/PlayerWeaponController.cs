@@ -167,7 +167,7 @@ public class PlayerWeaponController : MonoBehaviour
 
         }
 
-        weaponIDText.text = "^ " + EquippedWeaponID + " ^";
+        weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
 
     }
 

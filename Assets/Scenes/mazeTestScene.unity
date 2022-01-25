@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276807, g: 0.21589197, b: 0.29782572, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5938,7 +5938,7 @@ PrefabInstance:
     - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
       propertyPath: WeaponPrefabs.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
@@ -5948,8 +5948,14 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
+      propertyPath: WeaponPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 484211518226299833, guid: 25744c85b593dd645a4b38cad62a1fff,
+        type: 3}
+    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
+        type: 3}
       propertyPath: TrapRescaledOnUse.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
@@ -5960,6 +5966,11 @@ PrefabInstance:
         type: 3}
       propertyPath: TrapRescaledOnUse.Array.data[2]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
+        type: 3}
+      propertyPath: TrapRescaledOnUse.Array.data[3]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4621191464674350207, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
