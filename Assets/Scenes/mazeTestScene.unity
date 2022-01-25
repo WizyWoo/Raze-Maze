@@ -5935,43 +5935,6 @@ PrefabInstance:
       propertyPath: weaponIDText
       value: 
       objectReference: {fileID: 768092286}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: WeaponPrefabs.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: WeaponPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 8960588332873188362, guid: 28b17de920875c44d9de912dda8666d9,
-        type: 3}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: WeaponPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 484211518226299833, guid: 25744c85b593dd645a4b38cad62a1fff,
-        type: 3}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: TrapRescaledOnUse.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: TrapRescaledOnUse.Array.data[1]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: TrapRescaledOnUse.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: TrapRescaledOnUse.Array.data[3]
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4621191464674350207, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
       propertyPath: hoverText

@@ -604,7 +604,7 @@ PrefabInstance:
     - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
       propertyPath: WeaponPrefabs.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
@@ -615,7 +615,7 @@ PrefabInstance:
     - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
       propertyPath: TrapRescaledOnUse.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4621191464674350207, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}

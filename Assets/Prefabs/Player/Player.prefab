@@ -116,7 +116,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 7145331574180486927, guid: fe3a0847096e61c4a8938bdf79b4cb01, type: 3}
   - {fileID: 8960588332873188362, guid: 28b17de920875c44d9de912dda8666d9, type: 3}
-  - {fileID: 484211518226299833, guid: 25744c85b593dd645a4b38cad62a1fff, type: 3}
+  - {fileID: 484211518226299833, guid: dddf9a182a3b10742bfc0f7ca46e592a, type: 3}
   TrapRescaledOnUse: 00000100
   TrapPlaceDistance: 5
   PlacementCheckRange: 10
