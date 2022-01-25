@@ -159,6 +159,7 @@ public class PlayerWeaponController : MonoBehaviour
                 placingTrap = false;
                 GameObject temp = Instantiate(WeaponPrefabs[EquippedWeaponID], placingTrapPos - placeOffset, placingRotation);
                 temp.transform.localScale = placingScale;
+                temp.AddComponent<WeaponController>().WeaponID = EquippedWeaponID;
                 EquippedWeaponID = 0;
                 Destroy(ghostTrap.gameObject);
                 ghostTrap = null;
