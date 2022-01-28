@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 _moveInput, _camInput;
     private Camera cam;
     public float minClamp = -45f, maxClamp = 45f;
-    private float cameraX;
+    private float cameraX, timer;
     public int lives = 3;
 
     public GameOverScreenScript gameOver;
@@ -35,12 +35,15 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Invoke("CamCorrect",0.4f);
+    }
+    void CamCorrect(){
         cam.transform.localRotation = Quaternion.Euler(0,0,0);
     }
     private void FixedUpdate() {
         // Get control inputs
-        _moveInput = _playerActions.Player.Move.ReadValue<Vector2>();
-        _camInput = _playerActions.Player.Look.ReadValue<Vector2>();
+            _moveInput = _playerActions.Player.Move.ReadValue<Vector2>();
+            _camInput = _playerActions.Player.Look.ReadValue<Vector2>();
     
         // Movement
         //transform.Translate(new Vector3(_moveInput.x * _speed * Time.fixedDeltaTime, 0, _moveInput.y * _speed * Time.fixedDeltaTime));
