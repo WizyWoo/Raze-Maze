@@ -10,6 +10,7 @@ public class PlayerWeaponController : MonoBehaviour
     /*
     - Sepperate functions for the different scaling/placement
     - Align placement with surface
+    - Exessive placement checks for checking all directions to keep traps out of walls
     - Have a "Weapon editor" where you can change settings for individual weapons
     */
 
@@ -23,10 +24,20 @@ public class PlayerWeaponController : MonoBehaviour
 
     }
 
+    public enum WeaponUseMode
+    {
+
+        Melee,
+        Throw,
+        Ranged
+
+    }
+
     [Tooltip("This might be a bit heavy")]
     public bool ExstensivePlacementChecks;
-    public GameObject[] TrapPrefabs;
-    public ScalingMode[] TrapScaleMode;
+    public GameObject[] TrapPrefabs {get; private set;}
+    public ScalingMode[] TrapScaleMode {get; private set;}
+    public WeaponUseMode[] AttackMode {get; private set;}
     public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght;
     public int EquippedWeaponID {get; private set;}
     [SerializeField]
@@ -57,6 +68,8 @@ public class PlayerWeaponController : MonoBehaviour
         weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
 
     }
+
+    #region Placement Modes
 
     private (Vector3 position, Vector3 scale, Quaternion rotation) AlignToSurface(Vector3 tempPos)
     {
@@ -205,6 +218,29 @@ public class PlayerWeaponController : MonoBehaviour
         _rotation = transform.parent.rotation;
 
         return (_position, Vector3.zero, _rotation);
+
+    }
+
+    #endregion
+
+    private void MeleeAttack()
+    {
+
+
+
+    }
+
+    private void ThrowWeapon()
+    {
+
+
+
+    }
+
+    private void RangedAttack()
+    {
+
+
 
     }
 
