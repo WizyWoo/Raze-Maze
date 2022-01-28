@@ -1245,7 +1245,7 @@ GameObject:
   - component: {fileID: 3642738661488049608}
   - component: {fileID: 2549496232316688937}
   m_Layer: 6
-  m_Name: iceFatherPrefab
+  m_Name: IceTrapPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

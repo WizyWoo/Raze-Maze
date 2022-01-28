@@ -35,9 +35,9 @@ public class PlayerWeaponController : MonoBehaviour
 
     [Tooltip("This might be a bit heavy")]
     public bool ExstensivePlacementChecks;
-    public GameObject[] TrapPrefabs {get; private set;}
-    public ScalingMode[] TrapScaleMode {get; private set;}
-    public WeaponUseMode[] AttackMode {get; private set;}
+    public GameObject[] TrapPrefabs;
+    public ScalingMode[] TrapScaleMode;
+    public WeaponUseMode[] AttackMode;
     public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght;
     public int EquippedWeaponID {get; private set;}
     [SerializeField]

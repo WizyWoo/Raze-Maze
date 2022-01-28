@@ -1787,7 +1787,7 @@ PrefabInstance:
     - target: {fileID: 6547683528349448683, guid: 32d2f056fe3544b41816ae9d280674f8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6547683528349448683, guid: 32d2f056fe3544b41816ae9d280674f8,
         type: 3}
@@ -4279,7 +4279,7 @@ PrefabInstance:
     - target: {fileID: 1416359710976354514, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1416359710976354514, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
@@ -4346,42 +4346,6 @@ PrefabInstance:
       propertyPath: weaponIDText
       value: 
       objectReference: {fileID: 768092286}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: TrapPrefabs.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: TrapScaleMode.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: TrapPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: TrapPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 8960588332873188362, guid: 28b17de920875c44d9de912dda8666d9,
-        type: 3}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: TrapScaleMode.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: TrapScaleMode.Array.data[1]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: TrapScaleMode.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4621191464674350207, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
       propertyPath: hoverText
@@ -5565,7 +5529,7 @@ PrefabInstance:
     - target: {fileID: 6547683528349448683, guid: 32d2f056fe3544b41816ae9d280674f8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6547683528349448683, guid: 32d2f056fe3544b41816ae9d280674f8,
         type: 3}
