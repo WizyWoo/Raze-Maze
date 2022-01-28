@@ -8,7 +8,8 @@ public class PlayerWeaponController : MonoBehaviour
 {
     //TODO
     /*
-    - Sepperate functions for the different scaling
+    - Sepperate functions for the different scaling/placement
+    - Align placement with surface
     - Have a "Weapon editor" where you can change settings for individual weapons
     */
 
@@ -18,6 +19,7 @@ public class PlayerWeaponController : MonoBehaviour
         None,
         Forward,
         Sideways,
+        SurfaceAlign
 
     }
 
@@ -53,6 +55,13 @@ public class PlayerWeaponController : MonoBehaviour
         placingTrap = false;
         EquippedWeaponID = weaponID;
         weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
+
+    }
+
+    private (Vector3 position, Vector3 scale, Quaternion rotation) AlignToSurface(Vector3 tempPos)
+    {
+
+        return (Vector3.zero, Vector3.one, Quaternion.identity);
 
     }
 
