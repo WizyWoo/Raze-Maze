@@ -38,7 +38,7 @@ public class PlayerWeaponController : MonoBehaviour
     public GameObject[] TrapPrefabs;
     public ScalingMode[] TrapScaleMode;
     public WeaponUseMode[] AttackMode;
-    public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght;
+    public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght, MeleeReach;
     public int EquippedWeaponID {get; private set;}
     [SerializeField]
     private GameObject droppedWeaponPrefab;
@@ -48,12 +48,13 @@ public class PlayerWeaponController : MonoBehaviour
     private (Vector3, Vector3, Quaternion) placementInfo;
     private Transform ghostTrap;
     private Vector3 trapBounds, boundsOffset;
-    private LayerMask mask;
+    private LayerMask mask, playerMask;
 
     private void Start()
     {
 
         mask = ~((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Traps")));
+        playerMask = 1 << LayerMask.NameToLayer("Player");
 
     }
 
@@ -226,12 +227,22 @@ public class PlayerWeaponController : MonoBehaviour
     private void MeleeAttack()
     {
 
+        //Desktop
 
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, transform.forward, out hit, MeleeReach, playerMask, QueryTriggerInteraction.Ignore))
+        {
+
+
+
+        }
 
     }
 
     private void ThrowWeapon()
     {
+
+        //Desktop
 
 
 
@@ -240,7 +251,9 @@ public class PlayerWeaponController : MonoBehaviour
     private void RangedAttack()
     {
 
+        //Desktop
 
+        
 
     }
 
