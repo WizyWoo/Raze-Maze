@@ -9,40 +9,38 @@ public class PlayerWeaponController : MonoBehaviour
     //TODO
     /*
     - Sepperate functions for the different scaling
-    - Make forward scaling
     - Have a "Weapon editor" where you can change settings for individual weapons
     */
 
     public enum ScalingMode
     {
 
-        Normal,
+        None,
         Forward,
-        Sideways
+        Sideways,
 
     }
 
-    public GameObject[] WeaponPrefabs;
-    public bool[] TrapRescaledOnUse;
-    public float TrapPlaceDistance, PlacementCheckRange;
+    [Tooltip("This might be a bit heavy")]
+    public bool ExstensivePlacementChecks;
+    public GameObject[] TrapPrefabs;
+    public ScalingMode[] TrapScaleMode;
+    public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght;
     public int EquippedWeaponID {get; private set;}
     [SerializeField]
     private GameObject droppedWeaponPrefab;
     [SerializeField]
     private Text weaponIDText;
     private bool placingTrap, validLocation;
-    [SerializeField]
-    private Vector3 placingTrapPos, placeOffset, placingScale;
-    private Quaternion placingRotation;
+    private (Vector3, Vector3, Quaternion) placementInfo;
     private Transform ghostTrap;
-    private Vector3 ghostBounds;
+    private Vector3 trapBounds, boundsOffset;
     private LayerMask mask;
 
     private void Start()
     {
 
         mask = ~((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Traps")));
-        placingScale = Vector3.one;
 
     }
 
@@ -54,73 +52,108 @@ public class PlayerWeaponController : MonoBehaviour
         
         placingTrap = false;
         EquippedWeaponID = weaponID;
+        weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
 
     }
 
-    private void ScaleTrapToRoom(Vector3 tempPos)
+    private (Vector3 position, Vector3 scale, Quaternion rotation) ScaleSideways(Vector3 tempPos)
     {
 
-        //might need changing when moving to vr!
-        if(transform.parent)
+        Vector3 _position, _scale;
+        Quaternion _rotation;
+
+        RaycastHit hit;
+        if(Physics.Raycast(tempPos, Vector3.down, out hit, 1, mask, QueryTriggerInteraction.Ignore))
         {
 
-            ghostTrap.rotation = transform.parent.rotation;
-            placingRotation = transform.parent.rotation;
+            _position = hit.point + Vector3.up * (trapBounds.y / 2);
+
+            float rightDist = 0, leftDist = 0;
+
+            if(Physics.Raycast(_position, ghostTrap.right, out hit, ScaleMaxLenght/2, mask, QueryTriggerInteraction.Ignore))
+            {
+
+                rightDist = Vector3.Distance(_position, hit.point);
+
+            }
+
+            if(Physics.Raycast(_position, ghostTrap.right * -1, out hit, ScaleMaxLenght/2, mask, QueryTriggerInteraction.Ignore))
+            {
+
+                leftDist = Vector3.Distance(_position, hit.point);
+
+            }
+
+            if(rightDist != 0 || leftDist != 0)
+            {
+
+                if((rightDist < leftDist || leftDist < ScaleMinLenght) && rightDist > ScaleMinLenght)
+                {
+
+                    _scale = new Vector3(2 * rightDist, 1, 1);
+
+                }
+                else if((leftDist < rightDist || rightDist < ScaleMinLenght) && leftDist > ScaleMinLenght)
+                {
+
+                    _scale = new Vector3(2 * leftDist, 1, 1);
+
+                }
+                else
+                {
+
+                    //invalid?
+                    _scale = Vector3.one;
+
+                }
+
+                Debug.Log("Left: " + leftDist + " Right: " + rightDist);
+
+            }
+            else
+            {
+                
+                _scale = new Vector3(1 * ScaleMaxLenght, 1, 1);
+
+            }
 
         }
         else
         {
 
-            ghostTrap.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
-            placingRotation = Quaternion.Euler(0, transform.rotation.y, 0);
+            _position = tempPos + Vector3.up * (trapBounds.y / 2);
+            _scale = Vector3.one;
 
         }
+
+        _rotation = transform.parent.rotation;
+
+        return (_position, _scale, _rotation);
+
+    }
+
+    private (Vector3 position, Vector3 scale, Quaternion rotation) ScaleForward(Vector3 tempPos)
+    {
+
+        Vector3 _position, _scale;
+        Quaternion _rotation;
 
         RaycastHit hit;
-        if(Physics.Raycast((tempPos + (Vector3.up * 2)), Vector3.down, out hit, PlacementCheckRange, mask, QueryTriggerInteraction.Ignore))
+        if(Physics.Raycast(tempPos, Vector3.down, out hit, 1, mask, QueryTriggerInteraction.Ignore))
         {
 
-            tempPos = new Vector3(tempPos.x, hit.point.y + ghostBounds.y, tempPos.z);
+            _position = hit.point + Vector3.up * (trapBounds.y / 2);
 
-        }
-
-        if(TrapRescaledOnUse[EquippedWeaponID])
-        {
-
-            float rightDist = 0, leftDist = 0;
-
-            if(Physics.Raycast(tempPos, ghostTrap.right, out hit, PlacementCheckRange, mask, QueryTriggerInteraction.Ignore))
+            if(Physics.Raycast(_position, ghostTrap.forward, out hit, ScaleMaxLenght / 2, mask, QueryTriggerInteraction.Ignore))
             {
 
-                rightDist = Vector3.Distance(tempPos, hit.point);
-
-            }
-            if(Physics.Raycast(tempPos, ghostTrap.right * -1, out hit, PlacementCheckRange, mask, QueryTriggerInteraction.Ignore))
-            {
-
-                leftDist = Vector3.Distance(tempPos, hit.point);
-
-            }
-
-            if(rightDist != 0 && leftDist != 0)
-            {
-
-                float scale;
-
-                if(rightDist > leftDist)
-                    scale = leftDist * 2;
-                else
-                    scale = rightDist * 2;
-
-                ghostTrap.localScale = new Vector3(scale, 1, 1);
-                placingScale = new Vector3(scale, 1, 1);
+                _scale = new Vector3(1, 1, 1 * Mathf.Clamp(Vector3.Distance(_position, hit.point) * 2, ScaleMinLenght * 2, ScaleMaxLenght));
 
             }
             else
             {
 
-                ghostTrap.localScale = Vector3.one;
-                placingScale = Vector3.one;
+                _scale = new Vector3(1, 1, 1 * ScaleMaxLenght);
 
             }
 
@@ -128,13 +161,41 @@ public class PlayerWeaponController : MonoBehaviour
         else
         {
 
-            ghostTrap.localScale = Vector3.one;
-            placingScale = Vector3.one;
+            _position = tempPos + Vector3.up * (trapBounds.y / 2);
+            _scale = Vector3.one;
 
         }
 
-        ghostTrap.position = tempPos - placeOffset;
-        placingTrapPos = tempPos;
+        _rotation = transform.parent.rotation;
+
+        return (_position, _scale, _rotation);
+
+    }
+
+    private (Vector3 position, Vector3 scale, Quaternion rotation) NoScaling(Vector3 tempPos)
+    {
+
+        Vector3 _position;
+        Quaternion _rotation;
+
+        RaycastHit hit;
+        if(Physics.Raycast(tempPos, Vector3.down, out hit, 1, mask, QueryTriggerInteraction.Ignore))
+        {
+
+            _position = hit.point + Vector3.up * (trapBounds.y / 2);
+
+        }
+        else
+        {
+
+            _position = tempPos + Vector3.up * (trapBounds.y / 2);
+
+        }
+
+        //might wanna change this later, maybe?
+        _rotation = transform.parent.rotation;
+
+        return (_position, Vector3.zero, _rotation);
 
     }
 
@@ -148,27 +209,24 @@ public class PlayerWeaponController : MonoBehaviour
             {
 
                 placingTrap = true;
-                ghostTrap = Instantiate(WeaponPrefabs[EquippedWeaponID], transform.position, Quaternion.identity).transform;
-                ghostBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
-                placeOffset = ghostTrap.GetComponent<BoxCollider>().center;
+                ghostTrap = Instantiate(TrapPrefabs[EquippedWeaponID]).transform;
+                trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
+                boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
 
             }
             else
             {
 
-                placingTrap = false;
-                GameObject temp = Instantiate(WeaponPrefabs[EquippedWeaponID], placingTrapPos - placeOffset, placingRotation);
-                temp.transform.localScale = placingScale;
-                temp.AddComponent<WeaponController>().WeaponID = EquippedWeaponID;
-                EquippedWeaponID = 0;
+                Transform temp = Instantiate(TrapPrefabs[EquippedWeaponID], placementInfo.Item1, placementInfo.Item3).transform;
+                if(TrapScaleMode[EquippedWeaponID] != ScalingMode.None)
+                    temp.localScale = placementInfo.Item2;
                 Destroy(ghostTrap.gameObject);
-                ghostTrap = null;
+                EquippedWeaponID = 0;
+                weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
 
             }
 
         }
-
-        weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
 
     }
 
@@ -183,7 +241,7 @@ public class PlayerWeaponController : MonoBehaviour
             if(Physics.Raycast(transform.position, transform.forward, out hit, TrapPlaceDistance, mask, QueryTriggerInteraction.Ignore))
             {
 
-                tempV3 = hit.point;
+                tempV3 = hit.point + Vector3.up * 0.25f;
 
             }
             else
@@ -193,7 +251,26 @@ public class PlayerWeaponController : MonoBehaviour
 
             }
 
-            ScaleTrapToRoom(tempV3);
+            switch(TrapScaleMode[EquippedWeaponID])
+            {
+
+                case ScalingMode.None:
+                placementInfo = NoScaling(tempV3);
+                break;
+
+                case ScalingMode.Forward:
+                placementInfo = ScaleForward(tempV3);
+                break;
+
+                case ScalingMode.Sideways:
+                placementInfo = ScaleSideways(tempV3);
+                break;
+
+            }
+
+            ghostTrap.SetPositionAndRotation(placementInfo.Item1, placementInfo.Item3);
+            if(TrapScaleMode[EquippedWeaponID] != ScalingMode.None)
+                ghostTrap.localScale = placementInfo.Item2;
 
         }
         else if(EquippedWeaponID == 0)

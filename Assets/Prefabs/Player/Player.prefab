@@ -112,20 +112,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1cfe6a57e462a48874e5dbb4cb3973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponPrefabs:
-  - {fileID: 0}
-  - {fileID: 7145331574180486927, guid: fe3a0847096e61c4a8938bdf79b4cb01, type: 3}
+  ExstensivePlacementChecks: 1
+  TrapPrefabs:
   - {fileID: 8960588332873188362, guid: 28b17de920875c44d9de912dda8666d9, type: 3}
-  - {fileID: 484211518226299833, guid: dddf9a182a3b10742bfc0f7ca46e592a, type: 3}
-  TrapRescaledOnUse: 00000100
+  - {fileID: 8960588332873188362, guid: 28b17de920875c44d9de912dda8666d9, type: 3}
+  - {fileID: 8960588332873188362, guid: 28b17de920875c44d9de912dda8666d9, type: 3}
+  TrapScaleMode: 020000000100000000000000
   TrapPlaceDistance: 5
   PlacementCheckRange: 10
+  ScaleMaxLenght: 4
+  ScaleMinLenght: 0.5
   droppedWeaponPrefab: {fileID: 6547683528349419031, guid: 32d2f056fe3544b41816ae9d280674f8,
     type: 3}
   weaponIDText: {fileID: 0}
-  placingTrapPos: {x: 0, y: 0, z: 0}
-  placeOffset: {x: 0, y: 0, z: 0}
-  placingScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1416359710976390386
 GameObject:
   m_ObjectHideFlags: 0
