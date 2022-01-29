@@ -380,6 +380,8 @@ public class PlayerWeaponController : MonoBehaviour
         {
 
             placingTrap = false;
+            if(ghostTrap)
+                Destroy(ghostTrap);
 
         }
 
