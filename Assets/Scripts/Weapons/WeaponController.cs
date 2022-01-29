@@ -7,4 +7,11 @@ public class WeaponController : MonoBehaviour
 
     public int WeaponID;
 
+    public virtual void Thrown()
+    {
+
+        
+
+    }
+
 }

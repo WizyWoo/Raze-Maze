@@ -35,11 +35,12 @@ public class PlayerWeaponController : MonoBehaviour
 
     [Tooltip("This might be a bit heavy")]
     public bool ExstensivePlacementChecks;
-    public GameObject[] TrapPrefabs;
+    public GameObject[] TrapPrefabs, WeaponPrefabs;
     public ScalingMode[] TrapScaleMode;
     public WeaponUseMode[] AttackMode;
-    public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght, MeleeReach;
+    public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght, MeleeReach, ThrowVelocity, ShotRange;
     public int EquippedWeaponID {get; private set;}
+    public Transform Parent;
     [SerializeField]
     private GameObject droppedWeaponPrefab;
     [SerializeField]
@@ -62,10 +63,23 @@ public class PlayerWeaponController : MonoBehaviour
     {
 
         if(EquippedWeaponID != 0)
-            Instantiate(droppedWeaponPrefab, transform.position, Quaternion.identity).GetComponent<WeaponPickup>().WeaponID = EquippedWeaponID;
+        {
+
+            GameObject temp = Instantiate(droppedWeaponPrefab, transform.position, Quaternion.identity);
+            temp.GetComponent<WeaponPickup>().WeaponID = EquippedWeaponID;
+            temp.name = "Dropped Weapon ^ " + EquippedWeaponID;
+
+        }
         
         placingTrap = false;
-        EquippedWeaponID = weaponID;
+        UpdateEquippedWeapon(weaponID);
+
+    }
+
+    private void UpdateEquippedWeapon(int iD)
+    {
+
+        EquippedWeaponID = iD;
         weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
 
     }
@@ -130,8 +144,6 @@ public class PlayerWeaponController : MonoBehaviour
 
                 }
 
-                Debug.Log("Left: " + leftDist + " Right: " + rightDist);
-
             }
             else
             {
@@ -149,7 +161,7 @@ public class PlayerWeaponController : MonoBehaviour
 
         }
 
-        _rotation = transform.parent.rotation;
+        _rotation = Parent.rotation;
 
         return (_position, _scale, _rotation);
 
@@ -189,7 +201,7 @@ public class PlayerWeaponController : MonoBehaviour
 
         }
 
-        _rotation = transform.parent.rotation;
+        _rotation = Parent.rotation;
 
         return (_position, _scale, _rotation);
 
@@ -216,7 +228,7 @@ public class PlayerWeaponController : MonoBehaviour
         }
 
         //might wanna change this later, maybe?
-        _rotation = transform.parent.rotation;
+        _rotation = Parent.rotation;
 
         return (_position, Vector3.zero, _rotation);
 
@@ -244,16 +256,28 @@ public class PlayerWeaponController : MonoBehaviour
 
         //Desktop
 
+        GameObject temp = Instantiate(WeaponPrefabs[EquippedWeaponID], transform.position, transform.rotation);
+        WeaponController controller = temp.GetComponent<WeaponController>();
+        controller.WeaponID = EquippedWeaponID;
+        controller.Thrown();
+        temp.GetComponent<Rigidbody>().velocity = transform.forward * ThrowVelocity;
 
+        UpdateEquippedWeapon(0);
 
     }
 
-    private void RangedAttack()
+    private void FireWeapon()
     {
 
         //Desktop
 
-        
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, transform.forward, out hit, ShotRange, playerMask, QueryTriggerInteraction.Ignore))
+        {
+
+
+
+        }
 
     }
 
@@ -276,11 +300,32 @@ public class PlayerWeaponController : MonoBehaviour
             {
 
                 Transform temp = Instantiate(TrapPrefabs[EquippedWeaponID], placementInfo.Item1, placementInfo.Item3).transform;
+                temp.gameObject.AddComponent<TrapController>().TrapID = EquippedWeaponID;
                 if(TrapScaleMode[EquippedWeaponID] != ScalingMode.None)
                     temp.localScale = placementInfo.Item2;
                 Destroy(ghostTrap.gameObject);
-                EquippedWeaponID = 0;
-                weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
+                UpdateEquippedWeapon(0);
+
+            }
+
+        }
+        else if(Input.GetKeyDown(KeyCode.Mouse0) && EquippedWeaponID != 0)
+        {
+
+            switch(AttackMode[EquippedWeaponID])
+            {
+
+                case WeaponUseMode.Melee:
+                MeleeAttack();
+                break;
+
+                case WeaponUseMode.Throw:
+                ThrowWeapon();
+                break;
+
+                case WeaponUseMode.Ranged:
+                FireWeapon();
+                break;
 
             }
 

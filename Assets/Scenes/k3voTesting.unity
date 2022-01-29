@@ -4271,11 +4271,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1416359710964547891, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: _camSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1416359710976354514, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
       propertyPath: m_RootOrder
@@ -4335,11 +4330,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1416359710976390386, guid: bfa781f68741725478fc0b69cedef44e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
