@@ -2,7 +2,7 @@ Shader "50_Shades_of_Pog/Poggify"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+        [NoScaleOffset] MainTex ("Texture", 2D) = "white" {}
     }
     SubShader
     {
@@ -37,7 +37,7 @@ Shader "50_Shades_of_Pog/Poggify"
                 return o;
             }
 
-            sampler2D _MainTex;
+            sampler2D MainTex;
 
             //uv = pixel coord
             //fixed 4 = -2 to 2 (0 = r, 1 = g, 2 = b, 3 = a)
@@ -46,7 +46,7 @@ Shader "50_Shades_of_Pog/Poggify"
             fixed4 frag (v2f pixel) : SV_Target
             {
 
-                fixed4 col = tex2D(_MainTex, pixel.uv);
+                fixed4 col = tex2D(MainTex, pixel.uv);
 
                 col.r = abs(sin(pixel.vertex.x/1920 + _Time[1]));
                 col.g = abs(sin(pixel.vertex.y/1080 + _Time[1]));

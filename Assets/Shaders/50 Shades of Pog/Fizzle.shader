@@ -4,7 +4,7 @@ Shader "50_Shades_of_Pog/Fizzle"
     Properties
     {
 
-        _MainTex ("Texture", 2D) = "white" {}
+        [NoScaleOffset] MainTex ("Texture", 2D) = "white" {}
         Distortion ("Distort Dampening", Float) = 0.2
 
     }
@@ -51,7 +51,7 @@ Shader "50_Shades_of_Pog/Fizzle"
 
             }
 
-            sampler2D _MainTex;
+            sampler2D MainTex;
             float Distortion;
 
             //uv = pixel coord on texture
@@ -62,7 +62,7 @@ Shader "50_Shades_of_Pog/Fizzle"
             fixed4 frag (v2f i) : SV_Target
             {
 
-                fixed4 col = tex2D(_MainTex, i.uv + sin(_Time[1]) / Distortion);
+                fixed4 col = tex2D(MainTex, i.uv + sin(_Time[1]) / Distortion);
 
                 return col;
 

@@ -6,11 +6,28 @@ using UnityEngine.UI;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-    //TODO
+    //Plans/Info
     /*
+
+    Traps
+    id (has to be same as weapon)
+    Scaling mode
+    Max and Min scale
+    Prefab of trap
+    Bounds, use a collider on the Root object for the trap to set its bounds so it scales correctly
+
+    Weapon
+    id (Same as trap)
+    WeaponUseMode
+    MeleeRach
+    ThrowVelocity
+    ShotRange
+
+    TODO
     - Align placement with surface
     - Exessive placement checks for checking all directions to keep traps out of walls
     - Have a "Weapon editor" where you can change settings for individual weapons
+
     */
 
     public enum ScalingMode
@@ -103,6 +120,7 @@ public class PlayerWeaponController : MonoBehaviour
         {
 
             _position = hit.point + Vector3.up * (trapBounds.y / 2);
+            validLocation = true;
 
             float rightDist = 0, leftDist = 0;
 
@@ -157,6 +175,7 @@ public class PlayerWeaponController : MonoBehaviour
 
             _position = tempPos + Vector3.up * (trapBounds.y / 2);
             _scale = Vector3.one;
+            validLocation = false;
 
         }
 
@@ -177,6 +196,7 @@ public class PlayerWeaponController : MonoBehaviour
         {
 
             _position = hit.point + Vector3.up * (trapBounds.y / 2);
+            validLocation = true;
 
             if(Physics.Raycast(_position, ghostTrap.forward, out hit, ScaleMaxLenght / 2, mask, QueryTriggerInteraction.Ignore))
             {
@@ -197,6 +217,7 @@ public class PlayerWeaponController : MonoBehaviour
 
             _position = tempPos + Vector3.up * (trapBounds.y / 2);
             _scale = Vector3.one;
+            validLocation = false;
 
         }
 
@@ -217,12 +238,14 @@ public class PlayerWeaponController : MonoBehaviour
         {
 
             _position = hit.point + Vector3.up * (trapBounds.y / 2);
+            validLocation = true;
 
         }
         else
         {
 
             _position = tempPos + Vector3.up * (trapBounds.y / 2);
+            validLocation = false;
 
         }
 
@@ -295,13 +318,13 @@ public class PlayerWeaponController : MonoBehaviour
                 boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
 
             }
-            else
+            else if(validLocation)
             {
 
                 Transform temp = Instantiate(TrapPrefabs[EquippedWeaponID], placementInfo.Item1, placementInfo.Item3).transform;
-                temp.gameObject.AddComponent<TrapController>().TrapID = EquippedWeaponID;
                 if(TrapScaleMode[EquippedWeaponID] != ScalingMode.None)
                     temp.localScale = placementInfo.Item2;
+                temp.gameObject.AddComponent<TrapController>().TrapID = EquippedWeaponID;
                 Destroy(ghostTrap.gameObject);
                 UpdateEquippedWeapon(0);
 
@@ -375,12 +398,12 @@ public class PlayerWeaponController : MonoBehaviour
                 ghostTrap.localScale = placementInfo.Item2;
 
         }
-        else if(EquippedWeaponID == 0)
+        else
         {
 
             placingTrap = false;
             if(ghostTrap)
-                Destroy(ghostTrap);
+                Destroy(ghostTrap.gameObject);
 
         }
 
