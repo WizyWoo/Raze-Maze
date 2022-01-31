@@ -8,7 +8,6 @@ public class PlayerWeaponController : MonoBehaviour
 {
     //TODO
     /*
-    - Sepperate functions for the different scaling/placement
     - Align placement with surface
     - Exessive placement checks for checking all directions to keep traps out of walls
     - Have a "Weapon editor" where you can change settings for individual weapons
