@@ -119,7 +119,7 @@ public class PlayerWeaponController : MonoBehaviour
         if(Physics.Raycast(tempPos, Vector3.down, out hit, 1, mask, QueryTriggerInteraction.Ignore))
         {
 
-            _position = hit.point + Vector3.up * (trapBounds.y / 2);
+            _position = hit.point + (Vector3.up * (trapBounds.y / boundsOffset.y));
             validLocation = true;
 
             float rightDist = 0, leftDist = 0;
@@ -173,7 +173,7 @@ public class PlayerWeaponController : MonoBehaviour
         else
         {
 
-            _position = tempPos + Vector3.up * (trapBounds.y / 2);
+            _position = tempPos + (Vector3.up * (trapBounds.y - boundsOffset.y));
             _scale = Vector3.one;
             validLocation = false;
 
@@ -195,7 +195,7 @@ public class PlayerWeaponController : MonoBehaviour
         if(Physics.Raycast(tempPos, Vector3.down, out hit, 1, mask, QueryTriggerInteraction.Ignore))
         {
 
-            _position = hit.point + Vector3.up * (trapBounds.y / 2);
+            _position = hit.point + (Vector3.up * (trapBounds.y - boundsOffset.y));
             validLocation = true;
 
             if(Physics.Raycast(_position, ghostTrap.forward, out hit, ScaleMaxLenght / 2, mask, QueryTriggerInteraction.Ignore))
@@ -215,7 +215,7 @@ public class PlayerWeaponController : MonoBehaviour
         else
         {
 
-            _position = tempPos + Vector3.up * (trapBounds.y / 2);
+            _position = tempPos + (Vector3.up * (trapBounds.y - boundsOffset.y));
             _scale = Vector3.one;
             validLocation = false;
 
@@ -237,14 +237,14 @@ public class PlayerWeaponController : MonoBehaviour
         if(Physics.Raycast(tempPos, Vector3.down, out hit, 1, mask, QueryTriggerInteraction.Ignore))
         {
 
-            _position = hit.point + Vector3.up * (trapBounds.y / 2);
+            _position = hit.point + (Vector3.up * (trapBounds.y - boundsOffset.y));
             validLocation = true;
 
         }
         else
         {
 
-            _position = tempPos + Vector3.up * (trapBounds.y / 2);
+            _position = tempPos + (Vector3.up * (trapBounds.y - boundsOffset.y));
             validLocation = false;
 
         }
@@ -316,6 +316,7 @@ public class PlayerWeaponController : MonoBehaviour
                 ghostTrap = Instantiate(TrapPrefabs[EquippedWeaponID]).transform;
                 trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
                 boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
+                Debug.Log("x " + boundsOffset.x + " y " + boundsOffset.y + " z " + boundsOffset.z);
 
             }
             else if(validLocation)
