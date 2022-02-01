@@ -10,6 +10,12 @@ EditorBuildSettings:
     guid: b7f0e9e6dbcad6c45a1ded5a1b2d7693
   - enabled: 1
     path: Assets/Scenes/mazeTestScene.unity
+    guid: 11420ac277abd6f4f8b200f877395fd1
+  - enabled: 1
+    path: Assets/Scenes/mazeTestScene 1.unity
+    guid: aaa8a3de2372eed43a087ba9955b242b
+  - enabled: 1
+    path: Assets/Scenes/mazeTestScene 2.unity
     guid: dbf113c711a987c4a90a1ebb71b82fd8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
