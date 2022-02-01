@@ -4346,6 +4346,11 @@ PrefabInstance:
       propertyPath: hoverText
       value: 
       objectReference: {fileID: 768092287}
+    - target: {fileID: 5413858241239727071, guid: bfa781f68741725478fc0b69cedef44e,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfa781f68741725478fc0b69cedef44e, type: 3}
 --- !u!1 &1287240396
