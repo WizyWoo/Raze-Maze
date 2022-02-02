@@ -60,8 +60,9 @@ public class PlayerWeaponController : MonoBehaviour
     [SerializeField]
     private GameObject droppedWeaponPrefab;
     [SerializeField]
-    private Text weaponIDText;
+    private Text weaponIDText, feedbackText;
     private bool placingTrap, validLocation;
+    private float timer;
     private (Vector3, Vector3, Quaternion) placementInfo;
     private Transform ghostTrap;
     private Vector3 trapBounds, boundsOffset;
@@ -72,6 +73,7 @@ public class PlayerWeaponController : MonoBehaviour
 
         mask = ~((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Traps")));
         playerMask = 1 << LayerMask.NameToLayer("Player");
+        feedbackText.text = "";
 
     }
 
@@ -316,7 +318,6 @@ public class PlayerWeaponController : MonoBehaviour
                 ghostTrap = Instantiate(TrapPrefabs[EquippedWeaponID]).transform;
                 trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
                 boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
-                Debug.Log("x " + boundsOffset.x + " y " + boundsOffset.y + " z " + boundsOffset.z);
 
             }
             else if(validLocation)
@@ -328,6 +329,14 @@ public class PlayerWeaponController : MonoBehaviour
                 temp.gameObject.AddComponent<TrapController>().TrapID = EquippedWeaponID;
                 Destroy(ghostTrap.gameObject);
                 UpdateEquippedWeapon(0);
+                feedbackText.text = "";
+
+            }
+            else
+            {
+
+                feedbackText.text = "Placement is not valid";
+                timer = 2;
 
             }
 
@@ -351,6 +360,19 @@ public class PlayerWeaponController : MonoBehaviour
                 break;
 
             }
+
+        }
+
+        if(timer > 0)
+        {
+
+            timer -= Time.deltaTime;
+
+        }
+        else if(feedbackText.text != "")
+        {
+
+            feedbackText.text = "";
 
         }
 
