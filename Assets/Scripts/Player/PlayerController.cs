@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviourPun
         cam.transform.localRotation = Quaternion.Euler(0,0,0);
     }
     private void FixedUpdate() {
-        if (photonView.IsMine == true && PhotonNetwork.IsConnected == true)
+        if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
             return;
         }
