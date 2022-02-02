@@ -44,7 +44,8 @@ public class PlayerController : MonoBehaviourPun
     private void FixedUpdate() {
         if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
-    
+            return;
+        }
         // Get control inputs
             _moveInput = _playerActions.Player.Move.ReadValue<Vector2>();
             _camInput = _playerActions.Player.Look.ReadValue<Vector2>();
@@ -74,8 +75,6 @@ public class PlayerController : MonoBehaviourPun
         if(Mathf.Abs(transform.rotation.x) > 0 || Mathf.Abs(transform.rotation.z) > 0){
             //transform.Rotate(new Vector3(-transform.rotation.x, 0, -transform.rotation.z));
             transform.localRotation = Quaternion.Euler(0,transform.localRotation.y, 0);
-        }
-        return;
         }
     }
 
