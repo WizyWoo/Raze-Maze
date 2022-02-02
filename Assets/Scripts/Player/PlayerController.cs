@@ -42,6 +42,9 @@ public class PlayerController : MonoBehaviourPun
         cam.transform.localRotation = Quaternion.Euler(0,0,0);
     }
     private void FixedUpdate() {
+        if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+        {
+    
         // Get control inputs
             _moveInput = _playerActions.Player.Move.ReadValue<Vector2>();
             _camInput = _playerActions.Player.Look.ReadValue<Vector2>();
@@ -72,15 +75,14 @@ public class PlayerController : MonoBehaviourPun
             //transform.Rotate(new Vector3(-transform.rotation.x, 0, -transform.rotation.z));
             transform.localRotation = Quaternion.Euler(0,transform.localRotation.y, 0);
         }
+        return;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
-        {
-            return;
-        }
+        
 
         PlayerDeath();
     }
