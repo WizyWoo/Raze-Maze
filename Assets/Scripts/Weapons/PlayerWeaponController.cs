@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class PlayerWeaponController : MonoBehaviour
+public class PlayerWeaponController : MonoBehaviourPunCallbacks
 {
     //Plans/Info
     /*
@@ -50,9 +51,10 @@ public class PlayerWeaponController : MonoBehaviour
     }
 
     [Tooltip("This might be a bit heavy")]
-    public bool ExstensivePlacementChecks;
+    public bool ExstensivePlacementChecks, UseUIFeedback;
     public GameObject[] TrapPrefabs, WeaponPrefabs;
     public ScalingMode[] TrapScaleMode;
+    public float[] TrapActivationDelay;
     public WeaponUseMode[] AttackMode;
     public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght, MeleeReach, ThrowVelocity, ShotRange;
     public int EquippedWeaponID {get; private set;}
@@ -60,10 +62,11 @@ public class PlayerWeaponController : MonoBehaviour
     [SerializeField]
     private GameObject droppedWeaponPrefab;
     [SerializeField]
-    private Text weaponIDText;
+    private Text weaponIDText, feedbackText;
     private bool placingTrap, validLocation;
+    private float timer;
     private (Vector3, Vector3, Quaternion) placementInfo;
-    private Transform ghostTrap;
+    private Transform ghostTrap, weaponInHand;
     private Vector3 trapBounds, boundsOffset;
     private LayerMask mask, playerMask;
 
@@ -73,6 +76,13 @@ public class PlayerWeaponController : MonoBehaviour
         mask = ~((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Traps")));
         playerMask = 1 << LayerMask.NameToLayer("Player");
 
+        if(UseUIFeedback)
+        {
+
+            feedbackText.text = "";
+
+        }
+
     }
 
     public void PickedUpWeapon(int weaponID)
@@ -81,7 +91,7 @@ public class PlayerWeaponController : MonoBehaviour
         if(EquippedWeaponID != 0)
         {
 
-            GameObject temp = Instantiate(droppedWeaponPrefab, transform.position, Quaternion.identity);
+            GameObject temp = PhotonNetwork.Instantiate("PickupDroppedWeaponPrefab", transform.position, Quaternion.identity);
             temp.GetComponent<WeaponPickup>().WeaponID = EquippedWeaponID;
             temp.name = "Dropped Weapon ^ " + EquippedWeaponID;
 
@@ -96,7 +106,13 @@ public class PlayerWeaponController : MonoBehaviour
     {
 
         EquippedWeaponID = iD;
-        weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
+
+        if(UseUIFeedback)
+        {
+
+            weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
+
+        }
 
     }
 
@@ -258,18 +274,12 @@ public class PlayerWeaponController : MonoBehaviour
 
     #endregion
 
-    private void MeleeAttack()
+    private void EquipWeapon()
     {
 
         //Desktop
 
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit, MeleeReach, playerMask, QueryTriggerInteraction.Ignore))
-        {
-
-
-
-        }
+        weaponInHand = WeaponPrefabs[EquippedWeaponID].transform;
 
     }
 
@@ -278,7 +288,7 @@ public class PlayerWeaponController : MonoBehaviour
 
         //Desktop
 
-        GameObject temp = Instantiate(WeaponPrefabs[EquippedWeaponID], transform.position, transform.rotation);
+        GameObject temp = PhotonNetwork.Instantiate(WeaponPrefabs[EquippedWeaponID].name, transform.position, transform.rotation);
         WeaponController controller = temp.GetComponent<WeaponController>();
         controller.WeaponID = EquippedWeaponID;
         controller.Thrown();
@@ -291,15 +301,8 @@ public class PlayerWeaponController : MonoBehaviour
     private void FireWeapon()
     {
 
-        //Desktop
-
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit, ShotRange, playerMask, QueryTriggerInteraction.Ignore))
-        {
-
-
-
-        }
+        //VR and Desktop
+            weaponInHand.GetComponent<WeaponController>().FireWeapon();
 
     }
 
@@ -309,6 +312,8 @@ public class PlayerWeaponController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse1) && EquippedWeaponID != 0)
         {
 
+            string tempFeedback = "";
+
             if(!placingTrap)
             {
 
@@ -316,18 +321,32 @@ public class PlayerWeaponController : MonoBehaviour
                 ghostTrap = Instantiate(TrapPrefabs[EquippedWeaponID]).transform;
                 trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
                 boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
-                Debug.Log("x " + boundsOffset.x + " y " + boundsOffset.y + " z " + boundsOffset.z);
 
             }
             else if(validLocation)
             {
 
-                Transform temp = Instantiate(TrapPrefabs[EquippedWeaponID], placementInfo.Item1, placementInfo.Item3).transform;
+                Transform temp = PhotonNetwork.Instantiate(TrapPrefabs[EquippedWeaponID].name, placementInfo.Item1, placementInfo.Item3).transform;
                 if(TrapScaleMode[EquippedWeaponID] != ScalingMode.None)
                     temp.localScale = placementInfo.Item2;
-                temp.gameObject.AddComponent<TrapController>().TrapID = EquippedWeaponID;
+                temp.gameObject.AddComponent<TrapController>().TrapPlaced(TrapActivationDelay[EquippedWeaponID], EquippedWeaponID);
                 Destroy(ghostTrap.gameObject);
                 UpdateEquippedWeapon(0);
+                tempFeedback = "";
+
+            }
+            else
+            {
+
+                tempFeedback = "Placement is not valid";
+                timer = 2;
+
+            }
+
+            if(UseUIFeedback)
+            {
+
+                feedbackText.text = tempFeedback;
 
             }
 
@@ -339,7 +358,7 @@ public class PlayerWeaponController : MonoBehaviour
             {
 
                 case WeaponUseMode.Melee:
-                MeleeAttack();
+                //MeleeAttack();
                 break;
 
                 case WeaponUseMode.Throw:
@@ -352,6 +371,31 @@ public class PlayerWeaponController : MonoBehaviour
 
             }
 
+        }
+
+        if(Input.GetKeyDown(KeyCode.R) && EquippedWeaponID != 0)
+        {
+
+            //weaponInHand =
+
+        }
+
+        if(UseUIFeedback)
+        {
+
+            if(timer > 0)
+            {
+
+                timer -= Time.deltaTime;
+
+            }
+            else if(feedbackText.text != "")
+            {
+
+                feedbackText.text = "";
+
+            }
+        
         }
 
     }

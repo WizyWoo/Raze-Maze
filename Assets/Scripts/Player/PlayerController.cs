@@ -1,16 +1,19 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviourPun
 {
+    PhotonView myPhotonView;
+
     [SerializeField]
     private float _speed = 10, _plMaxSpeed = 10, _camSpeed = 45;
     private PlayerInputActions _playerActions;
     private Rigidbody _rb;
     public Vector2 _moveInput, _camInput;
-    private Camera cam;
+    [SerializeField] private Camera cam;
     public float minClamp = -45f, maxClamp = 45f;
     private float cameraX, timer;
     public int lives = 3;
@@ -27,7 +30,7 @@ public class PlayerController : MonoBehaviour
         _playerActions = new PlayerInputActions();
         TryGetComponent<Rigidbody>(out _rb);
 
-        cam = GetComponentInChildren<Camera>();
+        //cam = GetComponentInChildren<Camera>();
     }
 
     // Start is called before the first frame update
@@ -36,11 +39,21 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Invoke("CamCorrect",0.4f);
+        myPhotonView = GetComponent<PhotonView>();
+
+        if (!myPhotonView.IsMine)
+        {
+            cam.enabled = false;
+        }
     }
     void CamCorrect(){
         cam.transform.localRotation = Quaternion.Euler(0,0,0);
     }
     private void FixedUpdate() {
+        if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+        {
+            return;
+        }
         // Get control inputs
             _moveInput = _playerActions.Player.Move.ReadValue<Vector2>();
             _camInput = _playerActions.Player.Look.ReadValue<Vector2>();
@@ -76,6 +89,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         PlayerDeath();
     }
 
