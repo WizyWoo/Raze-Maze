@@ -138,6 +138,7 @@ MonoBehaviour:
   droppedWeaponPrefab: {fileID: 6547683528349419031, guid: 32d2f056fe3544b41816ae9d280674f8,
     type: 3}
   weaponIDText: {fileID: 0}
+  feedbackText: {fileID: 0}
 --- !u!114 &8997337419611332550
 MonoBehaviour:
   m_ObjectHideFlags: 0

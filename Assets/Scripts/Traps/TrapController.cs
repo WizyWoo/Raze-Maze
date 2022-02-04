@@ -11,6 +11,7 @@ public class TrapController : MonoBehaviour
     {
 
         Invoke("ActivateTrap", activationDelay);
+        Debug.Log("Trap placed " + TrapID + " activating in: " + activationDelay);
 
     }
 
