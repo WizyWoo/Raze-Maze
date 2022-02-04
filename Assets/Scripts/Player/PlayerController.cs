@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviourPun
         else
         {
 
-            IsMe = true;
+            this.enabled = false;
 
         }
         // Get control inputs
