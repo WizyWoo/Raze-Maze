@@ -4,7 +4,5 @@ using UnityEngine;
 
 public class MazeId : MonoBehaviour
 {
-    public Transform chunkStart, chunkEnd;
-    public BoxCollider boxCollider;
-    
+    public List<MazeDoorIndicator> wallDoors;
 }
