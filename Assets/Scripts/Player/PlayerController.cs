@@ -6,14 +6,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviourPun
 {
-    PhotonView myPhotonView;
-    public bool IsMe;
     [SerializeField]
     private float _speed = 10, _plMaxSpeed = 10, _camSpeed = 45;
     private PlayerInputActions _playerActions;
     private Rigidbody _rb;
     public Vector2 _moveInput, _camInput;
-    [SerializeField] private Camera cam;
+    private Camera cam;
     public float minClamp = -45f, maxClamp = 45f;
     private float cameraX, timer;
     public int lives = 3;
@@ -30,7 +28,7 @@ public class PlayerController : MonoBehaviourPun
         _playerActions = new PlayerInputActions();
         TryGetComponent<Rigidbody>(out _rb);
 
-        //cam = GetComponentInChildren<Camera>();
+        cam = GetComponentInChildren<Camera>();
     }
 
     // Start is called before the first frame update
@@ -39,12 +37,6 @@ public class PlayerController : MonoBehaviourPun
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Invoke("CamCorrect",0.4f);
-        myPhotonView = GetComponent<PhotonView>();
-
-        if (!myPhotonView.IsMine)
-        {
-            cam.enabled = false;
-        }
     }
     void CamCorrect(){
         cam.transform.localRotation = Quaternion.Euler(0,0,0);
@@ -53,12 +45,6 @@ public class PlayerController : MonoBehaviourPun
         if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
             return;
-        }
-        else
-        {
-
-            this.enabled = false;
-
         }
         // Get control inputs
             _moveInput = _playerActions.Player.Move.ReadValue<Vector2>();
