@@ -50,7 +50,7 @@ public class PlayerWeaponController : MonoBehaviour
     }
 
     [Tooltip("This might be a bit heavy")]
-    public bool ExstensivePlacementChecks;
+    public bool ExstensivePlacementChecks, UseUIFeedback;
     public GameObject[] TrapPrefabs, WeaponPrefabs;
     public ScalingMode[] TrapScaleMode;
     public float[] TrapActivationDelay;
@@ -74,7 +74,13 @@ public class PlayerWeaponController : MonoBehaviour
 
         mask = ~((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Traps")));
         playerMask = 1 << LayerMask.NameToLayer("Player");
-        feedbackText.text = "";
+
+        if(UseUIFeedback)
+        {
+
+            feedbackText.text = "";
+
+        }
 
     }
 
@@ -99,7 +105,13 @@ public class PlayerWeaponController : MonoBehaviour
     {
 
         EquippedWeaponID = iD;
-        weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
+
+        if(UseUIFeedback)
+        {
+
+            weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
+
+        }
 
     }
 
@@ -312,6 +324,8 @@ public class PlayerWeaponController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse1) && EquippedWeaponID != 0)
         {
 
+            string tempFeedback = "";
+
             if(!placingTrap)
             {
 
@@ -330,14 +344,21 @@ public class PlayerWeaponController : MonoBehaviour
                 temp.gameObject.AddComponent<TrapController>().TrapPlaced(TrapActivationDelay[EquippedWeaponID], EquippedWeaponID);
                 Destroy(ghostTrap.gameObject);
                 UpdateEquippedWeapon(0);
-                feedbackText.text = "";
+                tempFeedback = "";
 
             }
             else
             {
 
-                feedbackText.text = "Placement is not valid";
+                tempFeedback = "Placement is not valid";
                 timer = 2;
+
+            }
+
+            if(UseUIFeedback)
+            {
+
+                feedbackText.text = tempFeedback;
 
             }
 
@@ -364,17 +385,22 @@ public class PlayerWeaponController : MonoBehaviour
 
         }
 
-        if(timer > 0)
+        if(UseUIFeedback)
         {
 
-            timer -= Time.deltaTime;
+            if(timer > 0)
+            {
 
-        }
-        else if(feedbackText.text != "")
-        {
+                timer -= Time.deltaTime;
 
-            feedbackText.text = "";
+            }
+            else if(feedbackText.text != "")
+            {
 
+                feedbackText.text = "";
+
+            }
+        
         }
 
     }
