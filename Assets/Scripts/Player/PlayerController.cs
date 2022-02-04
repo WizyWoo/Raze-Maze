@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviourPun
 {
+
+    public bool IsMe;
     [SerializeField]
     private float _speed = 10, _plMaxSpeed = 10, _camSpeed = 45;
     private PlayerInputActions _playerActions;
@@ -45,6 +47,12 @@ public class PlayerController : MonoBehaviourPun
         if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
             return;
+        }
+        else
+        {
+
+            IsMe = true;
+
         }
         // Get control inputs
             _moveInput = _playerActions.Player.Move.ReadValue<Vector2>();
