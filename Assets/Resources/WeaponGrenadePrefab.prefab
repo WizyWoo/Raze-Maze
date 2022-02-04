@@ -95,8 +95,9 @@ GameObject:
   - component: {fileID: 4922112481516964310}
   - component: {fileID: 4922112481516964309}
   - component: {fileID: 5787422257912688968}
+  - component: {fileID: -8275241348711129893}
   m_Layer: 0
-  m_Name: GrenadeThrowable
+  m_Name: WeaponGrenadePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +128,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5693970041408951150}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.08
   m_Height: 0.25
@@ -165,6 +166,28 @@ MonoBehaviour:
   FuseLenght: 3
   ExplosionParticle: {fileID: 2600141172152766777, guid: 9e17682efd6deca4b9b6535503918f17,
     type: 3}
+--- !u!114 &-8275241348711129893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5693970041408951150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &6077126029100609789
 GameObject:
   m_ObjectHideFlags: 0

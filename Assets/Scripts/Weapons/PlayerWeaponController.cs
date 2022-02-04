@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class PlayerWeaponController : MonoBehaviour
+public class PlayerWeaponController : MonoBehaviourPunCallbacks
 {
     //Plans/Info
     /*
@@ -90,7 +91,7 @@ public class PlayerWeaponController : MonoBehaviour
         if(EquippedWeaponID != 0)
         {
 
-            GameObject temp = Instantiate(droppedWeaponPrefab, transform.position, Quaternion.identity);
+            GameObject temp = PhotonNetwork.Instantiate("PickupDroppedWeaponPrefab", transform.position, Quaternion.identity);
             temp.GetComponent<WeaponPickup>().WeaponID = EquippedWeaponID;
             temp.name = "Dropped Weapon ^ " + EquippedWeaponID;
 
@@ -293,7 +294,7 @@ public class PlayerWeaponController : MonoBehaviour
 
         //Desktop
 
-        GameObject temp = Instantiate(WeaponPrefabs[EquippedWeaponID], transform.position, transform.rotation);
+        GameObject temp = PhotonNetwork.Instantiate(WeaponPrefabs[EquippedWeaponID].name, transform.position, transform.rotation);
         WeaponController controller = temp.GetComponent<WeaponController>();
         controller.WeaponID = EquippedWeaponID;
         controller.Thrown();
@@ -338,7 +339,7 @@ public class PlayerWeaponController : MonoBehaviour
             else if(validLocation)
             {
 
-                Transform temp = Instantiate(TrapPrefabs[EquippedWeaponID], placementInfo.Item1, placementInfo.Item3).transform;
+                Transform temp = PhotonNetwork.Instantiate(TrapPrefabs[EquippedWeaponID].name, placementInfo.Item1, placementInfo.Item3).transform;
                 if(TrapScaleMode[EquippedWeaponID] != ScalingMode.None)
                     temp.localScale = placementInfo.Item2;
                 temp.gameObject.AddComponent<TrapController>().TrapPlaced(TrapActivationDelay[EquippedWeaponID], EquippedWeaponID);

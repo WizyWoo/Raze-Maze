@@ -96,8 +96,9 @@ GameObject:
   - component: {fileID: 5789962381062630219}
   - component: {fileID: 5133223601993688523}
   - component: {fileID: 5133223601993688520}
+  - component: {fileID: 3956386331279820367}
   m_Layer: 6
-  m_Name: MinePrefabPlaceholder
+  m_Name: TrapMinePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4982,6 +4983,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325d448f7428a5e46b70e74f82a581b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3956386331279820367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7145331574180486927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &2810180651692633707
 PrefabInstance:
   m_ObjectHideFlags: 0

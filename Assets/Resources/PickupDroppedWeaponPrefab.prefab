@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 6547683528349419030}
   - component: {fileID: 6547683528349448727}
   - component: {fileID: 6547683528349448726}
+  - component: {fileID: -6346995022858320270}
   m_Layer: 7
-  m_Name: Dropped Weapon
+  m_Name: PickupDroppedWeaponPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,4 +128,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f208cc6804f6c754980a2988d1b9e95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponID: 0
+  WeaponID: 1
+--- !u!114 &-6346995022858320270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6547683528349419031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

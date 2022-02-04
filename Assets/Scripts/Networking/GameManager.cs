@@ -30,6 +30,18 @@ namespace Com.MyCompany.MyGame
             SceneManager.LoadScene(0);
         }
 
+        private void Update()
+        {
+
+            if(Input.GetKeyDown(KeyCode.G))
+            {
+
+                PhotonNetwork.Instantiate("PickupDroppedWeaponPrefab", Vector3.up * 5, Quaternion.identity);
+
+            }
+
+        }
+
         public override void OnPlayerEnteredRoom(Player other)
         {
             Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
