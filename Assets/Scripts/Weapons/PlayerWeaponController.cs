@@ -66,7 +66,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
     private bool placingTrap, validLocation;
     private float timer;
     private (Vector3, Vector3, Quaternion) placementInfo;
-    private Transform ghostTrap;
+    private Transform ghostTrap, weaponInHand;
     private Vector3 trapBounds, boundsOffset;
     private LayerMask mask, playerMask;
 
@@ -274,18 +274,12 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
 
     #endregion
 
-    private void MeleeAttack()
+    private void EquipWeapon()
     {
 
         //Desktop
 
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit, MeleeReach, playerMask, QueryTriggerInteraction.Ignore))
-        {
-
-
-
-        }
+        weaponInHand = WeaponPrefabs[EquippedWeaponID].transform;
 
     }
 
@@ -307,15 +301,8 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
     private void FireWeapon()
     {
 
-        //Desktop
-
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit, ShotRange, playerMask, QueryTriggerInteraction.Ignore))
-        {
-
-
-
-        }
+        //VR and Desktop
+            weaponInHand.GetComponent<WeaponController>().FireWeapon();
 
     }
 
@@ -371,7 +358,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
             {
 
                 case WeaponUseMode.Melee:
-                MeleeAttack();
+                //MeleeAttack();
                 break;
 
                 case WeaponUseMode.Throw:
@@ -383,6 +370,13 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
                 break;
 
             }
+
+        }
+
+        if(Input.GetKeyDown(KeyCode.R) && EquippedWeaponID != 0)
+        {
+
+            //weaponInHand =
 
         }
 
