@@ -4358,6 +4358,31 @@ PrefabInstance:
       propertyPath: weaponIDText
       value: 
       objectReference: {fileID: 768092286}
+    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
+        type: 3}
+      propertyPath: TrapActivationDelay.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
+        type: 3}
+      propertyPath: TrapActivationDelay.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
+        type: 3}
+      propertyPath: TrapActivationDelay.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
+        type: 3}
+      propertyPath: TrapActivationDelay.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443799496672547198, guid: bfa781f68741725478fc0b69cedef44e,
+        type: 3}
+      propertyPath: TrapActivationDelay.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4621191464674350207, guid: bfa781f68741725478fc0b69cedef44e,
         type: 3}
       propertyPath: hoverText
