@@ -16,6 +16,21 @@ public class PlayerInteraction : MonoBehaviour
     {
 
         interactMask = 1 << LayerMask.NameToLayer("Interactables");
+
+        GameObject temp = GameObject.FindGameObjectWithTag("Hud");
+        Text[] tempTexts = temp.GetComponentsInChildren<Text>();
+
+        for(int i = 0; i < tempTexts.Length - 1; i++)
+        {
+
+            if(tempTexts[i].name == "HoverText")
+            {
+
+                hoverText = tempTexts[i];
+
+            }
+
+        }
         
     }
 
@@ -34,13 +49,13 @@ public class PlayerInteraction : MonoBehaviour
 
             }
 
-            //hoverText.text = "^ " + hit.transform.name + " ^";
+            hoverText.text = "^ " + hit.transform.name + " ^";
 
         }
         else
         {
 
-            //hoverText.text = "";
+            hoverText.text = "";
 
         }
 

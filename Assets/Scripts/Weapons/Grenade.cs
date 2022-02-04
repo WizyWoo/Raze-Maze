@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Grenade : WeaponController
 {
@@ -44,9 +45,9 @@ public class Grenade : WeaponController
     private void Explode()
     {
 
-        Instantiate(ExplosionParticle, transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(ExplosionParticle.name, transform.position, Quaternion.identity);
         //player damage logic here later
-        Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
 
     }
 

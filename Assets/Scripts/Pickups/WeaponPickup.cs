@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class WeaponPickup : MonoBehaviour , IInteractable
+public class WeaponPickup : MonoBehaviourPunCallbacks , IInteractable
 {
 
     public int WeaponID;
@@ -12,7 +13,7 @@ public class WeaponPickup : MonoBehaviour , IInteractable
 
         player.GetComponent<PlayerWeaponController>().PickedUpWeapon(WeaponID);
 
-        Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
 
     }
 

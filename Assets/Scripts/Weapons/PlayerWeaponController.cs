@@ -60,13 +60,15 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
     public int EquippedWeaponID {get; private set;}
     public Transform Parent;
     [SerializeField]
-    private GameObject droppedWeaponPrefab;
+    private GameObject droppedWeaponPrefab, weaponInHand;
     [SerializeField]
     private Text weaponIDText, feedbackText;
+    [SerializeField]
+    private Transform handTransform;
     private bool placingTrap, validLocation;
     private float timer;
     private (Vector3, Vector3, Quaternion) placementInfo;
-    private Transform ghostTrap, weaponInHand;
+    private Transform ghostTrap;
     private Vector3 trapBounds, boundsOffset;
     private LayerMask mask, playerMask;
 
@@ -78,6 +80,27 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
 
         if(UseUIFeedback)
         {
+
+            GameObject temp = GameObject.FindGameObjectWithTag("Hud");
+            Text[] tempTexts = temp.GetComponentsInChildren<Text>();
+
+            for(int i = 0; i < tempTexts.Length; i++)
+            {
+
+                if(tempTexts[i].name == "PlacementFeedback")
+                {
+
+                    feedbackText = tempTexts[i];
+
+                }
+                else if(tempTexts[i].name == "WeaponID")
+                {
+
+                    weaponIDText = tempTexts[i];
+
+                }
+
+            }
 
             feedbackText.text = "";
 
@@ -91,6 +114,8 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
         if(EquippedWeaponID != 0)
         {
 
+            if(weaponInHand)
+                PhotonNetwork.Destroy(weaponInHand);
             GameObject temp = PhotonNetwork.Instantiate("PickupDroppedWeaponPrefab", transform.position, Quaternion.identity);
             temp.GetComponent<WeaponPickup>().WeaponID = EquippedWeaponID;
             temp.name = "Dropped Weapon ^ " + EquippedWeaponID;
@@ -279,7 +304,26 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
 
         //Desktop
 
-        weaponInHand = WeaponPrefabs[EquippedWeaponID].transform;
+        if(weaponInHand == null)
+        {
+
+            weaponInHand = PhotonNetwork.Instantiate(WeaponPrefabs[EquippedWeaponID].name, handTransform.position, handTransform.rotation);
+            weaponInHand.transform.parent = handTransform;
+
+            if(weaponInHand.TryGetComponent<Rigidbody>(out Rigidbody rb))
+            {
+
+                rb.isKinematic = true;
+
+            }
+
+        }
+        else
+        {
+
+            PickedUpWeapon(0);
+
+        }
 
     }
 
@@ -294,6 +338,8 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
         controller.Thrown();
         temp.GetComponent<Rigidbody>().velocity = transform.forward * ThrowVelocity;
 
+        PhotonNetwork.Destroy(weaponInHand);
+
         UpdateEquippedWeapon(0);
 
     }
@@ -302,14 +348,14 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
     {
 
         //VR and Desktop
-            weaponInHand.GetComponent<WeaponController>().FireWeapon();
+        weaponInHand.GetComponent<WeaponController>().FireWeapon();
 
     }
 
     private void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.Mouse1) && EquippedWeaponID != 0)
+        if(Input.GetKeyDown(KeyCode.Mouse1) && EquippedWeaponID != 0 && weaponInHand == null)
         {
 
             string tempFeedback = "";
@@ -351,7 +397,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
             }
 
         }
-        else if(Input.GetKeyDown(KeyCode.Mouse0) && EquippedWeaponID != 0)
+        else if(Input.GetKeyDown(KeyCode.Mouse0) && EquippedWeaponID != 0 && weaponInHand)
         {
 
             switch(AttackMode[EquippedWeaponID])
@@ -373,10 +419,10 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
 
         }
 
-        if(Input.GetKeyDown(KeyCode.R) && EquippedWeaponID != 0)
+        if(Input.GetKeyDown(KeyCode.R) && EquippedWeaponID != 0 && !placingTrap)
         {
 
-            //weaponInHand =
+            EquipWeapon();
 
         }
 

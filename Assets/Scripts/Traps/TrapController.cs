@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class TrapController : MonoBehaviour
+public class TrapController : MonoBehaviourPunCallbacks
 {
 
     public int TrapID;

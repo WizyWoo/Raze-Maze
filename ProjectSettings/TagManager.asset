@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Movable
   - MazeDoor
+  - Hud
   layers:
   - Default
   - TransparentFX
