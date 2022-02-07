@@ -71,6 +71,8 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
     private Transform ghostTrap;
     private Vector3 trapBounds, boundsOffset;
     private LayerMask mask, playerMask;
+    [Tooltip("Should be the name of the folder in Resources"), SerializeField]
+    private string weaponFolderName, trapFolderName, pickupFolderName;
 
     private void Start()
     {
@@ -116,7 +118,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
 
             if(weaponInHand)
                 PhotonNetwork.Destroy(weaponInHand);
-            GameObject temp = PhotonNetwork.Instantiate("PickupDroppedWeaponPrefab", transform.position, Quaternion.identity);
+            GameObject temp = PhotonNetwork.Instantiate(pickupFolderName + droppedWeaponPrefab.name, transform.position, Quaternion.identity);
             temp.GetComponent<WeaponPickup>().WeaponID = EquippedWeaponID;
             temp.name = "Dropped Weapon ^ " + EquippedWeaponID;
 
@@ -307,7 +309,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
         if(weaponInHand == null)
         {
 
-            weaponInHand = PhotonNetwork.Instantiate(WeaponPrefabs[EquippedWeaponID].name, handTransform.position, handTransform.rotation);
+            weaponInHand = PhotonNetwork.Instantiate(weaponFolderName + WeaponPrefabs[EquippedWeaponID].name, handTransform.position, handTransform.rotation);
             weaponInHand.transform.parent = handTransform;
 
             if(weaponInHand.TryGetComponent<Rigidbody>(out Rigidbody rb))
@@ -332,7 +334,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
 
         //Desktop
 
-        GameObject temp = PhotonNetwork.Instantiate(WeaponPrefabs[EquippedWeaponID].name, transform.position, transform.rotation);
+        GameObject temp = PhotonNetwork.Instantiate(weaponFolderName + WeaponPrefabs[EquippedWeaponID].name, transform.position, transform.rotation);
         WeaponController controller = temp.GetComponent<WeaponController>();
         controller.WeaponID = EquippedWeaponID;
         controller.Thrown();
@@ -372,7 +374,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
             else if(validLocation)
             {
 
-                Transform temp = PhotonNetwork.Instantiate(TrapPrefabs[EquippedWeaponID].name, placementInfo.Item1, placementInfo.Item3).transform;
+                Transform temp = PhotonNetwork.Instantiate(trapFolderName + TrapPrefabs[EquippedWeaponID].name, placementInfo.Item1, placementInfo.Item3).transform;
                 if(TrapScaleMode[EquippedWeaponID] != ScalingMode.None)
                     temp.localScale = placementInfo.Item2;
                 temp.gameObject.AddComponent<TrapController>().TrapPlaced(TrapActivationDelay[EquippedWeaponID], EquippedWeaponID);

@@ -148,6 +148,9 @@ MonoBehaviour:
   weaponIDText: {fileID: 0}
   feedbackText: {fileID: 0}
   handTransform: {fileID: 5436638330459032001}
+  weaponFolderName: 
+  trapFolderName: 
+  pickupFolderName: 
 --- !u!114 &8997337419611332550
 MonoBehaviour:
   m_ObjectHideFlags: 0
