@@ -8,6 +8,7 @@ using UnityEngine.Rendering;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
+[RequireComponent(typeof(MeshCollider))]
 public class MeshCombiner : MonoBehaviour
 {
     void Start()
@@ -31,6 +32,7 @@ public class MeshCombiner : MonoBehaviour
         transform.GetComponent<MeshFilter>().mesh = new Mesh();
         transform.GetComponent<MeshFilter>().mesh.indexFormat = IndexFormat.UInt32;
         transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
+        transform.GetComponent<MeshCollider>().sharedMesh = transform.GetComponent<MeshFilter>().mesh;
         transform.gameObject.SetActive(true);
     }
 }

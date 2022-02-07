@@ -6,7 +6,6 @@ public class ChunkGenerator : MonoBehaviour
 {
     [SerializeField]
     private int _seed = 69420;
-    public int mazeWidth = 5, mazeLength = 5;
     public List<GameObject> chunks = new List<GameObject>();
     public GameObject exitChunk, startChunk, nullChunk;
     public List<GameObject> placedChunks = new List<GameObject>();
@@ -34,13 +33,13 @@ public class ChunkGenerator : MonoBehaviour
         
     }
     void GenerateMaze(){
+        int mazeWidth = mazeTemplates[generateMazeId].x.Count;
+        int mazeLength = mazeTemplates[generateMazeId].x[0].y.Count;
         for (int w = 0; w < mazeWidth; w++)
         {
             for (int l = 0; l < mazeLength; l++)
             {
                 GameObject g = nullChunk;
-                if(mazeTemplates[generateMazeId].x[w].y[l] == 0){
-                }
                 switch (mazeTemplates[generateMazeId].x[w].y[l])
                 {
                     case 0: // Creates chunk as normal
