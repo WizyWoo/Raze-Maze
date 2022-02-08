@@ -8,6 +8,11 @@ public class WeaponController : MonoBehaviourPunCallbacks
 
     public int WeaponID;
 
+    private void Start()
+    {
+        transform.SetParent(GameObject.Find("HandPos").transform);
+    }
+
     public virtual void Thrown()
     {}
 
