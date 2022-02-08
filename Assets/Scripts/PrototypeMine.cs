@@ -9,7 +9,7 @@ public class PrototypeMine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ps = GetComponent<ParticleSystem>();
+        ps = GetComponentInChildren<ParticleSystem>();
         ps.Pause();
     }
 
