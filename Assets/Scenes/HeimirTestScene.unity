@@ -1946,6 +1946,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beast: {fileID: 8487462431692626334, guid: 776e1e24b011b5940a599a6b8d0a665b, type: 3}
   fwd: {x: 0, y: 0, z: 0}
+  beastMessage: {fileID: 0}
+  beastTimer: 5
+  trapTriggered: 0
 --- !u!1 &324599373
 GameObject:
   m_ObjectHideFlags: 0
@@ -7153,6 +7156,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8500936281572874460, guid: 28b17de920875c44d9de912dda8666d9,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3642738661488049608, guid: 28b17de920875c44d9de912dda8666d9,
         type: 3}
       propertyPath: m_RootOrder
@@ -7268,6 +7276,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beast: {fileID: 8487462431692626334, guid: 776e1e24b011b5940a599a6b8d0a665b, type: 3}
   fwd: {x: 0, y: 0, z: 0}
+  beastMessage: {fileID: 0}
+  beastTimer: 5
+  trapTriggered: 0
 --- !u!23 &1507099458
 MeshRenderer:
   m_ObjectHideFlags: 0
