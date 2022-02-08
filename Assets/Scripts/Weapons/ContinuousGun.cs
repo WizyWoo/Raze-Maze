@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class ContinuousGun : WeaponController
+public class ContinuousGun : WeaponController, IPunObservable
 {
     public ParticleSystem particleSystem;
     private bool isFiring  = false;
