@@ -4,58 +4,81 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SqueakyToy : MonoBehaviour
 {
-    public GameObject beast;
-    Vector3 spawnPlacement;
-    public Vector3 fwd;
-    public Text beastMessage;
-    float textTimer = 3;
-    public float beastTimer = 5;
-    public bool trapTriggered = false;
     Renderer rend;
-    GameObject victim;
+    public GameObject beast, victim; 
+    public Text beastMessage;
+    Vector3 spawnPlacement, victimPos, victimDir;   
+    public float textTimer = 3, spawnDistance = 6, beastTimer = 5;
+    public bool trapTriggered = false;
+    public bool timerDown = false;
 
     private void Start()
     {
-        fwd.Set(0, -0.5f, 4);
-        rend = gameObject.GetComponentInChildren<Renderer>();
         beastMessage.enabled = false;
     }
 
     private void Update()
     {
-        if (beastTimer > 0 && trapTriggered == true)
+        if(timerDown == true)
         {
-            beastTimer -= Time.deltaTime;
-        }
-        else if (beastTimer == 0)
-        {
-            SpawnBeast();   
+            TimersDown();
         }
 
-        if (textTimer > 0)
+        if (victim != null)
         {
-            textTimer -= Time.deltaTime;
+            victimPos = victim.transform.position;
+            victimDir = victim.transform.forward;
+            Quaternion victimRotation = victim.transform.rotation;
         }
-        else beastMessage.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         textTimer = 3;
+        timerDown = true;
         beastTimer = 5;
         trapTriggered = true;
-        victim = other.gameObject;
-        beastMessage.enabled = true;        
+        victim = other.gameObject;    
+        beastMessage.enabled = true;
+        rend = gameObject.GetComponentInChildren<Renderer>();
         rend.enabled = false;
         gameObject.GetComponent<Collider>().enabled = false;
     }
 
     void SpawnBeast()
     {
-        for (int i = 0; i <= 5; i++)
+        if (beastTimer == 0)
         {
-            spawnPlacement = victim.transform.position + fwd;
-            beast = Instantiate(beast, spawnPlacement, transform.rotation * Quaternion.Euler(0, 180, 0));
+            for (int i = 0; i < 1; i++)
+            {
+                spawnPlacement = victimPos + Vector3.down + victimDir*spawnDistance;
+                beast = Instantiate(beast, spawnPlacement, transform.rotation * Quaternion.Euler(0, 180, 0));
+                beast.transform.LookAt(victim.transform.position + Vector3.down);
+                beastMessage.enabled = false;
+                Destroy(gameObject);
+            }
+        }       
+    }
+
+    void TimersDown()
+    {
+        if (textTimer > 0)
+        {
+            textTimer -= Time.deltaTime;
+        }
+        else
+        {
+            beastMessage.enabled = false;
+        }
+
+        if (beastTimer > 0 && trapTriggered == true)
+        {
+            beastTimer -= Time.deltaTime;
+        }
+        else if (beastTimer < 0 && trapTriggered == true)
+        {
+            beastTimer = 0;
+            SpawnBeast();
         }
     }
 }
