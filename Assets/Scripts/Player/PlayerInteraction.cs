@@ -16,11 +16,16 @@ public class PlayerInteraction : MonoBehaviour
     {
 
         interactMask = 1 << LayerMask.NameToLayer("Interactables");
+        
+    }
+
+    public void UpdateUIRefs()
+    {
 
         GameObject temp = GameObject.FindGameObjectWithTag("Hud");
         Text[] tempTexts = temp.GetComponentsInChildren<Text>();
 
-        for(int i = 0; i < tempTexts.Length - 1; i++)
+        for(int i = 0; i < tempTexts.Length; i++)
         {
 
             if(tempTexts[i].name == "HoverText")
@@ -31,7 +36,7 @@ public class PlayerInteraction : MonoBehaviour
             }
 
         }
-        
+
     }
 
     private void Update()
