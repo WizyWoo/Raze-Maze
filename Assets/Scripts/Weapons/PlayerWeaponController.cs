@@ -27,7 +27,10 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
     TODO
     - Align placement with surface
     - Exessive placement checks for checking all directions to keep traps out of walls
-    - Have a "Weapon editor" where you can change settings for individual weapons
+    - Weaponcontroller follow pos of hand for player using
+    - Photon for weapons being used
+    - Photon for traps placed then activated
+    - 
 
     */
 
