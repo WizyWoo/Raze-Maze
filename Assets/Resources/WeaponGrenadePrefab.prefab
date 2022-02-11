@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4922112481516964309}
   - component: {fileID: 5787422257912688968}
   - component: {fileID: -8275241348711129893}
+  - component: {fileID: 2160615573009962319}
   m_Layer: 0
   m_Name: WeaponGrenadePrefab
   m_TagString: Weapon
@@ -164,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponID: 0
   Damage: 0
+  Firing: 0
   FuseLenght: 3
   ExplosionParticle: {fileID: 2600141172152766777, guid: 9e17682efd6deca4b9b6535503918f17,
     type: 3}
@@ -185,10 +187,27 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 5787422257912688968}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &2160615573009962319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5693970041408951150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &6077126029100609789
 GameObject:
   m_ObjectHideFlags: 0
