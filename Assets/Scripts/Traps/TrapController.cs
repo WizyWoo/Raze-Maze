@@ -30,7 +30,8 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
         else
         {
 
-            TrapID = (int)stream.ReceiveNext();
+            if((int)stream.ReceiveNext() != 0)
+                TrapID = (int)stream.ReceiveNext();
 
         }
 
