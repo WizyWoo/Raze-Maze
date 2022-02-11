@@ -4,79 +4,79 @@ using UnityEngine;
 
 public class jelloTrapScript : TrapController
 {
-    //private float jelloMultiplier = 1f;
+    private float jelloMultiplier = 1f;
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    jelloMultiplier = 0.5f;
-
-    //    other.GetComponent<PlayerController>()._speed *= jelloMultiplier;
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    jelloMultiplier = 2f;
-
-    //    other.GetComponent<PlayerController>()._speed *= jelloMultiplier;
-    //}
-
-    bool started;
-    public LayerMask m_LayerMask;
-
-    List<Collider> colliderList = new List<Collider>();
-
-    void FixedUpdate()
+    private void OnTriggerStay(Collider other)
     {
-        CollisionsChecker();
+        jelloMultiplier = 0.5f;
+
+        other.GetComponent<PlayerController>()._speedMultiplier = jelloMultiplier;
     }
 
-    void CollisionsChecker()
+    private void OnTriggerExit(Collider other)
     {
-        //Use the OverlapBox to detect if there are any other colliders within this box area.
-        //Use the GameObject's centre, half the size (as a radius) and rotation. This creates an invisible box around your GameObject.
-        Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMask);
+        jelloMultiplier = 1f;
 
-        foreach (var item in hitColliders)
-        {
-            if(colliderList.Count > 0){
-                bool match = false;
-                foreach (var cols in colliderList)
-                {
-                    if(cols == item){
-                        match = true;
-                    }
-                }
-                if(!match){
-                    colliderList.Add(item);
-                }
-            }else{
-                colliderList.Add(item);
-            }
-        }
-        if(colliderList.Count > 0){
-            foreach (var playerList in colliderList)
-            {
-                bool inTrigger = false;
-                foreach (var colliderList in hitColliders)
-                {
-                    if(playerList == colliderList){
-                        inTrigger = true;
-                    }
-                }
-                if(!inTrigger){
-                    playerList.gameObject.GetComponent<PlayerController>()._speedMultiplier = 1f;
-                }else{
-                    playerList.gameObject.GetComponent<PlayerController>()._speedMultiplier = 0.5f;
-                }
-            }
-        }
-
-        //Check when there is a new collider coming into contact with the box
-        //while (i < hitColliders.Length)
-        //{
-            
-        //    //Increase the number of Colliders in the array
-        //    i++;
-        //}
+        other.GetComponent<PlayerController>()._speedMultiplier = jelloMultiplier;
     }
+
+    //bool started;
+    //public LayerMask m_LayerMask;
+
+    //List<Collider> colliderList = new List<Collider>();
+
+    //void FixedUpdate()
+    //{
+    //    CollisionsChecker();
+    //}
+
+    //void CollisionsChecker()
+    //{
+    //    //Use the OverlapBox to detect if there are any other colliders within this box area.
+    //    //Use the GameObject's centre, half the size (as a radius) and rotation. This creates an invisible box around your GameObject.
+    //    Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMask);
+
+    //    foreach (var item in hitColliders)
+    //    {
+    //        if(colliderList.Count > 0){
+    //            bool match = false;
+    //            foreach (var cols in colliderList)
+    //            {
+    //                if(cols == item){
+    //                    match = true;
+    //                }
+    //            }
+    //            if(!match){
+    //                colliderList.Add(item);
+    //            }
+    //        }else{
+    //            colliderList.Add(item);
+    //        }
+    //    }
+    //    if(colliderList.Count > 0){
+    //        foreach (var playerList in colliderList)
+    //        {
+    //            bool inTrigger = false;
+    //            foreach (var colliderList in hitColliders)
+    //            {
+    //                if(playerList == colliderList){
+    //                    inTrigger = true;
+    //                }
+    //            }
+    //            if(!inTrigger){
+    //                playerList.gameObject.GetComponent<PlayerController>()._speedMultiplier = 1f;
+    //            }else{
+    //                playerList.gameObject.GetComponent<PlayerController>()._speedMultiplier = 0.5f;
+    //            }
+    //        }
+    //    }
+
+    //    //Check when there is a new collider coming into contact with the box
+    //    //while (i < hitColliders.Length)
+    //    //{
+
+    //    //    //Increase the number of Colliders in the array
+    //    //    i++;
+    //    //}
 }
+
