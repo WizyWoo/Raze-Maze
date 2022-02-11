@@ -34,5 +34,7 @@ public class MeshCombiner : MonoBehaviour
         transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
         transform.GetComponent<MeshCollider>().sharedMesh = transform.GetComponent<MeshFilter>().mesh;
         transform.gameObject.SetActive(true);
+
+        transform.position = transform.position / 20;
     }
 }
