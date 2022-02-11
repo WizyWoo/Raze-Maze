@@ -7,6 +7,7 @@ public class WeaponController : MonoBehaviourPunCallbacks
 {
 
     public int WeaponID;
+    public int Damage;
 
     public virtual void Thrown()
     {}

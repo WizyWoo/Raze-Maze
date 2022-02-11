@@ -369,6 +369,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
                 ghostTrap = Instantiate(TrapPrefabs[EquippedWeaponID]).transform;
                 trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
                 boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
+                ghostTrap.GetComponent<TrapController>().enabled = false;
 
             }
             else if(validLocation)

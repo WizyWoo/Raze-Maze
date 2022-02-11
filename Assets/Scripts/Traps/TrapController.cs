@@ -7,6 +7,7 @@ public class TrapController : MonoBehaviourPunCallbacks
 {
 
     public int TrapID;
+    public int Damage;
 
     public virtual void TrapPlaced(float activationDelay, int _trapID)
     {
