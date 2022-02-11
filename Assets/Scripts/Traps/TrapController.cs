@@ -27,7 +27,7 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
             }
 
         }
-        else if(stream.IsReading)
+        else
         {
 
             TrapID = (int)stream.ReceiveNext();
@@ -41,6 +41,7 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
 
         TrapID = _trapID;
         Invoke("ActivateTrap", activationDelay);
+        Debug.Log("Funnything: " + _trapID);
 
     }
 
