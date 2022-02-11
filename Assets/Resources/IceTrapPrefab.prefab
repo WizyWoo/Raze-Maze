@@ -1232,7 +1232,7 @@ GameObject:
   - component: {fileID: 3642738661488049608}
   - component: {fileID: 2549496232316688937}
   - component: {fileID: -8500936281572874460}
-  - component: {fileID: 7767063322345187792}
+  - component: {fileID: 644653941238689685}
   m_Layer: 6
   m_Name: IceTrapPrefab
   m_TagString: Trap
@@ -1288,11 +1288,12 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 644653941238689685}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &7767063322345187792
+--- !u!114 &644653941238689685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
