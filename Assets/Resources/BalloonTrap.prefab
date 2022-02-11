@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde921e9ce5f74a489961d068abc9c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TrapID: 0
+  Damage: 0
   _objectToSpawn: {fileID: 3084766316945426198, guid: b4003fb8ddf9cac49ba55239e7f1dda8,
     type: 3}
 --- !u!114 &-3902683798680500204

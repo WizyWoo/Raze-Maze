@@ -13,7 +13,7 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
     public float Damage;
     private bool trapPlaced, trapActivate;
 
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo message)
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
 
         if(stream.IsWriting)
@@ -26,7 +26,7 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
         {
 
             Debug.Log("Hello I am mr " + (int)stream.ReceiveNext());
-            TrapID = (int)stream.ReceiveNext();
+            this.TrapID = (int)stream.ReceiveNext();
 
         }
 
