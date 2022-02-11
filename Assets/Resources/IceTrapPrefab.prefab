@@ -1232,6 +1232,7 @@ GameObject:
   - component: {fileID: 3642738661488049608}
   - component: {fileID: 2549496232316688937}
   - component: {fileID: -8500936281572874460}
+  - component: {fileID: 7767063322345187792}
   m_Layer: 6
   m_Name: IceTrapPrefab
   m_TagString: Trap
@@ -1291,6 +1292,20 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &7767063322345187792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8960588332873188362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0980236113810345bdb904b1d5da02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrapID: 0
+  Damage: 0
 --- !u!1 &9176398720531996095
 GameObject:
   m_ObjectHideFlags: 0
