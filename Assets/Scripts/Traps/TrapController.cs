@@ -10,7 +10,7 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
     //The ID is set automatically based on where the prefab is located in the PlayerWeaponControllers prefab array
 
     public int TrapID;
-    public int Damage;
+    public float Damage;
     private bool trapPlaced, trapActivate;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo message)

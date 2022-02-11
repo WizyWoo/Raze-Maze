@@ -10,7 +10,7 @@ public class WeaponController : MonoBehaviourPunCallbacks
     //The ID is set automatically based on where the prefab is located in the PlayerWeaponControllers prefab array
 
     public int WeaponID;
-    public int Damage;
+    public float Damage;
 
     public virtual void Thrown()
     {}
