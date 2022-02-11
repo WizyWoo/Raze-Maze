@@ -383,7 +383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bddc51983dcaae43a008e277e4592a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 350
   _plMaxSpeed: 10
   _camSpeed: 10
   _moveInput: {x: 0, y: 0}
@@ -391,6 +390,7 @@ MonoBehaviour:
   cam: {fileID: 1416359710976849618}
   minClamp: -45
   maxClamp: 45
+  _speed: 350
   lives: 3
   gameOver: {fileID: 0}
 --- !u!114 &8924066410276262111

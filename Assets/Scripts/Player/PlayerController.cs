@@ -9,12 +9,12 @@ public class PlayerController : MonoBehaviourPun
     PhotonView myPhotonView;
 
     [SerializeField]
-    private float _speed = 10, _plMaxSpeed = 10, _camSpeed = 45;
+    private float _plMaxSpeed = 10, _camSpeed = 45;
     private PlayerInputActions _playerActions;
     private Rigidbody _rb;
     public Vector2 _moveInput, _camInput;
     [SerializeField] private Camera cam;
-    public float minClamp = -45f, maxClamp = 45f;
+    public float minClamp = -45f, maxClamp = 45f, _speed = 10, _speedMultiplier = 1f;
     private float cameraX, timer;
     public int lives = 3;
 
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviourPun
         // Movement
         //transform.Translate(new Vector3(_moveInput.x * _speed * Time.fixedDeltaTime, 0, _moveInput.y * _speed * Time.fixedDeltaTime));
         //_rb.velocity = new Vector3(_moveInput.x * _speed * Time.fixedDeltaTime, 0, _moveInput.y * _speed * Time.fixedDeltaTime);
-        _rb.velocity += transform.forward * _moveInput.y * _speed * Time.fixedDeltaTime + transform.right * _moveInput.x * _speed * Time.fixedDeltaTime + transform.up * _rb.velocity.y * Time.fixedDeltaTime;
+        _rb.velocity += transform.forward * _moveInput.y * _speed * _speedMultiplier * Time.fixedDeltaTime + transform.right * _moveInput.x * _speed * _speedMultiplier * Time.fixedDeltaTime + transform.up * _rb.velocity.y * Time.fixedDeltaTime;
         
         if(_rb.velocity.magnitude > _plMaxSpeed){
             _rb.velocity = _rb.velocity.normalized * _plMaxSpeed;
