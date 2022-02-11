@@ -149,7 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 5
+  TurnSpeed: 1000
   MoveRelativeTo: {fileID: 6523557930561261549}
+  CamTransform: {fileID: 0}
 --- !u!1 &6523557930561261544
 GameObject:
   m_ObjectHideFlags: 0
