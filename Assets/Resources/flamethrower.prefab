@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8979805473154402031}
   m_Layer: 0
   m_Name: flamethrower
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 8979805473154402031}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -71,6 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponID: 7
+  Damage: 0
   particleSystem: {fileID: 7995552860899436711}
 --- !u!1 &3122761046827766717
 GameObject:
