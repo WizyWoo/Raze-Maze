@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class jelloTrapScript : TrapController
+public class JelloTrapScript : TrapController
 {
     private float jelloMultiplier = 1f;
 
