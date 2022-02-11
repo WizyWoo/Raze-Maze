@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 5316876116456601228}
   m_Layer: 0
   m_Name: minigun
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,7 +220,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 5316876116456601228}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -237,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponID: 6
+  Damage: 0
   particleSystem: {fileID: 8995168545513115497}
 --- !u!1001 &66811690907549854
 PrefabInstance:

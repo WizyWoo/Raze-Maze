@@ -41,7 +41,7 @@ namespace Com.MyCompany.MyGame
         public GameObject PlayerUiPrefab;
 
         [Tooltip("The current Health of our player")]
-        public float Health = 1f;
+        public float Health = 10f;
 
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
@@ -50,17 +50,16 @@ namespace Com.MyCompany.MyGame
 
         #region Private Fields
 
-        //[Tooltip("The Beams GameObject to control")]
-        //[SerializeField]
-        //private GameObject beams;
+        ////[Tooltip("The Beams GameObject to control")]
+        //[SerializeField] private GameObject mine;
         ////True, when the user is firing
         //bool IsFiring;
         #endregion
 
         #region Private Methods
 
-        #if UNITY_5_4_OR_NEWER
-            void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode loadingMode)
+#if UNITY_5_4_OR_NEWER
+        void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode loadingMode)
             {
                 this.CalledOnLevelWasLoaded(scene.buildIndex);
             }
@@ -181,11 +180,17 @@ namespace Com.MyCompany.MyGame
             }
             // We are only interested in Beamers
             // we should be using tags but for the sake of distribution, let's simply check by name.
-            if (!other.name.Contains("Beam"))
+            if (!other.tag.Contains("Weapon") && !other.tag.Contains("Trap"))
             {
                 return;
             }
-            Health -= 0.1f;
+
+            if(other.tag.Contains("Weapon"))
+                Health -= other.GetComponent<WeaponController>().Damage;
+
+            if (other.tag.Contains("Trap"))
+                Health -= other.GetComponent<TrapController>().Damage;
+
         }
 
         /// <summary>
@@ -196,18 +201,18 @@ namespace Com.MyCompany.MyGame
         void OnTriggerStay(Collider other)
         {
             // we dont' do anything if we are not the local player.
-            if (!photonView.IsMine)
-            {
-                return;
-            }
-            // We are only interested in Beamers
-            // we should be using tags but for the sake of distribution, let's simply check by name.
-            if (!other.name.Contains("Beam"))
-            {
-                return;
-            }
-            // we slowly affect health when beam is constantly hitting us, so player has to move to prevent death.
-            Health -= 0.1f * Time.deltaTime;
+            //if (!photonView.IsMine)
+            //{
+            //    return;
+            //}
+            //// We are only interested in Beamers
+            //// we should be using tags but for the sake of distribution, let's simply check by name.
+            //if (!other.tag.Contains("Weapon") && !other.tag.Contains("Trap"))
+            //{
+            //    return;
+            //}
+            //// we slowly affect health when beam is constantly hitting us, so player has to move to prevent death.
+            //Health -= 0.1f * Time.deltaTime;
         }
 
         #if !UNITY_5_4_OR_NEWER

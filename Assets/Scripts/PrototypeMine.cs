@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrototypeMine : MonoBehaviour
+public class PrototypeMine : TrapController
 {
     ParticleSystem ps;
     
@@ -13,9 +13,6 @@ public class PrototypeMine : MonoBehaviour
         ps.Pause();
     }
 
-   
-    
-    
     void OnCollisionEnter(Collision other)
     {
         ps.Play();

@@ -7,11 +7,12 @@ public class VrPlayerController : MonoBehaviour
 {
 
     public VRPlayerInputs PlayerInputs;
-    public float MovementSpeed;
+    public float MovementSpeed, TurnSpeed;
     [Tooltip("The transform the player moves relative to")]
     public Transform MoveRelativeTo;
+    public Transform CamTransform;
     private Vector2 movementDir;
-    private InputAction move;
+    private InputAction move, look;
     private InputAction trigger;
     private Rigidbody rb;
 
@@ -27,7 +28,9 @@ public class VrPlayerController : MonoBehaviour
     {
 
         move = PlayerInputs.Player.Move;
+        look = PlayerInputs.Player.Look;
         move.Enable();
+        look.Enable();
 
     }
 
@@ -35,6 +38,7 @@ public class VrPlayerController : MonoBehaviour
     {
 
         move.Disable();
+        look.Disable();
 
     }
 
@@ -48,6 +52,8 @@ public class VrPlayerController : MonoBehaviour
         Vector3 moveDir = ((new Vector3(forwardDir.x, 0, forwardDir.z) * tempV2.y) + (new Vector3(rightDir.x, 0, rightDir.z) * tempV2.x)) * MovementSpeed;
 
         rb.velocity = new Vector3(moveDir.x, rb.velocity.y, moveDir.z);
+
+        CamTransform.localRotation = Quaternion.Euler(0, CamTransform.localRotation.y + (look.ReadValue<Vector2>().x * TurnSpeed), 0);
 
     }
 

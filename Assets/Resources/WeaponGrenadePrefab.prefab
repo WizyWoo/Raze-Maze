@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: -8275241348711129893}
   m_Layer: 0
   m_Name: WeaponGrenadePrefab
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponID: 0
+  Damage: 0
   FuseLenght: 3
   ExplosionParticle: {fileID: 2600141172152766777, guid: 9e17682efd6deca4b9b6535503918f17,
     type: 3}

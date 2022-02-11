@@ -7,6 +7,8 @@ TagManager:
   - Movable
   - MazeDoor
   - Hud
+  - Weapon
+  - Trap
   layers:
   - Default
   - TransparentFX
