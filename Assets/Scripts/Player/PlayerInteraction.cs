@@ -8,8 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 
     [SerializeField]
     public float interactionDistance;
-    [SerializeField]
-    private Text hoverText;
+    public Text HoverText;
     private LayerMask interactMask;
 
     private void Start()
@@ -31,7 +30,7 @@ public class PlayerInteraction : MonoBehaviour
             if(tempTexts[i].name == "HoverText")
             {
 
-                hoverText = tempTexts[i];
+                HoverText = tempTexts[i];
 
             }
 
@@ -54,13 +53,13 @@ public class PlayerInteraction : MonoBehaviour
 
             }
 
-            hoverText.text = "^ " + hit.transform.name + " ^";
+            HoverText.text = "^ " + hit.transform.name + " ^";
 
         }
         else
         {
 
-            hoverText.text = "";
+            HoverText.text = "";
 
         }
 

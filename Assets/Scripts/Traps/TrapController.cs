@@ -27,6 +27,12 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
             }
 
         }
+        else if(stream.IsReading)
+        {
+
+            TrapID = (int)stream.ReceiveNext();
+
+        }
 
     }
 

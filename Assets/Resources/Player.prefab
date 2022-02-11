@@ -392,6 +392,7 @@ MonoBehaviour:
   minClamp: -45
   maxClamp: 45
   _speed: 350
+  _speedMultiplier: 1
   lives: 3
   gameOver: {fileID: 0}
 --- !u!114 &8924066410276262111

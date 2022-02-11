@@ -15,6 +15,7 @@ public class TerminateLocals : MonoBehaviourPunCallbacks
         if(!photonView.IsMine)
         {
 
+            this.gameObject.tag = "NotMe";
             foreach (GameObject go in TerminateThis)
             {
 

@@ -61,11 +61,10 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
     public WeaponUseMode[] AttackMode;
     public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght, MeleeReach, ThrowVelocity, ShotRange;
     public int EquippedWeaponID {get; private set;}
+    public Text WeaponIDText, FeedbackText;
     public Transform Parent;
     [SerializeField]
     private GameObject droppedWeaponPrefab, weaponInHand;
-    [SerializeField]
-    private Text weaponIDText, feedbackText;
     [SerializeField]
     private Transform handTransform;
     private bool placingTrap, validLocation;
@@ -100,19 +99,19 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
                 if(tempTexts[i].name == "PlacementFeedback")
                 {
 
-                    feedbackText = tempTexts[i];
+                    FeedbackText = tempTexts[i];
 
                 }
                 else if(tempTexts[i].name == "WeaponID")
                 {
 
-                    weaponIDText = tempTexts[i];
+                    WeaponIDText = tempTexts[i];
 
                 }
 
             }
 
-            feedbackText.text = "";
+            FeedbackText.text = "";
 
         }
 
@@ -145,7 +144,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
         if(UseUIFeedback)
         {
 
-            weaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
+            WeaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
 
         }
 
@@ -318,7 +317,6 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
         {
 
             weaponInHand = PhotonNetwork.Instantiate(weaponFolderName + WeaponPrefabs[EquippedWeaponID].name, handTransform.position, handTransform.rotation);
-            weaponInHand.transform.parent = handTransform;
 
             if(weaponInHand.TryGetComponent<Rigidbody>(out Rigidbody rb))
             {
@@ -377,7 +375,6 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
                 ghostTrap = Instantiate(TrapPrefabs[EquippedWeaponID]).transform;
                 trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
                 boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
-                ghostTrap.GetComponent<TrapController>().enabled = false;
 
             }
             else if(validLocation)
@@ -403,7 +400,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
             if(UseUIFeedback)
             {
 
-                feedbackText.text = tempFeedback;
+                FeedbackText.text = tempFeedback;
 
             }
 
@@ -446,13 +443,21 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
                 timer -= Time.deltaTime;
 
             }
-            else if(feedbackText.text != "")
+            else if(FeedbackText.text != "")
             {
 
-                feedbackText.text = "";
+                FeedbackText.text = "";
 
             }
         
+        }
+
+        if(weaponInHand)
+        {
+
+            weaponInHand.transform.position = handTransform.position;
+            weaponInHand.transform.rotation = handTransform.rotation;
+
         }
 
     }
