@@ -41,7 +41,7 @@ namespace Com.MyCompany.MyGame
         public GameObject PlayerUiPrefab;
 
         [Tooltip("The current Health of our player")]
-        public float Health = 10f;
+        public float Health = 1f;
 
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;

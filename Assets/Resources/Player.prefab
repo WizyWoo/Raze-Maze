@@ -392,6 +392,7 @@ MonoBehaviour:
   minClamp: -45
   maxClamp: 45
   _speed: 350
+  _speedMultiplier: 1
   lives: 3
   gameOver: {fileID: 0}
 --- !u!114 &8924066410276262111
@@ -446,7 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerUiPrefab: {fileID: 314649571836468322, guid: 8081fd110696b6e4b974f7ea0f05dbfc,
     type: 3}
-  Health: 10
+  Health: 1
 --- !u!114 &1915713057797412575
 MonoBehaviour:
   m_ObjectHideFlags: 0
