@@ -383,7 +383,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
                 Transform temp = PhotonNetwork.Instantiate(trapFolderName + TrapPrefabs[EquippedWeaponID].name, placementInfo.Item1, placementInfo.Item3).transform;
                 if(TrapScaleMode[EquippedWeaponID] != ScalingMode.None)
                     temp.localScale = placementInfo.Item2;
-                temp.gameObject.AddComponent<TrapController>().TrapPlaced(TrapActivationDelay[EquippedWeaponID], EquippedWeaponID);
+                temp.gameObject.GetComponent<TrapController>().TrapPlaced(TrapActivationDelay[EquippedWeaponID], EquippedWeaponID);
                 Destroy(ghostTrap.gameObject);
                 UpdateEquippedWeapon(0);
                 tempFeedback = "";

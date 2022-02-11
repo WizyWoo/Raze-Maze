@@ -19,19 +19,14 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
         if(stream.IsWriting)
         {
 
-            if(TrapID != 0)
-            {
-
-                stream.SendNext(TrapID);
-
-            }
+            stream.SendNext(TrapID);
 
         }
         else
         {
 
-            if((int)stream.ReceiveNext() != 0)
-                TrapID = (int)stream.ReceiveNext();
+            Debug.Log("Hello I am mr " + (int)stream.ReceiveNext());
+            TrapID = (int)stream.ReceiveNext();
 
         }
 
