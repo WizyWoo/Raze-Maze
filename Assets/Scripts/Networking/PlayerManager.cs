@@ -51,16 +51,15 @@ namespace Com.MyCompany.MyGame
         #region Private Fields
 
         //[Tooltip("The Beams GameObject to control")]
-        //[SerializeField]
-        //private GameObject beams;
+        [SerializeField] private GameObject mine;
         ////True, when the user is firing
         //bool IsFiring;
         #endregion
 
         #region Private Methods
 
-        #if UNITY_5_4_OR_NEWER
-            void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode loadingMode)
+#if UNITY_5_4_OR_NEWER
+        void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode loadingMode)
             {
                 this.CalledOnLevelWasLoaded(scene.buildIndex);
             }
@@ -181,11 +180,11 @@ namespace Com.MyCompany.MyGame
             }
             // We are only interested in Beamers
             // we should be using tags but for the sake of distribution, let's simply check by name.
-            if (!other.name.Contains("Beam"))
+            if (!other.name.Contains("TrapMinePrefab"))
             {
                 return;
             }
-            Health -= 0.1f;
+            Health -= 0.5f;
         }
 
         /// <summary>

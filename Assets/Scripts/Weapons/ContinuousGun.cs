@@ -3,11 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class ContinuousGun : WeaponController
+public class ContinuousGun : WeaponController, IPunObservable
 {
     public ParticleSystem particleSystem;
+    private bool isFiring  = false;
 
     List<ParticleCollisionEvent> colEvents = new List<ParticleCollisionEvent>();
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            // We own this player: send the others our data
+            stream.SendNext(isFiring);
+        }
+        else
+        {
+            // Network player, receive data
+            this.isFiring = (bool)stream.ReceiveNext();
+        }
+    }
 
     void Update()
     {
@@ -29,9 +44,12 @@ public class ContinuousGun : WeaponController
         if (Input.GetKey(KeyCode.Mouse0))
         {
             Debug.Log("shooooting");
+            isFiring = true;
             particleSystem.Play();
             //PhotonNetwork.Instantiate(particleSystem.name, transform.position, Quaternion.identity);
             //PhotonNetwork.Destroy(gameObject);
         }
+        else
+            isFiring = false;
     }
 }
