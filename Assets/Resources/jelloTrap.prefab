@@ -113,7 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrapID: 0
   Damage: 0
-  jelloSpeed: 100
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &8376783409142404790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +134,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 8376783409142404795}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

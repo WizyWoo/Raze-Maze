@@ -44,6 +44,8 @@ namespace Com.MyCompany.MyGame
             this.transform.SetParent(GameObject.Find("Canvas").GetComponent<Transform>(), false);
 
             _canvasGroup = this.GetComponent<CanvasGroup>();
+
+            //playerHealthSlider.maxValue = target.Health;
         }
 
         void Update()

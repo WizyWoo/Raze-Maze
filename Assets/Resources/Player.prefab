@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 7156812334643756261}
   - component: {fileID: 687883661854818539}
   - component: {fileID: -1044827381268234742}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerUiPrefab: {fileID: 314649571836468322, guid: 8081fd110696b6e4b974f7ea0f05dbfc,
     type: 3}
-  Health: 10
+  Health: 1
 --- !u!114 &1915713057797412575
 MonoBehaviour:
   m_ObjectHideFlags: 0
