@@ -41,10 +41,10 @@ public class jelloTrapScript : TrapController
         {
             item.gameObject.GetComponent<PlayerController>()._speedMultiplier = 0.5f;
 
-            for (int j = 0; j < length; j++)
-            {
+            //for (int j = 0; j < length; j++)
+            //{
 
-            }
+            //}
         }
 
         //Check when there is a new collider coming into contact with the box
