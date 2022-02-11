@@ -357,6 +357,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
 
         //VR and Desktop
         weaponInHand.GetComponent<WeaponController>().FireWeapon();
+        weaponInHand.GetComponent<WeaponController>().Firing = true;
 
     }
 

@@ -22,12 +22,16 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
         {
 
             stream.SendNext(TrapID);
+            stream.SendNext(trapPlaced);
+            stream.SendNext(trapActivate);
 
         }
         else if(stream.IsReading)
         {
 
             TrapID = (int)stream.ReceiveNext();
+            trapPlaced = (bool)stream.ReceiveNext();
+            trapActivate = (bool)stream.ReceiveNext();
 
         }
 
