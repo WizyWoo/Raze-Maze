@@ -9,6 +9,8 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
     //When making a trap script make sure that you Inherit from this script, you can override the TrapPlaced and ActivateTrap functions, however they are not needed for it to work
     //The ID is set automatically based on where the prefab is located in the PlayerWeaponControllers prefab array
 
+    //note to self, send and receive in same order
+
     public int TrapID;
     public float Damage;
     private bool trapPlaced, trapActivate;
@@ -22,11 +24,10 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
             stream.SendNext(TrapID);
 
         }
-        else
+        else if(stream.IsReading)
         {
 
-            Debug.Log("Hello I am mr " + (int)stream.ReceiveNext());
-            this.TrapID = (int)stream.ReceiveNext();
+            TrapID = (int)stream.ReceiveNext();
 
         }
 
