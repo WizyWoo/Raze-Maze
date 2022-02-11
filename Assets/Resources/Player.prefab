@@ -445,8 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerUiPrefab: {fileID: 314649571836468322, guid: 8081fd110696b6e4b974f7ea0f05dbfc,
     type: 3}
-  Health: 1
-  mine: {fileID: 7145331574180486927, guid: fe3a0847096e61c4a8938bdf79b4cb01, type: 3}
+  Health: 10
 --- !u!114 &1915713057797412575
 MonoBehaviour:
   m_ObjectHideFlags: 0
