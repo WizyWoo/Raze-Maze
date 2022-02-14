@@ -7,30 +7,14 @@ using Photon.Pun;
 
 public class PlayerWeaponController : MonoBehaviourPunCallbacks
 {
-    //Plans/Info
+    
     /*
-
-    Traps
-    id (has to be same as weapon)
-    Scaling mode
-    Max and Min scale
-    Prefab of trap
-    Bounds, use a collider on the Root object for the trap to set its bounds so it scales correctly
-
-    Weapon
-    id (Same as trap)
-    WeaponUseMode
-    MeleeRach
-    ThrowVelocity
-    ShotRange
 
     TODO
     - Align placement with surface
     - Exessive placement checks for checking all directions to keep traps out of walls
-    - Weaponcontroller follow pos of hand for player using
-    - Photon for weapons being used
-    - Photon for traps placed then activated
-    - 
+    - Make this use the ItemManager instead of own enums and values
+    - Make this independent on Refs to ui
 
     */
 
