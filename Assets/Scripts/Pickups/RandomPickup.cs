@@ -10,16 +10,21 @@ public class RandomPickup : MonoBehaviour , IInteractable
 
     public void Activate(Transform player)
     {
-
-        PlayerWeaponController _itemController = player.GetComponent<PlayerWeaponController>();
-        _itemController.PickedUpWeapon(ItemManager.main.RandomItemID());
-
-        if(LockAfterUse)
+        
+        if(!locked)
         {
+            
+            PlayerWeaponController _itemController = player.GetComponent<PlayerWeaponController>();
+            _itemController.PickedUpWeapon(ItemManager.main.RandomItemID());
 
-            locked = true;
-            gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+            if(LockAfterUse)
+            {
 
+                locked = true;
+                gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+
+            }
+        
         }
 
     }
