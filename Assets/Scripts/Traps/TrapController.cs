@@ -13,7 +13,7 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
 
     public int TrapID;
     public float Damage;
-    private bool trapPlaced, trapActivate;
+    private bool trapPlaced, trapActive;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -23,7 +23,7 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
 
             stream.SendNext(TrapID);
             stream.SendNext(trapPlaced);
-            stream.SendNext(trapActivate);
+            stream.SendNext(trapActive);
 
         }
         else if(stream.IsReading)
@@ -31,7 +31,7 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
 
             TrapID = (int)stream.ReceiveNext();
             trapPlaced = (bool)stream.ReceiveNext();
-            trapActivate = (bool)stream.ReceiveNext();
+            trapActive = (bool)stream.ReceiveNext();
 
         }
 
@@ -42,14 +42,14 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
 
         TrapID = _trapID;
         Invoke("ActivateTrap", activationDelay);
-        Debug.Log("Funnything: " + _trapID);
+        trapPlaced = true;
 
     }
 
     public virtual void ActivateTrap()
     {
 
-
+        trapActive = true;
 
     }
 

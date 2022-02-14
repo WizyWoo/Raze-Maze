@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8040701003740048230}
   - component: {fileID: 2617293762731290269}
   - component: {fileID: 3840933435406395151}
+  - component: {fileID: 6770983798692209196}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (22)
   m_TagString: Untagged
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6770983798692209196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234419466571658227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &748690685169430483
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +109,7 @@ GameObject:
   - component: {fileID: 1880348204090364472}
   - component: {fileID: 3692571844383966020}
   - component: {fileID: 2047063034669213980}
+  - component: {fileID: 6943133467382972735}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (24)
   m_TagString: Untagged
@@ -144,7 +160,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -166,6 +182,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6943133467382972735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748690685169430483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &1754805339842928637
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +252,7 @@ GameObject:
   - component: {fileID: 5065861209050972838}
   - component: {fileID: 8660336843535424082}
   - component: {fileID: 2351103441267918239}
+  - component: {fileID: 6908642032581669174}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (21)
   m_TagString: Untagged
@@ -272,7 +303,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -294,6 +325,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6908642032581669174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2928709645250245244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &3821868745123801008
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +350,7 @@ GameObject:
   - component: {fileID: 6885040195235253608}
   - component: {fileID: 6353861538035214325}
   - component: {fileID: 3256127275311758722}
+  - component: {fileID: 8841446114008871857}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (14)
   m_TagString: Untagged
@@ -355,7 +401,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -377,6 +423,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8841446114008871857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821868745123801008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &4773367473089962064
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +448,7 @@ GameObject:
   - component: {fileID: 7198171867652781196}
   - component: {fileID: 2480088758516650856}
   - component: {fileID: 4405878317749621440}
+  - component: {fileID: 2365264510573976535}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (17)
   m_TagString: Untagged
@@ -438,7 +499,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -460,6 +521,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2365264510573976535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4773367473089962064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &4810918534384117987
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +546,7 @@ GameObject:
   - component: {fileID: 7441666879817013297}
   - component: {fileID: 2328523540636331723}
   - component: {fileID: 7905523643445238665}
+  - component: {fileID: 3179125320099685589}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (19)
   m_TagString: Untagged
@@ -521,7 +597,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -543,6 +619,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3179125320099685589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4810918534384117987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &5242781693250781423
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +644,7 @@ GameObject:
   - component: {fileID: 8454251234449694926}
   - component: {fileID: 6882442999039086422}
   - component: {fileID: 713395965426295419}
+  - component: {fileID: 6354329577541960295}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (23)
   m_TagString: Untagged
@@ -604,7 +695,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -626,6 +717,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6354329577541960295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242781693250781423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &6815656359639355947
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +742,7 @@ GameObject:
   - component: {fileID: 6815656359639355951}
   - component: {fileID: 6815656359639355944}
   - component: {fileID: 6815656359639355945}
+  - component: {fileID: 7359198309103956502}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (11)
   m_TagString: Untagged
@@ -687,7 +793,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -709,6 +815,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7359198309103956502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6815656359639355947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &6815656359812434940
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +891,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -817,6 +937,7 @@ GameObject:
   - component: {fileID: 373150312873642481}
   - component: {fileID: 1804101861216158365}
   - component: {fileID: 8664299793450430326}
+  - component: {fileID: 2117299001378250321}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (15)
   m_TagString: Untagged
@@ -867,7 +988,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -889,6 +1010,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2117299001378250321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7489215851451919780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &7667665053370064519
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +1035,7 @@ GameObject:
   - component: {fileID: 2616958419853899762}
   - component: {fileID: 7869299590382210511}
   - component: {fileID: 1534074496875405724}
+  - component: {fileID: 3396610986264550876}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (16)
   m_TagString: Untagged
@@ -950,7 +1086,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -972,6 +1108,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3396610986264550876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667665053370064519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &7910043449198922900
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,6 +1133,7 @@ GameObject:
   - component: {fileID: 3708951481308687308}
   - component: {fileID: 8214506360254641220}
   - component: {fileID: 6708925210306379210}
+  - component: {fileID: 3991868285423868440}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (12)
   m_TagString: Untagged
@@ -1033,7 +1184,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1055,6 +1206,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3991868285423868440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7910043449198922900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &8053091816362492564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1231,7 @@ GameObject:
   - component: {fileID: 1931133184997497645}
   - component: {fileID: 910599729735273027}
   - component: {fileID: 6006442049001858445}
+  - component: {fileID: 6805352217443943398}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (18)
   m_TagString: Untagged
@@ -1116,7 +1282,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1138,6 +1304,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6805352217443943398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053091816362492564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &8605143278804730152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,6 +1329,7 @@ GameObject:
   - component: {fileID: 822536706588599089}
   - component: {fileID: 8777285913783244632}
   - component: {fileID: 955200110974931074}
+  - component: {fileID: 6730353925650373509}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (20)
   m_TagString: Untagged
@@ -1199,7 +1380,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1221,6 +1402,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6730353925650373509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8605143278804730152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
 --- !u!1 &8960588332873188362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,6 +1513,7 @@ GameObject:
   - component: {fileID: 911727238243364964}
   - component: {fileID: 6106340805214583}
   - component: {fileID: 8527941451076555566}
+  - component: {fileID: 2911413307744614050}
   m_Layer: 6
   m_Name: iceSpikePrefabPlaceholder (13)
   m_TagString: Untagged
@@ -1368,7 +1564,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef278eb3a8ae09a4792a85dcdc78db65, type: 2}
+  - {fileID: 2100000, guid: 36c7d9c8dfd61a944a3cdc41750b8c09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1390,3 +1586,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2911413307744614050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176398720531996095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506c13a391deaf348a1a1041c7227768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepTransformScale: 0
+  ScaleToKeep: {x: 0.1, y: 1, z: 0.1}
