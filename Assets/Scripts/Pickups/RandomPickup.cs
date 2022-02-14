@@ -9,6 +9,7 @@ public class RandomPickup : MonoBehaviour , IInteractable
     {
 
         PlayerWeaponController weaponController = player.GetComponent<PlayerWeaponController>();
+        Random.InitState(System.DateTime.UtcNow.Second);
         weaponController.PickedUpWeapon(Random.Range(1, weaponController.TrapPrefabs.Length));
 
     }

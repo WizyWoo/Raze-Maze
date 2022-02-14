@@ -23,6 +23,8 @@ public class TerminateLocals : MonoBehaviourPunCallbacks
                 
             }
 
+            Destroy(gameObject.GetComponent<Rigidbody>());
+
         }
 
     }
