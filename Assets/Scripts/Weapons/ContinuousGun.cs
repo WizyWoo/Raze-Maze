@@ -27,6 +27,9 @@ public class ContinuousGun : WeaponController, IPunObservable
     void Update()
     {
         FireWeapon();
+
+        if(isFiring == true)
+            particleSystem.Play();
     }
 
     private void OnParticleCollision(GameObject other)
@@ -46,11 +49,15 @@ public class ContinuousGun : WeaponController, IPunObservable
         {
             Debug.Log("shooooting");
             isFiring = true;
-            particleSystem.Play();
+            //particleSystem.Play();
             //PhotonNetwork.Instantiate(particleSystem.name, transform.position, Quaternion.identity);
             //PhotonNetwork.Destroy(gameObject);
         }
         else
             isFiring = false;
+
+
+        //GameObject effectDefGo = PhotonNetwork.Instantiate(effect.name, hit.point, Quaternion.LookRotation(hit.normal), 0);
+        //effectDefGo.GetComponent<ParticleSystem>().Play();
     }
 }
