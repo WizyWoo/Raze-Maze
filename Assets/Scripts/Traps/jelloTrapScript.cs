@@ -8,7 +8,7 @@ public class JelloTrapScript : TrapController
 
     private void OnTriggerStay(Collider other)
     {
-        jelloMultiplier = 0.5f;
+        jelloMultiplier = 0.1f;
 
         other.GetComponent<PlayerController>()._speedMultiplier = jelloMultiplier;
     }
