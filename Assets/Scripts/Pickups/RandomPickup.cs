@@ -13,9 +13,12 @@ public class RandomPickup : MonoBehaviour , IInteractable
         
         if(!locked)
         {
-            
+           
             PlayerWeaponController _itemController = player.GetComponent<PlayerWeaponController>();
-            _itemController.PickedUpWeapon(ItemManager.main.RandomItemID());
+            Random.InitState(System.DateTime.UtcNow.Second);
+            _itemController.PickedUpWeapon(Random.Range(1, _itemController.TrapPrefabs.Length));
+
+            //_itemController.PickedUpWeapon(ItemManager.main.RandomItemID());
 
             if(LockAfterUse)
             {
