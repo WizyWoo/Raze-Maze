@@ -53,13 +53,15 @@ public class PlayerInteraction : MonoBehaviour
 
             }
 
-            HoverText.text = "^ " + hit.transform.name + " ^";
+            if(HoverText)
+                HoverText.text = "^ " + hit.transform.name + " ^";
 
         }
         else
         {
 
-            HoverText.text = "";
+            if(HoverText)
+                HoverText.text = "";
 
         }
 
