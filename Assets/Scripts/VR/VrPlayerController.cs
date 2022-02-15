@@ -10,7 +10,7 @@ public class VrPlayerController : MonoBehaviour
     public float MovementSpeed, TurnSpeed;
     [Tooltip("The transform the player moves relative to")]
     public Transform MoveRelativeTo;
-    public Transform CamTransform;
+    public Transform RotateAround;
     private Vector2 movementDir;
     private InputAction move, look;
     private InputAction trigger;
@@ -53,7 +53,7 @@ public class VrPlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(moveDir.x, rb.velocity.y, moveDir.z);
 
-        CamTransform.localRotation = Quaternion.Euler(0, CamTransform.localRotation.y + (look.ReadValue<Vector2>().x * TurnSpeed), 0);
+        RotateAround.Rotate(0, TurnSpeed * Time.deltaTime * look.ReadValue<Vector2>().x, 0, Space.Self);
 
     }
 
