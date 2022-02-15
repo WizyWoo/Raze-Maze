@@ -39,6 +39,7 @@ public class ContinuousGun : WeaponController, IPunObservable
         //}
     }
 
+    [PunRPC]
     public override void FireWeapon()
     {
         if (Input.GetKey(KeyCode.Mouse0))
