@@ -45,19 +45,21 @@ public class ContinuousGun : WeaponController, IPunObservable
     [PunRPC]
     public override void FireWeapon()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (photonView.IsMine)
         {
-            Debug.Log("shooooting");
-            isFiring = true;
-            //particleSystem.Play();
-            //PhotonNetwork.Instantiate(particleSystem.name, transform.position, Quaternion.identity);
-            //PhotonNetwork.Destroy(gameObject);
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                Debug.Log("shooooting");
+                isFiring = true;
+                //particleSystem.Play();
+                //PhotonNetwork.Instantiate(particleSystem.name, transform.position, Quaternion.identity);
+                //PhotonNetwork.Destroy(gameObject);
+            }
+            else
+                isFiring = false;
         }
-        else
-            isFiring = false;
 
-
-        //GameObject effectDefGo = PhotonNetwork.Instantiate(effect.name, hit.point, Quaternion.LookRotation(hit.normal), 0);
+        //GameObject effectDefGo = PhotonNetwork.Instantiate(particleSystem.name, hit.point, Quaternion.LookRotation(hit.normal), 0);
         //effectDefGo.GetComponent<ParticleSystem>().Play();
     }
 }
