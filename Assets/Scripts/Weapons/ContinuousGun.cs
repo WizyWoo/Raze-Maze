@@ -42,7 +42,7 @@ public class ContinuousGun : WeaponController, IPunObservable
         //}
     }
 
-    [PunRPC]
+    //[PunRPC]
     public override void FireWeapon()
     {
         if (photonView.IsMine)
