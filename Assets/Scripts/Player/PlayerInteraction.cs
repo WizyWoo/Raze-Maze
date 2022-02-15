@@ -15,6 +15,8 @@ public class PlayerInteraction : MonoBehaviour
     {
 
         interactMask = 1 << LayerMask.NameToLayer("Interactables");
+
+        UpdateUIRefs();
         
     }
 

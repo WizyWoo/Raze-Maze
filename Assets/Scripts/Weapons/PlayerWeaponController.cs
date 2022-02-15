@@ -66,6 +66,8 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
         mask = ~((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Traps")));
         playerMask = 1 << LayerMask.NameToLayer("Player");
 
+        UpdateUIRefs();
+
     }
 
     public void UpdateUIRefs()

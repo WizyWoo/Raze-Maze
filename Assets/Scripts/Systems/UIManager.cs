@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Com.MyCompany.MyGame;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,10 +13,18 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
 
-        playuwu = GameObject.FindGameObjectWithTag("Player");
+        /*GameObject[] _players = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach (GameObject p in _players)
+        {
+
+            if(p == PlayerManager.LocalPlayerInstance)
+                playuwu = p;
+            
+        }
         playuwu.GetComponentInChildren<PlayerWeaponController>().FeedbackText = FeedbackText;
         playuwu.GetComponentInChildren<PlayerWeaponController>().WeaponIDText = WeaponIDText;
-        playuwu.GetComponentInChildren<PlayerInteraction>().HoverText = HoverText;
+        playuwu.GetComponentInChildren<PlayerInteraction>().HoverText = HoverText;*/
 
     }
 

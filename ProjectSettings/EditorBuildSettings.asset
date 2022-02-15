@@ -11,16 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mazeTestScene.unity
     guid: 11420ac277abd6f4f8b200f877395fd1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/mazeTestScene 1.unity
     guid: c51ad932380c64840be40f7c625275f8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/mazeTestScene 2.unity
     guid: 4a2b4d9a3665e694287ad2cb352a8225
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/mazeTestScene 3.unity
     guid: b38efbd19701cb847a40a5902e161d82
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/mazeTestScene 4.unity
     guid: 486cfa3c14c7ae54fa4ddacb1e38fa27
   m_configObjects:
