@@ -1,44 +1,30 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class PlayerWeaponController : MonoBehaviourPunCallbacks
+public class PlayerItemController : MonoBehaviour
 {
 
+    /*
+    
     TODO
     - Align placement with surface
     - Exessive placement checks for checking all directions to keep traps out of walls
     - Make this use the ItemManager instead of own enums and values
     - Make this independent on Refs to ui
 
-    public enum ScalingMode
-    {
-
-        None,
-        Forward,
-        Sideways,
-        SurfaceAlign
-
-    }
-
-    public enum WeaponUseMode
-    {
-
-        Melee,
-        Throw,
-        Ranged
-
-    }
+    */
 
     [Tooltip("This might be a bit heavy")]
     public bool ExstensivePlacementChecks, UseUIFeedback;
-    public GameObject[] TrapPrefabs, WeaponPrefabs;
-    public ScalingMode[] TrapScaleMode;
-    public float[] TrapActivationDelay;
-    public WeaponUseMode[] AttackMode;
+    //References from itemManager
+    public GameObject CurrentWeaponPrefab, CurrentTrapPrefab;
+    public ItemManager.ScalingMode CurrentTrapScaleMode;
+    public ItemManager.WeaponUseMode CurrentWeaponUseMode;
+    public int TrapActivationDelay;
+    //End
     public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght, MeleeReach, ThrowVelocity, ShotRange;
     public int EquippedWeaponID {get; private set;}
     public Text WeaponIDText, FeedbackText;
@@ -298,7 +284,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
         if(weaponInHand == null)
         {
 
-            weaponInHand = PhotonNetwork.Instantiate(weaponFolderName + WeaponPrefabs[EquippedWeaponID].name, handTransform.position, handTransform.rotation);
+            weaponInHand = PhotonNetwork.Instantiate(CurrentWeaponPrefab.name, handTransform.position, handTransform.rotation);
 
             if(weaponInHand.TryGetComponent<Rigidbody>(out Rigidbody rb))
             {
@@ -322,7 +308,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
 
         //Desktop
 
-        GameObject temp = PhotonNetwork.Instantiate(weaponFolderName + WeaponPrefabs[EquippedWeaponID].name, transform.position, transform.rotation);
+        GameObject temp = PhotonNetwork.Instantiate(CurrentWeaponPrefab.name, transform.position, transform.rotation);
         WeaponController controller = temp.GetComponent<WeaponController>();
         controller.WeaponID = EquippedWeaponID;
         controller.Thrown();
@@ -355,7 +341,7 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
             {
 
                 placingTrap = true;
-                ghostTrap = Instantiate(TrapPrefabs[EquippedWeaponID]).transform;
+                ghostTrap = Instantiate(CurrentTrapPrefab).transform;
                 trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
                 boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
 
@@ -363,10 +349,10 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
             else if(validLocation)
             {
 
-                Transform temp = PhotonNetwork.Instantiate(trapFolderName + TrapPrefabs[EquippedWeaponID].name, placementInfo.Item1, placementInfo.Item3).transform;
-                if(TrapScaleMode[EquippedWeaponID] != ScalingMode.None)
+                Transform temp = PhotonNetwork.Instantiate(CurrentTrapPrefab.name, placementInfo.Item1, placementInfo.Item3).transform;
+                if(CurrentTrapScaleMode != ItemManager.ScalingMode.None)
                     temp.localScale = placementInfo.Item2;
-                temp.gameObject.GetComponent<TrapController>().TrapPlaced(TrapActivationDelay[EquippedWeaponID], EquippedWeaponID);
+                temp.gameObject.GetComponent<TrapController>().TrapPlaced(TrapActivationDelay, EquippedWeaponID);
                 Destroy(ghostTrap.gameObject);
                 UpdateEquippedWeapon(0);
                 tempFeedback = "";
@@ -391,18 +377,18 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
         else if(Input.GetKeyDown(KeyCode.Mouse0) && EquippedWeaponID != 0 && weaponInHand)
         {
 
-            switch(AttackMode[EquippedWeaponID])
+            switch(CurrentWeaponUseMode)
             {
 
-                case WeaponUseMode.Melee:
+                case ItemManager.WeaponUseMode.Melee:
                 //MeleeAttack();
                 break;
 
-                case WeaponUseMode.Throw:
+                case ItemManager.WeaponUseMode.Throw:
                 ThrowWeapon();
                 break;
 
-                case WeaponUseMode.Ranged:
+                case ItemManager.WeaponUseMode.Ranged:
                 FireWeapon();
                 break;
 
@@ -466,25 +452,25 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
 
             }
 
-            switch(TrapScaleMode[EquippedWeaponID])
+            switch(CurrentTrapScaleMode)
             {
 
-                case ScalingMode.None:
+                case ItemManager.ScalingMode.None:
                 placementInfo = NoScaling(tempV3);
                 break;
 
-                case ScalingMode.Forward:
+                case ItemManager.ScalingMode.Forward:
                 placementInfo = ScaleForward(tempV3);
                 break;
 
-                case ScalingMode.Sideways:
+                case ItemManager.ScalingMode.Sideways:
                 placementInfo = ScaleSideways(tempV3);
                 break;
 
             }
 
             ghostTrap.SetPositionAndRotation(placementInfo.Item1, placementInfo.Item3);
-            if(TrapScaleMode[EquippedWeaponID] != ScalingMode.None)
+            if(CurrentTrapScaleMode != ItemManager.ScalingMode.None)
                 ghostTrap.localScale = placementInfo.Item2;
 
         }
@@ -498,5 +484,5 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
         }
 
     }
-    
-}*/
+
+}
