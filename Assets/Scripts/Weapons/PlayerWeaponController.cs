@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,12 +7,6 @@ using Photon.Pun;
 
 public class PlayerWeaponController : MonoBehaviourPunCallbacks
 {
-
-    TODO
-    - Align placement with surface
-    - Exessive placement checks for checking all directions to keep traps out of walls
-    - Make this use the ItemManager instead of own enums and values
-    - Make this independent on Refs to ui
 
     public enum ScalingMode
     {
@@ -499,4 +493,4 @@ public class PlayerWeaponController : MonoBehaviourPunCallbacks
 
     }
     
-}*/
+}
