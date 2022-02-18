@@ -15,7 +15,51 @@ public class HoldingAnchor : MonoBehaviour
     private HoldingAnchor linkedAnchor;
     private HoldingAnchorActivatable linkedActivatableAnchor;
     private bool isHeld;
+    private Transform handTransform;
 
+    public void Grabbed()
+    {
 
+        isHeld = true;
+        
+    }
+
+    public void Released()
+    {
+
+        isHeld = false;
+
+    }
+
+    private void FixedUpdate()
+    {
+
+        if(isHeld && mainAnchor)
+        {
+
+            if(LinkedAnchorTransform)
+            {
+
+                transform.position = handTransform.position;
+                transform.LookAt(LinkedAnchorTransform, handTransform.up);
+
+            }
+            else
+            {
+
+                transform.rotation = handTransform.rotation;
+                transform.rotation = handTransform.rotation;
+
+            }
+
+        }
+        else if(isHeld)
+        {
+
+            transform.position = handTransform.position;
+
+        }
+
+    }
 
 }
