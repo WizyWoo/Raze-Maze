@@ -18,7 +18,7 @@ public class PlayerItemController : MonoBehaviour
     */
 
     [Tooltip("This might be a bit heavy")]
-    public bool ExstensivePlacementChecks, UseUIFeedback;
+    public bool ExstensivePlacementChecks, UseUIFeedback, DesktopMode;
     //References from itemManager
     public GameObject CurrentWeaponPrefab, CurrentTrapPrefab;
     public ItemManager.ScalingMode CurrentTrapScaleMode;
@@ -30,7 +30,7 @@ public class PlayerItemController : MonoBehaviour
     public Text WeaponIDText, FeedbackText;
     public Transform Parent;
     [SerializeField]
-    private GameObject droppedWeaponPrefab, weaponInHand;
+    private GameObject droppedWeaponPrefab, activeWeapon;
     [SerializeField]
     private Transform handTransform;
     private bool placingTrap, validLocation;
@@ -104,8 +104,8 @@ public class PlayerItemController : MonoBehaviour
         if(EquippedWeaponID != 0)
         {
 
-            if(weaponInHand)
-                PhotonNetwork.Destroy(weaponInHand);
+            if(activeWeapon)
+                PhotonNetwork.Destroy(activeWeapon);
             GameObject temp = PhotonNetwork.Instantiate(pickupFolderName + droppedWeaponPrefab.name, transform.position, Quaternion.identity);
             temp.GetComponent<WeaponPickup>().WeaponID = EquippedWeaponID;
             temp.name = "Dropped Weapon ^ " + EquippedWeaponID;
@@ -124,6 +124,9 @@ public class PlayerItemController : MonoBehaviour
 
         if(UseUIFeedback)
         {
+
+            if(!WeaponIDText)
+                UpdateUIRefs();
 
             WeaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
 
@@ -289,20 +292,29 @@ public class PlayerItemController : MonoBehaviour
 
     #endregion
 
-    private void EquipWeapon()
+    private void EquipWeapon(Transform _vrHand = null)
     {
 
-        //Desktop
-
-        if(weaponInHand == null)
+        if(DesktopMode)
         {
 
-            weaponInHand = PhotonNetwork.Instantiate(CurrentWeaponPrefab.name, handTransform.position, handTransform.rotation);
-
-            if(weaponInHand.TryGetComponent<Rigidbody>(out Rigidbody rb))
+            if(activeWeapon == null)
             {
 
-                rb.isKinematic = true;
+                activeWeapon = PhotonNetwork.Instantiate(CurrentWeaponPrefab.name, handTransform.position, handTransform.rotation);
+
+                if(activeWeapon.TryGetComponent<Rigidbody>(out Rigidbody _rb))
+                {
+
+                    _rb.isKinematic = true;
+
+                }
+
+            }
+            else
+            {
+
+                PickedUpItem(0);
 
             }
 
@@ -310,7 +322,8 @@ public class PlayerItemController : MonoBehaviour
         else
         {
 
-            PickedUpItem(0);
+            activeWeapon = PhotonNetwork.Instantiate(CurrentWeaponPrefab.name, _vrHand.position, _vrHand.rotation);
+            activeWeapon.GetComponent<WeaponController>().MainAnchor.Grabbed(_vrHand);
 
         }
 
@@ -327,7 +340,7 @@ public class PlayerItemController : MonoBehaviour
         controller.Thrown();
         temp.GetComponent<Rigidbody>().velocity = transform.forward * ThrowVelocity;
 
-        PhotonNetwork.Destroy(weaponInHand);
+        PhotonNetwork.Destroy(activeWeapon);
 
         UpdateEquippedWeapon(0);
 
@@ -337,15 +350,15 @@ public class PlayerItemController : MonoBehaviour
     {
 
         //VR and Desktop
-        weaponInHand.GetComponent<WeaponController>().FireWeapon();
-        weaponInHand.GetComponent<WeaponController>().Firing = true;
+        activeWeapon.GetComponent<WeaponController>().FireWeapon();
+        activeWeapon.GetComponent<WeaponController>().Firing = true;
 
     }
 
     private void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.Mouse1) && EquippedWeaponID != 0 && weaponInHand == null)
+        if(Input.GetKeyDown(KeyCode.Mouse1) && EquippedWeaponID != 0 && activeWeapon == null)
         {
 
             string tempFeedback = "";
@@ -382,12 +395,15 @@ public class PlayerItemController : MonoBehaviour
             if(UseUIFeedback)
             {
 
+                if(!FeedbackText)
+                    UpdateUIRefs();
+                    
                 FeedbackText.text = tempFeedback;
 
             }
 
         }
-        else if(Input.GetKeyDown(KeyCode.Mouse0) && EquippedWeaponID != 0 && weaponInHand)
+        else if(Input.GetKeyDown(KeyCode.Mouse0) && EquippedWeaponID != 0 && activeWeapon)
         {
 
             switch(CurrentWeaponUseMode)
@@ -434,11 +450,11 @@ public class PlayerItemController : MonoBehaviour
         
         }
 
-        if(weaponInHand)
+        if(activeWeapon)
         {
 
-            weaponInHand.transform.position = handTransform.position;
-            weaponInHand.transform.rotation = handTransform.rotation;
+            activeWeapon.transform.position = handTransform.position;
+            activeWeapon.transform.rotation = handTransform.rotation;
 
         }
 

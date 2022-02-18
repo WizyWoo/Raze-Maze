@@ -55,7 +55,7 @@ public class VRHandsController : MonoBehaviour
     private void Start()
     {
 
-        grabMask = 1 << LayerMask.NameToLayer("Player");
+        grabMask = ~(1 << LayerMask.NameToLayer("Player"));
         
     }
 
@@ -92,7 +92,7 @@ public class VRHandsController : MonoBehaviour
                 {
 
                     holding = _closestHit.transform.GetComponent<HoldingAnchor>();
-                    holding.Grabbed();
+                    holding.Grabbed(transform);
 
                 }
 

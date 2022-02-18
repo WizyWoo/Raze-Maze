@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExstensivePlacementChecks: 0
-  UseUIFeedback: 0
+  UseUIFeedback: 1
+  DesktopMode: 1
   CurrentWeaponPrefab: {fileID: 0}
   CurrentTrapPrefab: {fileID: 0}
   CurrentTrapScaleMode: 0
@@ -145,7 +146,7 @@ MonoBehaviour:
   FeedbackText: {fileID: 0}
   Parent: {fileID: 1416359710976354514}
   droppedWeaponPrefab: {fileID: 0}
-  weaponInHand: {fileID: 0}
+  activeWeapon: {fileID: 0}
   handTransform: {fileID: 5436638330459032001}
   weaponFolderName: 
   trapFolderName: 

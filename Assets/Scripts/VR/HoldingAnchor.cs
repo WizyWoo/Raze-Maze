@@ -16,11 +16,21 @@ public class HoldingAnchor : MonoBehaviour
     private HoldingAnchorActivatable linkedActivatableAnchor;
     private bool isHeld;
     private Transform handTransform;
+    private Rigidbody rb;
 
-    public void Grabbed()
+    private void Start()
+    {
+
+        rb = transform.root.GetComponent<Rigidbody>();
+
+    }
+
+    public void Grabbed(Transform _grabbedBy)
     {
 
         isHeld = true;
+        handTransform = _grabbedBy;
+        rb.isKinematic = true;
         
     }
 
@@ -28,6 +38,8 @@ public class HoldingAnchor : MonoBehaviour
     {
 
         isHeld = false;
+        handTransform = null;
+        rb.isKinematic = false;
 
     }
 
