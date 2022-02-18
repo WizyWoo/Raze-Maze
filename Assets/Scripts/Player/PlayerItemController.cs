@@ -47,6 +47,7 @@ public class PlayerItemController : MonoBehaviour
 
         mask = ~((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Traps")));
         playerMask = 1 << LayerMask.NameToLayer("Player");
+        droppedWeaponPrefab = ItemManager.main.DroppedWeaponPrefab;
 
         UpdateUIRefs();
 
@@ -85,7 +86,19 @@ public class PlayerItemController : MonoBehaviour
 
     }
 
-    public void PickedUpWeapon(int weaponID)
+    public void UpdateItemRefs(int _itemID, GameObject _weaponPrefab, GameObject _trapPrefab, ItemManager.ScalingMode _scalingMode, ItemManager.WeaponUseMode _weaponUseMode)
+    {
+
+        PickedUpItem(_itemID);
+
+        CurrentWeaponPrefab = _weaponPrefab;
+        CurrentTrapPrefab = _trapPrefab;
+        CurrentTrapScaleMode = _scalingMode;
+        CurrentWeaponUseMode = _weaponUseMode;
+
+    }
+
+    public void PickedUpItem(int _itemID)
     {
 
         if(EquippedWeaponID != 0)
@@ -100,14 +113,14 @@ public class PlayerItemController : MonoBehaviour
         }
         
         placingTrap = false;
-        UpdateEquippedWeapon(weaponID);
+        UpdateEquippedWeapon(_itemID);
 
     }
 
-    private void UpdateEquippedWeapon(int iD)
+    private void UpdateEquippedWeapon(int _iD)
     {
 
-        EquippedWeaponID = iD;
+        EquippedWeaponID = _iD;
 
         if(UseUIFeedback)
         {
@@ -297,7 +310,7 @@ public class PlayerItemController : MonoBehaviour
         else
         {
 
-            PickedUpWeapon(0);
+            PickedUpItem(0);
 
         }
 

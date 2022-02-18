@@ -104,14 +104,14 @@ public class ItemManager : MonoBehaviour
         Random.InitState(System.DateTime.UtcNow.Second);
         randomID = Random.Range(1, TrapPrefabs.Length);
 
-        _playerItemController.PickedUpWeapon(randomID);
+        _playerItemController.UpdateItemRefs(randomID, WeaponPrefabs[randomID], TrapPrefabs[randomID], TrapScaleMode[randomID], AttackMode[randomID]);
 
     }
 
-    public void GivePlayerWeaponByID(PlayerItemController _playerItemController, int _weaponID)
+    public void GivePlayerWeaponByID(PlayerItemController _playerItemController, int _itemID)
     {
 
-        _playerItemController.PickedUpWeapon(_weaponID);
+        _playerItemController.UpdateItemRefs(_itemID, WeaponPrefabs[_itemID], TrapPrefabs[_itemID], TrapScaleMode[_itemID], AttackMode[_itemID]);
 
     }
 

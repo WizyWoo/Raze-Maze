@@ -1620,7 +1620,7 @@ GameObject:
   - component: {fileID: 3308123926340378521}
   - component: {fileID: 3308123926340378527}
   m_Layer: 3
-  m_Name: XRRig
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
