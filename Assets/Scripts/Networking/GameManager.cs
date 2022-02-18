@@ -130,7 +130,7 @@ namespace Com.MyCompany.MyGame
         public void WinLevel()
         {
             completeLevelUI.SetActive(true);
-            Invoke("LoadNextLevel", levelTransitionDelay);
+            //Invoke("LoadNextLevel", levelTransitionDelay);
         }
 
         public IEnumerator Respawn()

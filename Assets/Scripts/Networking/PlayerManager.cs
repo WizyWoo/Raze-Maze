@@ -41,7 +41,7 @@ namespace Com.MyCompany.MyGame
         public GameObject PlayerUiPrefab;
 
         [Tooltip("The current Health of our player")]
-        public float Health = 1f;
+        public float Health = 17f;
 
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
@@ -144,10 +144,10 @@ namespace Com.MyCompany.MyGame
             if (photonView.IsMine)
             {
                 ProcessInputs();
-                if (Health <= 0f)
-                {
-                    GameManager.Instance.LeaveRoom();
-                }
+                //if (Health <= 0f)
+                //{
+                //    GameManager.Instance.LeaveRoom();
+                //}
             }
 
             // trigger Beams active state

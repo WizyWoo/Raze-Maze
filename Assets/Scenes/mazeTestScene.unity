@@ -687,6 +687,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2817725146238752181, guid: 2453c0f1f57a43a4592080b50afb531a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6766351501224771088, guid: 2453c0f1f57a43a4592080b50afb531a,
         type: 3}
       propertyPath: m_RootOrder
@@ -707,6 +712,12 @@ PrefabInstance:
 --- !u!224 &768092286 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2404406182391340143, guid: 2453c0f1f57a43a4592080b50afb531a,
+    type: 3}
+  m_PrefabInstance: {fileID: 768092285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &768092287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 203529467737031007, guid: 2453c0f1f57a43a4592080b50afb531a,
     type: 3}
   m_PrefabInstance: {fileID: 768092285}
   m_PrefabAsset: {fileID: 0}
@@ -1602,6 +1613,11 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6868540459498952475, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: completeLevelUI
+      value: 
+      objectReference: {fileID: 768092287}
     - target: {fileID: 7822155614842472315, guid: b6910ba7ae0de4745843d18bb530ae72,
         type: 3}
       propertyPath: m_Name
