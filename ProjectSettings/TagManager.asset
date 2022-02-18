@@ -10,6 +10,7 @@ TagManager:
   - Weapon
   - Trap
   - NotMe
+  - GM
   layers:
   - Default
   - TransparentFX

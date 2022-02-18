@@ -12,12 +12,17 @@ namespace Com.MyCompany.MyGame
     {
         #region Public Fields
 
+        public GameObject completeLevelUI;
+        public Vector3 lastCheckpointPos;
         public static GameManager Instance;
 
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
 
         #endregion
+
+        [SerializeField] private float levelTransitionDelay = 1f;
+        private GameObject player;
 
         #region Photon Callbacks
 
@@ -108,6 +113,8 @@ namespace Com.MyCompany.MyGame
                     Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
                 }
             }
+
+            player = GameObject.FindGameObjectWithTag("Player");
         }
 
         void LoadArena()
@@ -120,7 +127,25 @@ namespace Com.MyCompany.MyGame
             PhotonNetwork.LoadLevel("mazeTestScene" /*+ PhotonNetwork.CurrentRoom.PlayerCount*/);
         }
 
+        public void WinLevel()
+        {
+            completeLevelUI.SetActive(true);
+            Invoke("LoadNextLevel", levelTransitionDelay);
+        }
+
+        public IEnumerator Respawn()
+        {
+            yield return new WaitForSeconds(0.5f);
+            player.transform.position = lastCheckpointPos;
+        }
+
+        public void GameOver()
+        {
+            Debug.Log("GAME OVER!");
+        }
 
         #endregion
     }
+
+
 }
