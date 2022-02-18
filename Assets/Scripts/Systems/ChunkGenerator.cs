@@ -84,7 +84,7 @@ public class ChunkGenerator : MonoBehaviour
             {
                 if(wall.gameObject != item.gameObject){
                     if(!item.gameObject.activeInHierarchy || !wall.gameObject.activeInHierarchy){
-                        if(Vector3.Distance(item.transform.position,wall.transform.position) < 0.1f){
+                        if(Vector3.Distance(item.transform.position,wall.transform.position) < 0.6f){
                             wall.gameObject.SetActive(false);
                             item.gameObject.SetActive(false);
                             Destroy(wall.GetComponent<MeshFilter>());

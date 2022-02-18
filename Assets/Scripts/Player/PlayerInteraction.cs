@@ -14,10 +14,11 @@ public class PlayerInteraction : MonoBehaviour
     {
 
         interactMask = 1 << LayerMask.NameToLayer("Interactables");
+        UpdateUIRefs();
         
     }
 
-    /*public void UpdateUIRefs()
+    public void UpdateUIRefs()
     {
 
         GameObject temp = GameObject.FindGameObjectWithTag("Hud");
@@ -35,7 +36,7 @@ public class PlayerInteraction : MonoBehaviour
 
         }
 
-    }*/
+    }
 
     private void Update()
     {
@@ -54,6 +55,8 @@ public class PlayerInteraction : MonoBehaviour
 
             if(HoverText)
                 HoverText.text = "^ " + hit.transform.name + " ^";
+            else
+                UpdateUIRefs();
 
         }
         else
