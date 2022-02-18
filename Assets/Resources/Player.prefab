@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1416359710976849618}
   - component: {fileID: 1416359710970751730}
   - component: {fileID: 4621191464674350207}
-  - component: {fileID: 3443799496672547198}
   - component: {fileID: 8997337419611332550}
+  - component: {fileID: 7064740562728103971}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -102,54 +102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 5
   HoverText: {fileID: 0}
---- !u!114 &3443799496672547198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416359710976390384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f1cfe6a57e462a48874e5dbb4cb3973, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ExstensivePlacementChecks: 1
-  UseUIFeedback: 1
-  TrapPrefabs:
-  - {fileID: 0}
-  - {fileID: 7145331574180486927, guid: fe3a0847096e61c4a8938bdf79b4cb01, type: 3}
-  - {fileID: 8960588332873188362, guid: 28b17de920875c44d9de912dda8666d9, type: 3}
-  - {fileID: 484211518226299833, guid: dddf9a182a3b10742bfc0f7ca46e592a, type: 3}
-  WeaponPrefabs:
-  - {fileID: 0}
-  - {fileID: 5693970041408951150, guid: 1449af2f59c55584399a258769dcb883, type: 3}
-  - {fileID: 3089593956413838343, guid: 0937811e5437dfa44be6cea36c8070d6, type: 3}
-  - {fileID: 2285447609137030244, guid: 014a53fec81d9ed4783ea5f40f5d7238, type: 3}
-  TrapScaleMode: 00000000000000000100000000000000
-  TrapActivationDelay:
-  - 0
-  - 0
-  - 0
-  - 0
-  AttackMode: 00000000010000000200000002000000
-  TrapPlaceDistance: 5
-  PlacementCheckRange: 10
-  ScaleMaxLenght: 4
-  ScaleMinLenght: 0.5
-  MeleeReach: 0
-  ThrowVelocity: 20
-  ShotRange: 0
-  WeaponIDText: {fileID: 0}
-  FeedbackText: {fileID: 0}
-  Parent: {fileID: 1416359710976354514}
-  droppedWeaponPrefab: {fileID: 6547683528349419031, guid: 32d2f056fe3544b41816ae9d280674f8,
-    type: 3}
-  weaponInHand: {fileID: 0}
-  handTransform: {fileID: 5436638330459032001}
-  weaponFolderName: 
-  trapFolderName: 
-  pickupFolderName: 
 --- !u!114 &8997337419611332550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +115,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderMat: {fileID: 2100000, guid: 569781a2537bd6e42a593640b6dbd6a3, type: 2}
+--- !u!114 &7064740562728103971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416359710976390384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df33944c881c0654ca7791ae30011441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExstensivePlacementChecks: 0
+  UseUIFeedback: 0
+  CurrentWeaponPrefab: {fileID: 0}
+  CurrentTrapPrefab: {fileID: 0}
+  CurrentTrapScaleMode: 0
+  CurrentWeaponUseMode: 0
+  TrapActivationDelay: 0
+  TrapPlaceDistance: 10
+  PlacementCheckRange: 0
+  ScaleMaxLenght: 5
+  ScaleMinLenght: 1
+  MeleeReach: 0
+  ThrowVelocity: 15
+  ShotRange: 0
+  WeaponIDText: {fileID: 0}
+  FeedbackText: {fileID: 0}
+  Parent: {fileID: 1416359710976354514}
+  droppedWeaponPrefab: {fileID: 0}
+  weaponInHand: {fileID: 0}
+  handTransform: {fileID: 5436638330459032001}
+  weaponFolderName: 
+  trapFolderName: 
+  pickupFolderName: 
 --- !u!1 &1416359710976390386
 GameObject:
   m_ObjectHideFlags: 0

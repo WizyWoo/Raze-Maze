@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerInteraction : MonoBehaviour
 {
 
-    [SerializeField]
     public float interactionDistance;
     public Text HoverText;
     private LayerMask interactMask;
@@ -15,12 +14,10 @@ public class PlayerInteraction : MonoBehaviour
     {
 
         interactMask = 1 << LayerMask.NameToLayer("Interactables");
-
-        UpdateUIRefs();
         
     }
 
-    public void UpdateUIRefs()
+    /*public void UpdateUIRefs()
     {
 
         GameObject temp = GameObject.FindGameObjectWithTag("Hud");
@@ -38,7 +35,7 @@ public class PlayerInteraction : MonoBehaviour
 
         }
 
-    }
+    }*/
 
     private void Update()
     {

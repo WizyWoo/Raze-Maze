@@ -57,27 +57,61 @@ public class ItemManager : MonoBehaviour
 
     }
 
+    public enum Theme
+    {
+
+        Universal,
+        Theme1,
+        Theme2
+
+    }
+
     public static ItemManager main {get; private set;}
+    [Tooltip("The Name of the Item")]
     public string[] ItemCatalogue;
     public GameObject[] TrapPrefabs, WeaponPrefabs;
     public ScalingMode[] TrapScaleMode;
     public float[] TrapActivationDelay;
     public WeaponUseMode[] AttackMode;
     public Rarity[] ItemRarity;
+    public Theme[] ItemTheme;
+    public GameObject DroppedWeaponPrefab;
 
     private void Awake()
     {
 
-        main = this;
+        if(ItemManager.main)
+        {
+
+            Destroy(ItemManager.main);
+            main = this;
+            
+        }
+        else
+        {
+
+            main = this;
+
+        }
 
     }
 
-    public int RandomItemID()
+    public void GivePlayerRandomWeapon(PlayerItemController _playerItemController)
     {
 
         int randomID = 0;
 
-        return randomID;
+        Random.InitState(System.DateTime.UtcNow.Second);
+        randomID = Random.Range(1, TrapPrefabs.Length);
+
+        _playerItemController.UpdateItemRefs(randomID, WeaponPrefabs[randomID], TrapPrefabs[randomID], TrapScaleMode[randomID], AttackMode[randomID]);
+
+    }
+
+    public void GivePlayerWeaponByID(PlayerItemController _playerItemController, int _itemID)
+    {
+
+        _playerItemController.UpdateItemRefs(_itemID, WeaponPrefabs[_itemID], TrapPrefabs[_itemID], TrapScaleMode[_itemID], AttackMode[_itemID]);
 
     }
 
