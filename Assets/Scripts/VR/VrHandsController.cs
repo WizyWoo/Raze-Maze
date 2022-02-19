@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Linq;
 
-public class VRHandsController : MonoBehaviour
+public class VrHandsController : MonoBehaviour
 {
 
     /*
@@ -20,6 +20,7 @@ public class VRHandsController : MonoBehaviour
 
     }
 
+    public Hand HandLR;
     public VRPlayerInputs PlayerInputs;
     public GameObject RightHand, LeftHand;
     public Transform WeaponDisplay, TrapDisplay;
@@ -33,6 +34,8 @@ public class VRHandsController : MonoBehaviour
     {
 
         PlayerInputs = new VRPlayerInputs();
+        GrabButton = PlayerInputs.Player.Grab;
+        TriggerButton = PlayerInputs.Player.Fire;
 
     }
 
@@ -55,7 +58,7 @@ public class VRHandsController : MonoBehaviour
     private void Start()
     {
 
-        grabMask = ~(1 << LayerMask.NameToLayer("Player"));
+        grabMask = 1 << LayerMask.NameToLayer("Interactables");
         
     }
 
@@ -100,7 +103,7 @@ public class VRHandsController : MonoBehaviour
 
         }
 
-        if(GrabButton.WasReleasedThisFrame())
+        if(GrabButton.WasReleasedThisFrame() && holding)
         {
 
             holding.Released();

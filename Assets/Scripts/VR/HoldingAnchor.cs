@@ -59,7 +59,7 @@ public class HoldingAnchor : MonoBehaviour
             else
             {
 
-                transform.rotation = handTransform.rotation;
+                transform.position = handTransform.position;
                 transform.rotation = handTransform.rotation;
 
             }
