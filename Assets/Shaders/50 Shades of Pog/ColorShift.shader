@@ -55,7 +55,7 @@ Shader "50_Shades_of_Pog/ColorShift"
             {
 
                 fixed4 col = tex2D(_MainTex, pixel.uv);
-                fixed4 noise = tex2D(NoiseTex, float2(pixel.uv.x * sin((_Time[1] * NoiseSpeedX)), pixel.uv.y * sin((_Time[1] * NoiseSpeedY))));
+                fixed4 noise = tex2D(NoiseTex, float2(pixel.uv.x + sin((_Time[1] * NoiseSpeedX)), pixel.uv.y + sin((_Time[1] * NoiseSpeedY))));
 
                 col.r = tex2D(_MainTex, float2((noise.r * NoiseMult), (noise.r + NoiseMult))).r;
 

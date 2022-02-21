@@ -50,10 +50,10 @@ public class PlayerController : MonoBehaviourPun
         cam.transform.localRotation = Quaternion.Euler(0,0,0);
     }
     private void FixedUpdate() {
-        if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+        /*if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
             return;
-        }
+        }*/
         // Get control inputs
             _moveInput = _playerActions.Player.Move.ReadValue<Vector2>();
             _camInput = _playerActions.Player.Look.ReadValue<Vector2>();

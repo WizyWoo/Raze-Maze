@@ -12,6 +12,7 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
     public int WeaponID;
     public float Damage;
     public bool Firing;
+    public HoldingAnchor MainAnchor;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {

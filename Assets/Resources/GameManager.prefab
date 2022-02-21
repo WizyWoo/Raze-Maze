@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1226705891552192826}
   - component: {fileID: 6868540459498952475}
+  - component: {fileID: 5409999063586750185}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,5 +45,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335e72931d583f647acb1acf689b1aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completeLevelUI: {fileID: 0}
+  lastCheckpointPos: {x: 0, y: 0, z: 0}
   playerPrefab: {fileID: 1416359710976390386, guid: bfa781f68741725478fc0b69cedef44e,
+    type: 3}
+  levelTransitionDelay: 1
+--- !u!114 &5409999063586750185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822155614842472315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d527c0b794f64b84d943a92744a9a595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemCatalogue:
+  - None
+  - Explosive
+  - Ice
+  - Ballon
+  TrapPrefabs:
+  - {fileID: 0}
+  - {fileID: 7145331574180486927, guid: fe3a0847096e61c4a8938bdf79b4cb01, type: 3}
+  - {fileID: 8960588332873188362, guid: 28b17de920875c44d9de912dda8666d9, type: 3}
+  - {fileID: 484211518226299833, guid: dddf9a182a3b10742bfc0f7ca46e592a, type: 3}
+  WeaponPrefabs:
+  - {fileID: 0}
+  - {fileID: 5693970041408951150, guid: 1449af2f59c55584399a258769dcb883, type: 3}
+  - {fileID: 3089593956413838343, guid: 0937811e5437dfa44be6cea36c8070d6, type: 3}
+  - {fileID: 2285447609137030244, guid: 014a53fec81d9ed4783ea5f40f5d7238, type: 3}
+  TrapScaleMode: 00000000000000000100000000000000
+  TrapActivationDelay:
+  - 0
+  - 0
+  - 0
+  - 0
+  AttackMode: 00000000010000000200000002000000
+  ItemRarity: 00000000000000000000000000000000
+  ItemTheme: 00000000000000000000000000000000
+  DroppedWeaponPrefab: {fileID: 6547683528349419031, guid: 32d2f056fe3544b41816ae9d280674f8,
     type: 3}

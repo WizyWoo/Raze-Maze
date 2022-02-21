@@ -151,7 +151,7 @@ namespace Com.MyCompany.MyGame
 
                 // #Critical
                 // Load the Room Level.
-                PhotonNetwork.LoadLevel("mazeTestScene");
+                PhotonNetwork.LoadLevel("mazeTestScene"); //mazeTestScene
             }
             Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         }

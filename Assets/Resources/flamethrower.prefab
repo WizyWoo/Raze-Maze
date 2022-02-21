@@ -76,6 +76,7 @@ MonoBehaviour:
   WeaponID: 7
   Damage: 0
   Firing: 0
+  MainAnchor: {fileID: 0}
   particleSystem: {fileID: 7995552860899436711}
 --- !u!114 &2912974027692373104
 MonoBehaviour:

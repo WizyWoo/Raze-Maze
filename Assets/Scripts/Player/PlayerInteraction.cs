@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class PlayerInteraction : MonoBehaviour
 {
 
-    [SerializeField]
     public float interactionDistance;
+    public bool DesktopMode;
     public Text HoverText;
+    public TextMesh HoverTextMesh;
     private LayerMask interactMask;
 
     private void Start()
@@ -16,7 +17,8 @@ public class PlayerInteraction : MonoBehaviour
 
         interactMask = 1 << LayerMask.NameToLayer("Interactables");
 
-        UpdateUIRefs();
+        if(DesktopMode)
+            UpdateUIRefs();
         
     }
 
@@ -55,15 +57,40 @@ public class PlayerInteraction : MonoBehaviour
 
             }
 
-            if(HoverText)
-                HoverText.text = "^ " + hit.transform.name + " ^";
+            if(DesktopMode)
+            {
+
+                if(HoverText)
+                    HoverText.text = "^ " + hit.transform.name + " ^";
+                else
+                    UpdateUIRefs();
+
+            }
+            else
+            {
+
+                HoverTextMesh.text = "^ " + hit.transform.name + " ^";
+
+            }
 
         }
         else
         {
 
-            if(HoverText)
-                HoverText.text = "";
+            if(DesktopMode)
+            {
+
+                if(HoverText)
+                    HoverText.text = "";
+
+            }
+            else
+            {
+
+                if(HoverTextMesh)
+                    HoverTextMesh.text = "";
+
+            }
 
         }
 
