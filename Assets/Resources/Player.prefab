@@ -101,7 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionDistance: 5
+  DesktopMode: 0
   HoverText: {fileID: 0}
+  HoverTextMesh: {fileID: 0}
 --- !u!114 &8997337419611332550
 MonoBehaviour:
   m_ObjectHideFlags: 0
