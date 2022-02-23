@@ -11,7 +11,7 @@ public class WeaponPickup : MonoBehaviourPunCallbacks , IInteractable
     public void Activate(Transform player)
     {
 
-        ItemManager.main.GivePlayerWeaponByID(player.root.GetComponent<PlayerItemController>(), WeaponID);
+        ItemManager.main.GivePlayerWeaponByID(player.root.GetComponentInChildren<PlayerItemController>(), WeaponID);
 
         PhotonNetwork.Destroy(gameObject);
 
