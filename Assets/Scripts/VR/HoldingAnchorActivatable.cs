@@ -25,4 +25,27 @@ public class HoldingAnchorActivatable : HoldingAnchor
 
     }
 
+    private void FixedUpdate()
+    {
+
+        if(!IsHeld)
+        {
+
+            if(ScriptToActivate != null)
+            {
+
+                ScriptToActivate.FireWeapon(false);
+
+            }
+            else
+            {
+
+                gameObject.GetComponent<WeaponController>().FireWeapon(false);
+
+            }
+
+        }
+
+    }
+
 }

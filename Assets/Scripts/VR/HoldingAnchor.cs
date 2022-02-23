@@ -8,14 +8,30 @@ public class HoldingAnchor : MonoBehaviour
     [Tooltip("If this is not the main anchor, do not link an anchor here")]
     public Transform LinkedAnchorTransform;
     public bool IsHeld;
-    [Tooltip("The object will rotate from this anchor if it is linked to another anchor"),SerializeField]
+    [Tooltip("Don't assign this field")]
+    public HoldingAnchor AttachedMainAnchor;
+    [Tooltip("The object will rotate from this anchor if it is linked to another anchor"), SerializeField]
     private bool mainAnchor;
     private Transform handTransform;
     private Rigidbody rb;
+    private Vector3 originPos;
+
+    private void Awake()
+    {
+
+        if(LinkedAnchorTransform && mainAnchor)
+        {
+
+            LinkedAnchorTransform.GetComponent<HoldingAnchor>().AttachedMainAnchor = this;
+
+        }
+
+    }
 
     private void Start()
     {
 
+        originPos = transform.position;
         rb = transform.root.GetComponent<Rigidbody>();
 
     }
@@ -39,6 +55,8 @@ public class HoldingAnchor : MonoBehaviour
 
         if(rb)
             rb.isKinematic = false;
+
+        transform.position = originPos;
 
     }
 
@@ -76,7 +94,7 @@ public class HoldingAnchor : MonoBehaviour
             }
 
         }
-        else if(IsHeld)
+        else if(IsHeld && AttachedMainAnchor.IsHeld)
         {
 
             transform.position = handTransform.position;

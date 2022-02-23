@@ -14,6 +14,7 @@ public class Grenade : WeaponController
     {
 
         fuseTime = FuseLenght;
+        gameObject.GetComponent<Collider>().isTrigger = false;
 
     }
 
@@ -32,13 +33,6 @@ public class Grenade : WeaponController
             }
 
         }
-
-    }
-
-    private void OnTriggerExit()
-    {
-
-        gameObject.GetComponent<Collider>().isTrigger = false;
 
     }
 
