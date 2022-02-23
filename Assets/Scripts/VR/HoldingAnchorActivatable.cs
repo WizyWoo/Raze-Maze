@@ -5,21 +5,21 @@ using UnityEngine;
 public class HoldingAnchorActivatable : HoldingAnchor
 {
 
-    public IInteractable ScriptToActivate;
+    public WeaponController ScriptToActivate;
 
-    public void ActivateInteractableOnObject(Transform _activatedBy)
+    public void ActivateInteractableOnObject(Transform _activatedBy, bool _firing)
     {
 
         if(ScriptToActivate != null)
         {
 
-            ScriptToActivate.Activate(_activatedBy);
+            ScriptToActivate.FireWeapon(_firing);
 
         }
         else
         {
 
-            gameObject.GetComponent<IInteractable>().Activate(_activatedBy);
+            gameObject.GetComponent<WeaponController>().FireWeapon(_firing);
 
         }
 

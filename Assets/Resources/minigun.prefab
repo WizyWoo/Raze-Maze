@@ -176,8 +176,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2426210915533573821}
   - component: {fileID: 3043335147502256976}
-  - component: {fileID: 5316876116456601228}
   - component: {fileID: 1160684520431103462}
+  - component: {fileID: 4125022326735619517}
   m_Layer: 0
   m_Name: minigun
   m_TagString: Weapon
@@ -200,6 +200,7 @@ Transform:
   - {fileID: 1168335538147277007}
   - {fileID: 5586091537388627893}
   - {fileID: 1495280690094690642}
+  - {fileID: 5608596870347650438}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -222,28 +223,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 5316876116456601228}
   - {fileID: 1160684520431103462}
+  - {fileID: 4125022326735619517}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &5316876116456601228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3089593956413838343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abe1e9746aa1f947921bd54b68d71e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WeaponID: 6
-  Damage: 0
-  Firing: 0
-  MainAnchor: {fileID: 0}
-  particleSystem: {fileID: 8995168545513115497}
 --- !u!114 &1160684520431103462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +244,64 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &4125022326735619517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3089593956413838343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b830029a2d8fe42819c89b12a96b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponID: 0
+  Damage: 0
+  Firing: 0
+  MainAnchor: {fileID: 0}
+  bullet: {fileID: 8517051764120185722, guid: daeb82eccf7969943b02ceb6a7a6718c, type: 3}
+  shootForce: 300
+  timeBetweenShooting: 0.1
+  spread: 3
+  reloadTime: 1.5
+  timeBetweenShots: 1
+  magazineSize: 10
+  bulletsPerTap: 100
+  allowButtonHold: 1
+  attackPoint: {fileID: 5608596870347650438}
+  allowInvoke: 0
+--- !u!1 &3430613293237152626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5608596870347650438}
+  m_Layer: 0
+  m_Name: attackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5608596870347650438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430613293237152626}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.63, y: -0.55, z: 4.427}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2426210915533573821}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &66811690907549854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -327,17 +369,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: IcicleShootParticleEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 2892978050042550029, guid: d8d9ea8c903cc7a42a8cf771cdcd641d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8d9ea8c903cc7a42a8cf771cdcd641d, type: 3}
 --- !u!4 &1495280690094690642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1453837210481267148, guid: d8d9ea8c903cc7a42a8cf771cdcd641d,
-    type: 3}
-  m_PrefabInstance: {fileID: 66811690907549854}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &8995168545513115497 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8950938081283854327, guid: d8d9ea8c903cc7a42a8cf771cdcd641d,
     type: 3}
   m_PrefabInstance: {fileID: 66811690907549854}
   m_PrefabAsset: {fileID: 0}

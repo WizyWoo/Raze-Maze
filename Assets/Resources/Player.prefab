@@ -100,8 +100,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8edd4dd996196e748b0e9c04a0a2d494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HandLR: 0
+  GrabButton:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  TriggerButton:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   interactionDistance: 5
+  DesktopMode: 0
   HoverText: {fileID: 0}
+  HoverTextMesh: {fileID: 0}
 --- !u!114 &8997337419611332550
 MonoBehaviour:
   m_ObjectHideFlags: 0

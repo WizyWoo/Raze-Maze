@@ -14,7 +14,7 @@ public class RandomPickup : MonoBehaviour , IInteractable
         if(!locked)
         {
             
-            ItemManager.main.GivePlayerRandomWeapon(_player.GetComponent<PlayerItemController>());
+            ItemManager.main.GivePlayerRandomWeapon(_player.root.GetComponentInChildren<PlayerItemController>());
 
             if(LockAfterUse)
             {

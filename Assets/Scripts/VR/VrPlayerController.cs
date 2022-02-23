@@ -9,8 +9,7 @@ public class VrPlayerController : MonoBehaviour
     public VRPlayerInputs PlayerInputs;
     public float MovementSpeed, TurnSpeed;
     [Tooltip("The transform the player moves relative to")]
-    public Transform MoveRelativeTo;
-    public Transform RotateAround;
+    public Transform MoveRelativeTo, RotateAround, CameraTransform;
     private Vector2 movementDir;
     private InputAction move, look;
     private InputAction trigger;
@@ -53,7 +52,7 @@ public class VrPlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(moveDir.x, rb.velocity.y, moveDir.z);
 
-        RotateAround.Rotate(0, TurnSpeed * Time.deltaTime * look.ReadValue<Vector2>().x, 0, Space.Self);
+        RotateAround.RotateAround(CameraTransform.position, Vector3.up, TurnSpeed * Time.deltaTime * look.ReadValue<Vector2>().x);
 
     }
 

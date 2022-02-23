@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8376783409142404792}
   - component: {fileID: 8376783409142404793}
   - component: {fileID: 8376783409142404794}
-  - component: {fileID: 8376783409142404795}
   - component: {fileID: 8376783409142404790}
+  - component: {fileID: 4632320587346131442}
   m_Layer: 0
   m_Name: jelloTrap
   m_TagString: Untagged
@@ -99,23 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8376783409142404795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8376783409142404796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e8064f279e076c4a956625132b99649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrapID: 0
-  Damage: 0
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!114 &8376783409142404790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +118,21 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 8376783409142404795}
+  - {fileID: 4632320587346131442}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &4632320587346131442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376783409142404796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8064f279e076c4a956625132b99649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrapID: 0
+  Damage: 0

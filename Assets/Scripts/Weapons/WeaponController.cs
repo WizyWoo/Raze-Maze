@@ -37,7 +37,7 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
     public virtual void Thrown()
     {}
 
-    public virtual void FireWeapon()
+    public virtual void FireWeapon(bool _firing)
     {}
 
 }

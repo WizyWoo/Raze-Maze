@@ -27,6 +27,7 @@ public class VrHandsController : MonoBehaviour
     [SerializeField]
     private float grabRadius, grabMaxDist, grabDistance;
     private LayerMask grabMask;
+    [SerializeField]
     private HoldingAnchor holding;
     private InputAction GrabButton, TriggerButton;
 
@@ -34,8 +35,21 @@ public class VrHandsController : MonoBehaviour
     {
 
         PlayerInputs = new VRPlayerInputs();
-        GrabButton = PlayerInputs.Player.Grab;
-        TriggerButton = PlayerInputs.Player.Fire;
+
+        switch(HandLR)
+        {
+
+            case Hand.Right:
+            GrabButton = PlayerInputs.Player.GrabRight;
+            TriggerButton = PlayerInputs.Player.FireRight;
+            break;
+
+            case Hand.Left:
+            GrabButton = PlayerInputs.Player.GrabLeft;
+            TriggerButton = PlayerInputs.Player.FireLeft;
+            break;
+
+        }
 
     }
 
@@ -68,7 +82,7 @@ public class VrHandsController : MonoBehaviour
         if(GrabButton.WasPressedThisFrame())
         {
 
-            RaycastHit[] _hits = Physics.SphereCastAll(transform.position, grabRadius, Vector3.forward, grabMaxDist, grabMask, QueryTriggerInteraction.Ignore);
+            RaycastHit[] _hits = Physics.SphereCastAll(transform.position, grabRadius, Vector3.forward, grabMaxDist, grabMask, QueryTriggerInteraction.Collide);
 
             if(_hits.Length > 0)
             {
@@ -80,22 +94,32 @@ public class VrHandsController : MonoBehaviour
                 for (int i = 0; i < _hits.Length; i++)
                 {
 
-                    _distances[i] = Vector3.Distance(_hits[i].point, transform.position);
+                    _distances[i] = Vector3.Distance(_hits[i].transform.position, transform.position);
+
                     if(_distances[i] == _distances.Min())
                     {
 
                         _closestHit = _hits[i];
-                        _closest = _distances.Min();
 
                     }
                     
                 }
 
-                if(_closest <= grabDistance)
+                if(_closest <= grabDistance && _closestHit.transform.TryGetComponent<HoldingAnchor>(out holding))
                 {
 
-                    holding = _closestHit.transform.GetComponent<HoldingAnchor>();
-                    holding.Grabbed(transform);
+                    if(!holding.IsHeld)
+                    {
+
+                        holding.Grabbed(transform);
+
+                    }
+                    else
+                    {
+
+                        holding = null;
+
+                    }
 
                 }
 
@@ -107,6 +131,30 @@ public class VrHandsController : MonoBehaviour
         {
 
             holding.Released();
+            holding = null;
+
+        }
+
+        if(TriggerButton.WasPressedThisFrame() && holding)
+        {
+            
+            if(holding.TryGetComponent<HoldingAnchorActivatable>(out HoldingAnchorActivatable _activatable))
+            {
+                
+                _activatable.ActivateInteractableOnObject(transform, true);
+
+            }
+
+        }
+        else if(TriggerButton.WasReleasedThisFrame() && holding)
+        {
+
+            if(holding.TryGetComponent<HoldingAnchorActivatable>(out HoldingAnchorActivatable _activatable))
+            {
+
+                _activatable.ActivateInteractableOnObject(transform, false);
+
+            }
 
         }
 

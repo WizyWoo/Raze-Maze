@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Launcher.unity
     guid: b7f0e9e6dbcad6c45a1ded5a1b2d7693
   - enabled: 1
@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/mazeTestScene 4.unity
     guid: 486cfa3c14c7ae54fa4ddacb1e38fa27
+  - enabled: 0
+    path: Assets/Scenes/k3voTesting.unity
+    guid: ac089d54793fda14abf022d5205722aa
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

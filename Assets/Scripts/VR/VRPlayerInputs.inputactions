@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
+                    "name": "FireLeft",
                     "type": "Button",
                     "id": "7d854ce7-9d93-429b-9a38-684dfae80b04",
                     "expectedControlType": "Button",
@@ -33,12 +33,30 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Grab",
+                    "name": "GrabLeft",
                     "type": "Button",
                     "id": "4c629d15-aa78-4b88-b46d-4bef7c33e27f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press,Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FireRight",
+                    "type": "Button",
+                    "id": "b837b9ce-b6a4-408a-8149-fb14c0f7241d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GrabRight",
+                    "type": "Button",
+                    "id": "1b0aaf74-ceef-4086-9abf-1016a8737f23",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -57,11 +75,11 @@
                 {
                     "name": "",
                     "id": "8255d333-5683-4943-a58a-ccb207ff1dce",
-                    "path": "<XRController>/{PrimaryAction}",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Fire",
+                    "action": "FireLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -79,11 +97,33 @@
                 {
                     "name": "",
                     "id": "735437ff-f95a-43e3-aa62-d584600980a6",
-                    "path": "<XRController>/gripPressed",
+                    "path": "<XRController>{LeftHand}/gripPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Grab",
+                    "action": "GrabLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d2bfe6c-2a4d-429e-a95d-b6a95db346b2",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "FireRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6946e2c9-b60d-4bea-baf6-07c3d50e9767",
+                    "path": "<XRController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "GrabRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

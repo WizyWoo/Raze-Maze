@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerInteraction : MonoBehaviour
+public class PlayerInteraction : VRInputManager
 {
 
     public float interactionDistance;
@@ -50,7 +50,7 @@ public class PlayerInteraction : MonoBehaviour
         if(Physics.Raycast(transform.position, transform.forward, out hit, interactionDistance, interactMask))
         {
 
-            if(Input.GetKeyDown(KeyCode.E) && hit.transform.TryGetComponent<IInteractable>(out IInteractable _IInteractable))
+            if((Input.GetKeyDown(KeyCode.E) || TriggerButton.WasPressedThisFrame()) && hit.transform.TryGetComponent<IInteractable>(out IInteractable _IInteractable))
             {
 
                 _IInteractable.Activate(transform);

@@ -350,8 +350,7 @@ public class PlayerItemController : MonoBehaviour
     {
 
         //VR and Desktop
-        activeWeapon.GetComponent<WeaponController>().FireWeapon();
-        activeWeapon.GetComponent<WeaponController>().Firing = true;
+        activeWeapon.GetComponent<WeaponController>().FireWeapon(true);
 
     }
 

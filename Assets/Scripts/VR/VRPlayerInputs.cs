@@ -46,7 +46,7 @@ public partial class @VRPlayerInputs : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Fire"",
+                    ""name"": ""FireLeft"",
                     ""type"": ""Button"",
                     ""id"": ""7d854ce7-9d93-429b-9a38-684dfae80b04"",
                     ""expectedControlType"": ""Button"",
@@ -55,12 +55,30 @@ public partial class @VRPlayerInputs : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Grab"",
+                    ""name"": ""GrabLeft"",
                     ""type"": ""Button"",
                     ""id"": ""4c629d15-aa78-4b88-b46d-4bef7c33e27f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press,Hold"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FireRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""b837b9ce-b6a4-408a-8149-fb14c0f7241d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GrabRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""1b0aaf74-ceef-4086-9abf-1016a8737f23"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 }
             ],
@@ -79,11 +97,11 @@ public partial class @VRPlayerInputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8255d333-5683-4943-a58a-ccb207ff1dce"",
-                    ""path"": ""<XRController>/{PrimaryAction}"",
+                    ""path"": ""<XRController>{LeftHand}/triggerPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
-                    ""action"": ""Fire"",
+                    ""action"": ""FireLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -101,11 +119,33 @@ public partial class @VRPlayerInputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""735437ff-f95a-43e3-aa62-d584600980a6"",
-                    ""path"": ""<XRController>/gripPressed"",
+                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
-                    ""action"": ""Grab"",
+                    ""action"": ""GrabLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7d2bfe6c-2a4d-429e-a95d-b6a95db346b2"",
+                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""FireRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6946e2c9-b60d-4bea-baf6-07c3d50e9767"",
+                    ""path"": ""<XRController>{RightHand}/gripPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""GrabRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -695,8 +735,10 @@ public partial class @VRPlayerInputs : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
-        m_Player_Grab = m_Player.FindAction("Grab", throwIfNotFound: true);
+        m_Player_FireLeft = m_Player.FindAction("FireLeft", throwIfNotFound: true);
+        m_Player_GrabLeft = m_Player.FindAction("GrabLeft", throwIfNotFound: true);
+        m_Player_FireRight = m_Player.FindAction("FireRight", throwIfNotFound: true);
+        m_Player_GrabRight = m_Player.FindAction("GrabRight", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -770,16 +812,20 @@ public partial class @VRPlayerInputs : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_Fire;
-    private readonly InputAction m_Player_Grab;
+    private readonly InputAction m_Player_FireLeft;
+    private readonly InputAction m_Player_GrabLeft;
+    private readonly InputAction m_Player_FireRight;
+    private readonly InputAction m_Player_GrabRight;
     public struct PlayerActions
     {
         private @VRPlayerInputs m_Wrapper;
         public PlayerActions(@VRPlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
-        public InputAction @Fire => m_Wrapper.m_Player_Fire;
-        public InputAction @Grab => m_Wrapper.m_Player_Grab;
+        public InputAction @FireLeft => m_Wrapper.m_Player_FireLeft;
+        public InputAction @GrabLeft => m_Wrapper.m_Player_GrabLeft;
+        public InputAction @FireRight => m_Wrapper.m_Player_FireRight;
+        public InputAction @GrabRight => m_Wrapper.m_Player_GrabRight;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -795,12 +841,18 @@ public partial class @VRPlayerInputs : IInputActionCollection2, IDisposable
                 @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Grab.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrab;
-                @Grab.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrab;
-                @Grab.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrab;
+                @FireLeft.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireLeft;
+                @FireLeft.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireLeft;
+                @FireLeft.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireLeft;
+                @GrabLeft.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabLeft;
+                @GrabLeft.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabLeft;
+                @GrabLeft.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabLeft;
+                @FireRight.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireRight;
+                @FireRight.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireRight;
+                @FireRight.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFireRight;
+                @GrabRight.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabRight;
+                @GrabRight.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabRight;
+                @GrabRight.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabRight;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -811,12 +863,18 @@ public partial class @VRPlayerInputs : IInputActionCollection2, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @Fire.started += instance.OnFire;
-                @Fire.performed += instance.OnFire;
-                @Fire.canceled += instance.OnFire;
-                @Grab.started += instance.OnGrab;
-                @Grab.performed += instance.OnGrab;
-                @Grab.canceled += instance.OnGrab;
+                @FireLeft.started += instance.OnFireLeft;
+                @FireLeft.performed += instance.OnFireLeft;
+                @FireLeft.canceled += instance.OnFireLeft;
+                @GrabLeft.started += instance.OnGrabLeft;
+                @GrabLeft.performed += instance.OnGrabLeft;
+                @GrabLeft.canceled += instance.OnGrabLeft;
+                @FireRight.started += instance.OnFireRight;
+                @FireRight.performed += instance.OnFireRight;
+                @FireRight.canceled += instance.OnFireRight;
+                @GrabRight.started += instance.OnGrabRight;
+                @GrabRight.performed += instance.OnGrabRight;
+                @GrabRight.canceled += instance.OnGrabRight;
             }
         }
     }
@@ -975,8 +1033,10 @@ public partial class @VRPlayerInputs : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnFire(InputAction.CallbackContext context);
-        void OnGrab(InputAction.CallbackContext context);
+        void OnFireLeft(InputAction.CallbackContext context);
+        void OnGrabLeft(InputAction.CallbackContext context);
+        void OnFireRight(InputAction.CallbackContext context);
+        void OnGrabRight(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
