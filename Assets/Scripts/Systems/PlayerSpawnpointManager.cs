@@ -13,6 +13,7 @@ public class PlayerSpawnpointManager : MonoBehaviour
     private int storedCount;
     
     void Awake(){
+        this.transform.parent = null;
         DontDestroyOnLoad(this);
 
     }
