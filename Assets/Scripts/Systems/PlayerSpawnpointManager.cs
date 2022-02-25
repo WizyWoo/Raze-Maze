@@ -32,7 +32,6 @@ public class PlayerSpawnpointManager : MonoBehaviour
             pl.AddRange(FindObjectsOfType<Com.MyCompany.MyGame.PlayerManager>());
             foreach (var item in pl)
             {
-                print(pl);
                 bool isFound = false;
                 foreach (var player in _players)
                 {
@@ -43,6 +42,7 @@ public class PlayerSpawnpointManager : MonoBehaviour
                 }
                 if(!isFound){
                     _players.Add(item);
+                    print("hi");
                 }
             }
         }
