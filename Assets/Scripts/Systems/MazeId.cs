@@ -5,4 +5,5 @@ using UnityEngine;
 public class MazeId : MonoBehaviour
 {
     public List<MazeDoorIndicator> wallDoors;
+    public Vector3 placeLocation;
 }

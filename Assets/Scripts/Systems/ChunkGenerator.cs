@@ -64,6 +64,7 @@ public class ChunkGenerator : MonoBehaviour
                 g.transform.parent = transform;
                 g.transform.position = new Vector3(w * 20, 2.5f, l * 20);
                 _mazeList.Add(g.GetComponent<MazeId>());
+                _mazeList[_mazeList.Count - 1].placeLocation = g.transform.position;
             }
         }
         _psm._spawnPoints.AddRange(FindObjectsOfType<PlayerSpawnpoint>());
@@ -99,8 +100,13 @@ public class ChunkGenerator : MonoBehaviour
                 item.gameObject.SetActive(true);
             }
         }
+        
+        foreach (var item in placedChunks)
+        {
+            item.transform.position = Vector3.zero;
+        }
         // moves the players to their respective spawnpoints
-        _psm.SpawnPlayers();
+        _psm.Invoke("SpawnPlayers", 0.01f);
     }
     
 }
