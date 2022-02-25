@@ -84,9 +84,7 @@ public class GenericGun : WeaponController, IPunObservable
     private void Shoot()
     {
         readyToShoot = false;
-
-        Debug.Log("shooooot");
-
+        
         //Find the exact hit position using a raycast
         //Ray ray;  //Just a ray through the middle of the current view
         //RaycastHit hit;
@@ -157,7 +155,6 @@ public class GenericGun : WeaponController, IPunObservable
         reloading = true;
         Invoke("ReloadFinished", reloadTime); //Invoke ReloadFinished function with your reloadTime as delay
     }
-
     private void ReloadFinished()
     {
         //Fill magazine
@@ -165,7 +162,7 @@ public class GenericGun : WeaponController, IPunObservable
         reloading = false;
     }
 
-    public override void FireWeapon(bool _firing)
+    public void FireWeapon(bool _firing)
     {
         Firing = _firing;
     }

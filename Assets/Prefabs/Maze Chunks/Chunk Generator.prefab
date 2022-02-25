@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &576906380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 576906382}
+  - component: {fileID: 576906381}
+  m_Layer: 0
+  m_Name: PlayerSpawnpointManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &576906382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576906380}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.646137, y: 0.6384492, z: 39.042908}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3952349179975455502}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &576906381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576906380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1459f365d2944204cbb48c247168166e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints: []
+  _players: []
 --- !u!1 &657040740141585882
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +150,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3952349179975455502}
   - component: {fileID: 3952349179975455601}
-  - component: {fileID: 644533662}
   m_Layer: 0
   m_Name: Chunk Generator
   m_TagString: Untagged
@@ -129,6 +174,7 @@ Transform:
   - {fileID: 3062070092236813245}
   - {fileID: 7661752242497753364}
   - {fileID: 2902569639101345325}
+  - {fileID: 576906382}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -174,6 +220,7 @@ MonoBehaviour:
   nullChunk: {fileID: 8964488499358300199, guid: 62e639eb6ff70e742920c26aa952fc5b,
     type: 3}
   placedChunks: []
+  _psm: {fileID: 576906381}
   generateMazeId: 0
   mazeTemplates:
   - x:
@@ -187,18 +234,6 @@ MonoBehaviour:
       biome: 0000000001000000010000000100000000000000
     - y: 0200000000000000000000000000000000000000
       biome: 0000000000000000000000000000000000000000
---- !u!114 &644533662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3952349179975455600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1459f365d2944204cbb48c247168166e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4012503713121236781
 GameObject:
   m_ObjectHideFlags: 0

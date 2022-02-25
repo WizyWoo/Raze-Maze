@@ -24,7 +24,7 @@ public class TerminateLocals : MonoBehaviourPunCallbacks
             }
 
             Destroy(gameObject.GetComponent<Rigidbody>());
-            Destroy(gameObject.GetComponent<PlayerController>());
+            Destroy(gameObject.GetComponent<PlayerMovementController>());
             Destroy(gameObject.GetComponent<PlayerPositionLog>());
 
         }
