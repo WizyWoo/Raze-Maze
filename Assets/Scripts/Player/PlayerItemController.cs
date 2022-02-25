@@ -346,11 +346,11 @@ public class PlayerItemController : MonoBehaviour
 
     }
 
-    private void FireWeapon()
+    private void FireWeapon(bool _fire)
     {
 
         //VR and Desktop
-        activeWeapon.GetComponent<WeaponController>().FireWeapon(true);
+        activeWeapon.GetComponent<WeaponController>().FireWeapon(_fire);
 
     }
 
@@ -417,7 +417,28 @@ public class PlayerItemController : MonoBehaviour
                 break;
 
                 case ItemManager.WeaponUseMode.Ranged:
-                FireWeapon();
+                FireWeapon(true);
+                break;
+
+            }
+
+        }
+        else if(Input.GetKeyUp(KeyCode.Mouse0) && EquippedWeaponID != 0 && activeWeapon)
+        {
+
+            switch(CurrentWeaponUseMode)
+            {
+
+                case ItemManager.WeaponUseMode.Melee:
+                //MeleeAttack();
+                break;
+
+                case ItemManager.WeaponUseMode.Throw:
+                ThrowWeapon();
+                break;
+
+                case ItemManager.WeaponUseMode.Ranged:
+                FireWeapon(false);
                 break;
 
             }
