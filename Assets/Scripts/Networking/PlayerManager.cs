@@ -14,7 +14,6 @@ namespace Com.MyCompany.MyGame
     {
         #region IPunObservable implementation
 
-
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
             if (stream.IsWriting)
@@ -31,7 +30,6 @@ namespace Com.MyCompany.MyGame
             }
         }
 
-
         #endregion
 
         #region Public Fields
@@ -41,10 +39,13 @@ namespace Com.MyCompany.MyGame
         public GameObject PlayerUiPrefab;
 
         [Tooltip("The current Health of our player")]
-        public float Health = 17f;
+        public float Health = 20f;
 
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
+
+        public int lives = 3;
+        public GameOverScreenScript gameOver;
 
         #endregion
 
@@ -155,6 +156,8 @@ namespace Com.MyCompany.MyGame
             //{
             //    beams.SetActive(IsFiring);
             //}
+
+            Damage();
         }
 
         #if UNITY_5_4_OR_NEWER
@@ -262,5 +265,19 @@ namespace Com.MyCompany.MyGame
         }
 
         #endregion
+
+        public void Damage()
+        {
+            Health--;
+
+            if (Health <= 0)
+            {
+                lives--;
+                GameManager.gameManager.Respawn();
+
+                if (lives <= 0)
+                    gameOver.SetUp();
+            }
+        }
     }
 }

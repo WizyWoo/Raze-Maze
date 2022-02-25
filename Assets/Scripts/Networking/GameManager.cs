@@ -27,6 +27,14 @@ namespace Com.MyCompany.MyGame
         #region Photon Callbacks
 
 
+        public static GameManager gameManager;
+
+
+        private void Awake()
+        {
+            gameManager = this;
+        }
+
         /// <summary>
         /// Called when the local player left the room. We need to load the launcher scene.
         /// </summary>

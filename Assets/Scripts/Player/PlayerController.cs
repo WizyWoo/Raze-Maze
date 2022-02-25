@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviourPun
     [SerializeField] private Camera cam;
     public float minClamp = -45f, maxClamp = 45f, _speed = 10, _speedMultiplier = 1f;
     private float cameraX, timer;
-    public int lives = 3;
 
     public GameOverScreenScript gameOver;
 
@@ -91,15 +90,9 @@ public class PlayerController : MonoBehaviourPun
     {
         
 
-        PlayerDeath();
+        
     }
 
-    public void PlayerDeath()
-    {
-        if(lives <= 0)
-        {
-            gameOver.SetUp();
-        }
-    }
+    
     
 }
