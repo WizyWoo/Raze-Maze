@@ -19,7 +19,8 @@ public class HoldingAnchorActivatable : HoldingAnchor
         else
         {
 
-            gameObject.GetComponent<WeaponController>().FireWeapon(_firing);
+            ScriptToActivate = gameObject.GetComponent<WeaponController>();
+            ScriptToActivate.FireWeapon(_firing);
 
         }
 
@@ -40,7 +41,8 @@ public class HoldingAnchorActivatable : HoldingAnchor
             else
             {
 
-                gameObject.GetComponent<WeaponController>().FireWeapon(false);
+                ScriptToActivate = gameObject.GetComponent<WeaponController>();
+                ScriptToActivate.FireWeapon(false);
 
             }
 

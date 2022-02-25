@@ -753,31 +753,6 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 3979533701365255431, guid: 2d88d22bd793c71418f56756db1e28d4,
-        type: 3}
-      propertyPath: GrabButton.m_Id
-      value: 17af043c-f3de-4fcf-82b7-10c29cea8198
-      objectReference: {fileID: 0}
-    - target: {fileID: 3979533701365255431, guid: 2d88d22bd793c71418f56756db1e28d4,
-        type: 3}
-      propertyPath: GrabButton.m_Name
-      value: Grab Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 3979533701365255431, guid: 2d88d22bd793c71418f56756db1e28d4,
-        type: 3}
-      propertyPath: TriggerButton.m_Id
-      value: 6dee1cac-375e-417b-9a41-1f97e641215c
-      objectReference: {fileID: 0}
-    - target: {fileID: 3979533701365255431, guid: 2d88d22bd793c71418f56756db1e28d4,
-        type: 3}
-      propertyPath: TriggerButton.m_Name
-      value: Trigger Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 6992668786799878873, guid: 2d88d22bd793c71418f56756db1e28d4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8602020907365611053, guid: 2d88d22bd793c71418f56756db1e28d4,
         type: 3}
       propertyPath: m_Name
@@ -7276,6 +7251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LinkedAnchorTransform: {fileID: 0}
   IsHeld: 0
+  AttachedMainAnchor: {fileID: 0}
   mainAnchor: 0
 --- !u!1 &2050063814
 GameObject:
@@ -17578,6 +17554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LinkedAnchorTransform: {fileID: 2008689504}
   IsHeld: 0
+  AttachedMainAnchor: {fileID: 0}
   mainAnchor: 1
   ScriptToActivate: {fileID: 4380600434402870266}
 --- !u!4 &7292612788887588281

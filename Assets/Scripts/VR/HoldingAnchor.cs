@@ -49,7 +49,7 @@ public class HoldingAnchor : MonoBehaviour
         
     }
 
-    public void Released()
+    public virtual void Released()
     {
 
         IsHeld = false;
@@ -62,7 +62,7 @@ public class HoldingAnchor : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
 
         if(IsHeld && mainAnchor)

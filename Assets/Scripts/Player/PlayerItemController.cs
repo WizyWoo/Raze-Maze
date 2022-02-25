@@ -23,10 +23,11 @@ public class PlayerItemController : MonoBehaviour
     public GameObject CurrentWeaponPrefab, CurrentTrapPrefab;
     public ItemManager.ScalingMode CurrentTrapScaleMode;
     public ItemManager.WeaponUseMode CurrentWeaponUseMode;
-    public int TrapActivationDelay;
+    public int TrapActivationDelay, EquippedWeaponID;
     //End
     public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght, MeleeReach, ThrowVelocity, ShotRange;
-    public int EquippedWeaponID {get; private set;}
+    [SerializeField]
+    public int CurrentItemID {get; private set;}
     public Text WeaponIDText, FeedbackText;
     public Transform Parent, PlaceTrapFrom;
     [SerializeField]
@@ -101,26 +102,26 @@ public class PlayerItemController : MonoBehaviour
     public void PickedUpItem(int _itemID)
     {
 
-        if(EquippedWeaponID != 0)
+        if(CurrentItemID != 0 || EquippedWeaponID != 0)
         {
 
             if(activeWeapon)
                 PhotonNetwork.Destroy(activeWeapon);
             GameObject temp = PhotonNetwork.Instantiate(pickupFolderName + droppedWeaponPrefab.name, transform.position, Quaternion.identity);
-            temp.GetComponent<WeaponPickup>().WeaponID = EquippedWeaponID;
-            temp.name = "Dropped Weapon ^ " + EquippedWeaponID;
+            temp.GetComponent<WeaponPickup>().WeaponID = CurrentItemID;
+            temp.name = "Dropped Weapon ^ " + CurrentItemID;
 
         }
         
         placingTrap = false;
-        UpdateEquippedWeapon(_itemID);
+        UpdateItemID(_itemID);
 
     }
 
-    private void UpdateEquippedWeapon(int _iD)
+    private void UpdateItemID(int _iD)
     {
 
-        EquippedWeaponID = _iD;
+        CurrentItemID = _iD;
 
         if(UseUIFeedback)
         {
@@ -128,7 +129,7 @@ public class PlayerItemController : MonoBehaviour
             if(!WeaponIDText)
                 UpdateUIRefs();
 
-            WeaponIDText.text = "^ Weapon ID: " + EquippedWeaponID + " ^";
+            WeaponIDText.text = "^ Weapon ID: " + CurrentItemID + " ^";
 
         }
 
@@ -328,6 +329,9 @@ public class PlayerItemController : MonoBehaviour
             HoldingAnchor _tempAnchor = activeWeapon.GetComponent<WeaponController>().MainAnchor;
             _tempAnchor.Grabbed(_vrHand);
 
+            EquippedWeaponID = CurrentItemID;
+            CurrentItemID = 0;
+
             return _tempAnchor;
 
         }
@@ -341,13 +345,13 @@ public class PlayerItemController : MonoBehaviour
 
         GameObject temp = PhotonNetwork.Instantiate(CurrentWeaponPrefab.name, transform.position, transform.rotation);
         WeaponController controller = temp.GetComponent<WeaponController>();
-        controller.WeaponID = EquippedWeaponID;
+        controller.WeaponID = CurrentItemID;
         controller.Thrown();
         temp.GetComponent<Rigidbody>().velocity = transform.forward * ThrowVelocity;
 
         PhotonNetwork.Destroy(activeWeapon);
 
-        UpdateEquippedWeapon(0);
+        UpdateItemID(0);
 
     }
 
@@ -379,9 +383,9 @@ public class PlayerItemController : MonoBehaviour
             Transform temp = PhotonNetwork.Instantiate(CurrentTrapPrefab.name, placementInfo.Item1, placementInfo.Item3).transform;
             if(CurrentTrapScaleMode != ItemManager.ScalingMode.None)
                 temp.localScale = placementInfo.Item2;
-            temp.gameObject.GetComponent<TrapController>().TrapPlaced(TrapActivationDelay, EquippedWeaponID);
+            temp.gameObject.GetComponent<TrapController>().TrapPlaced(TrapActivationDelay, CurrentItemID);
             Destroy(ghostTrap.gameObject);
-            UpdateEquippedWeapon(0);
+            UpdateItemID(0);
             tempFeedback = "";
 
         }
@@ -408,13 +412,13 @@ public class PlayerItemController : MonoBehaviour
     private void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.Mouse1) && EquippedWeaponID != 0 && activeWeapon == null)
+        if(Input.GetKeyDown(KeyCode.Mouse1) && CurrentItemID != 0 && activeWeapon == null)
         {
 
             StartPlacingTrap();
 
         }
-        else if(Input.GetKeyDown(KeyCode.Mouse0) && EquippedWeaponID != 0 && activeWeapon)
+        else if(Input.GetKeyDown(KeyCode.Mouse0) && CurrentItemID != 0 && activeWeapon)
         {
 
             switch(CurrentWeaponUseMode)
@@ -435,7 +439,7 @@ public class PlayerItemController : MonoBehaviour
             }
 
         }
-        else if(Input.GetKeyUp(KeyCode.Mouse0) && EquippedWeaponID != 0 && activeWeapon)
+        else if(Input.GetKeyUp(KeyCode.Mouse0) && CurrentItemID != 0 && activeWeapon)
         {
 
             switch(CurrentWeaponUseMode)
@@ -457,7 +461,7 @@ public class PlayerItemController : MonoBehaviour
 
         }
 
-        if(Input.GetKeyDown(KeyCode.R) && EquippedWeaponID != 0 && !placingTrap)
+        if(Input.GetKeyDown(KeyCode.R) && CurrentItemID != 0 && !placingTrap)
         {
 
             EquipWeapon();
@@ -495,7 +499,7 @@ public class PlayerItemController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if(placingTrap && EquippedWeaponID != 0)
+        if(placingTrap && CurrentItemID != 0)
         {
 
             Vector3 tempV3;

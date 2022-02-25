@@ -36,5 +36,7 @@ public class DisplayGrabAnchor : HoldingAnchor
             return null;
 
     }
+
+    public override void Released(){}
     
 }

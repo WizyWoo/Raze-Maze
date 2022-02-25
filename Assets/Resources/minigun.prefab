@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5586091537388627893}
   - component: {fileID: 5467853267784796744}
   - component: {fileID: 3521261190365405081}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MinigunBarrelParentMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178865028848448307}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.63, y: -0.55, z: 2.8}
+  m_LocalPosition: {x: 0, y: -0.506, z: 2.564}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1168335538147277007}
   - component: {fileID: 6898114214773566450}
   - component: {fileID: 6413692389306816573}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MiniGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2162217691648484318}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.63, y: -0.55, z: 2.8}
+  m_LocalPosition: {x: 0, y: -0.506, z: 2.564}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -178,7 +178,9 @@ GameObject:
   - component: {fileID: 3043335147502256976}
   - component: {fileID: 1160684520431103462}
   - component: {fileID: 4125022326735619517}
-  m_Layer: 0
+  - component: {fileID: 1494185081001674521}
+  - component: {fileID: 6977855550406708124}
+  m_Layer: 7
   m_Name: minigun
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -201,6 +203,7 @@ Transform:
   - {fileID: 5586091537388627893}
   - {fileID: 1495280690094690642}
   - {fileID: 5608596870347650438}
+  - {fileID: 8036724380338668158}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -272,6 +275,36 @@ MonoBehaviour:
   bulletsLeft: 0
   attackPoint: {fileID: 5608596870347650438}
   allowInvoke: 1
+--- !u!114 &1494185081001674521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3089593956413838343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870464ec2aafdc14b825507f36d247e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LinkedAnchorTransform: {fileID: 0}
+  IsHeld: 0
+  AttachedMainAnchor: {fileID: 8342092232593808872}
+  mainAnchor: 1
+  ScriptToActivate: {fileID: 4125022326735619517}
+--- !u!65 &6977855550406708124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3089593956413838343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3430613293237152626
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5608596870347650438}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: attackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,6 +336,68 @@ Transform:
   m_Father: {fileID: 2426210915533573821}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6925068278749026316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8036724380338668158}
+  - component: {fileID: 8342092232593808872}
+  - component: {fileID: 698032605614119503}
+  m_Layer: 7
+  m_Name: Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8036724380338668158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925068278749026316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.009, z: 0.769}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2426210915533573821}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8342092232593808872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925068278749026316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a5bb9388f38a54e850802a23b30a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LinkedAnchorTransform: {fileID: 0}
+  IsHeld: 0
+  AttachedMainAnchor: {fileID: 0}
+  mainAnchor: 0
+--- !u!65 &698032605614119503
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925068278749026316}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &66811690907549854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,6 +405,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2426210915533573821}
     m_Modifications:
+    - target: {fileID: 347982285632823502, guid: d8d9ea8c903cc7a42a8cf771cdcd641d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1453837210481267148, guid: d8d9ea8c903cc7a42a8cf771cdcd641d,
         type: 3}
       propertyPath: m_RootOrder
@@ -369,6 +469,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IcicleShootParticleEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892978050042550029, guid: d8d9ea8c903cc7a42a8cf771cdcd641d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2892978050042550029, guid: d8d9ea8c903cc7a42a8cf771cdcd641d,
         type: 3}
