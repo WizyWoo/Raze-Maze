@@ -167,6 +167,7 @@ MonoBehaviour:
   WeaponIDText: {fileID: 0}
   FeedbackText: {fileID: 0}
   Parent: {fileID: 1416359710976354514}
+  PlaceTrapFrom: {fileID: 1416359710976354512}
   droppedWeaponPrefab: {fileID: 0}
   activeWeapon: {fileID: 0}
   handTransform: {fileID: 5436638330459032001}

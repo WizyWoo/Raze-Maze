@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 public class DisplayGrabAnchor : HoldingAnchor
 {
@@ -18,9 +17,9 @@ public class DisplayGrabAnchor : HoldingAnchor
             if(IsWeaponDisplay)
             {
 
-                ItemController.EquipWeapon(_grabbedBy);
+                HoldingAnchor _tempAnchor = ItemController.EquipWeapon(_grabbedBy);
                 
-                return null;
+                return _tempAnchor;
 
             }
             else

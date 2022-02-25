@@ -292,7 +292,7 @@ public class PlayerItemController : MonoBehaviour
 
     #endregion
 
-    public void EquipWeapon(Transform _vrHand = null)
+    public HoldingAnchor EquipWeapon(Transform _vrHand = null)
     {
 
         if(DesktopMode)
@@ -318,12 +318,17 @@ public class PlayerItemController : MonoBehaviour
 
             }
 
+            return null;
+
         }
         else
         {
 
             activeWeapon = PhotonNetwork.Instantiate(CurrentWeaponPrefab.name, _vrHand.position, _vrHand.rotation);
-            activeWeapon.GetComponent<WeaponController>().MainAnchor.Grabbed(_vrHand);
+            HoldingAnchor _tempAnchor = activeWeapon.GetComponent<WeaponController>().MainAnchor;
+            _tempAnchor.Grabbed(_vrHand);
+
+            return _tempAnchor;
 
         }
 
