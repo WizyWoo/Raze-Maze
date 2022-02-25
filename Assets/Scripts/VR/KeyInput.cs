@@ -12,6 +12,7 @@ public class KeyInput : MonoBehaviour , IInteractable
     {
 
         keyboard = transform.GetComponentInParent<KeyboardController>();
+        gameObject.name = Letter.ToString();
 
     }
 
