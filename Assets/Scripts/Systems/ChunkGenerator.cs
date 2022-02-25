@@ -106,7 +106,7 @@ public class ChunkGenerator : MonoBehaviour
             item.transform.position = Vector3.zero;
         }
         // moves the players to their respective spawnpoints
-        _psm.Invoke("SpawnPlayers", 0.01f);
+        _psm.Invoke("SpawnPlayers", 0.1f);
     }
     
 }
