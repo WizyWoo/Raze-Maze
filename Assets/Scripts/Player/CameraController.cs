@@ -20,6 +20,7 @@ public class CameraController : MonoBehaviour
     {
 
         fov = Camera.main.fieldOfView;
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         player = transform.root;
         pMC = player.GetComponent<PlayerMovementController>();
@@ -54,9 +55,19 @@ public class CameraController : MonoBehaviour
         {
 
             if(Cursor.lockState == CursorLockMode.Locked)
+            {
+
                 Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+            }
             else
+            {
+
                 Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+
+            }
 
         }
 
