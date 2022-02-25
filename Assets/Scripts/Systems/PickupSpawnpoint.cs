@@ -10,11 +10,6 @@ public class PickupSpawnpoint : MonoBehaviour
     {
         Invoke("InstantiatePickup", 0.2f);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void InstantiatePickup(){
         Instantiate(randomWeaponPickup,transform.position,Quaternion.identity);
 

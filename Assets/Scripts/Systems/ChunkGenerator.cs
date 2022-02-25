@@ -24,12 +24,6 @@ public class ChunkGenerator : MonoBehaviour
         //GenerateMaze();
         GenerateMaze();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void GenerateMaze(){
         // Set seed for random gen
         Random.InitState(_seed);
@@ -69,7 +63,7 @@ public class ChunkGenerator : MonoBehaviour
         }
         _psm._spawnPoints.AddRange(FindObjectsOfType<PlayerSpawnpoint>());
         CheckChunkConnection();
-        }
+    }
     void CheckChunkConnection(){
         // Go through all the maze parts
         List<MazeDoorIndicator> walls = new List<MazeDoorIndicator>();

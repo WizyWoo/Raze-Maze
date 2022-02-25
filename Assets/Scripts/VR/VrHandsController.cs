@@ -111,7 +111,7 @@ public class VrHandsController : MonoBehaviour
                     if(!holding.IsHeld)
                     {
 
-                        holding.Grabbed(transform);
+                        holding = holding.Grabbed(transform);
 
                     }
                     else
