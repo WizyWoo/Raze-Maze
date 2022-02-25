@@ -167,7 +167,7 @@ MonoBehaviour:
   WeaponIDText: {fileID: 0}
   FeedbackText: {fileID: 0}
   Parent: {fileID: 1416359710976354514}
-  PlaceTrapFrom: {fileID: 1416359710976354512}
+  PlaceTrapFrom: {fileID: 0}
   droppedWeaponPrefab: {fileID: 0}
   activeWeapon: {fileID: 0}
   handTransform: {fileID: 5436638330459032001}
@@ -440,7 +440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3120648513725273668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.623}
+  m_LocalPosition: {x: 0.49, y: -0.332, z: 0.623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
