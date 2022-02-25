@@ -8,11 +8,10 @@ public class PickupSpawnpoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(randomWeaponPickup,transform.position,Quaternion.identity);
+        Invoke("InstantiatePickup", 0.2f);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void InstantiatePickup(){
+        Instantiate(randomWeaponPickup,transform.position,Quaternion.identity);
+
     }
 }

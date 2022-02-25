@@ -28,7 +28,7 @@ public class PlayerItemController : MonoBehaviour
     public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght, MeleeReach, ThrowVelocity, ShotRange;
     public int EquippedWeaponID {get; private set;}
     public Text WeaponIDText, FeedbackText;
-    public Transform Parent;
+    public Transform Parent, PlaceTrapFrom;
     [SerializeField]
     private GameObject droppedWeaponPrefab, activeWeapon;
     [SerializeField]
@@ -292,7 +292,7 @@ public class PlayerItemController : MonoBehaviour
 
     #endregion
 
-    private void EquipWeapon(Transform _vrHand = null)
+    public HoldingAnchor EquipWeapon(Transform _vrHand = null)
     {
 
         if(DesktopMode)
@@ -318,12 +318,17 @@ public class PlayerItemController : MonoBehaviour
 
             }
 
+            return null;
+
         }
         else
         {
 
             activeWeapon = PhotonNetwork.Instantiate(CurrentWeaponPrefab.name, _vrHand.position, _vrHand.rotation);
-            activeWeapon.GetComponent<WeaponController>().MainAnchor.Grabbed(_vrHand);
+            HoldingAnchor _tempAnchor = activeWeapon.GetComponent<WeaponController>().MainAnchor;
+            _tempAnchor.Grabbed(_vrHand);
+
+            return _tempAnchor;
 
         }
 
@@ -346,11 +351,57 @@ public class PlayerItemController : MonoBehaviour
 
     }
 
-    private void FireWeapon()
+    private void FireWeapon(bool _fire)
     {
 
         //VR and Desktop
-        activeWeapon.GetComponent<WeaponController>().FireWeapon(true);
+        activeWeapon.GetComponent<WeaponController>().FireWeapon(_fire);
+
+    }
+
+    public void StartPlacingTrap()
+    {
+
+        string tempFeedback = "";
+
+        if(!placingTrap)
+        {
+
+            placingTrap = true;
+            ghostTrap = Instantiate(CurrentTrapPrefab).transform;
+            trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
+            boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
+
+        }
+        else if(validLocation)
+        {
+
+            Transform temp = PhotonNetwork.Instantiate(CurrentTrapPrefab.name, placementInfo.Item1, placementInfo.Item3).transform;
+            if(CurrentTrapScaleMode != ItemManager.ScalingMode.None)
+                temp.localScale = placementInfo.Item2;
+            temp.gameObject.GetComponent<TrapController>().TrapPlaced(TrapActivationDelay, EquippedWeaponID);
+            Destroy(ghostTrap.gameObject);
+            UpdateEquippedWeapon(0);
+            tempFeedback = "";
+
+        }
+        else
+        {
+
+            tempFeedback = "Placement is not valid";
+            timer = 2;
+
+        }
+
+        if(UseUIFeedback)
+        {
+
+            if(!FeedbackText)
+                UpdateUIRefs();
+                
+            FeedbackText.text = tempFeedback;
+
+        }
 
     }
 
@@ -360,46 +411,7 @@ public class PlayerItemController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse1) && EquippedWeaponID != 0 && activeWeapon == null)
         {
 
-            string tempFeedback = "";
-
-            if(!placingTrap)
-            {
-
-                placingTrap = true;
-                ghostTrap = Instantiate(CurrentTrapPrefab).transform;
-                trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
-                boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
-
-            }
-            else if(validLocation)
-            {
-
-                Transform temp = PhotonNetwork.Instantiate(CurrentTrapPrefab.name, placementInfo.Item1, placementInfo.Item3).transform;
-                if(CurrentTrapScaleMode != ItemManager.ScalingMode.None)
-                    temp.localScale = placementInfo.Item2;
-                temp.gameObject.GetComponent<TrapController>().TrapPlaced(TrapActivationDelay, EquippedWeaponID);
-                Destroy(ghostTrap.gameObject);
-                UpdateEquippedWeapon(0);
-                tempFeedback = "";
-
-            }
-            else
-            {
-
-                tempFeedback = "Placement is not valid";
-                timer = 2;
-
-            }
-
-            if(UseUIFeedback)
-            {
-
-                if(!FeedbackText)
-                    UpdateUIRefs();
-                    
-                FeedbackText.text = tempFeedback;
-
-            }
+            StartPlacingTrap();
 
         }
         else if(Input.GetKeyDown(KeyCode.Mouse0) && EquippedWeaponID != 0 && activeWeapon)
@@ -417,7 +429,28 @@ public class PlayerItemController : MonoBehaviour
                 break;
 
                 case ItemManager.WeaponUseMode.Ranged:
-                FireWeapon();
+                FireWeapon(true);
+                break;
+
+            }
+
+        }
+        else if(Input.GetKeyUp(KeyCode.Mouse0) && EquippedWeaponID != 0 && activeWeapon)
+        {
+
+            switch(CurrentWeaponUseMode)
+            {
+
+                case ItemManager.WeaponUseMode.Melee:
+                //MeleeAttack();
+                break;
+
+                case ItemManager.WeaponUseMode.Throw:
+                ThrowWeapon();
+                break;
+
+                case ItemManager.WeaponUseMode.Ranged:
+                FireWeapon(false);
                 break;
 
             }
@@ -467,7 +500,7 @@ public class PlayerItemController : MonoBehaviour
 
             Vector3 tempV3;
             RaycastHit hit;
-            if(Physics.Raycast(transform.position, transform.forward, out hit, TrapPlaceDistance, mask, QueryTriggerInteraction.Ignore))
+            if(Physics.Raycast(PlaceTrapFrom.position, PlaceTrapFrom.forward, out hit, TrapPlaceDistance, mask, QueryTriggerInteraction.Ignore))
             {
 
                 tempV3 = hit.point + Vector3.up * 0.25f;
@@ -476,7 +509,7 @@ public class PlayerItemController : MonoBehaviour
             else
             {
 
-                tempV3 = transform.position + (transform.forward * TrapPlaceDistance);
+                tempV3 = PlaceTrapFrom.position + (PlaceTrapFrom.forward * TrapPlaceDistance);
 
             }
 

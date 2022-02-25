@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class PlayerSpawnpointManager : MonoBehaviour
 {
-    private List<PlayerSpawnpoint> _spawnPoints = new List<PlayerSpawnpoint>();
-    private List<PlayerController> _players = new List<PlayerController>();
+
+    [HideInInspector]
+    public List<PlayerSpawnpoint> _spawnPoints = new List<PlayerSpawnpoint>();
+    [HideInInspector]
+    public List<Com.MyCompany.MyGame.PlayerManager> _players = new List<Com.MyCompany.MyGame.PlayerManager>();
+    private bool scanning;
+    private int storedCount;
+    
+    void Awake(){
+        this.transform.parent = null;
+        DontDestroyOnLoad(this);
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -13,17 +24,40 @@ public class PlayerSpawnpointManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        storedCount = _players.Count;
+        if(scanning){
+            List<Com.MyCompany.MyGame.PlayerManager> pl = new List<Com.MyCompany.MyGame.PlayerManager>();
+            pl.AddRange(FindObjectsOfType<Com.MyCompany.MyGame.PlayerManager>());
+            foreach (var item in pl)
+            {
+                bool isFound = false;
+                foreach (var player in _players)
+                {
+                    if(player == item){
+                        isFound = true;
+                    }
+
+                }
+                if(!isFound){
+                    _players.Add(item);
+                    print("hi");
+                }
+            }
+        }
+        if(_players.Count > storedCount){
+            int rng = Random.Range(0, _spawnPoints.Count);
+            _players[_players.Count - 1].transform.position = _spawnPoints[rng].transform.position;
+        }
     }
     public void SpawnPlayers(){
-        _spawnPoints.AddRange(FindObjectsOfType<PlayerSpawnpoint>());
-        _players.AddRange(FindObjectsOfType<PlayerController>());
+        scanning = true;
+        /*_players.AddRange(FindObjectsOfType<Com.MyCompany.MyGame.PlayerManager>());
 
         for (int i = 0; i < _players.Count; i++)
         {
             _players[i].transform.position = _spawnPoints[i].transform.position;
-        }
+        }*/
     }
 }

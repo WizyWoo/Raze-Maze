@@ -10,9 +10,7 @@ public class VrPlayerController : MonoBehaviour
     public float MovementSpeed, TurnSpeed;
     [Tooltip("The transform the player moves relative to")]
     public Transform MoveRelativeTo, RotateAround, CameraTransform;
-    private Vector2 movementDir;
     private InputAction move, look;
-    private InputAction trigger;
     private Rigidbody rb;
 
     private void Awake()

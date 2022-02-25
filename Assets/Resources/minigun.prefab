@@ -261,16 +261,17 @@ MonoBehaviour:
   Firing: 0
   MainAnchor: {fileID: 0}
   bullet: {fileID: 8517051764120185722, guid: daeb82eccf7969943b02ceb6a7a6718c, type: 3}
-  shootForce: 300
+  shootForce: 200
   timeBetweenShooting: 0.1
-  spread: 3
+  spread: 0.1
   reloadTime: 1.5
   timeBetweenShots: 1
   magazineSize: 10
-  bulletsPerTap: 100
+  bulletsPerTap: 1
   allowButtonHold: 1
+  bulletsLeft: 0
   attackPoint: {fileID: 5608596870347650438}
-  allowInvoke: 0
+  allowInvoke: 1
 --- !u!1 &3430613293237152626
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ public class HoldingAnchor : MonoBehaviour
 
     }
 
-    public void Grabbed(Transform _grabbedBy)
+    public virtual HoldingAnchor Grabbed(Transform _grabbedBy)
     {
 
         IsHeld = true;
@@ -44,6 +44,8 @@ public class HoldingAnchor : MonoBehaviour
 
         if(rb)
             rb.isKinematic = true;
+
+        return this;
         
     }
 

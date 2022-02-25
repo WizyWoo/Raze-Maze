@@ -10,7 +10,7 @@ public class ChunkGenerator : MonoBehaviour
     public GameObject exitChunk, startChunk, nullChunk;
     public List<GameObject> placedChunks = new List<GameObject>();
     private List<MazeId> _mazeList = new List<MazeId>();
-    private PlayerSpawnpointManager _psm;
+    public PlayerSpawnpointManager _psm;
     [Tooltip("Which maze template to generate")]
     public int generateMazeId = 0;
     [Header("Y must have consistent numbers")]
@@ -21,15 +21,8 @@ public class ChunkGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _psm = GetComponent<PlayerSpawnpointManager>();
         //GenerateMaze();
         GenerateMaze();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     void GenerateMaze(){
         // Set seed for random gen
@@ -65,10 +58,12 @@ public class ChunkGenerator : MonoBehaviour
                 g.transform.parent = transform;
                 g.transform.position = new Vector3(w * 20, 2.5f, l * 20);
                 _mazeList.Add(g.GetComponent<MazeId>());
+                _mazeList[_mazeList.Count - 1].placeLocation = g.transform.position;
             }
         }
+        _psm._spawnPoints.AddRange(FindObjectsOfType<PlayerSpawnpoint>());
         CheckChunkConnection();
-        }
+    }
     void CheckChunkConnection(){
         // Go through all the maze parts
         List<MazeDoorIndicator> walls = new List<MazeDoorIndicator>();
@@ -99,8 +94,13 @@ public class ChunkGenerator : MonoBehaviour
                 item.gameObject.SetActive(true);
             }
         }
+        
+        foreach (var item in placedChunks)
+        {
+            item.transform.position = Vector3.zero;
+        }
         // moves the players to their respective spawnpoints
-        _psm.SpawnPlayers();
+        _psm.Invoke("SpawnPlayers", 0.1f);
     }
     
 }
