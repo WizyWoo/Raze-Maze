@@ -261,7 +261,7 @@ MonoBehaviour:
   Firing: 0
   MainAnchor: {fileID: 0}
   bullet: {fileID: 8517051764120185722, guid: daeb82eccf7969943b02ceb6a7a6718c, type: 3}
-  shootForce: 300
+  shootForce: 200
   timeBetweenShooting: 0.1
   spread: 0.1
   reloadTime: 1.5
