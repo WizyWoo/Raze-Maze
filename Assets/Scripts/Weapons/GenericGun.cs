@@ -17,7 +17,9 @@ public class GenericGun : WeaponController, IPunObservable
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
 
-    int bulletsLeft, bulletsShot;
+    int bulletsShot;
+
+    [SerializeField] private int bulletsLeft;
 
 
     //Recoil
@@ -37,6 +39,8 @@ public class GenericGun : WeaponController, IPunObservable
 
     //bug fixing 
     public bool allowInvoke = true;
+
+    private LayerMask layerMask;
 
     private void Awake()
     {
@@ -61,9 +65,11 @@ public class GenericGun : WeaponController, IPunObservable
         //else Firing = Input.GetKeyDown(KeyCode.Mouse0);
 
         //Reloading 
-        if (Input.GetKeyDown(KeyCode.T) && bulletsLeft < magazineSize && !reloading) Reload();
+        if (Input.GetKeyDown(KeyCode.T) /*&& bulletsLeft < magazineSize && !reloading*/) 
+            Reload();
         //Reload automatically when trying to shoot without ammo
-        if (readyToShoot && Firing && !reloading && bulletsLeft <= 0) Reload();
+        if (readyToShoot && Firing && !reloading && bulletsLeft <= 0) 
+            Reload();
 
         //Shooting
         if (readyToShoot && Firing && !reloading && bulletsLeft > 0)
@@ -82,18 +88,23 @@ public class GenericGun : WeaponController, IPunObservable
         Debug.Log("shooooot");
 
         //Find the exact hit position using a raycast
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); //Just a ray through the middle of your current view
-        RaycastHit hit;
+        //Ray ray;  //Just a ray through the middle of the current view
+        //RaycastHit hit;
+
+        //if (Physics.Raycast(attackPoint.position, transform.forward, out hit, Mathf.Infinity, layerMask, QueryTriggerInteraction.Ignore))
+        //{
+
+        //}       
 
         //check if ray hits something
-        Vector3 targetPoint;
-        if (Physics.Raycast(ray, out hit))
-            targetPoint = hit.point;
-        else
-            targetPoint = ray.GetPoint(75); //Just a point far away from the player
+        //Vector3 targetPoint;
+        //if (Physics.Raycast(ray, out hit))
+        //    targetPoint = hit.point;
+        //else
+        //    targetPoint = ray.GetPoint(75); //Just a point far away from the player
 
         //Calculate direction from attackPoint to targetPoint
-        Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
+        Vector3 directionWithoutSpread = attackPoint.forward;
 
         //Calculate spread
         float x = Random.Range(-spread, spread);
@@ -121,6 +132,7 @@ public class GenericGun : WeaponController, IPunObservable
         //Invoke resetShot function (if not already invoked), with your timeBetweenShooting
         if (allowInvoke)
         {
+            Debug.Log("entered");
             Invoke("ResetShot", timeBetweenShooting);
             allowInvoke = false;
 
@@ -134,6 +146,7 @@ public class GenericGun : WeaponController, IPunObservable
     }
     private void ResetShot()
     {
+        Debug.Log("reseting the shot");
         //Allow shooting and invoking again
         readyToShoot = true;
         allowInvoke = true;
