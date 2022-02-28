@@ -11,7 +11,7 @@ public class DisplayGrabAnchor : HoldingAnchor
     public override HoldingAnchor Grabbed(Transform _grabbedBy)
     {
 
-        if(ItemController.EquippedWeaponID != 0)
+        if(ItemController.CurrentItemID != 0)
         {
 
             if(IsWeaponDisplay)

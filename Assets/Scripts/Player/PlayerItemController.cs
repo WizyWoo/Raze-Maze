@@ -30,11 +30,12 @@ public class PlayerItemController : MonoBehaviour
     public int CurrentItemID {get; private set;}
     public Text WeaponIDText, FeedbackText;
     public Transform Parent, PlaceTrapFrom;
+    public bool PlacingTrap;
     [SerializeField]
     private GameObject droppedWeaponPrefab, activeWeapon;
     [SerializeField]
     private Transform handTransform;
-    private bool placingTrap, validLocation;
+    private bool validLocation;
     private float timer;
     private (Vector3, Vector3, Quaternion) placementInfo;
     private Transform ghostTrap;
@@ -113,7 +114,7 @@ public class PlayerItemController : MonoBehaviour
 
         }
         
-        placingTrap = false;
+        PlacingTrap = false;
         UpdateItemID(_itemID);
 
     }
@@ -325,12 +326,11 @@ public class PlayerItemController : MonoBehaviour
         else
         {
 
+            EquippedWeaponID = CurrentItemID;
+            CurrentItemID = 0;
             activeWeapon = PhotonNetwork.Instantiate(CurrentWeaponPrefab.name, _vrHand.position, _vrHand.rotation);
             HoldingAnchor _tempAnchor = activeWeapon.GetComponent<WeaponController>().MainAnchor;
             _tempAnchor.Grabbed(_vrHand);
-
-            EquippedWeaponID = CurrentItemID;
-            CurrentItemID = 0;
 
             return _tempAnchor;
 
@@ -368,10 +368,10 @@ public class PlayerItemController : MonoBehaviour
 
         string tempFeedback = "";
 
-        if(!placingTrap)
+        if(!PlacingTrap)
         {
 
-            placingTrap = true;
+            PlacingTrap = true;
             ghostTrap = Instantiate(CurrentTrapPrefab).transform;
             trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
             boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
@@ -461,7 +461,7 @@ public class PlayerItemController : MonoBehaviour
 
         }
 
-        if(Input.GetKeyDown(KeyCode.R) && CurrentItemID != 0 && !placingTrap)
+        if(Input.GetKeyDown(KeyCode.R) && CurrentItemID != 0 && !PlacingTrap)
         {
 
             EquipWeapon();
@@ -486,7 +486,7 @@ public class PlayerItemController : MonoBehaviour
         
         }
 
-        if(activeWeapon)
+        if(activeWeapon && DesktopMode)
         {
 
             activeWeapon.transform.position = handTransform.position;
@@ -499,7 +499,7 @@ public class PlayerItemController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if(placingTrap && CurrentItemID != 0)
+        if(PlacingTrap && CurrentItemID != 0)
         {
 
             Vector3 tempV3;
@@ -542,7 +542,7 @@ public class PlayerItemController : MonoBehaviour
         else
         {
 
-            placingTrap = false;
+            PlacingTrap = false;
             if(ghostTrap)
                 Destroy(ghostTrap.gameObject);
 

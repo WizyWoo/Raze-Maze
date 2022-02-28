@@ -12,8 +12,8 @@ public class HoldingAnchor : MonoBehaviour
     public HoldingAnchor AttachedMainAnchor;
     [Tooltip("The object will rotate from this anchor if it is linked to another anchor"), SerializeField]
     private bool mainAnchor;
-    private Transform handTransform;
-    private Rigidbody rb;
+    public Transform handTransform;
+    public Rigidbody rb;
     private Vector3 originPos;
 
     private void Awake()
@@ -58,7 +58,8 @@ public class HoldingAnchor : MonoBehaviour
         if(rb)
             rb.isKinematic = false;
 
-        transform.position = originPos;
+        if(!mainAnchor)
+            transform.position = originPos;
 
     }
 

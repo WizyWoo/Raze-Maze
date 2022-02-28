@@ -112,6 +112,8 @@ MonoBehaviour:
   IsHeld: 0
   AttachedMainAnchor: {fileID: 0}
   mainAnchor: 1
+  handTransform: {fileID: 0}
+  rb: {fileID: 0}
   ScriptToActivate: {fileID: 0}
 --- !u!65 &7805413069392604535
 BoxCollider:
@@ -258,6 +260,8 @@ MonoBehaviour:
   IsHeld: 0
   AttachedMainAnchor: {fileID: 0}
   mainAnchor: 0
+  handTransform: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!65 &5816304775492585480
 BoxCollider:
   m_ObjectHideFlags: 0

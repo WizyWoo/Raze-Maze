@@ -30,6 +30,7 @@ public class VrHandsController : MonoBehaviour
     [SerializeField]
     private HoldingAnchor holding;
     private InputAction GrabButton, TriggerButton;
+    private PlayerItemController itemController;
 
     private void Awake()
     {
@@ -73,6 +74,7 @@ public class VrHandsController : MonoBehaviour
     {
 
         grabMask = 1 << LayerMask.NameToLayer("Interactables");
+        itemController = transform.root.GetComponent<PlayerItemController>();
         
     }
 
@@ -135,13 +137,24 @@ public class VrHandsController : MonoBehaviour
 
         }
 
-        if(TriggerButton.WasPressedThisFrame() && holding)
+        if(TriggerButton.WasPressedThisFrame())
         {
             
-            if(holding.TryGetComponent<HoldingAnchorActivatable>(out HoldingAnchorActivatable _activatable))
+            if(holding)
             {
-                
-                _activatable.ActivateInteractableOnObject(transform, true);
+
+                if(holding.TryGetComponent<HoldingAnchorActivatable>(out HoldingAnchorActivatable _activatable))
+                {
+                    
+                    _activatable.ActivateInteractableOnObject(transform, true);
+
+                }
+
+            }
+            else if(itemController.PlacingTrap)
+            {
+
+                itemController.StartPlacingTrap();
 
             }
 

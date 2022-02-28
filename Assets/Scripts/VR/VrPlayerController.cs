@@ -6,6 +6,12 @@ using UnityEngine.InputSystem;
 public class VrPlayerController : MonoBehaviour
 {
 
+    //ToDo
+    /*
+    Check if the players hands are behind a wall before allowing them to pick up stuff
+    Make a solution for players to shoot past a corner
+    */
+
     public VRPlayerInputs PlayerInputs;
     public float MovementSpeed, TurnSpeed;
     [Tooltip("The transform the player moves relative to")]
