@@ -15,11 +15,11 @@ public class GenericGun : WeaponController, IPunObservable
     //Gun stats
     public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
-    public bool allowButtonHold;
+    public bool allowButtonHold, canReload = false;
 
     int bulletsShot;
 
-    [SerializeField] private int bulletsLeft;
+    [SerializeField] private int bulletsLeft; 
 
 
     //Recoil
@@ -42,11 +42,20 @@ public class GenericGun : WeaponController, IPunObservable
 
     private LayerMask layerMask;
 
+    GameObject mixerObject;
+    GameObject mixerBlades;
+
     private void Awake()
     {
         //make sure magazine is full
         bulletsLeft = magazineSize;
         readyToShoot = true;
+    }
+
+    private void Start()
+    {
+        mixerObject = GameObject.Find("handMixer");
+        mixerBlades = mixerObject.transform.GetChild(1).gameObject;
     }
 
     private void Update()
@@ -65,11 +74,11 @@ public class GenericGun : WeaponController, IPunObservable
         //else Firing = Input.GetKeyDown(KeyCode.Mouse0);
 
         //Reloading 
-        if (Input.GetKeyDown(KeyCode.T) /*&& bulletsLeft < magazineSize && !reloading*/) 
+        if (Input.GetKeyDown(KeyCode.T) && canReload == true/*&& bulletsLeft < magazineSize && !reloading*/) 
             Reload();
         //Reload automatically when trying to shoot without ammo
-        if (readyToShoot && Firing && !reloading && bulletsLeft <= 0) 
-            Reload();
+        //if (readyToShoot && Firing && !reloading && bulletsLeft <= 0) 
+        //    Reload();
 
         //Shooting
         if (readyToShoot && Firing && !reloading && bulletsLeft > 0)
@@ -77,14 +86,14 @@ public class GenericGun : WeaponController, IPunObservable
             //Set bullets shot to 0
             bulletsShot = 0;
 
-            Shoot();
+            Shoot();            
         }
     }
 
-    private void Shoot()
+   public void Shoot()
     {
         readyToShoot = false;
-        
+
         //Find the exact hit position using a raycast
         //Ray ray;  //Just a ray through the middle of the current view
         //RaycastHit hit;
@@ -100,6 +109,8 @@ public class GenericGun : WeaponController, IPunObservable
         //    targetPoint = hit.point;
         //else
         //    targetPoint = ray.GetPoint(75); //Just a point far away from the player
+
+        mixerBlades.gameObject.SetActive(false);
 
         //Calculate direction from attackPoint to targetPoint
         Vector3 directionWithoutSpread = attackPoint.forward;
