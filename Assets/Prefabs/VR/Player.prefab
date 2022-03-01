@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 3833835234458933234}
   - component: {fileID: 5761565838710055990}
   - component: {fileID: 4632711525070477728}
+  - component: {fileID: 609253037789892521}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -231,6 +232,7 @@ MonoBehaviour:
   FeedbackText: {fileID: 0}
   Parent: {fileID: 260854732712247036}
   PlaceTrapFrom: {fileID: 260854731484014344}
+  PlacingTrap: 0
   droppedWeaponPrefab: {fileID: 0}
   activeWeapon: {fileID: 0}
   handTransform: {fileID: 0}
@@ -276,6 +278,20 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &609253037789892521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260854731515951132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb8631231d85eb43b8a6c08dbd28b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyThis:
+  - {fileID: 260854732712246979}
 --- !u!1 &260854732679865853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1915,7 +1931,7 @@ GameObject:
   - component: {fileID: 1937998618556811200}
   - component: {fileID: 9026657646286108127}
   m_Layer: 7
-  m_Name: DisplayPoint
+  m_Name: WeaponDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2050,7 +2066,7 @@ GameObject:
   - component: {fileID: 1402682255815550325}
   - component: {fileID: 7107515984416514147}
   m_Layer: 7
-  m_Name: DisplayPoint
+  m_Name: TrapDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

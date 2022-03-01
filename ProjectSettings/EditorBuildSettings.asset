@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/waitingRoomScene.unity
     guid: 33620f74531c67243b9c4bcef3b0bc64
   - enabled: 1
-    path: Assets/Scenes/mazeTestScene.unity
+    path: Assets/Scenes/MazeGameScene.unity
     guid: 11420ac277abd6f4f8b200f877395fd1
   - enabled: 0
     path: Assets/Scenes/mazeTestScene 1.unity
