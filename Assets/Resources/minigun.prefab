@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponID: 0
-  Damage: 0
+  Damage: 0.5
   Firing: 0
   MainAnchor: {fileID: 0}
   bullet: {fileID: 8517051764120185722, guid: daeb82eccf7969943b02ceb6a7a6718c, type: 3}
