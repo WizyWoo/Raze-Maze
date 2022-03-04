@@ -26,6 +26,9 @@ public class TerminateLocalsVR : MonoBehaviourPunCallbacks
             Destroy(gameObject.GetComponent<PlayerItemController>());
             Destroy(gameObject.GetComponent<VrPlayerController>());
             Destroy(gameObject.GetComponent<CameraOffset>());
+            Destroy(gameObject.GetComponentInChildren<PlayerInteraction>());
+            
+            Destroy(gameObject.GetComponentInChildren<Camera>());
             
         }
 
