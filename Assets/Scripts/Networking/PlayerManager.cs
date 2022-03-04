@@ -157,7 +157,7 @@ namespace Com.MyCompany.MyGame
             //    beams.SetActive(IsFiring);
             //}
 
-            Damage();
+            //Damage();
         }
 
         #if UNITY_5_4_OR_NEWER
