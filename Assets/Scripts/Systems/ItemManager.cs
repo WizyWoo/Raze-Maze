@@ -115,4 +115,38 @@ public class ItemManager : MonoBehaviour
 
     }
 
+    public int GiveRandomFilteredID(Theme _theme)
+    {
+
+        int _rarity = Random.Range(0, 101);
+
+        if(_rarity <= 50)
+        {
+
+
+
+        }
+        else if(_rarity > 50 && _rarity <= 80)
+        {
+
+
+
+        }
+        else if(_rarity > 80 && _rarity <= 95)
+        {
+
+
+
+        }
+        else if(_rarity > 95)
+        {
+
+
+
+        }
+
+        return 0;
+
+    }
+
 }
