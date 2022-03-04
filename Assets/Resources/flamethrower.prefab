@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponID: 7
-  Damage: 0
+  Damage: 0.5
   Firing: 0
   MainAnchor: {fileID: 0}
   particleSystem: {fileID: 7995552860899436711}
