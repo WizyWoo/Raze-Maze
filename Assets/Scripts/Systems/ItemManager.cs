@@ -76,6 +76,7 @@ public class ItemManager : MonoBehaviour
     public Rarity[] ItemRarity;
     public Theme[] ItemTheme;
     public GameObject DroppedWeaponPrefab;
+    private List<int> commonItems, unCommonItems, rareItems, legendaryItems;
 
     private void Awake()
     {
@@ -92,6 +93,42 @@ public class ItemManager : MonoBehaviour
 
             main = this;
 
+        }
+
+    }
+
+    private void Start()
+    {
+
+        commonItems = new List<int>();
+        unCommonItems = new List<int>();
+        rareItems = new List<int>();
+        legendaryItems = new List<int>();
+
+        for(int i = 0; i < ItemRarity.Length; i++)
+        {
+
+            switch(ItemRarity[i])
+            {
+
+                case Rarity.Common:
+                commonItems.Add(i);
+                break;
+
+                case Rarity.Uncommon:
+                unCommonItems.Add(i);
+                break;
+
+                case Rarity.Rare:
+                rareItems.Add(i);
+                break;
+
+                case Rarity.Legendary:
+                legendaryItems.Add(i);
+                break;
+
+            }
+            
         }
 
     }
@@ -115,37 +152,90 @@ public class ItemManager : MonoBehaviour
 
     }
 
-    public int GiveRandomFilteredID(Theme _theme)
+    public void GiveRandomFilteredID(Theme _theme, PlayerItemController _playerItemController)
     {
 
+        Random.InitState(System.DateTime.UtcNow.Millisecond);
         int _rarity = Random.Range(0, 101);
+        int _returnID = 0;
+        Rarity _tempRarity = Rarity.Common;
 
-        if(_rarity <= 50)
+        if(_rarity > 50 && _rarity <= 80)
         {
 
-
-
-        }
-        else if(_rarity > 50 && _rarity <= 80)
-        {
-
-
+            _tempRarity = Rarity.Uncommon;
 
         }
         else if(_rarity > 80 && _rarity <= 95)
         {
 
-
+            _tempRarity = Rarity.Rare;
 
         }
         else if(_rarity > 95)
         {
 
-
+            _tempRarity = Rarity.Legendary;
 
         }
 
-        return 0;
+        bool _idChosen = false;
+
+        while(!_idChosen)
+        {
+
+            if(_tempRarity == Rarity.Common)
+            {
+
+                _returnID = commonItems[Random.Range(0, commonItems.Count)];
+                if(ItemTheme[_returnID] == _theme)
+                {
+
+                    _idChosen = true;
+
+                }
+
+            }
+            else if(_tempRarity == Rarity.Uncommon)
+            {
+
+                _returnID = unCommonItems[Random.Range(0, unCommonItems.Count)];
+                if(ItemTheme[_returnID] == _theme)
+                {
+
+                    _idChosen = true;
+
+                }
+
+            }
+            else if(_tempRarity == Rarity.Rare)
+            {
+
+                _returnID = rareItems[Random.Range(0, rareItems.Count)];
+                if(ItemTheme[_returnID] == _theme)
+                {
+
+                    _idChosen = true;
+
+                }
+
+            }
+            else if(_tempRarity == Rarity.Legendary)
+            {
+
+                _returnID = legendaryItems[Random.Range(0, legendaryItems.Count)];
+                if(ItemTheme[_returnID] == _theme)
+                {
+
+                    _idChosen = true;
+
+                }
+
+            }
+
+        }
+
+        _playerItemController.UpdateItemRefs(_returnID, WeaponPrefabs[_returnID], TrapPrefabs[_returnID], TrapScaleMode[_returnID], AttackMode[_returnID]);
 
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class RandomPickup : MonoBehaviour , IInteractable
 {
 
+    public ItemManager.Theme PickupTheme;
     public bool LockAfterUse;
     private bool locked;
 
@@ -14,7 +15,7 @@ public class RandomPickup : MonoBehaviour , IInteractable
         if(!locked)
         {
             
-            ItemManager.main.GivePlayerRandomWeapon(_player.root.GetComponentInChildren<PlayerItemController>());
+            ItemManager.main.GiveRandomFilteredID(PickupTheme, _player.root.GetComponentInChildren<PlayerItemController>());
 
             if(LockAfterUse)
             {
