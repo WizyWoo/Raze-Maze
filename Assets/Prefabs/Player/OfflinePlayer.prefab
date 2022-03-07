@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 3973109002167777377}
   - component: {fileID: 7252342508564285164}
   - component: {fileID: 6365922220199939413}
+  - component: {fileID: 241639839}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -200,7 +201,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -274,6 +275,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderMat: {fileID: 2100000, guid: 569781a2537bd6e42a593640b6dbd6a3, type: 2}
+--- !u!114 &241639839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973109002172622435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67848a74ddc35b45803a2395943e0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprinting: 0
+  InputSensitivity: 5
+  FovChangeSpeed: 10
+  cameraPivot: {fileID: 3973109002172136003}
 --- !u!1001 &5254872769878901992
 PrefabInstance:
   m_ObjectHideFlags: 0
