@@ -271,10 +271,13 @@ namespace Com.MyCompany.MyGame
               {
                   lives--;
                   Health = 1f;
-                    GameManager.gameManager.Respawn();
-                    //StartCoroutine(GameManager.gameManager.Respawn());
-                  if (lives <= 0)
-                      gameOver.SetUp();
+                 if (photonView.IsMine)
+                 {
+                   GameManager.gameManager.Respawn();
+                        //StartCoroutine(GameManager.gameManager.Respawn());
+                   if (lives <= 0)
+                       gameOver.SetUp();                
+                 }
               }
             }
             else
