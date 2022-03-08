@@ -26,7 +26,7 @@ public class HoldingAnchorActivatable : HoldingAnchor
 
     }
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
 
         if(!IsHeld)
@@ -48,6 +48,6 @@ public class HoldingAnchorActivatable : HoldingAnchor
 
         }
 
-    }
+    }*/
 
 }
