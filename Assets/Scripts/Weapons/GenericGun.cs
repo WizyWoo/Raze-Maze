@@ -124,11 +124,18 @@ public class GenericGun : WeaponController, IPunObservable
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0); //Just add spread to last direction
 
         RaycastHit hit;
-        if(Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, 1000, LayerMask.NameToLayer("Interactables"), QueryTriggerInteraction.Ignore))
+        if(Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, 1000, ~LayerMask.NameToLayer("Player"), QueryTriggerInteraction.Ignore))
         {
 
             if(hit.transform.tag == "Player")
+            {
+
                 hit.transform.GetComponent<PlayerManager>().Damage(this);
+                Debug.Log("hit " + hit.transform.name);
+
+            }
+
+            Debug.Log(hit.transform.name);
 
         }
 

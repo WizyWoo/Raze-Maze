@@ -297,6 +297,8 @@ namespace Com.MyCompany.MyGame
                 }
             }
 
+            Debug.Log(gameObject.name + " was damaged");
+
         }
     }
 }
