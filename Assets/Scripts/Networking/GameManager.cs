@@ -141,9 +141,15 @@ namespace Com.MyCompany.MyGame
             //Invoke("LoadNextLevel", levelTransitionDelay);
         }
 
-        public IEnumerator Respawn()
+        //public IEnumerator Respawn()
+        //{
+        //    yield return new WaitForSeconds(0.5f);
+        //    player.transform.position = lastCheckpointPos;
+        //}
+
+        public void Respawn()
         {
-            yield return new WaitForSeconds(0.5f);
+            //yield return new WaitForSeconds(0.5f);
             player.transform.position = lastCheckpointPos;
         }
 

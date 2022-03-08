@@ -271,8 +271,8 @@ namespace Com.MyCompany.MyGame
               {
                   lives--;
                   Health = 1f;
-
-                    StartCoroutine(GameManager.gameManager.Respawn());
+                    GameManager.gameManager.Respawn();
+                    //StartCoroutine(GameManager.gameManager.Respawn());
                   if (lives <= 0)
                       gameOver.SetUp();
               }
@@ -285,7 +285,8 @@ namespace Com.MyCompany.MyGame
                 {
                     lives--;
                     Health = 1f;
-                    StartCoroutine(GameManager.gameManager.Respawn());
+                    //StartCoroutine(GameManager.gameManager.Respawn());
+                    GameManager.gameManager.Respawn();
 
                     if (lives <= 0)
                         gameOver.SetUp();
