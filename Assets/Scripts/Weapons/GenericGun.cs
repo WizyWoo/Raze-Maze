@@ -127,7 +127,7 @@ public class GenericGun : WeaponController, IPunObservable
         if(Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, 1000, ~LayerMask.NameToLayer("Player"), QueryTriggerInteraction.Ignore))
         {
 
-            if(hit.transform.tag == "Player")
+            if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
 
                 hit.transform.GetComponent<PlayerManager>().Damage(this);
