@@ -12,26 +12,6 @@ namespace Com.MyCompany.MyGame
     /// </summary>
     public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
-        #region IPunObservable implementation
-
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            if (stream.IsWriting)
-            {
-                // We own this player: send the others our data
-                //stream.SendNext(IsFiring);
-                stream.SendNext(Health);
-            }
-            else
-            {
-                // Network player, receive data
-               // this.IsFiring = (bool)stream.ReceiveNext();
-                this.Health = (float)stream.ReceiveNext();
-            }
-        }
-
-        #endregion
-
         #region Public Fields
 
         [Tooltip("The Player's UI GameObject Prefab")]
@@ -57,6 +37,26 @@ namespace Com.MyCompany.MyGame
         //[SerializeField] private GameObject mine;
         ////True, when the user is firing
         //bool IsFiring;
+        #endregion
+
+        #region IPunObservable implementation
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                // We own this player: send the others our data
+                //stream.SendNext(IsFiring);
+                stream.SendNext(Health);
+            }
+            else
+            {
+                // Network player, receive data
+                // this.IsFiring = (bool)stream.ReceiveNext();
+                this.Health = (float)stream.ReceiveNext();
+            }
+        }
+
         #endregion
 
         #region Private Methods
