@@ -15,6 +15,9 @@ public class HoldingAnchor : MonoBehaviour
     public Transform handTransform;
     public Rigidbody rb;
     private Vector3 originPos;
+    public AudioSource audioSource;
+    [SerializeField]
+    private AudioClip grabSound;
 
     private void Awake()
     {
@@ -41,6 +44,8 @@ public class HoldingAnchor : MonoBehaviour
 
         IsHeld = true;
         handTransform = _grabbedBy;
+
+        audioSource.PlayOneShot(grabSound);
 
         if(rb)
             rb.isKinematic = true;

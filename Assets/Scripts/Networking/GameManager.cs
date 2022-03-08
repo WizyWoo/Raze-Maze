@@ -22,8 +22,7 @@ namespace Com.MyCompany.MyGame
         #endregion
 
         [SerializeField] private float levelTransitionDelay = 1f;
-        [SerializeField]
-        private GameObject player;
+        public GameObject player;
 
         #region Photon Callbacks
 

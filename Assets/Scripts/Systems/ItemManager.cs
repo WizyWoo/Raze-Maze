@@ -105,7 +105,7 @@ public class ItemManager : MonoBehaviour
         rareItems = new List<int>();
         legendaryItems = new List<int>();
 
-        for(int i = 0; i < ItemRarity.Length; i++)
+        for(int i = 1; i < ItemCatalogue.Length; i++)
         {
 
             switch(ItemRarity[i])
@@ -141,14 +141,14 @@ public class ItemManager : MonoBehaviour
         Random.InitState(System.DateTime.UtcNow.Second);
         randomID = Random.Range(1, TrapPrefabs.Length);
 
-        _playerItemController.UpdateItemRefs(randomID, WeaponPrefabs[randomID], TrapPrefabs[randomID], TrapScaleMode[randomID], AttackMode[randomID]);
+        _playerItemController.UpdateItemRefs(randomID, WeaponPrefabs[randomID], TrapPrefabs[randomID], TrapScaleMode[randomID], AttackMode[randomID], TrapActivationDelay[randomID]);
 
     }
 
     public void GivePlayerWeaponByID(PlayerItemController _playerItemController, int _itemID)
     {
 
-        _playerItemController.UpdateItemRefs(_itemID, WeaponPrefabs[_itemID], TrapPrefabs[_itemID], TrapScaleMode[_itemID], AttackMode[_itemID]);
+        _playerItemController.UpdateItemRefs(_itemID, WeaponPrefabs[_itemID], TrapPrefabs[_itemID], TrapScaleMode[_itemID], AttackMode[_itemID], TrapActivationDelay[_itemID]);
 
     }
 
@@ -235,7 +235,7 @@ public class ItemManager : MonoBehaviour
 
         }
 
-        _playerItemController.UpdateItemRefs(_returnID, WeaponPrefabs[_returnID], TrapPrefabs[_returnID], TrapScaleMode[_returnID], AttackMode[_returnID]);
+        _playerItemController.UpdateItemRefs(_returnID, WeaponPrefabs[_returnID], TrapPrefabs[_returnID], TrapScaleMode[_returnID], AttackMode[_returnID], TrapActivationDelay[_returnID]);
 
     }
 

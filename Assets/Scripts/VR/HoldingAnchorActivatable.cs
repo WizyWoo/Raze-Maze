@@ -6,6 +6,8 @@ public class HoldingAnchorActivatable : HoldingAnchor
 {
 
     public WeaponController ScriptToActivate;
+    [SerializeField]
+    private AudioClip activateSound;
 
     public void ActivateInteractableOnObject(Transform _activatedBy, bool _firing)
     {
@@ -23,6 +25,9 @@ public class HoldingAnchorActivatable : HoldingAnchor
             ScriptToActivate.FireWeapon(_firing);
 
         }
+
+        if(_firing)
+            audioSource.PlayOneShot(activateSound);
 
     }
 

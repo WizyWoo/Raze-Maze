@@ -23,7 +23,8 @@ public class PlayerItemController : MonoBehaviour
     public GameObject CurrentWeaponPrefab, CurrentTrapPrefab;
     public ItemManager.ScalingMode CurrentTrapScaleMode;
     public ItemManager.WeaponUseMode CurrentWeaponUseMode;
-    public int TrapActivationDelay, EquippedWeaponID;
+    public int EquippedWeaponID;
+    public float TrapActivationDelay;
     //End
     public float TrapPlaceDistance, PlacementCheckRange, ScaleMaxLenght, ScaleMinLenght, MeleeReach, ThrowVelocity, ShotRange;
     [SerializeField]
@@ -88,7 +89,7 @@ public class PlayerItemController : MonoBehaviour
 
     }
 
-    public void UpdateItemRefs(int _itemID, GameObject _weaponPrefab, GameObject _trapPrefab, ItemManager.ScalingMode _scalingMode, ItemManager.WeaponUseMode _weaponUseMode)
+    public void UpdateItemRefs(int _itemID, GameObject _weaponPrefab, GameObject _trapPrefab, ItemManager.ScalingMode _scalingMode, ItemManager.WeaponUseMode _weaponUseMode, float _activationDelay)
     {
 
         PickedUpItem(_itemID);
@@ -97,6 +98,7 @@ public class PlayerItemController : MonoBehaviour
         CurrentTrapPrefab = _trapPrefab;
         CurrentTrapScaleMode = _scalingMode;
         CurrentWeaponUseMode = _weaponUseMode;
+        TrapActivationDelay = _activationDelay;
 
     }
 
