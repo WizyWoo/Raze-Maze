@@ -28,6 +28,7 @@ namespace Com.MyCompany.MyGame
         public GameOverScreenScript gameOver;
 
         public float trapDamage;
+        public static PlayerManager playerManager;
 
         #endregion
 

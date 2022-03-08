@@ -143,6 +143,7 @@ namespace Com.MyCompany.MyGame
 
         public IEnumerator Respawn()
         {
+            PlayerManager.playerManager.Health = 20f;
             yield return new WaitForSeconds(0.5f);
             player.transform.position = lastCheckpointPos;
         }
