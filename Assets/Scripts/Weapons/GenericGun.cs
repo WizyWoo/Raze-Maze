@@ -58,6 +58,23 @@ public class GenericGun : WeaponController, IPunObservable
         //mixerBlades = mixerObject.transform.GetChild(1).gameObject;
     }
 
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+
+        if (stream.IsWriting)
+        {
+            stream.SendNext(WeaponID);
+            stream.SendNext(Firing);
+            stream.SendNext(bulletsLeft);
+        }
+        else if (stream.IsReading)
+        {
+            WeaponID = (int)stream.ReceiveNext();
+            Firing = (bool)stream.ReceiveNext();
+            bulletsLeft = (int)stream.ReceiveNext();
+        }
+    }
+
     private void Update()
     {
         MyInput();
