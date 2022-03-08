@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEditor.XR.LegacyInputHelpers;
+using UnityEngine.SpatialTracking;
 
 public class TerminateLocalsVR : MonoBehaviourPunCallbacks
 {
 
     public GameObject[] DestroyThis;
+    public PlayerInteraction PI1, PI2;
+    public VrHandsController Hand1, Hand2;
+    public TrackedPoseDriver[] PoseDrivers;
+
 
     private void Awake()
     {
@@ -26,8 +31,18 @@ public class TerminateLocalsVR : MonoBehaviourPunCallbacks
             Destroy(gameObject.GetComponent<PlayerItemController>());
             Destroy(gameObject.GetComponent<VrPlayerController>());
             Destroy(gameObject.GetComponent<CameraOffset>());
-            Destroy(gameObject.GetComponentInChildren<PlayerInteraction>());
-            
+            Destroy(PI1);
+            Destroy(PI2);
+            Destroy(Hand1);
+            Destroy(Hand2);
+
+            foreach (TrackedPoseDriver _driver in PoseDrivers)
+            {
+
+                Destroy(_driver);
+                
+            }
+
             Destroy(gameObject.GetComponentInChildren<Camera>());
             
         }

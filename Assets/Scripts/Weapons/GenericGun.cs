@@ -163,7 +163,7 @@ public class GenericGun : WeaponController, IPunObservable
         //if (muzzleFlash != null)
         //    Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
 
-        bulletsLeft--;
+        //bulletsLeft--;
         bulletsShot++;
 
         //Invoke resetShot function (if not already invoked), with your timeBetweenShooting

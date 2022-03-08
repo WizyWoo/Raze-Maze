@@ -260,7 +260,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 4632711525070477728}
-  sceneViewId: 0
+  sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &4632711525070477728
@@ -292,6 +292,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyThis: []
+  PI1: {fileID: 4883060188735341366}
+  PI2: {fileID: 3390003008388670589}
+  Hand1: {fileID: 2236391011774727389}
+  Hand2: {fileID: 1145741916898583857}
+  PoseDrivers:
+  - {fileID: 260854732798931689}
+  - {fileID: 260854732679865855}
+  - {fileID: 260854731484014345}
 --- !u!1 &260854732679865853
 GameObject:
   m_ObjectHideFlags: 0
