@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1512183429755616990}
   - component: {fileID: 2264151836297016115}
-  - component: {fileID: 8979805473154402031}
   - component: {fileID: 2912974027692373104}
   - component: {fileID: 3196566526158879239}
   - component: {fileID: 7805413069392604535}
+  - component: {fileID: 4877508295003505926}
   m_Layer: 7
   m_Name: flamethrower
   m_TagString: Weapon
@@ -58,28 +58,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 8979805473154402031}
   - {fileID: 2912974027692373104}
-  sceneViewId: 0
+  - {fileID: 4877508295003505926}
+  sceneViewId: 4
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &8979805473154402031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2285447609137030244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abe1e9746aa1f947921bd54b68d71e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WeaponID: 7
-  Damage: 0.5
-  Firing: 0
-  MainAnchor: {fileID: 0}
-  particleSystem: {fileID: 7995552860899436711}
 --- !u!114 &2912974027692373104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +111,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4877508295003505926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2285447609137030244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b830029a2d8fe42819c89b12a96b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponID: 0
+  Damage: 0.5
+  Firing: 0
+  MainAnchor: {fileID: 0}
+  bullet: {fileID: 8517051764120185722, guid: daeb82eccf7969943b02ceb6a7a6718c, type: 3}
+  shootForce: 200
+  timeBetweenShooting: 0.1
+  spread: 0.1
+  reloadTime: 1.5
+  timeBetweenShots: 1
+  magazineSize: 10
+  bulletsPerTap: 1
+  allowButtonHold: 1
+  canReload: 1
+  bulletsLeft: 0
+  attackPoint: {fileID: 0}
+  allowInvoke: 1
 --- !u!1 &3122761046827766717
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +294,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1512183429755616990}
     m_Modifications:
+    - target: {fileID: 1023687222195937257, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1809523084760714456, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
       propertyPath: m_Layer
@@ -290,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 4264412070949995304, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
       propertyPath: sceneViewId
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4669459751264538862, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
@@ -352,6 +369,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7826554210524676023, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8519728169229408581, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
       propertyPath: m_Name
@@ -367,12 +389,6 @@ PrefabInstance:
 --- !u!4 &7670205690975433087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4714757991461550113, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
-    type: 3}
-  m_PrefabInstance: {fileID: 3106397451942807902}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7995552860899436711 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5037782992961806841, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
     type: 3}
   m_PrefabInstance: {fileID: 3106397451942807902}
   m_PrefabAsset: {fileID: 0}
