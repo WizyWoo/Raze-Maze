@@ -89,6 +89,13 @@ public class GenericGun : WeaponController, IPunObservable
 
             Shoot();            
         }
+
+        if(!photonView.IsMine && Firing)
+        {
+
+            Shoot();
+
+        }
     }
 
    public void Shoot()
