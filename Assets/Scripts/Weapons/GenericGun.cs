@@ -42,8 +42,8 @@ public class GenericGun : WeaponController, IPunObservable
 
     private LayerMask layerMask;
 
-    GameObject mixerObject;
-    GameObject mixerBlades;
+    //GameObject mixerObject;
+    //GameObject mixerBlades;
 
     private void Awake()
     {
@@ -54,8 +54,8 @@ public class GenericGun : WeaponController, IPunObservable
 
     private void Start()
     {
-        mixerObject = GameObject.Find("handMixer");
-        mixerBlades = mixerObject.transform.GetChild(1).gameObject;
+        //mixerObject = GameObject.Find("handMixer");
+        //mixerBlades = mixerObject.transform.GetChild(1).gameObject;
     }
 
     private void Update()
@@ -110,7 +110,7 @@ public class GenericGun : WeaponController, IPunObservable
         //else
         //    targetPoint = ray.GetPoint(75); //Just a point far away from the player
 
-        mixerBlades.gameObject.SetActive(false);
+        //mixerBlades.gameObject.SetActive(false);
 
         //Calculate direction from attackPoint to targetPoint
         Vector3 directionWithoutSpread = attackPoint.forward;
