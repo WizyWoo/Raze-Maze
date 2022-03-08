@@ -19,7 +19,7 @@ namespace Com.MyCompany.MyGame
         public GameObject PlayerUiPrefab;
 
         [Tooltip("The current Health of our player")]
-        public float Health = 20f;
+        public float Health;
 
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
@@ -118,6 +118,7 @@ namespace Com.MyCompany.MyGame
                 Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
             }
 
+            GameManager.gameManager.lastCheckpointPos = transform.position;
             //CameraWork _cameraWork = this.gameObject.GetComponentInChildren<CameraWork>();
 
 
@@ -269,8 +270,8 @@ namespace Com.MyCompany.MyGame
               if (Health <= 0)
               {
                   lives--;
-                  Health = 20f;
-                    Debug.Log("cool");
+                  Health = 1f;
+
                     StartCoroutine(GameManager.gameManager.Respawn());
                   if (lives <= 0)
                       gameOver.SetUp();
@@ -283,7 +284,7 @@ namespace Com.MyCompany.MyGame
                 if (Health <= 0)
                 {
                     lives--;
-                    Health = 20f;
+                    Health = 1f;
                     StartCoroutine(GameManager.gameManager.Respawn());
 
                     if (lives <= 0)
