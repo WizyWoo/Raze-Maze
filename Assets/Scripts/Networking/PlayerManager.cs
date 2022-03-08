@@ -47,6 +47,8 @@ namespace Com.MyCompany.MyGame
         public int lives = 3;
         public GameOverScreenScript gameOver;
 
+        public float trapDamage;
+
         #endregion
 
         #region Private Fields
@@ -188,11 +190,11 @@ namespace Com.MyCompany.MyGame
                 return;
             }
 
-            if(other.tag.Contains("Weapon"))
-                Health -= other.GetComponent<WeaponController>().Damage;
+            //if(other.tag.Contains("Weapon"))
+            //    Health -= other.GetComponent<WeaponController>().Damage;
 
             if (other.tag.Contains("Trap"))
-                Health -= other.GetComponent<TrapController>().Damage;
+                 Damage(null, trapDamage);
 
         }
 
@@ -266,18 +268,35 @@ namespace Com.MyCompany.MyGame
 
         #endregion
 
-        public void Damage()
+        public void Damage(WeaponController wP = null, float damage = 0)
         {
-            Health--;
-
-            if (Health <= 0)
+            if (wP != null)
             {
-                lives--;
-                GameManager.gameManager.Respawn();
-
-                if (lives <= 0)
-                    gameOver.SetUp();
+              Health -= wP.Damage;
+             
+              if (Health <= 0)
+              {
+                  lives--;
+                  GameManager.gameManager.Respawn();
+             
+                  if (lives <= 0)
+                      gameOver.SetUp();
+              }
             }
+            else
+            {
+                Health -= damage;
+
+                if (Health <= 0)
+                {
+                    lives--;
+                    GameManager.gameManager.Respawn();
+
+                    if (lives <= 0)
+                        gameOver.SetUp();
+                }
+            }
+
         }
     }
 }

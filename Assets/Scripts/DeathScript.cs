@@ -5,8 +5,10 @@ using Com.MyCompany.MyGame;
 
 public class DeathScript : MonoBehaviour
 {
+    WeaponController wP;
+
     private void OnTriggerEnter(Collider other)
     {
-        GetComponent<PlayerManager>().Damage();
+        GetComponent<PlayerManager>().Damage(wP);
     }
 }

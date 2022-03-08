@@ -124,6 +124,8 @@ public class GenericGun : WeaponController, IPunObservable
 
         //Instantiate bullet/projectile
         GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
+        currentBullet.GetComponent<BulletScript>().wP = this;
+
         //Rotate bullet to shoot direction
         currentBullet.transform.forward = directionWithSpread.normalized;
 
