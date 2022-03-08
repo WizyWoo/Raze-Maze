@@ -144,15 +144,6 @@ namespace Com.MyCompany.MyGame
                 ProcessInputs();
             }
 
-            if (photonView.IsMine)
-            {
-                ProcessInputs();
-                //if (Health <= 0f)
-                //{
-                //    GameManager.Instance.LeaveRoom();
-                //}
-            }
-
             // trigger Beams active state
             //if (beams != null && IsFiring != beams.activeInHierarchy)
             //{
