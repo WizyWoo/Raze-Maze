@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2813782754751604086}
   - component: {fileID: 3057687187777998964}
   - component: {fileID: 6507528292895646481}
+  - component: {fileID: 7185631730262590456}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -121,7 +122,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 6507528292895646481}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -154,3 +156,17 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!64 &7185631730262590456
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517051764120185722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7886550880557681832, guid: 5cbfa0871b11f5342bf5ace43f961e9c, type: 3}

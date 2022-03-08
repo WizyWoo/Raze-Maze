@@ -20,14 +20,12 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
 
         if(stream.IsWriting)
         {
-
             stream.SendNext(WeaponID);
             stream.SendNext(Firing);
 
         }
         else if(stream.IsReading)
         {
-
             WeaponID = (int)stream.ReceiveNext();
             Firing = (bool)stream.ReceiveNext();
 

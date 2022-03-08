@@ -60,7 +60,6 @@ public class GenericGun : WeaponController, IPunObservable
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-
         if (stream.IsWriting)
         {
             stream.SendNext(WeaponID);
