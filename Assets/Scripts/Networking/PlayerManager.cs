@@ -28,6 +28,7 @@ namespace Com.MyCompany.MyGame
         public GameOverScreenScript gameOver;
 
         public float trapDamage;
+       
 
         #endregion
 
@@ -268,8 +269,9 @@ namespace Com.MyCompany.MyGame
               if (Health <= 0)
               {
                   lives--;
-                  GameManager.gameManager.Respawn();
-             
+                  Health = 20f;
+                    Debug.Log("cool");
+                    StartCoroutine(GameManager.gameManager.Respawn());
                   if (lives <= 0)
                       gameOver.SetUp();
               }
@@ -281,7 +283,8 @@ namespace Com.MyCompany.MyGame
                 if (Health <= 0)
                 {
                     lives--;
-                    GameManager.gameManager.Respawn();
+                    Health = 20f;
+                    StartCoroutine(GameManager.gameManager.Respawn());
 
                     if (lives <= 0)
                         gameOver.SetUp();
