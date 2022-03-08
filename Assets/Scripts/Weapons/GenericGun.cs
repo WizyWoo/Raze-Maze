@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Photon.Pun;
+using Com.MyCompany.MyGame;
 
 public class GenericGun : WeaponController, IPunObservable
 {
@@ -56,22 +57,6 @@ public class GenericGun : WeaponController, IPunObservable
     {
         //mixerObject = GameObject.Find("handMixer");
         //mixerBlades = mixerObject.transform.GetChild(1).gameObject;
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(WeaponID);
-            stream.SendNext(Firing);
-            stream.SendNext(bulletsLeft);
-        }
-        else if (stream.IsReading)
-        {
-            WeaponID = (int)stream.ReceiveNext();
-            Firing = (bool)stream.ReceiveNext();
-            bulletsLeft = (int)stream.ReceiveNext();
-        }
     }
 
     private void Update()
@@ -138,15 +123,26 @@ public class GenericGun : WeaponController, IPunObservable
         //Calculate new direction with spread
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0); //Just add spread to last direction
 
+        RaycastHit hit;
+        if(Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, 1000, LayerMask.NameToLayer("Interactables"), QueryTriggerInteraction.Ignore))
+        {
+
+            if(hit.transform.tag == "Player")
+                hit.transform.GetComponent<PlayerManager>().Damage(this);
+
+        }
+
+        Debug.DrawRay(attackPoint.position, attackPoint.forward, Color.green, 10);
+
         //Instantiate bullet/projectile
-        GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
-        currentBullet.GetComponent<BulletScript>().wP = this;
+        //GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
+        //currentBullet.GetComponent<BulletScript>().wP = this;
 
         //Rotate bullet to shoot direction
-        currentBullet.transform.forward = directionWithSpread.normalized;
+        //currentBullet.transform.forward = directionWithSpread.normalized;
 
         //Add forces to bullet
-        currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
+        //currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
         //currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
 
         //Instantiate muzzle flash, if you have one
