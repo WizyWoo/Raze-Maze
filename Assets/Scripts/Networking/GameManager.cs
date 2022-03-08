@@ -142,7 +142,8 @@ namespace Com.MyCompany.MyGame
         }
 
         public IEnumerator Respawn()
-        {           
+        {
+            Debug.Log("epic");
             yield return new WaitForSeconds(0.5f);
             player.transform.position = lastCheckpointPos;
         }

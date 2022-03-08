@@ -270,8 +270,8 @@ namespace Com.MyCompany.MyGame
               {
                   lives--;
                   Health = 20f;
-                  GameManager.gameManager.Respawn();                 
-             
+                    Debug.Log("cool");
+                    StartCoroutine(GameManager.gameManager.Respawn());
                   if (lives <= 0)
                       gameOver.SetUp();
               }
@@ -284,7 +284,7 @@ namespace Com.MyCompany.MyGame
                 {
                     lives--;
                     Health = 20f;
-                    GameManager.gameManager.Respawn();
+                    StartCoroutine(GameManager.gameManager.Respawn());
 
                     if (lives <= 0)
                         gameOver.SetUp();
