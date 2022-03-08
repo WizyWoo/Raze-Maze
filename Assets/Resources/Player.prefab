@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 260854731484014345}
   - component: {fileID: 3390003008388670589}
   - component: {fileID: 2236391011774727389}
+  - component: {fileID: 3342217303096095145}
   m_Layer: 3
   m_Name: LeftController
   m_TagString: Untagged
@@ -111,6 +112,22 @@ MonoBehaviour:
   grabMaxDist: 0.1
   grabDistance: 0.5
   holding: {fileID: 0}
+--- !u!114 &3342217303096095145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260854731484014351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &260854731515951132
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,6 +363,7 @@ GameObject:
   - component: {fileID: 260854732679865855}
   - component: {fileID: 4883060188735341366}
   - component: {fileID: 1145741916898583857}
+  - component: {fileID: 4359121699869801370}
   m_Layer: 3
   m_Name: RightController
   m_TagString: Untagged
@@ -445,6 +463,22 @@ MonoBehaviour:
   grabMaxDist: 0.1
   grabDistance: 0.5
   holding: {fileID: 0}
+--- !u!114 &4359121699869801370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260854732679865853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &260854732712246979
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +529,7 @@ GameObject:
   - component: {fileID: 260854732798931690}
   - component: {fileID: 2021186300193701649}
   - component: {fileID: 8582126192789186060}
+  - component: {fileID: 383310166694716958}
   m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -649,6 +684,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &383310166694716958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260854732798931693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &818627582625501780
 GameObject:
   m_ObjectHideFlags: 0
