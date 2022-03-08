@@ -156,7 +156,7 @@ public class ItemManager : MonoBehaviour
     {
 
         Random.InitState(System.DateTime.UtcNow.Millisecond);
-        int _rarity = Random.Range(0, 101);
+        int _rarity = 5; //Random.Range(0, 101);
         int _returnID = 0;
         Rarity _tempRarity = Rarity.Common;
 

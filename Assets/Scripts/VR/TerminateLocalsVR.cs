@@ -12,6 +12,7 @@ public class TerminateLocalsVR : MonoBehaviourPunCallbacks
     public PlayerInteraction PI1, PI2;
     public VrHandsController Hand1, Hand2;
     public TrackedPoseDriver[] PoseDrivers;
+    public VRCamPos CamPos;
 
 
     private void Awake()
@@ -35,6 +36,8 @@ public class TerminateLocalsVR : MonoBehaviourPunCallbacks
             Destroy(PI2);
             Destroy(Hand1);
             Destroy(Hand2);
+            Destroy(CamPos);
+
 
             foreach (TrackedPoseDriver _driver in PoseDrivers)
             {
