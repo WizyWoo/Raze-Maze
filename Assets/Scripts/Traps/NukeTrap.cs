@@ -14,15 +14,22 @@ public class NukeTrap : TrapController
     [SerializeField]
     private GameObject explosionParticles;
 
-    public override void ActivateTrap()
+    private void FixedUpdate()
     {
         
-        audioSource.PlayOneShot(boomSound);
-        PhotonNetwork.Instantiate(explosionParticles.name, transform.position, Quaternion.identity);
+        if(TrapActived)
+        {
 
-        GameManager.gameManager.player.GetComponent<PlayerManager>().Damage(null, Damage);
+            audioSource.PlayOneShot(boomSound);
+            Instantiate(explosionParticles, transform.position, Quaternion.identity);
 
-        Destroy(gameObject, boomSound.length);
+            GameManager.gameManager.player.GetComponent<PlayerManager>().Damage(null, Damage);
+
+            Destroy(gameObject, boomSound.length);
+            
+            TrapActived = false;
+            
+        }
 
     }
 

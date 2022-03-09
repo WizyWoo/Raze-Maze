@@ -385,7 +385,7 @@ public class PlayerItemController : MonoBehaviour
             Transform temp = PhotonNetwork.Instantiate(CurrentTrapPrefab.name, placementInfo.Item1, placementInfo.Item3).transform;
             if(CurrentTrapScaleMode != ItemManager.ScalingMode.None)
                 temp.localScale = placementInfo.Item2;
-            temp.gameObject.GetComponent<TrapController>().TrapPlaced(TrapActivationDelay, CurrentItemID);
+            temp.gameObject.GetComponent<TrapController>().OnTrapPlaced(TrapActivationDelay, CurrentItemID);
             Destroy(ghostTrap.gameObject);
             UpdateItemID(0);
             tempFeedback = "";
