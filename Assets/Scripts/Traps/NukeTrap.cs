@@ -13,23 +13,28 @@ public class NukeTrap : TrapController
     private AudioClip boomSound;
     [SerializeField]
     private GameObject explosionParticles;
+    private bool used;
 
     private void FixedUpdate()
     {
+
+        if(TrapActived && !used)
+            NukeTriggered();
+
+    }
+
+    private void NukeTriggered()
+    {
+
+        used = true;
+        audioSource.PlayOneShot(boomSound);
+        Instantiate(explosionParticles, transform.position, Quaternion.identity);
+
+        GameManager.gameManager.player.GetComponent<PlayerManager>().Damage(null, Damage);
+
+        Destroy(gameObject, boomSound.length);
         
-        if(TrapActived)
-        {
-
-            audioSource.PlayOneShot(boomSound);
-            Instantiate(explosionParticles, transform.position, Quaternion.identity);
-
-            GameManager.gameManager.player.GetComponent<PlayerManager>().Damage(null, Damage);
-
-            Destroy(gameObject, boomSound.length);
-            
-            TrapActived = false;
-            
-        }
+        TrapActived = false;
 
     }
 
