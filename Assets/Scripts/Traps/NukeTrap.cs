@@ -33,8 +33,6 @@ public class NukeTrap : TrapController
         GameManager.gameManager.player.GetComponent<PlayerManager>().Damage(null, Damage);
 
         Destroy(gameObject, boomSound.length);
-        
-        TrapActived = false;
 
     }
 
