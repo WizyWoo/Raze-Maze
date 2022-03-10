@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class JelloTrapScript : TrapController
 {
-    private float jelloMultiplier = 1f;
+    //private float jelloMultiplier = 1f;
+    private float movSpeed;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
+        movSpeed = other.GetComponent<VrPlayerController>().MovementSpeed;
         //jelloMultiplier = 0.1f;
 
         //other.GetComponent<PlayerController>()._speedMultiplier = jelloMultiplier;
 
-        other.GetComponent<PlayerController>()._speed = 70;
+        other.GetComponent<VrPlayerController>().MovementSpeed = movSpeed / 2f;
     }
 
     private void OnTriggerExit(Collider other)
@@ -21,7 +23,7 @@ public class JelloTrapScript : TrapController
 
         //other.GetComponent<PlayerController>()._speedMultiplier = jelloMultiplier;
 
-        other.GetComponent<PlayerController>()._speed = 350;
+        other.GetComponent<VrPlayerController>().MovementSpeed = movSpeed;
     }
 
     //bool started;
