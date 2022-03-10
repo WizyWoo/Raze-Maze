@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Grenade : WeaponController
+public class Grenade : ExplosiveWeaponDamage
 {
 
     public float FuseLenght;
@@ -14,7 +14,6 @@ public class Grenade : WeaponController
     {
 
         fuseTime = FuseLenght;
-        gameObject.GetComponent<Collider>().isTrigger = false;
 
     }
 
@@ -36,11 +35,13 @@ public class Grenade : WeaponController
 
     }
 
-    private void Explode()
+    public override void Explode()
     {
 
         PhotonNetwork.Instantiate(ExplosionParticle.name, transform.position, Quaternion.identity);
-        //player damage logic here later
+        
+        base.Explode();
+
         PhotonNetwork.Destroy(gameObject);
 
     }

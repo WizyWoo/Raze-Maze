@@ -130,7 +130,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5693970041408951150}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.08
   m_Height: 0.25
@@ -151,7 +151,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &5787422257912688968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,9 +165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponID: 0
-  Damage: 0
+  Damage: 4
   Firing: 0
   MainAnchor: {fileID: 0}
+  ExplosionRadius: 6
   FuseLenght: 3
   ExplosionParticle: {fileID: 2600141172152766777, guid: 9e17682efd6deca4b9b6535503918f17,
     type: 3}

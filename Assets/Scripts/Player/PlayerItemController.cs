@@ -332,6 +332,8 @@ public class PlayerItemController : MonoBehaviour
             CurrentItemID = 0;
             activeWeapon = PhotonNetwork.Instantiate(CurrentWeaponPrefab.name, _vrHand.position, _vrHand.rotation);
             HoldingAnchor _tempAnchor = activeWeapon.GetComponent<WeaponController>().MainAnchor;
+            if(!_tempAnchor)
+                _tempAnchor = activeWeapon.GetComponent<HoldingAnchor>();
             _tempAnchor.Grabbed(_vrHand);
 
             return _tempAnchor;
