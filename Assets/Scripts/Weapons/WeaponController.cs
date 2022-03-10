@@ -28,7 +28,6 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
         {
             WeaponID = (int)stream.ReceiveNext();
             Firing = (bool)stream.ReceiveNext();
-
         }
 
     }

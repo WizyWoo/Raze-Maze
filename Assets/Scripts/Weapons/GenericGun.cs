@@ -8,10 +8,10 @@ using Com.MyCompany.MyGame;
 public class GenericGun : WeaponController, IPunObservable
 {
     //bullet 
-    public GameObject bullet;
+    //public GameObject bullet;
 
     //bullet force
-    public float shootForce/* ,upwardForce*/;
+    /*public float shootForce*//* ,upwardForce*/
 
     //Gun stats
     public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
@@ -20,12 +20,14 @@ public class GenericGun : WeaponController, IPunObservable
 
     int bulletsShot;
 
-    [SerializeField] private int bulletsLeft; 
+    [SerializeField] private int bulletsLeft;
 
-
+    public float rayLength;
     //Recoil
     //public Rigidbody playerRb;
     //public float recoilForce;
+
+    public ParticleSystem particleSystem;
 
     //bools
     private bool readyToShoot, reloading;
@@ -131,7 +133,7 @@ public class GenericGun : WeaponController, IPunObservable
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0); //Just add spread to last direction
 
         RaycastHit hit;
-        if(Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, 1000, ~LayerMask.NameToLayer("Player"), QueryTriggerInteraction.Ignore))
+        if(Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, rayLength, ~LayerMask.NameToLayer("Player"), QueryTriggerInteraction.Ignore))
         {
 
             if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -147,6 +149,9 @@ public class GenericGun : WeaponController, IPunObservable
         }
 
         Debug.DrawRay(attackPoint.position, attackPoint.forward, Color.green, 10);
+
+        if(particleSystem != null)
+            particleSystem.Play();
 
         //Instantiate bullet/projectile
         //GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
@@ -194,6 +199,7 @@ public class GenericGun : WeaponController, IPunObservable
         reloading = true;
         Invoke("ReloadFinished", reloadTime); //Invoke ReloadFinished function with your reloadTime as delay
     }
+
     private void ReloadFinished()
     {
         //Fill magazine

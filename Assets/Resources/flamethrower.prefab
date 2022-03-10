@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2912974027692373104}
   - component: {fileID: 3196566526158879239}
   - component: {fileID: 7805413069392604535}
-  - component: {fileID: 4093333248062107728}
   - component: {fileID: 2730312883190510855}
+  - component: {fileID: 5961918233139977892}
   m_Layer: 7
   m_Name: flamethrower
   m_TagString: Weapon
@@ -35,8 +35,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2693497630660937900}
-  - {fileID: 7670205690975433087}
   - {fileID: 5664738164538319907}
+  - {fileID: 7759999814111758354}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2912974027692373104}
-  - {fileID: 4093333248062107728}
+  - {fileID: 5961918233139977892}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -115,23 +115,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4093333248062107728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2285447609137030244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abe1e9746aa1f947921bd54b68d71e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WeaponID: 0
-  Damage: 0
-  Firing: 0
-  MainAnchor: {fileID: 3196566526158879239}
-  particleSystem: {fileID: 7995552860899436711}
 --- !u!82 &2730312883190510855
 AudioSource:
   m_ObjectHideFlags: 0
@@ -229,6 +212,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5961918233139977892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2285447609137030244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b830029a2d8fe42819c89b12a96b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponID: 0
+  Damage: 0.02
+  Firing: 0
+  MainAnchor: {fileID: 0}
+  timeBetweenShooting: 0.1
+  spread: 0.1
+  reloadTime: 1.5
+  timeBetweenShots: 1
+  magazineSize: 10
+  bulletsPerTap: 1
+  allowButtonHold: 1
+  canReload: 1
+  bulletsLeft: 0
+  rayLength: 15
+  particleSystem: {fileID: 7995552860899436711}
+  attackPoint: {fileID: 7759999814111758354}
+  allowInvoke: 1
 --- !u!1 &3122761046827766717
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +324,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5656828480709032811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7759999814111758354}
+  m_Layer: 0
+  m_Name: attackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7759999814111758354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656828480709032811}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0807, z: 1.079}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7670205690975433087}
+  m_Father: {fileID: 1512183429755616990}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5890074759761851920
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +387,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1512183429755616990}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3702724288523746793
 MonoBehaviour:
@@ -383,7 +427,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1512183429755616990}
+    m_TransformParent: {fileID: 7759999814111758354}
     m_Modifications:
     - target: {fileID: 1023687222195937257, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
@@ -408,22 +452,22 @@ PrefabInstance:
     - target: {fileID: 4714757991461550113, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4714757991461550113, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0019
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4714757991461550113, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.107
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4714757991461550113, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.789
+      value: 0.176
       objectReference: {fileID: 0}
     - target: {fileID: 4714757991461550113, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
