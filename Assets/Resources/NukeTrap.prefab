@@ -51,6 +51,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrapID: 0
   Damage: 100
+  TrapPlaced: 0
+  TrapActived: 0
   audioSource: {fileID: 2342730089807578551}
   boomSound: {fileID: 8300000, guid: ad111c2336e759048b82eb88a7985d48, type: 3}
   explosionParticles: {fileID: 2600141172152766777, guid: 4b0292f0adc9788409bbc218da099154,

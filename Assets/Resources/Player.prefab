@@ -156,8 +156,8 @@ MonoBehaviour:
   CurrentTrapPrefab: {fileID: 0}
   CurrentTrapScaleMode: 0
   CurrentWeaponUseMode: 0
-  TrapActivationDelay: 0
   EquippedWeaponID: 0
+  TrapActivationDelay: 0
   TrapPlaceDistance: 10
   PlacementCheckRange: 0
   ScaleMaxLenght: 5
