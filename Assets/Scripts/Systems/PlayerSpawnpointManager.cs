@@ -46,9 +46,8 @@ public class PlayerSpawnpointManager : MonoBehaviour
                 }
             }
         }
-        if(_players.Count > storedCount){
-            int rng = Random.Range(0, _spawnPoints.Count);
-            _players[_players.Count - 1].transform.position = _spawnPoints[rng].transform.position;
+        if(_players.Count > storedCount){   // Needs testing
+            _players[_players.Count - 1].transform.position = _spawnPoints[_players.Count % (_spawnPoints.Count - 1)].transform.position;
         }
     }
     public void SpawnPlayers(){

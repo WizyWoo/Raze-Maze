@@ -31,6 +31,7 @@ void surf (Input IN, inout SurfaceOutput o)
     if(abs(IN.worldNormal.x)>0.5)
     {
         UV = IN.worldPos.yz; // side
+        UV = float2(UV[1],UV[0]);
         c = tex2D(_WallTex, UV* _Scale); // use WALLSIDE texture
     }
     else if(abs(IN.worldNormal.z)>0.5)

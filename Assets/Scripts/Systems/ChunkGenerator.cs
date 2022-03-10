@@ -30,6 +30,7 @@ public class ChunkGenerator : MonoBehaviour
 
         int mazeWidth = mazeTemplates[generateMazeId].x.Count;
         int mazeLength = mazeTemplates[generateMazeId].x[0].y.Count;
+        int spawnedPoints = 0;
         
         for (int w = 0; w < mazeWidth; w++)
         {
@@ -46,10 +47,12 @@ public class ChunkGenerator : MonoBehaviour
                     case 1: // Creates an empty chunk
                         g = Instantiate(nullChunk);
                     break;
-                    case 2:
+                    case 2: // Creates a spawnpoint chunk
                         g = Instantiate(startChunk);
+                        g.GetComponentInChildren<PlayerSpawnpoint>().spawnpointId = spawnedPoints;
+                        spawnedPoints++;
                     break;
-                    case 3:
+                    case 3: // Creates an exit chunk
                         g = Instantiate(exitChunk);
                     break;
                     
