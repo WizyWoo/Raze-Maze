@@ -12,7 +12,7 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GetComponent<PlayerManager>().Damage(wP);
+            GetComponent<PlayerManager>().Damage(wP.Damage);
         }
     }
 }

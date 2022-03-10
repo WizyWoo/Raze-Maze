@@ -187,7 +187,7 @@ namespace Com.MyCompany.MyGame
             //    Health -= other.GetComponent<WeaponController>().Damage;
 
             if (other.tag.Contains("Trap"))
-                 Damage(null, trapDamage);
+                 Damage(trapDamage);
 
         }
 
@@ -261,39 +261,20 @@ namespace Com.MyCompany.MyGame
 
         #endregion
 
-        public void Damage(WeaponController wP = null, float damage = 0)
+        public void Damage(float damage = 0)
         {
-            if (wP != null)
-            {
-              Health -= wP.Damage;
-             
-              if (Health <= 0)
-              {
-                  lives--;
-                  Health = 1f;
-                 if (photonView.IsMine)
-                 {
-                   GameManager.gameManager.Respawn();
-                        //StartCoroutine(GameManager.gameManager.Respawn());
-                   if (lives <= 0)
-                       gameOver.SetUp();                
-                 }
-              }
-            }
-            else
-            {
-                Health -= damage;
 
-                if (Health <= 0)
-                {
-                    lives--;
-                    Health = 1f;
-                    //StartCoroutine(GameManager.gameManager.Respawn());
-                    GameManager.gameManager.Respawn();
+            Health -= damage;
 
-                    if (lives <= 0)
-                        gameOver.SetUp();
-                }
+            if (Health <= 0)
+            {
+                lives--;
+                Health = 1f;
+                //StartCoroutine(GameManager.gameManager.Respawn());
+                GameManager.gameManager.Respawn();
+
+                if (lives <= 0)
+                    gameOver.SetUp();
             }
 
             Debug.Log(gameObject.name + " was damaged");
