@@ -1501,7 +1501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrapID: 0
-  Damage: 0.01
+  Damage: 0.005
   TrapPlaced: 0
   TrapActived: 0
   ContinueslyDamage: 1
