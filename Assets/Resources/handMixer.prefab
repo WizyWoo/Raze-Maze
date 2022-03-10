@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2399728877359873617}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -1.191758, z: 0}
+  m_LocalPosition: {x: -0, y: -1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,6 +428,8 @@ MonoBehaviour:
   mainAnchor: 0
   handTransform: {fileID: 0}
   rb: {fileID: 0}
+  audioSource: {fileID: 0}
+  grabSound: {fileID: 0}
 --- !u!1 &8270857594716394717
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +658,10 @@ MonoBehaviour:
   mainAnchor: 1
   handTransform: {fileID: 0}
   rb: {fileID: 0}
+  audioSource: {fileID: 0}
+  grabSound: {fileID: 0}
   ScriptToActivate: {fileID: 0}
+  activateSound: {fileID: 0}
 --- !u!114 &9109807381526474314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,19 +675,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponID: 0
-  Damage: 100
+  Damage: 1
   Firing: 0
   MainAnchor: {fileID: 0}
   bullet: {fileID: 1809724846989947614, guid: 3010be602f456f34ba0048fcf9c7864d, type: 3}
-  shootForce: 120
-  timeBetweenShooting: 0
+  shootForce: 100
+  timeBetweenShooting: 4
   spread: 0
-  reloadTime: 0
-  timeBetweenShots: 0
-  magazineSize: 1
+  reloadTime: 1
+  timeBetweenShots: 4
+  magazineSize: 10
   bulletsPerTap: 1
   allowButtonHold: 0
   canReload: 0
   bulletsLeft: 0
+  rayLength: 10
+  particleSystem: {fileID: 0}
   attackPoint: {fileID: 7050052531768342197}
   allowInvoke: 1

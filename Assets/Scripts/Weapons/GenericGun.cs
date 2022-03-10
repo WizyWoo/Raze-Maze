@@ -11,7 +11,7 @@ public class GenericGun : WeaponController, IPunObservable
     public GameObject bullet;
 
     //bullet force
-    public float shootForce/* ,upwardForce*/;
+    public float shootForce;//* ,upwardForce
 
     //Gun stats
     public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
@@ -20,12 +20,14 @@ public class GenericGun : WeaponController, IPunObservable
 
     int bulletsShot;
 
-    [SerializeField] private int bulletsLeft; 
+    [SerializeField] private int bulletsLeft;
 
-
+    public float rayLength;
     //Recoil
     //public Rigidbody playerRb;
     //public float recoilForce;
+
+    public ParticleSystem particleSystem;
 
     //bools
     private bool readyToShoot, reloading;
@@ -43,8 +45,7 @@ public class GenericGun : WeaponController, IPunObservable
 
     private LayerMask layerMask;
 
-    //GameObject mixerObject;
-    //GameObject mixerBlades;
+    private GameObject mixerObject, mixerBlades;
 
     private void Awake()
     {
@@ -55,8 +56,8 @@ public class GenericGun : WeaponController, IPunObservable
 
     private void Start()
     {
-        //mixerObject = GameObject.Find("handMixer");
-        //mixerBlades = mixerObject.transform.GetChild(1).gameObject;
+        mixerObject = GameObject.Find("handMixer");
+        mixerBlades = mixerObject.transform.GetChild(1).gameObject;
     }
 
     private void Update()
@@ -116,9 +117,7 @@ public class GenericGun : WeaponController, IPunObservable
         //if (Physics.Raycast(ray, out hit))
         //    targetPoint = hit.point;
         //else
-        //    targetPoint = ray.GetPoint(75); //Just a point far away from the player
-
-        //mixerBlades.gameObject.SetActive(false);
+        //    targetPoint = ray.GetPoint(75); //Just a point far away from the player       
 
         //Calculate direction from attackPoint to targetPoint
         Vector3 directionWithoutSpread = attackPoint.forward;
@@ -131,7 +130,7 @@ public class GenericGun : WeaponController, IPunObservable
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0); //Just add spread to last direction
 
         RaycastHit hit;
-        if(Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, 1000, ~LayerMask.NameToLayer("Player"), QueryTriggerInteraction.Ignore))
+        if(Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, rayLength, ~LayerMask.NameToLayer("Player"), QueryTriggerInteraction.Ignore))
         {
 
             if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -148,16 +147,25 @@ public class GenericGun : WeaponController, IPunObservable
 
         Debug.DrawRay(attackPoint.position, attackPoint.forward, Color.green, 10);
 
-        //Instantiate bullet/projectile
-        //GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
-        //currentBullet.GetComponent<BulletScript>().wP = this;
+        if(particleSystem != null)
+            particleSystem.Play();
 
-        //Rotate bullet to shoot direction
-        //currentBullet.transform.forward = directionWithSpread.normalized;
+        if(bullet != null)
+        {
+            if (mixerBlades != null)
+                mixerBlades.gameObject.SetActive(false);
 
-        //Add forces to bullet
-        //currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
-        //currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
+            //Instantiate bullet/projectile
+            GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
+           //currentBullet.GetComponent<BulletScript>().wP = this;
+
+           //Rotate bullet to shoot direction
+           currentBullet.transform.forward = directionWithSpread.normalized;
+
+           //Add forces to bullet
+           currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
+           //currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
+        }
 
         //Instantiate muzzle flash, if you have one
         //if (muzzleFlash != null)
@@ -194,6 +202,7 @@ public class GenericGun : WeaponController, IPunObservable
         reloading = true;
         Invoke("ReloadFinished", reloadTime); //Invoke ReloadFinished function with your reloadTime as delay
     }
+
     private void ReloadFinished()
     {
         //Fill magazine
