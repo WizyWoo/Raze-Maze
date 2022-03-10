@@ -12,7 +12,7 @@ public class WeepingAngel : TrapController
     {
         player = GameObject.FindGameObjectWithTag("Player");
         camera = Camera.main;
-        renderer = GetComponent<Renderer>();
+        renderer = GetComponentInChildren<Renderer>();
     }
 
     private void Update()
