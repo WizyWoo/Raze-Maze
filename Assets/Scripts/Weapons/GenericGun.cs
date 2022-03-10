@@ -8,10 +8,10 @@ using Com.MyCompany.MyGame;
 public class GenericGun : WeaponController, IPunObservable
 {
     //bullet 
-    //public GameObject bullet;
+    public GameObject bullet;
 
     //bullet force
-    /*public float shootForce*//* ,upwardForce*/
+    public float shootForce;//* ,upwardForce
 
     //Gun stats
     public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
@@ -45,8 +45,7 @@ public class GenericGun : WeaponController, IPunObservable
 
     private LayerMask layerMask;
 
-    //GameObject mixerObject;
-    //GameObject mixerBlades;
+    private GameObject mixerObject, mixerBlades;
 
     private void Awake()
     {
@@ -57,8 +56,8 @@ public class GenericGun : WeaponController, IPunObservable
 
     private void Start()
     {
-        //mixerObject = GameObject.Find("handMixer");
-        //mixerBlades = mixerObject.transform.GetChild(1).gameObject;
+        mixerObject = GameObject.Find("handMixer");
+        mixerBlades = mixerObject.transform.GetChild(1).gameObject;
     }
 
     private void Update()
@@ -118,9 +117,7 @@ public class GenericGun : WeaponController, IPunObservable
         //if (Physics.Raycast(ray, out hit))
         //    targetPoint = hit.point;
         //else
-        //    targetPoint = ray.GetPoint(75); //Just a point far away from the player
-
-        //mixerBlades.gameObject.SetActive(false);
+        //    targetPoint = ray.GetPoint(75); //Just a point far away from the player       
 
         //Calculate direction from attackPoint to targetPoint
         Vector3 directionWithoutSpread = attackPoint.forward;
@@ -153,16 +150,22 @@ public class GenericGun : WeaponController, IPunObservable
         if(particleSystem != null)
             particleSystem.Play();
 
-        //Instantiate bullet/projectile
-        //GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
-        //currentBullet.GetComponent<BulletScript>().wP = this;
+        if(bullet != null)
+        {
+            if (mixerBlades != null)
+                mixerBlades.gameObject.SetActive(false);
 
-        //Rotate bullet to shoot direction
-        //currentBullet.transform.forward = directionWithSpread.normalized;
+            //Instantiate bullet/projectile
+            GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
+           //currentBullet.GetComponent<BulletScript>().wP = this;
 
-        //Add forces to bullet
-        //currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
-        //currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
+           //Rotate bullet to shoot direction
+           currentBullet.transform.forward = directionWithSpread.normalized;
+
+           //Add forces to bullet
+           currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
+           //currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
+        }
 
         //Instantiate muzzle flash, if you have one
         //if (muzzleFlash != null)
