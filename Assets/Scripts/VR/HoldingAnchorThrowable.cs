@@ -5,8 +5,8 @@ using UnityEngine;
 public class HoldingAnchorThrowable : HoldingAnchor
 {
 
-    public bool IsWeapon;
-    public float FollowSpeedMult;
+    public bool ActivateWhenThrown;
+    public float FollowSpeedMult = 50;
     public WeaponController ScriptToActivate;
     public Collider MainCollider;
 
@@ -34,7 +34,7 @@ public class HoldingAnchorThrowable : HoldingAnchor
         IsHeld = false;
         handTransform = null;
 
-        if(IsWeapon)
+        if(ActivateWhenThrown)
         {
 
             ScriptToActivate.Thrown();

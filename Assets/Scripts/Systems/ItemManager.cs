@@ -156,7 +156,7 @@ public class ItemManager : MonoBehaviour
     {
 
         Random.InitState(System.DateTime.UtcNow.Millisecond);
-        int _rarity = 5; //Random.Range(0, 101);
+        int _rarity = Random.Range(0, 101);
         int _returnID = 0;
         Rarity _tempRarity = Rarity.Common;
 
@@ -188,7 +188,7 @@ public class ItemManager : MonoBehaviour
             {
 
                 _returnID = commonItems[Random.Range(0, commonItems.Count)];
-                if(ItemTheme[_returnID] == _theme)
+                if(ItemTheme[_returnID] == _theme || ItemTheme[_returnID] == Theme.Universal)
                 {
 
                     _idChosen = true;
@@ -200,7 +200,7 @@ public class ItemManager : MonoBehaviour
             {
 
                 _returnID = unCommonItems[Random.Range(0, unCommonItems.Count)];
-                if(ItemTheme[_returnID] == _theme)
+                if(ItemTheme[_returnID] == _theme || ItemTheme[_returnID] == Theme.Universal)
                 {
 
                     _idChosen = true;
@@ -212,7 +212,7 @@ public class ItemManager : MonoBehaviour
             {
 
                 _returnID = rareItems[Random.Range(0, rareItems.Count)];
-                if(ItemTheme[_returnID] == _theme)
+                if(ItemTheme[_returnID] == _theme || ItemTheme[_returnID] == Theme.Universal)
                 {
 
                     _idChosen = true;
@@ -224,7 +224,7 @@ public class ItemManager : MonoBehaviour
             {
 
                 _returnID = legendaryItems[Random.Range(0, legendaryItems.Count)];
-                if(ItemTheme[_returnID] == _theme)
+                if(ItemTheme[_returnID] == _theme || ItemTheme[_returnID] == Theme.Universal)
                 {
 
                     _idChosen = true;
