@@ -36,7 +36,7 @@ public class Grenade : ExplosiveWeaponDamage
         if(Used)
         {
 
-            //Explode();
+            Explode();
 
         }
 
