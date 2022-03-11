@@ -13,6 +13,7 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
     [Tooltip("Keep in mind, the player has 20 health")]
     public float Damage;
     public bool Firing;
+    public bool Used;
     public HoldingAnchor MainAnchor;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -22,12 +23,15 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
         {
             stream.SendNext(WeaponID);
             stream.SendNext(Firing);
+            stream.SendNext(Used);
 
         }
         else if(stream.IsReading)
         {
             WeaponID = (int)stream.ReceiveNext();
             Firing = (bool)stream.ReceiveNext();
+            Used = (bool)stream.ReceiveNext();
+
         }
 
     }

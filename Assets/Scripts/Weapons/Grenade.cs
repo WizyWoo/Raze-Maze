@@ -27,9 +27,16 @@ public class Grenade : ExplosiveWeaponDamage
             if(fuseTime <= 0)
             {
 
-                Explode();
+                Used = true;
 
             }
+
+        }
+
+        if(Used)
+        {
+
+            Explode();
 
         }
 
