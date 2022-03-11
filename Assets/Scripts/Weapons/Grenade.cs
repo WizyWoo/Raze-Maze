@@ -36,7 +36,7 @@ public class Grenade : ExplosiveWeaponDamage
         if(Used)
         {
 
-            Explode();
+            //Explode();
 
         }
 
@@ -49,7 +49,7 @@ public class Grenade : ExplosiveWeaponDamage
         
         base.Explode();
 
-        //Destroy(gameObject);
+        Destroy(gameObject);
 
     }
 
