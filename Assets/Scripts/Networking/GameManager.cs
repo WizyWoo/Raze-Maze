@@ -160,9 +160,13 @@ namespace Com.MyCompany.MyGame
                 Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
             }
 
-            PhotonNetwork.Destroy(player);
+            if (photonView.IsMine)
+            {
+               PhotonNetwork.Destroy(player);
+           
+               SceneManager.LoadScene("waitingRoomScene");
 
-            SceneManager.LoadScene("waitingRoomScene");
+            }
         }
     }
 
