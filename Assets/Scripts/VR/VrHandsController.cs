@@ -73,7 +73,7 @@ public class VrHandsController : MonoBehaviour
     private void Start()
     {
 
-        grabMask = (1 << LayerMask.NameToLayer("Interactables") + 1 << LayerMask.NameToLayer("DangerInteractable"));
+        grabMask = 1 << LayerMask.NameToLayer("Interactables");
         itemController = transform.root.GetComponent<PlayerItemController>();
         
     }
