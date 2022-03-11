@@ -280,7 +280,7 @@ namespace Com.MyCompany.MyGame
                 }
             }
 
-            Debug.Log(gameObject.name + " was damaged");
+            Debug.Log(gameObject.name + " was damaged for " + damage);
 
         }
     }
