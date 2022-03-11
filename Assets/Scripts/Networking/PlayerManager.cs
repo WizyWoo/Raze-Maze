@@ -271,10 +271,14 @@ namespace Com.MyCompany.MyGame
                 lives--;
                 Health = 1f;
                 //StartCoroutine(GameManager.gameManager.Respawn());
-                GameManager.gameManager.Respawn();
+                if (photonView.IsMine)
+                {
+                   GameManager.gameManager.Respawn();
 
-                if (lives <= 0)
-                    gameOver.SetUp();
+                   if (lives <= 0)
+                       gameOver.SetUp();
+
+                }
             }
 
             Debug.Log(gameObject.name + " was damaged");
