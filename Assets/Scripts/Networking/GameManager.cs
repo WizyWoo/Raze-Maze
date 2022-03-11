@@ -17,7 +17,7 @@ namespace Com.MyCompany.MyGame
 
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
-
+        
         #endregion
 
         [SerializeField] private float levelTransitionDelay = 1f;
@@ -28,6 +28,7 @@ namespace Com.MyCompany.MyGame
 
         public static GameManager gameManager;
 
+        private PhotonView playerPhotonView;
 
         private void Awake()
         {
@@ -49,7 +50,7 @@ namespace Com.MyCompany.MyGame
             {
 
                 PhotonNetwork.Instantiate("PickupDroppedWeaponPrefab", Vector3.up * 5, Quaternion.identity);
-
+                
             }
 
         }
@@ -122,6 +123,7 @@ namespace Com.MyCompany.MyGame
             }
 
             player = GameObject.FindGameObjectWithTag("Player");
+            playerPhotonView = player.GetPhotonView();
         }
 
         void LoadArena()
@@ -160,12 +162,11 @@ namespace Com.MyCompany.MyGame
                 Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
             }
 
-            if (photonView.IsMine)
+            if (playerPhotonView.IsMine)
             {
                PhotonNetwork.Destroy(player);
            
                SceneManager.LoadScene("waitingRoomScene");
-
             }
         }
     }
