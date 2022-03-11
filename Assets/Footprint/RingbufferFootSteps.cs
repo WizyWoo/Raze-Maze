@@ -22,7 +22,7 @@ public class RingbufferFootSteps : MonoBehaviour
 
     public void Update()
     {
-        if(_fa.grounded || _fa == null){
+        if(_fa == null || _fa.grounded){
             if (Vector3.Distance(lastEmit, transform.position) > delta){
                 Gizmos.color = Color.green;
                 var pos = transform.position + (transform.right * gap * dir);
