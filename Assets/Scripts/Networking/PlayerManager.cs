@@ -276,7 +276,7 @@ namespace Com.MyCompany.MyGame
                    GameManager.gameManager.Respawn();
 
                    if (lives <= 0)
-                       gameOver.SetUp();
+                        GameManager.gameManager.GameOver();
 
                 }
             }
