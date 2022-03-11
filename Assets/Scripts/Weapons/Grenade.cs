@@ -49,7 +49,7 @@ public class Grenade : ExplosiveWeaponDamage
         
         base.Explode();
 
-        PhotonNetwork.Destroy(gameObject);
+        //Destroy(gameObject);
 
     }
 
