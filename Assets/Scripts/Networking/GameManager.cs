@@ -156,7 +156,14 @@ namespace Com.MyCompany.MyGame
         public void GameOver()
         {
             Debug.Log("GAME OVER!");
+            if (!PhotonNetwork.IsMasterClient)
+            {
+                Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
+            }
+            Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
+            PhotonNetwork.LoadLevel("waitingRoom" /*  "mazeTestScene"  + PhotonNetwork.CurrentRoom.PlayerCount*/);
         }
+    }
 
         #endregion
     }
