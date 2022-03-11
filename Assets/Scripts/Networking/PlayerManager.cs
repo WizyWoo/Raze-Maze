@@ -170,26 +170,26 @@ namespace Com.MyCompany.MyGame
         /// Note: when jumping and firing at the same, you'll find that the player's own beam intersects with itself
         /// One could move the collider further away to prevent this or check if the beam belongs to the player.
         /// </summary>
-        void OnTriggerEnter(Collider other)
-        {
-            if (!photonView.IsMine)
-            {
-                return;
-            }
-            // We are only interested in Beamers
-            // we should be using tags but for the sake of distribution, let's simply check by name.
-            if (!other.tag.Contains("Weapon") && !other.tag.Contains("Trap"))
-            {
-                return;
-            }
+        //void OnTriggerEnter(Collider other)
+        //{
+        //    if (!photonView.IsMine)
+        //    {
+        //        return;
+        //    }
+        //    // We are only interested in Beamers
+        //    // we should be using tags but for the sake of distribution, let's simply check by name.
+        //    if (!other.tag.Contains("Weapon") && !other.tag.Contains("Trap"))
+        //    {
+        //        return;
+        //    }
 
-            //if(other.tag.Contains("Weapon"))
-            //    Health -= other.GetComponent<WeaponController>().Damage;
+        //    //if(other.tag.Contains("Weapon"))
+        //    //    Health -= other.GetComponent<WeaponController>().Damage;
 
-            if (other.tag.Contains("Trap"))
-                 Damage(trapDamage);
+        //    //if (other.tag.Contains("Trap"))
+        //    //     Damage(trapDamage);
 
-        }
+        //}
 
         /// <summary>
         /// MonoBehaviour method called once per frame for every Collider 'other' that is touching the trigger.
@@ -275,9 +275,8 @@ namespace Com.MyCompany.MyGame
                 {
                    GameManager.gameManager.Respawn();
 
-                   if (lives <= 0)
-                        GameManager.gameManager.GameOver();
-
+                    if (lives <= 0)
+                        GameManager.gameManager.LeaveRoom();
                 }
             }
 
