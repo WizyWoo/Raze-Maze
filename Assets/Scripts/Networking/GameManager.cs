@@ -27,8 +27,7 @@ namespace Com.MyCompany.MyGame
 
 
         public static GameManager gameManager;
-
-        private PhotonView playerPhotonView;
+        
 
         private void Awake()
         {
@@ -123,7 +122,6 @@ namespace Com.MyCompany.MyGame
             }
 
             player = GameObject.FindGameObjectWithTag("Player");
-            playerPhotonView = player.GetPhotonView();
         }
 
         void LoadArena()
@@ -138,7 +136,7 @@ namespace Com.MyCompany.MyGame
 
         public void WinLevel()
         {
-            completeLevelUI.SetActive(true);
+            LeaveRoom();
             //Invoke("LoadNextLevel", levelTransitionDelay);
         }
 
@@ -154,18 +152,18 @@ namespace Com.MyCompany.MyGame
             player.transform.position = lastCheckpointPos;
         }
 
-        public void GameOver()
+        public void GameOver(PhotonView photonView)
         {
-            Debug.Log("GAME OVER!");
-            if (!PhotonNetwork.IsMasterClient)
+            if (photonView.IsMine)
             {
-                Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
-            }
-
-            if (playerPhotonView.IsMine)
-            {
-               PhotonNetwork.Destroy(player);
+               Debug.Log("GAME OVER!");
+               if (!PhotonNetwork.IsMasterClient)
+               {
+                   Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
+               }
            
+               PhotonNetwork.Destroy(player);
+                         
                SceneManager.LoadScene("waitingRoomScene");
             }
         }
