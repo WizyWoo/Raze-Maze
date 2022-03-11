@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 
-
 namespace Com.MyCompany.MyGame
 {
     public class GameManager : MonoBehaviourPunCallbacks
@@ -163,7 +162,7 @@ namespace Com.MyCompany.MyGame
 
             PhotonNetwork.Destroy(player);
 
-            PhotonNetwork.LoadLevel("waitingRoomScene");
+            SceneManager.LoadScene("waitingRoomScene");
         }
     }
 
