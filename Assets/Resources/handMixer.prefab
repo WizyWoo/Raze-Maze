@@ -677,6 +677,7 @@ MonoBehaviour:
   WeaponID: 0
   Damage: 1
   Firing: 0
+  Used: 0
   MainAnchor: {fileID: 0}
   bullet: {fileID: 1809724846989947614, guid: 3010be602f456f34ba0048fcf9c7864d, type: 3}
   shootForce: 100
