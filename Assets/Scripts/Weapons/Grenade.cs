@@ -33,10 +33,13 @@ public class Grenade : ExplosiveWeaponDamage
 
         }
 
-        if(Used)
+        if(Used && !ExplosiveUsed)
         {
 
+            ExplosiveUsed = true;
             Explode();
+
+            Invoke("DestroyMe", 10);
 
         }
 
@@ -48,6 +51,13 @@ public class Grenade : ExplosiveWeaponDamage
         PhotonNetwork.Instantiate(ExplosionParticle.name, transform.position, Quaternion.identity);
         
         base.Explode();
+
+    }
+
+    public void DestroyMe()
+    {
+
+        PhotonNetwork.Destroy(gameObject);
 
     }
 

@@ -16,6 +16,14 @@ public class TrapContactDamage : TrapController
         gameObject.GetComponent<Collider>().isTrigger = false;
         
     }
+
+    private void FixedUpdate()
+    {
+
+        if(TrapActived)
+            gameObject.GetComponent<Collider>().isTrigger = false;
+
+    }
     
     private void OnCollisionEnter(Collision _other)
     {
