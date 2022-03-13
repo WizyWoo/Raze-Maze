@@ -217,7 +217,7 @@ public class PlayerItemController : MonoBehaviour
 
         }
 
-        _rotation = PlaceTrapFrom.rotation;
+        _rotation = new Quaternion(0, PlaceTrapFrom.rotation.y, 0, PlaceTrapFrom.rotation.w);
 
         return (_position, _scale, _rotation);
 
@@ -259,7 +259,7 @@ public class PlayerItemController : MonoBehaviour
 
         }
 
-        _rotation = PlaceTrapFrom.rotation;
+        _rotation = new Quaternion(0, PlaceTrapFrom.rotation.y, 0, PlaceTrapFrom.rotation.w);
 
         return (_position, _scale, _rotation);
 
@@ -288,7 +288,7 @@ public class PlayerItemController : MonoBehaviour
         }
 
         //might wanna change this later, maybe?
-        _rotation = PlaceTrapFrom.rotation;
+        _rotation = new Quaternion(0, PlaceTrapFrom.rotation.y, 0, PlaceTrapFrom.rotation.w);
 
         return (_position, Vector3.zero, _rotation);
 
