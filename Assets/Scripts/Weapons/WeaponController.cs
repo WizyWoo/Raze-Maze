@@ -10,7 +10,7 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
     //The ID is set automatically based on where the prefab is located in the PlayerWeaponControllers prefab array
 
     public int WeaponID;
-    [Tooltip("Keep in mind, the player has 20 health")]
+    [Tooltip("Keep in mind, the player has 1 health")]
     public float Damage;
     public bool Firing;
     public bool Used;

@@ -49,8 +49,6 @@ public class Grenade : ExplosiveWeaponDamage
         
         base.Explode();
 
-        Destroy(gameObject);
-
     }
 
 }
