@@ -217,7 +217,7 @@ public class PlayerItemController : MonoBehaviour
 
         }
 
-        _rotation = Parent.rotation;
+        _rotation = PlaceTrapFrom.rotation;
 
         return (_position, _scale, _rotation);
 
@@ -259,7 +259,7 @@ public class PlayerItemController : MonoBehaviour
 
         }
 
-        _rotation = Parent.rotation;
+        _rotation = PlaceTrapFrom.rotation;
 
         return (_position, _scale, _rotation);
 
@@ -288,7 +288,7 @@ public class PlayerItemController : MonoBehaviour
         }
 
         //might wanna change this later, maybe?
-        _rotation = Parent.rotation;
+        _rotation = PlaceTrapFrom.rotation;
 
         return (_position, Vector3.zero, _rotation);
 
