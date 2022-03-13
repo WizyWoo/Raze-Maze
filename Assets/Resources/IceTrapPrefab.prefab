@@ -1427,8 +1427,8 @@ GameObject:
   - component: {fileID: 3642738661488049608}
   - component: {fileID: 2549496232316688937}
   - component: {fileID: -8500936281572874460}
-  - component: {fileID: 5327772518433120169}
   - component: {fileID: -2555264835059212854}
+  - component: {fileID: 72748552242734841}
   m_Layer: 6
   m_Name: IceTrapPrefab
   m_TagString: Trap
@@ -1485,28 +1485,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 5327772518433120169}
   - {fileID: -2555264835059212854}
+  - {fileID: 72748552242734841}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &5327772518433120169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8960588332873188362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4081118a5df4684cbfb692606b0b08d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrapID: 0
-  Damage: 0.005
-  TrapPlaced: 0
-  TrapActived: 0
-  ContinueslyDamage: 1
 --- !u!114 &-2555264835059212854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,6 +1506,23 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
+--- !u!114 &72748552242734841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8960588332873188362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5b2a13efd063b419e5eadf65cbf230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrapID: 0
+  Damage: 0.005
+  TrapPlaced: 0
+  TrapActived: 0
+  ContinueslyDamage: 1
 --- !u!1 &9176398720531996095
 GameObject:
   m_ObjectHideFlags: 0
