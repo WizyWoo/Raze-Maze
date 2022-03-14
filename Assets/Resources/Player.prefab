@@ -2145,7 +2145,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4445941611951998315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2154,7 +2154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 39.8, y: 3.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7182198199944876703
@@ -2211,6 +2211,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2a8112b4d236f48b485fae35d76041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  playerNameText: {fileID: 0}
+  playerHealthSlider: {fileID: 0}
 --- !u!1 &5305728203882041000
 GameObject:
   m_ObjectHideFlags: 0
@@ -3106,6 +3109,7 @@ GameObject:
   - component: {fileID: 8895159522355598185}
   - component: {fileID: 4896229504840415999}
   - component: {fileID: 6886035309678727688}
+  - component: {fileID: 8439068793871908170}
   m_Layer: 5
   m_Name: PlayerUI
   m_TagString: Untagged
@@ -3121,8 +3125,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7907662045741302879}
   m_LocalRotation: {x: 0.28606585, y: 0.6808568, z: -0.23512949, w: 0.6319133}
-  m_LocalPosition: {x: 0, y: 0, z: -283}
-  m_LocalScale: {x: 2.2816, y: 2.2816, z: 2.2816}
+  m_LocalPosition: {x: 0, y: 0, z: -279.4}
+  m_LocalScale: {x: 2.8259897, y: 2.8259897, z: 2.8259897}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6617387993889415640}
@@ -3134,7 +3138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 42.978, y: 97.129, z: 7.254}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: -49.8}
+  m_AnchoredPosition: {x: 14, y: -26.3}
   m_SizeDelta: {x: 80, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4896229504840415999
@@ -3200,6 +3204,21 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &8439068793871908170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907662045741302879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2a8112b4d236f48b485fae35d76041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 8268114991359721830}
+  playerNameText: {fileID: 7960304087224042040}
+  playerHealthSlider: {fileID: 4896229504840415999}
 --- !u!1 &8066557717527959540
 GameObject:
   m_ObjectHideFlags: 0

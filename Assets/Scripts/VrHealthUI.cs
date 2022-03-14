@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class VrHealthUI : MonoBehaviour
 {
+    [SerializeField]
     private PlayerManager target;
 
     [Tooltip("UI Text to display Player's Name")]
@@ -17,6 +18,11 @@ public class VrHealthUI : MonoBehaviour
     [SerializeField]
     private Slider playerHealthSlider;
 
+    private void Start()
+    {
+        SetName();
+    }
+
     void Update()
     {
         // Reflect the Player Health
@@ -26,15 +32,8 @@ public class VrHealthUI : MonoBehaviour
         }
     }
 
-    public void SetTarget(PlayerManager _target)
+    public void SetName()
     {
-        if (_target == null)
-        {
-            Debug.LogError("<Color=Red><a>Missing</a></Color> PlayMakerManager target for PlayerUI.SetTarget.", this);
-            return;
-        }
-        // Cache references for efficiency
-        target = _target;
         if (playerNameText != null)
         {
             playerNameText.text = target.photonView.Owner.NickName;
