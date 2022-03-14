@@ -11,7 +11,7 @@ public class VrHealthUI : MonoBehaviour
 
     [Tooltip("UI Text to display Player's Name")]
     [SerializeField]
-    private Text playerNameText;
+    private Text playerNameText, playerLives;
 
 
     [Tooltip("UI Slider to display Player's Health")]
@@ -29,6 +29,7 @@ public class VrHealthUI : MonoBehaviour
         if (playerHealthSlider != null)
         {
             playerHealthSlider.value = target.Health;
+            playerLives.text = target.lives.ToString();
         }
     }
 
