@@ -154,6 +154,8 @@ MonoBehaviour:
   DesktopMode: 1
   CurrentWeaponPrefab: {fileID: 0}
   CurrentTrapPrefab: {fileID: 0}
+  TrapDisplayObj: {fileID: 0}
+  WeaponDisplayObj: {fileID: 0}
   CurrentTrapScaleMode: 0
   CurrentWeaponUseMode: 0
   EquippedWeaponID: 0
