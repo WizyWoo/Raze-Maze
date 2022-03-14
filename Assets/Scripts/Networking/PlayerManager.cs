@@ -120,7 +120,8 @@ namespace Com.MyCompany.MyGame
                 Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
             }
 
-            GameManager.gameManager.lastCheckpointPos = transform.position;
+
+            Invoke("SetInitialPos", 0.5f);
             //CameraWork _cameraWork = this.gameObject.GetComponentInChildren<CameraWork>();
 
 
@@ -222,6 +223,11 @@ namespace Com.MyCompany.MyGame
             this.CalledOnLevelWasLoaded(level);
         }
         #endif
+
+        void SetInitialPos()
+        {
+            GameManager.gameManager.lastCheckpointPos = transform.position;
+        }
 
 
         void CalledOnLevelWasLoaded(int level)
