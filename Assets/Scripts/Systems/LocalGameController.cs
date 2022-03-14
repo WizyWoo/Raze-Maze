@@ -10,10 +10,12 @@ public class LocalGameController : MonoBehaviour
     private void Awake()
     {
 
-        if(LocalGameController.main != this)
+        if(LocalGameController.main != null)
             Destroy(gameObject);
         else
             main = this;
+
+        DontDestroyOnLoad(this);
 
     }
 
