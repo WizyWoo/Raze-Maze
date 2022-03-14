@@ -6,7 +6,7 @@ using Photon.Pun;
 public class PlayerSpawnpointManager : MonoBehaviour
 {
 
-    [HideInInspector]
+    
     public List<PlayerSpawnpoint> _spawnPoints = new List<PlayerSpawnpoint>();
     [HideInInspector]
     public List<Com.MyCompany.MyGame.PlayerManager> _players = new List<Com.MyCompany.MyGame.PlayerManager>();
@@ -57,7 +57,7 @@ public class PlayerSpawnpointManager : MonoBehaviour
         // Set local player to spawnpoint
         player = FindObjectOfType<Com.MyCompany.MyGame.PlayerManager>();
 
-        player.transform.position = _spawnPoints[playerId % _spawnPoints.Count].transform.position;
+        player.transform.position = _spawnPoints[(playerId % (_spawnPoints.Count))].transform.position;
         Debug.Log("" + playerId % (_spawnPoints.Count));
         
         List<Com.MyCompany.MyGame.PlayerManager> pl = new List<Com.MyCompany.MyGame.PlayerManager>();
