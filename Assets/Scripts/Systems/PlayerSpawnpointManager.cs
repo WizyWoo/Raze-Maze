@@ -57,7 +57,7 @@ public class PlayerSpawnpointManager : MonoBehaviour
         // Set local player to spawnpoint
         player = FindObjectOfType<Com.MyCompany.MyGame.PlayerManager>();
 
-        player.transform.position = _spawnPoints[playerId % (_spawnPoints.Count)].transform.position;
+        player.transform.position = _spawnPoints[playerId % _spawnPoints.Count].transform.position;
         Debug.Log("" + playerId % (_spawnPoints.Count));
         
         List<Com.MyCompany.MyGame.PlayerManager> pl = new List<Com.MyCompany.MyGame.PlayerManager>();
