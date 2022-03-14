@@ -55,7 +55,9 @@ public class PlayerSpawnpointManager : MonoBehaviour
         }*/
         playerId = PhotonNetwork.LocalPlayer.ActorNumber;
         // Set local player to spawnpoint
-        player = FindObjectOfType<Com.MyCompany.MyGame.PlayerManager>();
+        GameObject playa = GameObject.FindGameObjectWithTag("Player");
+        player = playa.GetComponent<Com.MyCompany.MyGame.PlayerManager>();
+
 
         player.transform.position = _spawnPoints[(playerId % (_spawnPoints.Count))].transform.position;
         Debug.Log("" + playerId % (_spawnPoints.Count));
