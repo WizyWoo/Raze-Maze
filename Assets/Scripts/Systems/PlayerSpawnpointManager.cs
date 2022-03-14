@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerSpawnpointManager : MonoBehaviour
 {
@@ -11,16 +12,14 @@ public class PlayerSpawnpointManager : MonoBehaviour
     public List<Com.MyCompany.MyGame.PlayerManager> _players = new List<Com.MyCompany.MyGame.PlayerManager>();
     private bool scanning;
     private int storedCount;
+    private int playerId;
     
     void Awake(){
         this.transform.parent = null;
-        DontDestroyOnLoad(this);
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private void Start() {
+        playerId = PhotonNetwork.LocalPlayer.ActorNumber;
     }
 
     // Update is called once per frame
@@ -47,7 +46,7 @@ public class PlayerSpawnpointManager : MonoBehaviour
             }
         }
         if(_players.Count > storedCount){   // Needs testing
-            _players[_players.Count - 1].transform.position = _spawnPoints[_players.Count % (_spawnPoints.Count - 1)].transform.position;
+            _players[_players.Count - 1].transform.position = _spawnPoints[playerId % (_spawnPoints.Count - 1)].transform.position;
         }
     }
     public void SpawnPlayers(){
