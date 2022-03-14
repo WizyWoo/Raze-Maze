@@ -216,6 +216,8 @@ MonoBehaviour:
   WeaponID: 0
   Damage: 0.2
   Firing: 0
+  Used: 0
+  ExplosiveUsed: 0
   MainAnchor: {fileID: 638261895739064238}
   ContinueslyDamage: 0
   CheckVelocity: 1

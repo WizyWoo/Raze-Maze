@@ -168,6 +168,7 @@ MonoBehaviour:
   Damage: 4
   Firing: 0
   Used: 0
+  ExplosiveUsed: 0
   MainAnchor: {fileID: 0}
   ExplosionRadius: 6
   FuseLenght: 3
