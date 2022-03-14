@@ -88,6 +88,8 @@ namespace Com.MyCompany.MyGame
             // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
             DontDestroyOnLoad(this.gameObject);
 
+            gameObject.name = photonView.Owner.NickName;
+
             //if (beams == null)
             //{
             //    Debug.LogError("<Color=Red><a>Missing</a></Color> Beams Reference.", this);
