@@ -226,7 +226,8 @@ namespace Com.MyCompany.MyGame
 
         void SetInitialPos()
         {
-            GameManager.gameManager.lastCheckpointPos = transform.position;
+            if(photonView.IsMine)
+                GameManager.gameManager.lastCheckpointPos = transform.position;
         }
 
 
