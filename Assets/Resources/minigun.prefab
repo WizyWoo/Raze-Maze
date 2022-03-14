@@ -263,6 +263,7 @@ MonoBehaviour:
   Damage: 0.025
   Firing: 0
   Used: 0
+  ExplosiveUsed: 0
   MainAnchor: {fileID: 0}
   bullet: {fileID: 0}
   shootForce: 0
