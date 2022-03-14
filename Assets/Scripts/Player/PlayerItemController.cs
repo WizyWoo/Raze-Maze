@@ -20,7 +20,7 @@ public class PlayerItemController : MonoBehaviour
     [Tooltip("This might be a bit heavy")]
     public bool ExstensivePlacementChecks, UseUIFeedback, DesktopMode;
     //References from itemManager
-    public GameObject CurrentWeaponPrefab, CurrentTrapPrefab;
+    public GameObject CurrentWeaponPrefab, CurrentTrapPrefab, TrapDisplayObj, WeaponDisplayObj;
     public ItemManager.ScalingMode CurrentTrapScaleMode;
     public ItemManager.WeaponUseMode CurrentWeaponUseMode;
     public int EquippedWeaponID;
@@ -325,7 +325,7 @@ public class PlayerItemController : MonoBehaviour
             return null;
 
         }
-        else
+        else if(!PlacingTrap)
         {
 
             EquippedWeaponID = CurrentItemID;
@@ -339,6 +339,8 @@ public class PlayerItemController : MonoBehaviour
             return _tempAnchor;
 
         }
+        else
+            return null;
 
     }
 
@@ -495,6 +497,21 @@ public class PlayerItemController : MonoBehaviour
 
             activeWeapon.transform.position = handTransform.position;
             activeWeapon.transform.rotation = handTransform.rotation;
+
+        }
+
+        if(CurrentItemID != 0)
+        {
+
+            TrapDisplayObj.SetActive(true);
+            WeaponDisplayObj.SetActive(true);
+
+        }
+        else
+        {
+
+            TrapDisplayObj.SetActive(false);
+            WeaponDisplayObj.SetActive(false);
 
         }
 
