@@ -13,18 +13,15 @@ public class PlayerSpawnpointManager : MonoBehaviour
     private bool scanning;
     private int storedCount;
     private int playerId;
-    
+    private Com.MyCompany.MyGame.PlayerManager player;    
     void Awake(){
         this.transform.parent = null;
 
     }
-    private void Start() {
-        playerId = PhotonNetwork.LocalPlayer.ActorNumber;
-    }
 
     // Update is called once per frame
     void FixedUpdate()
-    {
+    {/*
         storedCount = _players.Count;
         if(scanning){
             List<Com.MyCompany.MyGame.PlayerManager> pl = new List<Com.MyCompany.MyGame.PlayerManager>();
@@ -41,13 +38,12 @@ public class PlayerSpawnpointManager : MonoBehaviour
                 }
                 if(!isFound){
                     _players.Add(item);
-                    print("hi");
                 }
             }
         }
         if(_players.Count > storedCount){   // Needs testing
             _players[_players.Count - 1].transform.position = _spawnPoints[playerId % (_spawnPoints.Count - 1)].transform.position;
-        }
+        }*/
     }
     public void SpawnPlayers(){
         scanning = true;
@@ -57,5 +53,14 @@ public class PlayerSpawnpointManager : MonoBehaviour
         {
             _players[i].transform.position = _spawnPoints[i].transform.position;
         }*/
+        playerId = PhotonNetwork.LocalPlayer.ActorNumber;
+        // Set local player to spawnpoint
+        player = FindObjectOfType<Com.MyCompany.MyGame.PlayerManager>();
+
+        player.transform.position = _spawnPoints[playerId % (_spawnPoints.Count - 1)].transform.position;
+        Debug.Log("" + playerId % (_spawnPoints.Count - 1));
+        
+        List<Com.MyCompany.MyGame.PlayerManager> pl = new List<Com.MyCompany.MyGame.PlayerManager>();
+        pl.AddRange(FindObjectsOfType<Com.MyCompany.MyGame.PlayerManager>());
     }
 }
