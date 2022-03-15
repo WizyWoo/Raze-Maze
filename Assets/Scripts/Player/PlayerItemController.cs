@@ -379,7 +379,7 @@ public class PlayerItemController : MonoBehaviour
 
             PlacingTrap = true;
             ghostTrap = Instantiate(CurrentTrapPrefab).transform;
-            ghostTrap.GetComponent<TrapController>().enabled = false;
+            Destroy(ghostTrap.GetComponent<TrapController>());
             trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
             boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
 
