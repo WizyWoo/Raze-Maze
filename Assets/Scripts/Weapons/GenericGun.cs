@@ -136,7 +136,7 @@ public class GenericGun : WeaponController, IPunObservable
             if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
 
-                hit.transform.GetComponent<PlayerManager>().Damage(Damage);
+                hit.transform.root.GetComponent<PlayerManager>().Damage(Damage);
                 Debug.Log("hit " + hit.transform.name);
 
             }
