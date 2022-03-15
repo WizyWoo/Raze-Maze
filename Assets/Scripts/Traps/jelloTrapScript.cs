@@ -9,7 +9,7 @@ public class JelloTrapScript : TrapController
 
     private void OnTriggerEnter(Collider other)
     {
-        movSpeed = other.transform.root.GetComponent<VrPlayerController>().MovementSpeed;
+        movSpeed =/* other.transform.root.GetComponent<VrPlayerController>().MovementSpeed;*/ 8f;
         //jelloMultiplier = 0.1f;
 
         //other.GetComponent<PlayerController>()._speedMultiplier = jelloMultiplier;

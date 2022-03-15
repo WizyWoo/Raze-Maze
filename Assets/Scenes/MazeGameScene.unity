@@ -429,7 +429,7 @@ PrefabInstance:
     - target: {fileID: 3952349179975455502, guid: df0dc4500c6d7f447bb8ab87dbc88a16,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3952349179975455502, guid: df0dc4500c6d7f447bb8ab87dbc88a16,
         type: 3}
@@ -716,77 +716,3 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5647009011072768745, guid: b6910ba7ae0de4745843d18bb530ae72, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b6910ba7ae0de4745843d18bb530ae72, type: 3}
---- !u!1001 &8888323906436510811
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 529886359084926189, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: sceneViewId
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6516195548635388669, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_Name
-      value: DeathPlane
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382643985166742785, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382643985166742785, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -67
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382643985166742785, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382643985166742785, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.210359
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382643985166742785, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382643985166742785, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382643985166742785, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382643985166742785, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382643985166742785, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382643985166742785, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382643985166742785, guid: ef2daa09186d759459ca1cfef6de3917,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef2daa09186d759459ca1cfef6de3917, type: 3}
