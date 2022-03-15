@@ -5010,6 +5010,7 @@ MonoBehaviour:
   Damage: 4
   TrapPlaced: 0
   TrapActived: 0
+  Used: 0
   ExplosionRadius: 6
 --- !u!1001 &2810180651692633707
 PrefabInstance:

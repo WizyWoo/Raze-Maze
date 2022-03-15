@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8376783409142404793}
   - component: {fileID: 8376783409142404794}
   - component: {fileID: 8376783409142404790}
-  - component: {fileID: 4632320587346131442}
   - component: {fileID: -8808945334094484980}
+  - component: {fileID: 3411609212772741729}
   m_Layer: 6
   m_Name: jelloTrap
   m_TagString: Trap
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8376783409142404796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.83, y: 0.035, z: -8.46}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.0341, y: 1.528972, z: 2.0341}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -119,28 +119,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 4632320587346131442}
   - {fileID: -8808945334094484980}
+  - {fileID: 3411609212772741729}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &4632320587346131442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8376783409142404796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e8064f279e076c4a956625132b99649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrapID: 0
-  Damage: 0
-  TrapPlaced: 0
-  TrapActived: 0
-  Used: 0
 --- !u!114 &-8808945334094484980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,3 +140,20 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
+--- !u!114 &3411609212772741729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376783409142404796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8064f279e076c4a956625132b99649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrapID: 0
+  Damage: 0
+  TrapPlaced: 0
+  TrapActived: 0
+  Used: 0
