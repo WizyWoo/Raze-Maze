@@ -45,7 +45,7 @@ public class GenericGun : WeaponController, IPunObservable
 
     private LayerMask layerMask;
 
-    private GameObject mixerObject, mixerBlades;
+    //private GameObject mixerObject, mixerBlades;
 
     private void Awake()
     {
@@ -56,8 +56,8 @@ public class GenericGun : WeaponController, IPunObservable
 
     private void Start()
     {
-        mixerObject = GameObject.Find("handMixer");
-        mixerBlades = mixerObject.transform.GetChild(1).gameObject;
+        ////mixerObject = GameObject.Find("handMixer");
+        ////mixerBlades = mixerObject.transform.GetChild(1).gameObject;
     }
 
     private void Update()
@@ -152,8 +152,8 @@ public class GenericGun : WeaponController, IPunObservable
 
         if(bullet != null)
         {
-            if (mixerBlades != null)
-                mixerBlades.gameObject.SetActive(false);
+            //if (mixerBlades != null)
+            //    mixerBlades.gameObject.SetActive(false);
 
             //Instantiate bullet/projectile
             GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
