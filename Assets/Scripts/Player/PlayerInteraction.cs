@@ -11,6 +11,7 @@ public class PlayerInteraction : VRInputManager
     public Text HoverText;
     public TextMesh HoverTextMesh;
     private LayerMask interactMask;
+    private LineRenderer laserPointer;
 
     private void Start()
     {
@@ -19,6 +20,8 @@ public class PlayerInteraction : VRInputManager
 
         if(DesktopMode)
             UpdateUIRefs();
+
+        laserPointer = gameObject.GetComponent<LineRenderer>();
         
     }
 
@@ -71,6 +74,9 @@ public class PlayerInteraction : VRInputManager
 
                 HoverTextMesh.text = "^ " + hit.transform.name + " ^";
 
+                laserPointer.SetPosition(0, transform.position);
+                laserPointer.SetPosition(1, hit.point);
+
             }
 
         }
@@ -89,6 +95,9 @@ public class PlayerInteraction : VRInputManager
 
                 if(HoverTextMesh)
                     HoverTextMesh.text = "";
+
+                laserPointer.SetPosition(0, transform.position);
+                laserPointer.SetPosition(1, transform.position);
 
             }
 
