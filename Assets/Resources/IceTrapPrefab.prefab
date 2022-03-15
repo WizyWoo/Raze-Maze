@@ -1522,6 +1522,7 @@ MonoBehaviour:
   Damage: 0.005
   TrapPlaced: 0
   TrapActived: 0
+  Used: 0
   ContinueslyDamage: 1
 --- !u!1 &9176398720531996095
 GameObject:

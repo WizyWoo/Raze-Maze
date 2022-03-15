@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 8376783409142404794}
   - component: {fileID: 8376783409142404790}
   - component: {fileID: 4632320587346131442}
-  m_Layer: 0
+  - component: {fileID: -8808945334094484980}
+  m_Layer: 6
   m_Name: jelloTrap
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +120,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 4632320587346131442}
+  - {fileID: -8808945334094484980}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -136,3 +138,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrapID: 0
   Damage: 0
+  TrapPlaced: 0
+  TrapActived: 0
+  Used: 0
+--- !u!114 &-8808945334094484980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376783409142404796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 1
+  m_UseLocal: 1
