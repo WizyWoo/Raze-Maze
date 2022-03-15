@@ -45,7 +45,7 @@ public class HoldingAnchor : MonoBehaviour
         IsHeld = true;
         handTransform = _grabbedBy;
 
-        audioSource.PlayOneShot(grabSound);
+        //audioSource.PlayOneShot(grabSound);
 
         if(rb)
             rb.isKinematic = true;

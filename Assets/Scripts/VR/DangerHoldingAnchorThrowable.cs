@@ -34,7 +34,7 @@ public class DangerHoldingAnchorThrowable : HoldingAnchor
         
         IsHeld = false;
         handTransform = null;
-        MainCollider.isTrigger = true;
+        MainCollider.isTrigger = false;
 
         if(ActivateWhenThrown)
         {

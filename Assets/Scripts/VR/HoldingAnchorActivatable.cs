@@ -26,8 +26,8 @@ public class HoldingAnchorActivatable : HoldingAnchor
 
         }
 
-        if(_firing)
-            audioSource.PlayOneShot(activateSound);
+        //if(_firing)
+            //audioSource.PlayOneShot(activateSound);
 
     }
 

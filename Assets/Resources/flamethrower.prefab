@@ -98,10 +98,10 @@ MonoBehaviour:
   mainAnchor: 1
   handTransform: {fileID: 0}
   rb: {fileID: 0}
-  audioSource: {fileID: 2730312883190510855}
-  grabSound: {fileID: 8300000, guid: c8964e3a441e60d448f2de590b07ddea, type: 3}
-  ScriptToActivate: {fileID: 0}
-  activateSound: {fileID: 8300000, guid: ad111c2336e759048b82eb88a7985d48, type: 3}
+  audioSource: {fileID: 0}
+  grabSound: {fileID: 0}
+  ScriptToActivate: {fileID: 5961918233139977892}
+  activateSound: {fileID: 0}
 --- !u!65 &7805413069392604535
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -9,13 +9,22 @@ public class MineTrap : ExplosiveTrapDamage
     private void OnTriggerEnter(Collider _other)
     {
 
-        if(_other.transform.root.TryGetComponent<Rigidbody>(out Rigidbody _rb))
+        if(_other.transform.root.TryGetComponent<Rigidbody>(out Rigidbody _rb) && !Used)
         {
 
             Explode();
-            PhotonNetwork.Destroy(gameObject);
+            
+            Used = true;
+            Invoke("DestroyMe", 10);
 
         }
+
+    }
+
+    private void DestroyMe()
+    {
+
+        PhotonNetwork.Destroy(gameObject);
 
     }
 
