@@ -6,18 +6,24 @@ public class BalloonFunctionality : MonoBehaviour
 {
     public List<Vector3> positions = new List<Vector3>();
     private Vector3 startPos;
-    private float timer;
+    public float timer;
 
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
         GetComponentInChildren<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        GetComponentInChildren<Rigidbody>().transform.localPosition = new Vector3(0,0,0);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(timer < 5){
+            GetComponentInChildren<Rigidbody>().transform.localPosition = new Vector3(0,0,0);
+        }else{
+            Destroy(gameObject);
+        }
         if(positions.Count < 5){
             int length = positions.Count;
             for (int i = length - 1; i < 6 - length; i++)
@@ -43,7 +49,7 @@ public class BalloonFunctionality : MonoBehaviour
             case < 5:
             transform.position = Vector3.Lerp(positions[positions.Count - 4], positions[positions.Count - 5], timer - 4);
             break;
-            case < 6:
+            case > 5:
             GetComponentInChildren<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
             GetComponentInChildren<PlayerPositionLog>().transform.parent = null;
             Destroy(gameObject);
