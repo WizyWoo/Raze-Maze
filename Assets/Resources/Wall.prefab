@@ -65,6 +65,7 @@ MonoBehaviour:
   Damage: 0
   TrapPlaced: 0
   TrapActived: 0
+  Used: 0
 --- !u!114 &954209387583591939
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class JelloTrapScript : TrapController
 
         //other.GetComponent<PlayerController>()._speedMultiplier = jelloMultiplier;
 
-        other.transform.root.GetComponent<VrPlayerController>().MovementSpeed = movSpeed / 2f;
+        other.transform.root.GetComponent<VrPlayerController>().MovementSpeed = movSpeed / 3f;
     }
 
     private void OnTriggerExit(Collider other)
