@@ -9,12 +9,15 @@ public class TriggerTrap : TrapController
 
     [SerializeField]
     private GameObject _objectToSpawn;
+    private LayerMask _triggerTag = 8;
+    private bool _hasBeenTriggered;
     private void OnTriggerEnter(Collider other) {
-        if(other.tag == "Player"){
+        if(((1<<other.gameObject.layer) & _triggerTag) != 0 && !_hasBeenTriggered){
+            _hasBeenTriggered = true;
             GameObject trap = Instantiate(_objectToSpawn, transform.position, Quaternion.identity);
-            other.transform.parent = trap.transform;
+            other.attachedRigidbody.transform.parent = trap.transform;
             if(trap.TryGetComponent(out BalloonFunctionality bf)){
-                bf.positions.AddRange(other.gameObject.GetComponent<PlayerPositionLog>().playerPosHistory);
+                bf.positions.AddRange(other.attachedRigidbody.gameObject.GetComponent<PlayerPositionLog>().playerPosHistory);
             }
 
             // Removes the trap
