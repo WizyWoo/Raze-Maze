@@ -6,6 +6,7 @@ public class LocalGameController : MonoBehaviour
 {
 
     public static LocalGameController main { get; private set; }
+    public bool PlayerHasWon;
 
     private void Awake()
     {
@@ -16,6 +17,17 @@ public class LocalGameController : MonoBehaviour
             main = this;
 
         DontDestroyOnLoad(this);
+
+    }
+
+    public bool WinCheck()
+    {
+
+        bool _temp = PlayerHasWon;
+
+        PlayerHasWon = false;
+
+        return _temp;
 
     }
 

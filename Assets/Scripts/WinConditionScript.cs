@@ -7,6 +7,7 @@ public class WinConditionScript : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+        LocalGameController.main.PlayerHasWon = true;
         GameManager.gameManager.WinLevel();
     }
 }
