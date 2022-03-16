@@ -12,7 +12,7 @@ public class BalloonFunctionality : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        GetComponentInChildren<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        GetComponentInChildren<Rigidbody>().isKinematic = true;
         GetComponentInChildren<Rigidbody>().transform.localPosition = new Vector3(0,0,0);
     }
 
@@ -50,7 +50,7 @@ public class BalloonFunctionality : MonoBehaviour
             transform.position = Vector3.Lerp(positions[positions.Count - 4], positions[positions.Count - 5], timer - 4);
             break;
             case > 5:
-            GetComponentInChildren<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
+            GetComponentInChildren<Rigidbody>().isKinematic = false;
             GetComponentInChildren<PlayerPositionLog>().transform.parent = null;
             Destroy(gameObject);
             break;
