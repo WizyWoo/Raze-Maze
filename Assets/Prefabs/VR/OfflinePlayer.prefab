@@ -2659,4 +2659,5 @@ MonoBehaviour:
   grounded: 0
   _layerMask:
     serializedVersion: 2
-    m_Bits: 33271
+    m_Bits: 2048
+  plCamera: {fileID: 260854732798931688}
