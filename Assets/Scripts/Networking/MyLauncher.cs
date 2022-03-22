@@ -9,12 +9,14 @@ namespace Com.MyCompany.MyGame
     {
         #region Public Fields
 
-        [Tooltip("The Ui Panel to let the user enter name, connect and play")]
-        [SerializeField]
-        private GameObject controlPanel;
-        [Tooltip("The UI Label to inform the user that the connection is in progress")]
-        [SerializeField]
-        private GameObject progressLabel;
+        //[Tooltip("The Ui Panel to let the user enter name, connect and play")]
+        //[SerializeField]
+        ////private GameObject controlPanel;
+        //[Tooltip("The UI Label to inform the user that the connection is in progress")]
+        //[SerializeField]
+        //private GameObject progressLabel;
+
+        public int roomToJoinID;
 
         #endregion
 
@@ -67,8 +69,8 @@ namespace Com.MyCompany.MyGame
         /// </summary>
         void Start()
         {
-            progressLabel.SetActive(false);
-            controlPanel.SetActive(true);
+            //progressLabel.SetActive(false);
+            //controlPanel.SetActive(true);
         }
 
 
@@ -85,8 +87,8 @@ namespace Com.MyCompany.MyGame
         /// </summary>
         public void Connect()
         {
-            progressLabel.SetActive(true);
-            controlPanel.SetActive(false);
+            //progressLabel.SetActive(true);
+            //controlPanel.SetActive(false);
 
             if (PhotonNetwork.IsConnected)
             {
@@ -122,8 +124,8 @@ namespace Com.MyCompany.MyGame
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            progressLabel.SetActive(false);
-            controlPanel.SetActive(true);
+            //progressLabel.SetActive(false);
+            //controlPanel.SetActive(true);
             isConnecting = false;
 
             Debug.LogWarningFormat("PUN Basics Tutorial/Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
@@ -151,7 +153,7 @@ namespace Com.MyCompany.MyGame
 
                 // #Critical
                 // Load the Room Level.
-                PhotonNetwork.LoadLevel("MazeGameScene"); //mazeTestScene
+                PhotonNetwork.LoadLevel(roomToJoinID); //mazeTestScene
             }
             Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         }
