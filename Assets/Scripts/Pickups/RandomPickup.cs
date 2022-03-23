@@ -9,6 +9,14 @@ public class RandomPickup : MonoBehaviour , IInteractable
     public bool LockAfterUse;
     private bool locked;
 
+    private void OnTriggerEnter(Collider col)
+    {
+
+        if(col.tag == "Player")
+            Activate(col.transform.root);
+
+    }
+
     public void Activate(Transform _player)
     {
         
