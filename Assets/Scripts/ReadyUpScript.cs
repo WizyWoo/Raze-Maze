@@ -13,13 +13,15 @@ namespace Com.MyCompany.MyGame
 
         public GameObject chunkGenerator;
         private bool locked;
+        private int readyCounter = 3;
+
+        public TextMesh readyText;
 
         // Update is called once per frame
         void Update()
         {
             playersInRoom = PhotonNetwork.CurrentRoom.PlayerCount;
         }
-
 
         public void Activate(Transform _player)
         {
@@ -28,6 +30,9 @@ namespace Com.MyCompany.MyGame
                 PhotonView photonView = gameObject.GetPhotonView();
 
                 photonView.RPC("ClickedByPlayer", RpcTarget.MasterClient);
+
+                locked = true;
+                readyText.text = "WAITING FOR OTHERS";
             }        
         }
 
@@ -43,11 +48,22 @@ namespace Com.MyCompany.MyGame
         [PunRPC]
         private void ShitPoopiePissBaby()
         {
-
-            chunkGenerator.SetActive(true);
-
+            StartCoroutine(PissBabyIsPooping());
         }
 
+        private IEnumerator PissBabyIsPooping()
+        {
+            readyText.text = readyCounter.ToString();
+
+            yield return new WaitForSeconds(1f);
+
+            readyCounter--;
+
+            if (readyCounter >= 0)
+                StartCoroutine(PissBabyIsPooping());
+            else
+                chunkGenerator.SetActive(true);
+        }
     }
 }
 
