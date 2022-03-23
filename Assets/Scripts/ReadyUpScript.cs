@@ -8,7 +8,9 @@ namespace Com.MyCompany.MyGame
     public class ReadyUpScript : MonoBehaviourPunCallbacks, IInteractable
     {
         // Start is called before the first frame update
+        [SerializeField]
         private int playersInRoom, playerReadied;
+
         public GameObject chunkGenerator;
         private bool locked;
 
