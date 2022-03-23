@@ -37,7 +37,7 @@ namespace Com.MyCompany.MyGame
             playerReadied++;
 
             if (playersInRoom == playerReadied)
-                photonView.RPC("ShitPoopiePissBaby", RpcTarget.MasterClient);
+                photonView.RPC("ShitPoopiePissBaby", RpcTarget.All);
         }
 
         [PunRPC]
