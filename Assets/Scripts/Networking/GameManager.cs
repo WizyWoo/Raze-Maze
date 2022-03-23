@@ -113,7 +113,7 @@ namespace Com.MyCompany.MyGame
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
                     // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                    PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
+                    PhotonNetwork.Instantiate(this.playerPrefab.name,this.transform.position /*new Vector3(0f, 5f, 0f)*/, Quaternion.identity, 0);
                 }
                 else
                 {
@@ -130,6 +130,7 @@ namespace Com.MyCompany.MyGame
             {
                 Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
             }
+            
             Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
             PhotonNetwork.LoadLevel("mazeTestScene" /*  "mazeTestScene"  + PhotonNetwork.CurrentRoom.PlayerCount*/);
         }
@@ -152,10 +153,10 @@ namespace Com.MyCompany.MyGame
             player.transform.position = lastCheckpointPos;
         }
 
-        public void GameOver(PhotonView photonView)
+        public void GameOver()
         {
-            if (photonView.IsMine)
-            {
+            //if (photonView.IsMine)
+            //{
                Debug.Log("GAME OVER!");
                if (!PhotonNetwork.IsMasterClient)
                {
@@ -164,8 +165,8 @@ namespace Com.MyCompany.MyGame
            
                PhotonNetwork.Destroy(player);
                          
-               SceneManager.LoadScene("waitingRoomScene");
-            }
+               SceneManager.LoadScene("MazeGameScene");
+            //}
         }
     }
 

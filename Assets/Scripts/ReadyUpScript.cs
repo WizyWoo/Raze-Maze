@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Photon.Pun;
+
+namespace Com.MyCompany.MyGame
+{
+    public class ReadyUpScript : MonoBehaviourPunCallbacks, IInteractable
+    {
+        // Start is called before the first frame update
+        private int playersInRoom, playerReadied;
+        public GameObject chunkGenerator;
+        private bool locked;
+
+        // Update is called once per frame
+        void Update()
+        {
+            playersInRoom = PhotonNetwork.CurrentRoom.PlayerCount;
+        }
+
+
+        public void Activate(Transform _player)
+        {
+            if (!locked)
+            {
+                PhotonView photonView = _player.gameObject.GetPhotonView();
+
+                photonView.RPC("ClickedByPlayer", RpcTarget.MasterClient, playerReadied);
+            }        
+        }
+
+        [PunRPC]
+        private void ClickedByPlayer()
+        {
+            playerReadied++;
+
+            if (playersInRoom == playerReadied)
+                chunkGenerator.SetActive(true);
+        }
+
+    }
+}
+

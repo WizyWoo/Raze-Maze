@@ -321,6 +321,7 @@ MonoBehaviour:
   Health: 1
   lives: 3
   gameOver: {fileID: 0}
+  readied: 0
   trapDamage: 0
 --- !u!114 &1915713057797412575
 MonoBehaviour:

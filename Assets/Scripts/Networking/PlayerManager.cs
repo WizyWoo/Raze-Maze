@@ -27,8 +27,11 @@ namespace Com.MyCompany.MyGame
         public int lives = 3;
         public GameOverScreenScript gameOver;
 
-        public float trapDamage;
-       
+        public bool readied = false;
+
+        public static PlayerManager playerManager;
+
+        public float trapDamage;     
 
         #endregion
 
@@ -89,6 +92,8 @@ namespace Com.MyCompany.MyGame
             DontDestroyOnLoad(this.gameObject);
 
             gameObject.name = photonView.Owner.NickName;
+
+            playerManager = this;
 
             //if (beams == null)
             //{
@@ -285,7 +290,8 @@ namespace Com.MyCompany.MyGame
                    GameManager.gameManager.Respawn();
 
                     if (lives <= 0)
-                        GameManager.gameManager.LeaveRoom();
+                        GameManager.gameManager.GameOver();
+                        //GameManager.gameManager.LeaveRoom();
                 }
             }
 

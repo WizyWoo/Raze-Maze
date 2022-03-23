@@ -499,6 +499,12 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df0dc4500c6d7f447bb8ab87dbc88a16, type: 3}
+--- !u!1 &867170331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3952349179975455600, guid: df0dc4500c6d7f447bb8ab87dbc88a16,
+    type: 3}
+  m_PrefabInstance: {fileID: 867170330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1646029967
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +661,7 @@ PrefabInstance:
     - target: {fileID: 1226705891552192826, guid: b6910ba7ae0de4745843d18bb530ae72,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 1226705891552192826, guid: b6910ba7ae0de4745843d18bb530ae72,
         type: 3}
@@ -701,13 +707,18 @@ PrefabInstance:
         type: 3}
       propertyPath: playerPrefab
       value: 
-      objectReference: {fileID: 260854731515951132, guid: bfa781f68741725478fc0b69cedef44e,
+      objectReference: {fileID: 1416359710976390386, guid: 4263f810b62da4f4f8221cbc3313dc0c,
         type: 3}
     - target: {fileID: 6868540459498952475, guid: b6910ba7ae0de4745843d18bb530ae72,
         type: 3}
       propertyPath: completeLevelUI
       value: 
       objectReference: {fileID: 768092287}
+    - target: {fileID: 6868540459498952475, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: lastCheckpointPos.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7822155614842472315, guid: b6910ba7ae0de4745843d18bb530ae72,
         type: 3}
       propertyPath: m_Name
@@ -1544,7 +1555,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec95737afe6d8cc4cae3856f2333519b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2160,6 +2171,7 @@ GameObject:
   - component: {fileID: 5317974725013950382}
   - component: {fileID: 5317974725013950383}
   - component: {fileID: 5317974725013950380}
+  - component: {fileID: 5317974725013950384}
   m_Layer: 7
   m_Name: Enter Game
   m_TagString: Untagged
@@ -2245,6 +2257,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5317974725013950384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5317974725013950370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a90e1ac70a0b3f48a14c5e3ac20c95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chunkGenerator: {fileID: 867170331}
 --- !u!1 &5317974725079625824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,7 +2442,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec95737afe6d8cc4cae3856f2333519b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3392,7 +3417,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec95737afe6d8cc4cae3856f2333519b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4069,7 +4094,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec95737afe6d8cc4cae3856f2333519b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
