@@ -60,4 +60,11 @@ public class VrPlayerController : MonoBehaviour
 
     }
 
+    public void OnRespawning()
+    {
+
+        
+
+    }
+
 }
