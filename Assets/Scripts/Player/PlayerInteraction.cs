@@ -56,7 +56,7 @@ public class PlayerInteraction : VRInputManager
             if((Input.GetKeyDown(KeyCode.E) || TriggerButton.WasPressedThisFrame()) && hit.transform.TryGetComponent<IInteractable>(out IInteractable _IInteractable))
             {
 
-                _IInteractable.Activate(transform);
+                _IInteractable.Activate(transform.root);
 
             }
 
