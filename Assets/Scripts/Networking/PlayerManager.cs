@@ -31,7 +31,9 @@ namespace Com.MyCompany.MyGame
 
         public static PlayerManager playerManager;
 
-        public float trapDamage;     
+        public float trapDamage;
+
+        private VrPlayerController vrController;
 
         #endregion
 
@@ -128,7 +130,7 @@ namespace Com.MyCompany.MyGame
 
             Invoke("SetInitialPos", 0.5f);
             //CameraWork _cameraWork = this.gameObject.GetComponentInChildren<CameraWork>();
-
+            vrController =  gameObject.GetComponent<VrPlayerController>();
 
             //if (_cameraWork != null)
             //{
@@ -284,13 +286,15 @@ namespace Com.MyCompany.MyGame
             {
                 lives--;
                 Health = 1f;
+
                 //StartCoroutine(GameManager.gameManager.Respawn());
                 if (photonView.IsMine)
                 {
-                   GameManager.gameManager.Respawn();
+                    vrController.OnRespawning(2f);
+                    GameManager.gameManager.Invoke("Respawn", 2f);
 
                     if (lives <= 0)
-                        GameManager.gameManager.GameOver();
+                        GameManager.gameManager.Invoke("GameOver", 2f);
                         //GameManager.gameManager.LeaveRoom();
                 }
             }
