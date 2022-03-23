@@ -12,14 +12,13 @@ namespace Com.MyCompany.MyGame
         private int playersInRoom, playerReadied;
 
         public GameObject chunkGenerator;
-        private bool locked;
+        private bool locked = false;
 
         // Update is called once per frame
         void Update()
         {
             playersInRoom = PhotonNetwork.CurrentRoom.PlayerCount;
         }
-
 
         public void Activate(Transform _player)
         {
@@ -28,6 +27,8 @@ namespace Com.MyCompany.MyGame
                 PhotonView photonView = gameObject.GetPhotonView();
 
                 photonView.RPC("ClickedByPlayer", RpcTarget.All);
+
+                locked = true;
             }        
         }
 
