@@ -60,10 +60,10 @@ public class VrPlayerController : MonoBehaviour
 
     }
 
-    public void OnRespawning()
+    public void OnRespawning(float _respawnDelay)
     {
 
-        
+
 
     }
 
