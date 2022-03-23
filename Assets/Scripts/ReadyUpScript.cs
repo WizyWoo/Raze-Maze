@@ -27,7 +27,7 @@ namespace Com.MyCompany.MyGame
             {
                 PhotonView photonView = gameObject.GetPhotonView();
 
-                photonView.RPC("ClickedByPlayer", RpcTarget.All);
+                photonView.RPC("ClickedByPlayer", RpcTarget.MasterClient);
             }        
         }
 
@@ -37,7 +37,15 @@ namespace Com.MyCompany.MyGame
             playerReadied++;
 
             if (playersInRoom == playerReadied)
-                chunkGenerator.SetActive(true);
+                photonView.RPC("ShitPoopiePissBaby", RpcTarget.MasterClient);
+        }
+
+        [PunRPC]
+        private void ShitPoopiePissBaby()
+        {
+
+            chunkGenerator.SetActive(true);
+
         }
 
     }
