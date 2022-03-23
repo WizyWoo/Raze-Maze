@@ -27,7 +27,7 @@ namespace Com.MyCompany.MyGame
             {
                 PhotonView photonView = gameObject.GetPhotonView();
 
-                photonView.RPC("ClickedByPlayer", RpcTarget.MasterClient);
+                photonView.RPC("ClickedByPlayer", RpcTarget.All);
             }        
         }
 
