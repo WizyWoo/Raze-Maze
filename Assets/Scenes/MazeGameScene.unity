@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.122912236, g: 0.12682644, b: 0.16698368, a: 1}
+  m_IndirectSpecularColor: {r: 0.12316003, g: 0.1264383, b: 0.16799375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2456,6 +2456,7 @@ MonoBehaviour:
   playersInRoom: 0
   playerReadied: 0
   chunkGenerator: {fileID: 867170331}
+  readyText: {fileID: 5317974726367452163}
 --- !u!114 &5317974725013950385
 MonoBehaviour:
   m_ObjectHideFlags: 0
