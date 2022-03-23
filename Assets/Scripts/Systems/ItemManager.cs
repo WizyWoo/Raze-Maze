@@ -155,7 +155,6 @@ public class ItemManager : MonoBehaviour
     public void GiveRandomFilteredID(Theme _theme, PlayerItemController _playerItemController)
     {
 
-        Random.InitState(System.DateTime.UtcNow.Millisecond);
         int _rarity = Random.Range(0, 101);
         int _returnID = 0;
         Rarity _tempRarity = Rarity.Common;
