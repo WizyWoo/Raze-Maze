@@ -11,12 +11,17 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(MeshCollider))]
 public class MeshCombiner : MonoBehaviour
 {
+    [Header("Combines children of target")][Tooltip("Leave empty if you want to combine everything")]
+    public Transform combineTarget;
     void Start()
     {
+        if(combineTarget == null){
+            combineTarget = transform;
+        }
         Invoke("CombineMesh", 0.01f);
     }
     void CombineMesh(){
-        MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
+        MeshFilter[] meshFilters = combineTarget.GetComponentsInChildren<MeshFilter>();
         CombineInstance[] combine = new CombineInstance[meshFilters.Length];  
 
         int i = 0;

@@ -10,6 +10,7 @@ public class FootprintAligner : MonoBehaviour
     private LayerMask _layerMask;
     private ParticleSystem _ps;
     private RingbufferFootSteps _rbfs;
+    public Transform plCamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,9 @@ public class FootprintAligner : MonoBehaviour
     
     private void FixedUpdate() {
         if(playerCol != null){
+            transform.forward = plCamera.forward;
             RaycastHit hit;
-            if (Physics.Raycast(playerCol.transform.position, Vector3.down, out hit, playerCol.height / 2 + 0.1f, _layerMask)){
+            if (Physics.Raycast(plCamera.position, Vector3.down, out hit, 2, _layerMask)){
                 if(!grounded){
                     //_ps.Play();
                 }
