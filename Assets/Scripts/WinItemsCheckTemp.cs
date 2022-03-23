@@ -5,12 +5,12 @@ using UnityEngine;
 public class WinItemsCheckTemp : MonoBehaviour
 {
 
-    public GameObject RatTrophy;
+    public GameObject WinItems;
 
     private void Start()
     {
 
-        RatTrophy.SetActive(LocalGameController.main.WinCheck());
+        WinItems.SetActive(LocalGameController.main.WinCheck());
 
     }
 
