@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276807, g: 0.21589197, b: 0.29782572, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2172,6 +2172,7 @@ GameObject:
   - component: {fileID: 5317974725013950383}
   - component: {fileID: 5317974725013950380}
   - component: {fileID: 5317974725013950384}
+  - component: {fileID: 5317974725013950385}
   m_Layer: 7
   m_Name: Enter Game
   m_TagString: Untagged
@@ -2269,7 +2270,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a90e1ac70a0b3f48a14c5e3ac20c95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playersInRoom: 0
+  playerReadied: 0
   chunkGenerator: {fileID: 867170331}
+--- !u!114 &5317974725013950385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5317974725013950370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &5317974725079625824
 GameObject:
   m_ObjectHideFlags: 0

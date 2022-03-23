@@ -25,7 +25,7 @@ namespace Com.MyCompany.MyGame
         {
             if (!locked)
             {
-                PhotonView photonView = _player.gameObject.GetPhotonView();
+                PhotonView photonView = gameObject.GetPhotonView();
 
                 photonView.RPC("ClickedByPlayer", RpcTarget.MasterClient, playerReadied);
             }        
