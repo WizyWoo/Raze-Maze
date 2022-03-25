@@ -7,6 +7,15 @@ public class DisplayGrabAnchor : HoldingAnchor
 
     public PlayerItemController ItemController;
     public bool IsWeaponDisplay;
+    public GameObject ItemDisplay;
+
+    public void UpdateDisplayModel(GameObject _displayPrefab)
+    {
+
+        Destroy(ItemDisplay);
+        ItemDisplay = Instantiate(_displayPrefab, transform);
+
+    }
 
     public override HoldingAnchor Grabbed(Transform _grabbedBy)
     {
