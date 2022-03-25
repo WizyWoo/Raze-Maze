@@ -20,6 +20,7 @@ public class PlayerItemController : MonoBehaviour
     [Tooltip("This might be a bit heavy")]
     public bool ExstensivePlacementChecks, UseUIFeedback, DesktopMode;
     //References from itemManager
+    public DisplayGrabAnchor WeaponDisplay, TrapDisplay;
     public GameObject CurrentWeaponPrefab, CurrentTrapPrefab, TrapDisplayObj, WeaponDisplayObj;
     public ItemManager.ScalingMode CurrentTrapScaleMode;
     public ItemManager.WeaponUseMode CurrentWeaponUseMode;
@@ -87,6 +88,8 @@ public class PlayerItemController : MonoBehaviour
 
         }
 
+        
+
     }
 
     public void UpdateItemRefs(int _itemID, GameObject _weaponPrefab, GameObject _trapPrefab, ItemManager.ScalingMode _scalingMode, ItemManager.WeaponUseMode _weaponUseMode, float _activationDelay)
@@ -99,6 +102,8 @@ public class PlayerItemController : MonoBehaviour
         CurrentTrapScaleMode = _scalingMode;
         CurrentWeaponUseMode = _weaponUseMode;
         TrapActivationDelay = _activationDelay;
+        WeaponDisplay.UpdateDisplayModel(_weaponPrefab);
+        TrapDisplay.UpdateDisplayModel(_trapPrefab);
 
     }
 
