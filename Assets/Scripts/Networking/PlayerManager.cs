@@ -290,10 +290,10 @@ namespace Com.MyCompany.MyGame
                 //StartCoroutine(GameManager.gameManager.Respawn());
                 if (photonView.IsMine)
                 {                  
-                    GameManager.gameManager.Invoke("Respawn", 2f);
+                    GameManager.gameManager.Invoke("Respawn", 0);
 
                     if (lives <= 0)
-                        GameManager.gameManager.Invoke("GameOver", 2f);
+                        GameManager.gameManager.Invoke("GameOver", 0);
                     //GameManager.gameManager.LeaveRoom();
 
                     vrController.OnRespawning(2f);

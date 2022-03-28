@@ -15,6 +15,27 @@ public class DisplayGrabAnchor : HoldingAnchor
         Destroy(ItemDisplay);
         ItemDisplay = Instantiate(_displayPrefab, transform);
 
+        if(ItemDisplay.TryGetComponent<Rigidbody>(out Rigidbody _rb))
+        {
+
+            Destroy(_rb);
+
+        }
+
+        if(ItemDisplay.TryGetComponent<Collider>(out Collider _col))
+        {
+
+            Collider[] _tempColliders = ItemDisplay.GetComponentsInChildren<Collider>();
+
+            for(int i = 0; i < _tempColliders.Length; i++)
+            {
+
+                Destroy(_tempColliders[i]);
+
+            }
+
+        }
+
     }
 
     public override HoldingAnchor Grabbed(Transform _grabbedBy)

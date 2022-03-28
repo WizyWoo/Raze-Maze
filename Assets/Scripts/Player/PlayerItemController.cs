@@ -377,6 +377,8 @@ public class PlayerItemController : MonoBehaviour
     public void StartPlacingTrap()
     {
 
+        EquippedWeaponID = CurrentItemID;
+        CurrentItemID = 0;
         string tempFeedback = "";
 
         if(!PlacingTrap)
@@ -526,7 +528,7 @@ public class PlayerItemController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if(PlacingTrap && CurrentItemID != 0)
+        if(PlacingTrap && EquippedWeaponID != 0)
         {
 
             Vector3 tempV3;

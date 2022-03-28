@@ -16,7 +16,7 @@ public class PlayerInteraction : VRInputManager
     private void Start()
     {
 
-        interactMask = 1 << LayerMask.NameToLayer("Interactables");
+        interactMask = ((1 << LayerMask.NameToLayer("Interactables")) + (1 << LayerMask.NameToLayer("Default")));
 
         if(DesktopMode)
             UpdateUIRefs();
@@ -53,29 +53,58 @@ public class PlayerInteraction : VRInputManager
         if(Physics.Raycast(transform.position, transform.forward, out hit, interactionDistance, interactMask))
         {
 
-            if((Input.GetKeyDown(KeyCode.E) || TriggerButton.WasPressedThisFrame()) && hit.transform.TryGetComponent<IInteractable>(out IInteractable _IInteractable))
+            Debug.Log(hit.transform.gameObject.name);
+
+            if(hit.transform.TryGetComponent<IInteractable>(out IInteractable _inter))
             {
 
-                _IInteractable.Activate(transform.root);
+                if((Input.GetKeyDown(KeyCode.E) || TriggerButton.WasPressedThisFrame()) && hit.transform.TryGetComponent<IInteractable>(out IInteractable _IInteractable))
+                {
 
-            }
+                    _IInteractable.Activate(transform.root);
 
-            if(DesktopMode)
-            {
+                }
 
-                if(HoverText)
-                    HoverText.text = "^ " + hit.transform.name + " ^";
+                if(DesktopMode)
+                {
+
+                    if(HoverText)
+                        HoverText.text = "^ " + hit.transform.name + " ^";
+                    else
+                        UpdateUIRefs();
+
+                }
                 else
-                    UpdateUIRefs();
+                {
+
+                    HoverTextMesh.text = "^ " + hit.transform.name + " ^";
+
+                    laserPointer.SetPosition(0, transform.position);
+                    laserPointer.SetPosition(1, hit.point);
+
+                }
 
             }
             else
             {
 
-                HoverTextMesh.text = "^ " + hit.transform.name + " ^";
+                if(DesktopMode)
+                {
 
-                laserPointer.SetPosition(0, transform.position);
-                laserPointer.SetPosition(1, hit.point);
+                    if(HoverText)
+                        HoverText.text = "";
+
+                }
+                else
+                {
+
+                    if(HoverTextMesh)
+                        HoverTextMesh.text = "";
+
+                    laserPointer.SetPosition(0, transform.position);
+                    laserPointer.SetPosition(1, transform.position);
+
+                }
 
             }
 
