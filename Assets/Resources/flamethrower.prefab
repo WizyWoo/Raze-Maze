@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3196566526158879239}
   - component: {fileID: 7805413069392604535}
   - component: {fileID: 2730312883190510855}
-  - component: {fileID: 5961918233139977892}
+  - component: {fileID: 692244002853573434}
   m_Layer: 7
   m_Name: flamethrower
   m_TagString: Weapon
@@ -60,7 +60,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2912974027692373104}
-  - {fileID: 5961918233139977892}
+  - {fileID: 692244002853573434}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   audioSource: {fileID: 0}
   grabSound: {fileID: 0}
-  ScriptToActivate: {fileID: 5961918233139977892}
+  ScriptToActivate: {fileID: 0}
   activateSound: {fileID: 0}
 --- !u!65 &7805413069392604535
 BoxCollider:
@@ -212,7 +212,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5961918233139977892
+--- !u!114 &692244002853573434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2285447609137030244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2b830029a2d8fe42819c89b12a96b16, type: 3}
+  m_Script: {fileID: 11500000, guid: 60a97da302318e64abda033ba97fe00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponID: 0
@@ -245,6 +245,7 @@ MonoBehaviour:
   particleSystem: {fileID: 7995552860899436711}
   attackPoint: {fileID: 7759999814111758354}
   allowInvoke: 1
+  rayWideness: 0.7
 --- !u!1 &3122761046827766717
 GameObject:
   m_ObjectHideFlags: 0

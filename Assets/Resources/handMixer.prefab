@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 9109807381526474313}
   - component: {fileID: 9109807381526474312}
   - component: {fileID: 9109807381526474315}
-  - component: {fileID: 9109807381526474314}
+  - component: {fileID: 2578606770170842086}
   m_Layer: 7
   m_Name: handMixer
   m_TagString: Weapon
@@ -575,7 +575,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9109807381526474317}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -17.677, y: 13.539, z: 5.85964}
   m_LocalScale: {x: 0.54038, y: 0.54038, z: 0.54038}
   m_ConstrainProportionsScale: 0
@@ -586,7 +586,7 @@ Transform:
   - {fileID: 7050052531768342197}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &9109807381526474422
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -620,7 +620,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 9109807381526474312}
-  - {fileID: 9109807381526474314}
+  - {fileID: 2578606770170842086}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -662,7 +662,7 @@ MonoBehaviour:
   grabSound: {fileID: 0}
   ScriptToActivate: {fileID: 0}
   activateSound: {fileID: 0}
---- !u!114 &9109807381526474314
+--- !u!114 &2578606770170842086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -671,26 +671,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 9109807381526474317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2b830029a2d8fe42819c89b12a96b16, type: 3}
+  m_Script: {fileID: 11500000, guid: 41eb1326924aeca41a4b63aace641e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponID: 0
   Damage: 1
   Firing: 0
   Used: 0
+  ExplosiveUsed: 0
   MainAnchor: {fileID: 0}
   bullet: {fileID: 1809724846989947614, guid: 3010be602f456f34ba0048fcf9c7864d, type: 3}
-  shootForce: 100
-  timeBetweenShooting: 4
+  shootForce: 0
+  timeBetweenShooting: 0.1
   spread: 0
-  reloadTime: 1
-  timeBetweenShots: 4
-  magazineSize: 10
-  bulletsPerTap: 1
+  reloadTime: 0
+  timeBetweenShots: 0
+  magazineSize: 1
+  bulletsPerTap: 0
   allowButtonHold: 0
   canReload: 0
   bulletsLeft: 0
-  rayLength: 10
+  rayLength: 1000
   particleSystem: {fileID: 0}
-  attackPoint: {fileID: 7050052531768342197}
+  attackPoint: {fileID: 0}
   allowInvoke: 1

@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Com.MyCompany.MyGame;
 
-public class MixerScript : GenericGun
+public class WideSpreadGunsScript : GenericGun
 {
-    private GameObject mixerObject, mixerBlades;
-
-    private void Start()
-    {
-        mixerObject = GameObject.Find("handMixer");
-        mixerBlades = mixerObject.transform.GetChild(1).gameObject;
-    }
+    public float rayWideness;
 
     public override void Shoot()
     {
-        readyToShoot = false;    
+        readyToShoot = false;      
 
         //Calculate direction from attackPoint to targetPoint
         Vector3 directionWithoutSpread = attackPoint.forward;
@@ -28,7 +22,7 @@ public class MixerScript : GenericGun
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0); //Just add spread to last direction
 
         RaycastHit hit;
-        if (Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, rayLength, ~(1 << LayerMask.NameToLayer("Interactables")), QueryTriggerInteraction.Ignore))
+        if (Physics.SphereCast(attackPoint.position, rayWideness, attackPoint.forward, out hit, rayLength, ~(1 << LayerMask.NameToLayer("Interactables")), QueryTriggerInteraction.Ignore))
         {
 
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -36,6 +30,7 @@ public class MixerScript : GenericGun
 
                 hit.transform.root.GetComponent<PlayerManager>().Damage(Damage);
                 Debug.Log("hit " + hit.transform.name);
+
             }
 
             Debug.Log(hit.transform.name);
@@ -48,12 +43,10 @@ public class MixerScript : GenericGun
 
         if (bullet != null)
         {
-            if (mixerBlades != null)
-                mixerBlades.gameObject.SetActive(false);
-
             //Instantiate bullet/projectile
             GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
-                                                                                                       //currentBullet.GetComponent<BulletScript>().wP = this
+                                                                                                       //currentBullet.GetComponent<BulletScript>().wP = this;
+
             //Rotate bullet to shoot direction
             currentBullet.transform.forward = directionWithSpread.normalized;
 
@@ -61,7 +54,7 @@ public class MixerScript : GenericGun
             currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
         }
 
-        bulletsLeft--;
+        //bulletsLeft--;
         bulletsShot++;
 
         //Invoke resetShot function (if not already invoked), with your timeBetweenShooting

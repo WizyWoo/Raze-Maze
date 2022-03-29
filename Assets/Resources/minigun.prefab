@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2426210915533573821}
   - component: {fileID: 3043335147502256976}
   - component: {fileID: 1160684520431103462}
-  - component: {fileID: 4125022326735619517}
+  - component: {fileID: 5622669579957892613}
   - component: {fileID: 1494185081001674521}
   - component: {fileID: 6977855550406708124}
   - component: {fileID: 8094266339983884654}
@@ -227,7 +227,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1160684520431103462}
-  - {fileID: 4125022326735619517}
+  - {fileID: 5622669579957892613}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &4125022326735619517
+--- !u!114 &5622669579957892613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3089593956413838343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2b830029a2d8fe42819c89b12a96b16, type: 3}
+  m_Script: {fileID: 11500000, guid: 60a97da302318e64abda033ba97fe00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponID: 0
@@ -280,6 +280,7 @@ MonoBehaviour:
   particleSystem: {fileID: 8995168545513115497}
   attackPoint: {fileID: 5608596870347650438}
   allowInvoke: 1
+  rayWideness: 0.2
 --- !u!114 &1494185081001674521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +301,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   audioSource: {fileID: 0}
   grabSound: {fileID: 0}
-  ScriptToActivate: {fileID: 4125022326735619517}
+  ScriptToActivate: {fileID: 0}
   activateSound: {fileID: 0}
 --- !u!65 &6977855550406708124
 BoxCollider:

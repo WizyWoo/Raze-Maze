@@ -18,34 +18,25 @@ public class GenericGun : WeaponController, IPunObservable
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold, canReload = false;
 
-    int bulletsShot;
+    protected int bulletsShot;
 
-    [SerializeField] private int bulletsLeft;
+    [SerializeField] protected int bulletsLeft;
 
     public float rayLength;
-    //Recoil
-    //public Rigidbody playerRb;
-    //public float recoilForce;
 
     public ParticleSystem particleSystem;
 
     //bools
-    private bool readyToShoot, reloading;
+    protected bool readyToShoot, reloading;
 
     //Reference
     //public Camera myCamera;
     public Transform attackPoint;
 
-    //Graphics
-    //public GameObject muzzleFlash;
-    //public TextMeshProUGUI ammunitionDisplay;
-
     //bug fixing 
     public bool allowInvoke = true;
 
-    private LayerMask layerMask;
-
-    //private GameObject mixerObject, mixerBlades;
+    protected LayerMask layerMask;
 
     private void Awake()
     {
@@ -54,27 +45,13 @@ public class GenericGun : WeaponController, IPunObservable
         readyToShoot = true;
     }
 
-    private void Start()
-    {
-        ////mixerObject = GameObject.Find("handMixer");
-        ////mixerBlades = mixerObject.transform.GetChild(1).gameObject;
-    }
-
     private void Update()
     {
         MyInput();
-
-        //Set ammo display, if it exists 
-        //if (ammunitionDisplay != null)
-        //    ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
     }
 
     private void MyInput()
     {
-        //Check if allowed to hold down button and take corresponding input
-        //if (allowButtonHold) Firing = Input.GetKey(KeyCode.Mouse0);
-        //else Firing = Input.GetKeyDown(KeyCode.Mouse0);
-
         //Reloading 
         if (Input.GetKeyDown(KeyCode.T) && canReload == true/*&& bulletsLeft < magazineSize && !reloading*/) 
             Reload();
@@ -99,25 +76,9 @@ public class GenericGun : WeaponController, IPunObservable
         }
     }
 
-   public void Shoot()
+   public virtual void Shoot()
     {
-        readyToShoot = false;
-
-        //Find the exact hit position using a raycast
-        //Ray ray;  //Just a ray through the middle of the current view
-        //RaycastHit hit;
-
-        //if (Physics.Raycast(attackPoint.position, transform.forward, out hit, Mathf.Infinity, layerMask, QueryTriggerInteraction.Ignore))
-        //{
-
-        //}       
-
-        //check if ray hits something
-        //Vector3 targetPoint;
-        //if (Physics.Raycast(ray, out hit))
-        //    targetPoint = hit.point;
-        //else
-        //    targetPoint = ray.GetPoint(75); //Just a point far away from the player       
+        readyToShoot = false; 
 
         //Calculate direction from attackPoint to targetPoint
         Vector3 directionWithoutSpread = attackPoint.forward;
@@ -152,9 +113,6 @@ public class GenericGun : WeaponController, IPunObservable
 
         if(bullet != null)
         {
-            //if (mixerBlades != null)
-            //    mixerBlades.gameObject.SetActive(false);
-
             //Instantiate bullet/projectile
             GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
            //currentBullet.GetComponent<BulletScript>().wP = this;
@@ -167,11 +125,6 @@ public class GenericGun : WeaponController, IPunObservable
            //currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
         }
 
-        //Instantiate muzzle flash, if you have one
-        //if (muzzleFlash != null)
-        //    Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
-
-        //bulletsLeft--;
         bulletsShot++;
 
         //Invoke resetShot function (if not already invoked), with your timeBetweenShooting
@@ -180,15 +133,13 @@ public class GenericGun : WeaponController, IPunObservable
             Debug.Log("entered");
             Invoke("ResetShot", timeBetweenShooting);
             allowInvoke = false;
-
-            ////Add recoil to player (should only be called once)
-            //playerRb.AddForce(-directionWithSpread.normalized * recoilForce, ForceMode.Impulse);
         }
 
         //if more than one bulletsPerTap make sure to repeat shoot function
         if (bulletsShot < bulletsPerTap && bulletsLeft > 0)
             Invoke("Shoot", timeBetweenShots);
     }
+
     private void ResetShot()
     {
         Debug.Log("reseting the shot");
@@ -197,7 +148,7 @@ public class GenericGun : WeaponController, IPunObservable
         allowInvoke = true;
     }
 
-    private void Reload()
+    protected void Reload()
     {
         reloading = true;
         Invoke("ReloadFinished", reloadTime); //Invoke ReloadFinished function with your reloadTime as delay
