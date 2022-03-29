@@ -6,6 +6,8 @@ using Photon.Pun;
 public class MineTrap : ExplosiveTrapDamage
 {
 
+    public ParticleSystem ParticleSys;
+
     private void OnTriggerEnter(Collider _other)
     {
 
@@ -13,6 +15,8 @@ public class MineTrap : ExplosiveTrapDamage
         {
 
             Explode();
+
+            ParticleSys.Play();
             
             Used = true;
             Invoke("DestroyMe", 10);

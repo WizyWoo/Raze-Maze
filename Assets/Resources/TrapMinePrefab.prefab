@@ -138,7 +138,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5012,6 +5012,7 @@ MonoBehaviour:
   TrapActived: 0
   Used: 0
   ExplosionRadius: 6
+  ParticleSys: {fileID: 2427469137226538877}
 --- !u!1001 &2810180651692633707
 PrefabInstance:
   m_ObjectHideFlags: 0
