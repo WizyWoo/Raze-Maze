@@ -27,7 +27,7 @@ namespace Com.MyCompany.MyGame
         public int lives = 3;
         public GameOverScreenScript gameOver;
 
-        public bool readied = false;
+        public bool readied = false, DamageLocked;
 
         public static PlayerManager playerManager;
 
@@ -280,28 +280,46 @@ namespace Com.MyCompany.MyGame
         public void Damage(float damage = 0)
         {
 
-            Health -= damage;
-
-            if (Health <= 0)
+            if(!DamageLocked)
             {
-                lives--;
-                Health = 1f;
 
-                //StartCoroutine(GameManager.gameManager.Respawn());
-                if (photonView.IsMine)
-                {                  
-                    GameManager.gameManager.Invoke("Respawn", 0);
+                Health -= damage;
 
-                    if (lives <= 0)
-                        GameManager.gameManager.Invoke("GameOver", 0);
-                    //GameManager.gameManager.LeaveRoom();
+                if (Health <= 0)
+                {
+                    lives--;
+                    Health = 1f;
 
-                    vrController.OnRespawning(2f);
+                    //StartCoroutine(GameManager.gameManager.Respawn());
+                    if (photonView.IsMine)
+                    {                  
+                        GameManager.gameManager.Invoke("Respawn", 2f);
+
+                        DamageLocked = true;
+
+                        Invoke("UnlockDamage", 2f);
+
+                        if (lives <= 0)
+                            GameManager.gameManager.Invoke("GameOver", 2f);
+                        //GameManager.gameManager.LeaveRoom();
+
+                        vrController.OnRespawning();
+                    }
                 }
+
+                Debug.Log(gameObject.name + " was damaged for " + damage);
+
             }
 
-            Debug.Log(gameObject.name + " was damaged for " + damage);
+        }
+
+        public void UnlockDamage()
+        {
+
+            vrController.OnRespawned();
+            DamageLocked = false;
 
         }
+
     }
 }

@@ -60,10 +60,17 @@ public class VrPlayerController : MonoBehaviour
 
     }
 
-    public void OnRespawning(float _respawnDelay)
+    public void OnRespawning()
     {
 
+        move.Disable();
 
+    }
+
+    public void OnRespawned()
+    {
+
+        move.Enable();
 
     }
 
