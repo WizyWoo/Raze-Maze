@@ -34,6 +34,9 @@ public class VrHandsController : MonoBehaviour
     private InputAction GrabButton, TriggerButton;
     private PlayerItemController itemController;
     private UnityEngine.XR.InputDevice device;
+    private HapticCapabilities deviceHaptics;
+    private uint deviceID;
+    private byte[] hapticBuffer;
 
     private void Awake()
     {
@@ -48,6 +51,7 @@ public class VrHandsController : MonoBehaviour
             TriggerButton = PlayerInputs.Player.FireRight;
 
             device = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+            device.TryGetHapticCapabilities(out deviceHaptics);
 
             break;
 
@@ -60,6 +64,8 @@ public class VrHandsController : MonoBehaviour
             break;
 
         }
+
+        hapticBuffer = new byte[deviceHaptics.bufferOptimalSize];
 
     }
 
@@ -119,7 +125,7 @@ public class VrHandsController : MonoBehaviour
                 if(!closestAnchor.IsHeld)
                 {
 
-                    
+                    device.SendHapticBuffer(0, hapticBuffer);
 
                 }
 
