@@ -22,7 +22,8 @@ public class DoorScript : MonoBehaviour, IInteractable
     void OnTriggerEnter(Collider other)
     {
         //TODO: check if it's the player
-        inTrigger = true;
+        if(other.CompareTag("Player"))
+            inTrigger = true;
     }
 
     void OnTriggerExit(Collider other)
