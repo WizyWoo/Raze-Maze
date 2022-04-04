@@ -4180,6 +4180,7 @@ GameObject:
   - component: {fileID: 1939964311}
   - component: {fileID: 1939964310}
   - component: {fileID: 1939964309}
+  - component: {fileID: 1939964314}
   m_Layer: 0
   m_Name: Cool
   m_TagString: Untagged
@@ -4301,6 +4302,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1939964314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939964308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c266db73da50aa40a0a721f64596d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerSize: 0.075
+  Clips:
+  - {fileID: 32900000, guid: 1812bb48e8769b041a83ea29897fdbb3, type: 3}
+  - {fileID: 32900000, guid: 5d14535ab1b052348a980b3df0f4be11, type: 3}
+  - {fileID: 32900000, guid: cdd3ffde0f443fe44b4be85cb976ac52, type: 3}
 --- !u!1 &1951518474
 GameObject:
   m_ObjectHideFlags: 0
