@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 7556719387670708525}
   - component: {fileID: 3114149574901460167}
   - component: {fileID: 2318940553835961965}
-  - component: {fileID: 3849021344769855260}
+  - component: {fileID: 2884048929814565666}
   m_Layer: 0
   m_Name: Hinge
   m_TagString: Untagged
@@ -357,6 +357,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keycheck: 0
+  open: 0
+  close: 1
+  inTrigger: 0
 --- !u!65 &2318940553835961965
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -370,26 +373,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.7790985, y: 0.6646363, z: 7.4080706}
   m_Center: {x: -3.8902512, y: 0.27753228, z: -0.07277107}
---- !u!95 &3849021344769855260
-Animator:
-  serializedVersion: 4
+--- !u!111 &2884048929814565666
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3894574537298490867}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fa37b9fff88f3984f8da986ac96cd386, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 2e8233fabd27b1f40a77bc1da88e49c2, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7364628735841499750
 GameObject:
   m_ObjectHideFlags: 0
