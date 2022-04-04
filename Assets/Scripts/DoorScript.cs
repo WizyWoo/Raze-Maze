@@ -5,12 +5,12 @@ public class DoorScript : MonoBehaviour, IInteractable
 {
     public static bool doorKey = false;
     public bool keycheck;
-    private bool open, close = true, inTrigger;
-    private Animator anim;
+    public bool open, close = true, inTrigger;
+    private Animation anim;
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animation>();
         keycheck = doorKey;
     }
 
@@ -28,7 +28,8 @@ public class DoorScript : MonoBehaviour, IInteractable
 
     void OnTriggerExit(Collider other)
     {
-        inTrigger = false;
+        if(other.CompareTag("Player"))
+            inTrigger = false;
     }
 
     public void Activate(Transform _player)
@@ -52,7 +53,7 @@ public class DoorScript : MonoBehaviour, IInteractable
             if (open)
             {
                 if (anim != null)
-                    anim.Play("doorOpening");
+                    anim.Play();
             }                  
         }
     }
