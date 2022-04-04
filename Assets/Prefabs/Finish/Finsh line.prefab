@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 7556719387670708525}
   - component: {fileID: 3114149574901460167}
   - component: {fileID: 2318940553835961965}
+  - component: {fileID: 3849021344769855260}
   m_Layer: 0
   m_Name: Hinge
   m_TagString: Untagged
@@ -335,8 +336,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3894574537298490867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8312092, y: 1.92, z: -3.61}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.8312092, y: 1.92, z: -4.37}
+  m_LocalScale: {x: 1, y: 1, z: 1.3445}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5286797065209263201}
@@ -355,6 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4bef8449dacae047913baaf34932724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keycheck: 0
 --- !u!65 &2318940553835961965
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -366,8 +368,28 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.7790985, y: 0.5157164, z: 7.4080706}
-  m_Center: {x: -3.8902512, y: 0.20307225, z: -0.07277107}
+  m_Size: {x: 7.7790985, y: 0.6646363, z: 7.4080706}
+  m_Center: {x: -3.8902512, y: 0.27753228, z: -0.07277107}
+--- !u!95 &3849021344769855260
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894574537298490867}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa37b9fff88f3984f8da986ac96cd386, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7364628735841499750
 GameObject:
   m_ObjectHideFlags: 0

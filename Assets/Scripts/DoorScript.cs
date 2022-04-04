@@ -3,11 +3,25 @@ using System.Collections;
 
 public class DoorScript : MonoBehaviour, IInteractable
 {
-    public static bool doorKey;
-    private bool open, close, inTrigger;
+    public static bool doorKey = false;
+    public bool keycheck;
+    private bool open, close = true, inTrigger;
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+        keycheck = doorKey;
+    }
+
+    void Update()
+    {
+        keycheck = doorKey;
+    }
 
     void OnTriggerEnter(Collider other)
     {
+        //TODO: check if it's the player
         inTrigger = true;
     }
 
@@ -16,7 +30,7 @@ public class DoorScript : MonoBehaviour, IInteractable
         inTrigger = false;
     }
 
-    void Activate(Transform _player)
+    public void Activate(Transform _player)
     {
         if (inTrigger)
         {
@@ -24,27 +38,21 @@ public class DoorScript : MonoBehaviour, IInteractable
             {
                 if (doorKey)
                 {
-                    open = true;
+                    open = true;                   
                     close = false;
                 }
             }
             else
             {
                 close = true;
-                open = false;
-                
+                open = false;                
             }
-        }
 
-        if (open)
-        {
-            var newRot = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0.0f, -90.0f, 0.0f), Time.deltaTime * 200);
-            transform.rotation = newRot;
-        }
-        else
-        {
-            var newRot = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0.0f, 0.0f, 0.0f), Time.deltaTime * 200);
-            transform.rotation = newRot;
+            if (open)
+            {
+                if (anim != null)
+                    anim.Play("doorOpening");
+            }                  
         }
     }
 }
