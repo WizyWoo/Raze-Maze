@@ -1168,6 +1168,78 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: ItemTheme.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: AttackMode.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: ItemRarity.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: TrapPrefabs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: AttackMode.Array.data[7]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: ItemCatalogue.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: ItemRarity.Array.data[7]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: TrapScaleMode.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: WeaponPrefabs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: TrapPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 8376783409142404796, guid: df34a29912f913643aa4236f6cdf1ca2,
+        type: 3}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: ItemCatalogue.Array.data[7]
+      value: Mixer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: TrapScaleMode.Array.data[7]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: WeaponPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 9109807381526474317, guid: 5a3160fc5c2d60443a3f97589add92e5,
+        type: 3}
+    - target: {fileID: 5409999063586750185, guid: b6910ba7ae0de4745843d18bb530ae72,
+        type: 3}
+      propertyPath: TrapActivationDelay.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6607009582266129076, guid: b6910ba7ae0de4745843d18bb530ae72,
         type: 3}
       propertyPath: sceneViewId
