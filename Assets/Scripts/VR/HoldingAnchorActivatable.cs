@@ -6,8 +6,6 @@ public class HoldingAnchorActivatable : HoldingAnchor
 {
 
     public WeaponController ScriptToActivate;
-    [SerializeField]
-    private AudioClip activateSound;
 
     public void ActivateInteractableOnObject(Transform _activatedBy, bool _firing)
     {
@@ -26,33 +24,16 @@ public class HoldingAnchorActivatable : HoldingAnchor
 
         }
 
-        if(_firing && activateSound)
-            audioSource.PlayOneShot(activateSound);
+    }
+
+    public override void Released()
+    {
+
+        base.Released();
+        
+        ScriptToActivate.FireWeapon(false);
 
     }
 
-    /*private void FixedUpdate()
-    {
-
-        if(!IsHeld)
-        {
-
-            if(ScriptToActivate != null)
-            {
-
-                ScriptToActivate.FireWeapon(false);
-
-            }
-            else
-            {
-
-                ScriptToActivate = gameObject.GetComponent<WeaponController>();
-                ScriptToActivate.FireWeapon(false);
-
-            }
-
-        }
-
-    }*/
 
 }

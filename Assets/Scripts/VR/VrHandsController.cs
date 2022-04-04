@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Linq;
+using UnityEngine.XR;
+using UnityEngine.XR.Provider;
 
 public class VrHandsController : MonoBehaviour
 {
@@ -28,9 +30,10 @@ public class VrHandsController : MonoBehaviour
     private float grabRadius, grabMaxDist, grabDistance;
     private LayerMask grabMask;
     [SerializeField]
-    private HoldingAnchor holding;
+    private HoldingAnchor holding, closestAnchor;
     private InputAction GrabButton, TriggerButton;
     private PlayerItemController itemController;
+    private UnityEngine.XR.InputDevice device;
 
     private void Awake()
     {
@@ -43,11 +46,17 @@ public class VrHandsController : MonoBehaviour
             case Hand.Right:
             GrabButton = PlayerInputs.Player.GrabRight;
             TriggerButton = PlayerInputs.Player.FireRight;
+
+            device = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+
             break;
 
             case Hand.Left:
             GrabButton = PlayerInputs.Player.GrabLeft;
             TriggerButton = PlayerInputs.Player.FireLeft;
+
+            device = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
+
             break;
 
         }
@@ -81,49 +90,56 @@ public class VrHandsController : MonoBehaviour
     private void Update()
     {
 
+        RaycastHit[] _hits = Physics.SphereCastAll(transform.position, grabRadius, Vector3.forward, grabMaxDist, grabMask, QueryTriggerInteraction.Collide);
+
+        if(_hits.Length > 0)
+        {
+
+            RaycastHit _closestHit = _hits[0];
+            float[] _distances = new float[_hits.Length];
+            float _closest = 0;
+
+            for (int i = 0; i < _hits.Length; i++)
+            {
+
+                _distances[i] = Vector3.Distance(_hits[i].transform.position, transform.position);
+
+                if(_distances[i] == _distances.Min())
+                {
+
+                    _closestHit = _hits[i];
+
+                }
+                
+            }
+
+            if(_closest <= grabDistance && _closestHit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor))
+            {
+
+                if(!closestAnchor.IsHeld)
+                {
+
+                    
+
+                }
+
+            }
+
+        }
+
         if(GrabButton.WasPressedThisFrame())
         {
 
-            RaycastHit[] _hits = Physics.SphereCastAll(transform.position, grabRadius, Vector3.forward, grabMaxDist, grabMask, QueryTriggerInteraction.Collide);
-
-            if(_hits.Length > 0)
+            if(!closestAnchor.IsHeld)
             {
 
-                RaycastHit _closestHit = _hits[0];
-                float[] _distances = new float[_hits.Length];
-                float _closest = 0;
+                holding = closestAnchor.Grabbed(transform);
 
-                for (int i = 0; i < _hits.Length; i++)
-                {
+            }
+            else
+            {
 
-                    _distances[i] = Vector3.Distance(_hits[i].transform.position, transform.position);
-
-                    if(_distances[i] == _distances.Min())
-                    {
-
-                        _closestHit = _hits[i];
-
-                    }
-                    
-                }
-
-                if(_closest <= grabDistance && _closestHit.transform.TryGetComponent<HoldingAnchor>(out holding))
-                {
-
-                    if(!holding.IsHeld)
-                    {
-
-                        holding = holding.Grabbed(transform);
-
-                    }
-                    else
-                    {
-
-                        holding = null;
-
-                    }
-
-                }
+                holding = null;
 
             }
 
