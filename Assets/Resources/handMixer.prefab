@@ -274,13 +274,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5493017549787489723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.133, z: 0}
+  m_LocalPosition: {x: 0, y: -0.91478646, z: 1.1743256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8441814023433729271}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -92.101, y: 0, z: 0}
 --- !u!1 &7353338679516481949
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,14 +306,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7353338679516481949}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7199511, y: -0, z: -0, w: 0.6940248}
+  m_LocalPosition: {x: 0, y: -0.9930051, z: -0.9572463}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8441814023433729271}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -92.101, y: 0, z: 0}
 --- !u!33 &2505043025089675925
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -389,14 +389,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8270857593743097327}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000023841858, y: 1.805, z: 0}
+  m_LocalRotation: {x: -0.7199511, y: -0, z: -0, w: 0.6940248}
+  m_LocalPosition: {x: 0, y: -1.059177, z: -2.7610228}
   m_LocalScale: {x: 0.31057, y: 0.31057, z: 0.31057}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8441814023433729271}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -92.101, y: 0, z: 0}
 --- !u!65 &8270857593743097325
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -428,8 +428,6 @@ MonoBehaviour:
   mainAnchor: 0
   handTransform: {fileID: 0}
   rb: {fileID: 0}
-  audioSource: {fileID: 0}
-  grabSound: {fileID: 0}
 --- !u!1 &8270857594716394717
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,8 +451,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8270857594716394717}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7199511, y: -0, z: -0, w: 0.6940248}
+  m_LocalPosition: {x: 0, y: -0.9930051, z: -0.9572463}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -462,7 +460,7 @@ Transform:
   - {fileID: 3203638210694207471}
   m_Father: {fileID: 8441814023433729271}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -92.101, y: 0, z: 0}
 --- !u!1 &9045773961049645174
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,9 +573,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9109807381526474317}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -17.677, y: 13.539, z: 5.85964}
-  m_LocalScale: {x: 0.54038, y: 0.54038, z: 0.54038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.678, y: 13.452, z: 5.8601}
+  m_LocalScale: {x: 0.4353031, y: 0.4353031, z: 0.4353031}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7535830989710819642}
@@ -658,10 +656,7 @@ MonoBehaviour:
   mainAnchor: 1
   handTransform: {fileID: 0}
   rb: {fileID: 0}
-  audioSource: {fileID: 0}
-  grabSound: {fileID: 0}
   ScriptToActivate: {fileID: 0}
-  activateSound: {fileID: 0}
 --- !u!114 &2578606770170842086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,7 +676,7 @@ MonoBehaviour:
   ExplosiveUsed: 0
   MainAnchor: {fileID: 0}
   bullet: {fileID: 1809724846989947614, guid: 3010be602f456f34ba0048fcf9c7864d, type: 3}
-  shootForce: 0
+  shootForce: 50
   timeBetweenShooting: 0.1
   spread: 0
   reloadTime: 0
@@ -693,5 +688,7 @@ MonoBehaviour:
   bulletsLeft: 0
   rayLength: 1000
   particleSystem: {fileID: 0}
-  attackPoint: {fileID: 0}
+  attackPoint: {fileID: 7050052531768342197}
   allowInvoke: 1
+  mixerObject: {fileID: 9109807381526474317}
+  mixerBlades: {fileID: 8270857594716394717}
