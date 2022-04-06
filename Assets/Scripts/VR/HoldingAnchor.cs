@@ -34,6 +34,13 @@ public class HoldingAnchor : MonoBehaviour
         originPos = transform.position;
         rb = transform.root.GetComponent<Rigidbody>();
 
+        if(!mainAnchor)
+        {
+
+            originPos = transform.localPosition;
+
+        }
+
     }
 
     public virtual HoldingAnchor Grabbed(Transform _grabbedBy)
@@ -57,6 +64,13 @@ public class HoldingAnchor : MonoBehaviour
 
         if(rb)
             rb.isKinematic = false;
+
+        if(!mainAnchor)
+        {
+
+            transform.localPosition = originPos;
+            
+        }
 
     }
 

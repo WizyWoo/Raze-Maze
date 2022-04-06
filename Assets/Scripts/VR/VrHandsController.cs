@@ -24,12 +24,10 @@ public class VrHandsController : MonoBehaviour
 
     public Hand HandLR;
     public VRPlayerInputs PlayerInputs;
-    public GameObject RightHand, LeftHand;
-    public Transform WeaponDisplay, TrapDisplay;
-    public uint Channel;
+    public Transform DisplayTransform;
     public float HapticAmp, HapticDur;
     [SerializeField]
-    private float grabRadius, grabMaxDist, grabDistance;
+    private float grabRadius, grabDistance;
     private LayerMask grabMask;
     [SerializeField]
     private HoldingAnchor holding, closestAnchor;
@@ -37,7 +35,6 @@ public class VrHandsController : MonoBehaviour
     private PlayerItemController itemController;
     private UnityEngine.XR.InputDevice device;
     private UnityEngine.XR.HapticCapabilities deviceHaptics;
-    private byte[] hapticBuffer;
 
     private void Awake()
     {
@@ -109,12 +106,12 @@ public class VrHandsController : MonoBehaviour
     private void Update()
     {
 
-        RaycastHit[] _hits = Physics.SphereCastAll(transform.position, grabRadius, Vector3.forward, grabMaxDist, grabMask, QueryTriggerInteraction.Collide);
+        Collider[] _hits = Physics.OverlapSphere(transform.position, grabRadius, grabMask, QueryTriggerInteraction.Collide);
 
         if(_hits.Length > 0)
         {
 
-            RaycastHit _closestHit = _hits[0];
+            Collider _closestHit = _hits[0];
             float[] _distances = new float[_hits.Length];
             float _closest = 0;
 

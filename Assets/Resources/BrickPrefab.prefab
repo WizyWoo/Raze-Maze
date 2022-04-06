@@ -195,8 +195,6 @@ MonoBehaviour:
   mainAnchor: 1
   handTransform: {fileID: 0}
   rb: {fileID: 5381702360757388189}
-  audioSource: {fileID: 0}
-  grabSound: {fileID: 0}
   ActivateWhenThrown: 0
   FollowSpeedMult: 50
   ScriptToActivate: {fileID: 0}

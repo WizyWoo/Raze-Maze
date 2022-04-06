@@ -232,8 +232,6 @@ MonoBehaviour:
   mainAnchor: 1
   handTransform: {fileID: 0}
   rb: {fileID: 4922112481516964309}
-  audioSource: {fileID: 0}
-  grabSound: {fileID: 0}
   ActivateWhenThrown: 1
   FollowSpeedMult: 50
   ScriptToActivate: {fileID: 5787422257912688968}
