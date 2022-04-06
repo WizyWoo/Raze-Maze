@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Linq;
 using UnityEngine.XR;
-using UnityEngine.XR.Provider;
+using UnityEngine.InputSystem.XR.Haptics;
 
 public class VrHandsController : MonoBehaviour
 {
@@ -26,6 +26,8 @@ public class VrHandsController : MonoBehaviour
     public VRPlayerInputs PlayerInputs;
     public GameObject RightHand, LeftHand;
     public Transform WeaponDisplay, TrapDisplay;
+    public uint Channel;
+    public float HapticAmp, HapticDur;
     [SerializeField]
     private float grabRadius, grabMaxDist, grabDistance;
     private LayerMask grabMask;
@@ -34,8 +36,7 @@ public class VrHandsController : MonoBehaviour
     private InputAction GrabButton, TriggerButton;
     private PlayerItemController itemController;
     private UnityEngine.XR.InputDevice device;
-    private HapticCapabilities deviceHaptics;
-    private uint deviceID;
+    private UnityEngine.XR.HapticCapabilities deviceHaptics;
     private byte[] hapticBuffer;
 
     private void Awake()
@@ -50,22 +51,15 @@ public class VrHandsController : MonoBehaviour
             GrabButton = PlayerInputs.Player.GrabRight;
             TriggerButton = PlayerInputs.Player.FireRight;
 
-            device = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-            device.TryGetHapticCapabilities(out deviceHaptics);
-
             break;
 
             case Hand.Left:
             GrabButton = PlayerInputs.Player.GrabLeft;
             TriggerButton = PlayerInputs.Player.FireLeft;
 
-            device = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
-
             break;
 
         }
-
-        hapticBuffer = new byte[deviceHaptics.bufferOptimalSize];
 
     }
 
@@ -90,6 +84,25 @@ public class VrHandsController : MonoBehaviour
 
         grabMask = 1 << LayerMask.NameToLayer("Interactables");
         itemController = transform.root.GetComponent<PlayerItemController>();
+
+        switch(HandLR)
+        {
+
+            case Hand.Right:
+
+            device = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+            device.TryGetHapticCapabilities(out deviceHaptics);
+
+            break;
+
+            case Hand.Left:
+
+            device = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
+            device.TryGetHapticCapabilities(out deviceHaptics);
+
+            break;
+
+        }
         
     }
 
@@ -125,7 +138,20 @@ public class VrHandsController : MonoBehaviour
                 if(!closestAnchor.IsHeld)
                 {
 
-                    device.SendHapticBuffer(0, hapticBuffer);
+                    if(deviceHaptics.supportsImpulse)
+                    {
+                        
+                        device.SendHapticImpulse(0u, HapticAmp, HapticDur);
+                    
+                    }
+                    else if(deviceHaptics.supportsBuffer)
+                    {
+
+                        Debug.Log("Buffer supported, but not implemented...");
+
+                    }
+                    else
+                        Debug.Log("No Haptics");
 
                 }
 

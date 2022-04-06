@@ -6,18 +6,12 @@ using UnityEngine.InputSystem;
 public class VrPlayerController : MonoBehaviour
 {
 
-    //ToDo
-    /*
-    Check if the players hands are behind a wall before allowing them to pick up stuff
-    Make a solution for players to shoot past a corner
-    */
-
     public VRPlayerInputs PlayerInputs;
     public float MovementSpeed, TurnSpeed;
-    [Tooltip("The transform the player moves relative to")]
     public Transform MoveRelativeTo, RotateAround, CameraTransform;
     private InputAction move, look;
     private Rigidbody rb;
+    public Vector2 tempV2;
 
     private void Awake()
     {
@@ -48,7 +42,7 @@ public class VrPlayerController : MonoBehaviour
     private void Update()
     {
 
-        Vector2 tempV2 = move.ReadValue<Vector2>();
+        tempV2 = move.ReadValue<Vector2>();
 
         Vector3 forwardDir = new Vector3(MoveRelativeTo.forward.x, 0, MoveRelativeTo.forward.z).normalized;
         Vector3 rightDir = new Vector3(MoveRelativeTo.right.x, 0, MoveRelativeTo.right.z).normalized;
