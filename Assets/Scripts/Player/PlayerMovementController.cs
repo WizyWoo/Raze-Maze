@@ -9,7 +9,7 @@ public class PlayerMovementController : MonoBehaviour
     public bool DrawGizmos;
     private float sprinting, coyoteTimer;
     [SerializeField]
-    private bool grounded;
+    public bool grounded;
     private Vector3 movementDir, spawnOrigin;
     private Rigidbody rb;
     private LayerMask playerMask;
