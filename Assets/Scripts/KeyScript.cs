@@ -5,3 +5,5 @@ public class KeyScript : MonoBehaviour, IInteractable
 {
     
 }
+
+
