@@ -321,7 +321,8 @@ public class PlayerItemController : MonoBehaviour
             else
             {
 
-                PickedUpItem(0);
+                EquippedWeaponID = CurrentItemID;
+                CurrentItemID = 0;
 
             }
 

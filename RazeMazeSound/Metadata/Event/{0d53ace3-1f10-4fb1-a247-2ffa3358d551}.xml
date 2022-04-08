@@ -33,7 +33,6 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{e68495bb-5d30-4ea3-8b52-90a44904078b}</destination>
-			<destination>{787f132f-0f9f-4e9d-8b42-90de7f27de1a}</destination>
 		</relationship>
 		<relationship name="banks">
 			<destination>{9ed9c028-9eae-45f2-be43-2e2a0a11b2cb}</destination>
@@ -70,15 +69,14 @@
 			<destination>{b3a4d32d-d143-4e78-be20-4f689181a78a}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{c879cdf6-f196-4bed-bd94-59fdcc924802}" />
+	<object class="Timeline" id="{c879cdf6-f196-4bed-bd94-59fdcc924802}">
+		<property name="isProxyEnabled">
+			<value>false</value>
+		</property>
+	</object>
 	<object class="ActionSheet" id="{e68495bb-5d30-4ea3-8b52-90a44904078b}">
 		<relationship name="modules">
 			<destination>{ea43b0d7-dd01-45a0-9b90-f20687ce83d2}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProxy" id="{787f132f-0f9f-4e9d-8b42-90de7f27de1a}">
-		<relationship name="preset">
-			<destination>{0fada691-ed51-4f91-ab00-cafd510a7deb}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{3ffbb89d-043e-4005-a266-ddd23772ab6e}">

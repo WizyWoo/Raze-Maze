@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{941d574e-68ee-4c73-b5be-47b16ccfe050}">
 		<property name="name">
-			<value>Walking</value>
+			<value>Surfaces</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -137,6 +137,14 @@
 		<property name="start">
 			<value>1</value>
 		</property>
+		<relationship name="sounds">
+			<destination>{853f8fe2-1307-45b4-b7b6-d333d8cfdcce}</destination>
+			<destination>{08b7be59-eb73-402b-b750-53257facb8b3}</destination>
+			<destination>{7172bac1-0525-474b-a33a-af38e3eab8df}</destination>
+			<destination>{017e3b05-6e95-4142-a162-73f1d323e54f}</destination>
+			<destination>{6005645f-da9c-486e-a5fc-d684dd511dca}</destination>
+			<destination>{fb2b4632-5d5c-42a8-8343-2a87bae85bcb}</destination>
+		</relationship>
 	</object>
 	<object class="MultiSound" id="{70e38d27-2fc6-4b29-8a28-713e806a30ea}">
 		<property name="start">
@@ -212,6 +220,36 @@
 	<object class="SingleSound" id="{b2cf6635-40bc-4651-ba5a-314c8f460c6e}">
 		<relationship name="audioFile">
 			<destination>{429fb828-0f2c-498a-bcc9-165903107601}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{853f8fe2-1307-45b4-b7b6-d333d8cfdcce}">
+		<relationship name="audioFile">
+			<destination>{3a938bda-953a-41ce-83e6-d8cd944fa8d8}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{08b7be59-eb73-402b-b750-53257facb8b3}">
+		<relationship name="audioFile">
+			<destination>{f3fe1851-44d7-48f7-8753-d0746bcec899}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{7172bac1-0525-474b-a33a-af38e3eab8df}">
+		<relationship name="audioFile">
+			<destination>{98a365c5-d366-4473-92a2-64fb38628ede}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{017e3b05-6e95-4142-a162-73f1d323e54f}">
+		<relationship name="audioFile">
+			<destination>{3bc5b168-bd5b-4bf2-87a3-02de58877350}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{6005645f-da9c-486e-a5fc-d684dd511dca}">
+		<relationship name="audioFile">
+			<destination>{472569ed-2b6b-49db-bcc9-8bf6fe0be025}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{fb2b4632-5d5c-42a8-8343-2a87bae85bcb}">
+		<relationship name="audioFile">
+			<destination>{cd2f0839-1f1d-4f08-a9b8-74fefbc47422}</destination>
 		</relationship>
 	</object>
 	<object class="Automator" id="{c1f4838b-5eff-48ca-95d2-1d1a1140717e}">
