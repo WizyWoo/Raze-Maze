@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using Photon.Pun;
 
-public class DoorScript : MonoBehaviour, IInteractable
+public class DoorScript : MonoBehaviourPunCallbacks, IInteractable
 {
     public static bool doorKey = false;
     public bool keycheck;
@@ -33,7 +33,6 @@ public class DoorScript : MonoBehaviour, IInteractable
             inTrigger = false;
     }
 
-    [PunRPC]
     public void Activate(Transform _player)
     {
         if (inTrigger)
@@ -54,9 +53,15 @@ public class DoorScript : MonoBehaviour, IInteractable
 
             if (open)
             {
-                if (anim != null)
-                    anim.Play();
+              photonView.RPC("OpenDoor", RpcTarget.All);
             }                  
         }
+    }
+
+    [PunRPC]
+    private void OpenDoor()
+    {
+        if (anim != null)
+             anim.Play();
     }
 }
