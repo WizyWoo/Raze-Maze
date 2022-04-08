@@ -306,19 +306,14 @@ namespace Com.MyCompany.MyGame
                         vrController.OnRespawning();
                     }
                 }
-
                 Debug.Log(gameObject.name + " was damaged for " + damage);
-
             }
-
         }
 
         public void UnlockDamage()
         {
-
-            vrController.OnRespawned();
             DamageLocked = false;
-
+            vrController.OnRespawned();
         }
 
     }
