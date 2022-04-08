@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Photon.Pun;
 
 public class DoorScript : MonoBehaviour, IInteractable
 {
@@ -32,6 +33,7 @@ public class DoorScript : MonoBehaviour, IInteractable
             inTrigger = false;
     }
 
+    [PunRPC]
     public void Activate(Transform _player)
     {
         if (inTrigger)
