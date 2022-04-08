@@ -16,6 +16,8 @@ public class ChunkGenerator : MonoBehaviour
     [Header("Y must have consistent numbers")]
     [Tooltip("Consider this a cordinate system, 0 means no change, 1 means removed, 2 means spawnpoint, 3 means end")]
     public List<MazeTemplate> mazeTemplates;
+    public GameObject key;
+    private List<Transform> _plainChunk;
     
     
     // Start is called before the first frame update
@@ -43,6 +45,7 @@ public class ChunkGenerator : MonoBehaviour
                         int biomeId = mazeTemplates[generateMazeId].x[w].biome[l];
                         int r = Random.Range(0, biomeChunks[biomeId].chunks.Count);
                         g = Instantiate(biomeChunks[biomeId].chunks[r]);
+                        _plainChunk.Add(g.transform);
                     break;
                     case 1: // Creates an empty chunk
                         g = Instantiate(nullChunk);
@@ -62,6 +65,11 @@ public class ChunkGenerator : MonoBehaviour
                 g.transform.position = new Vector3(w * 20, 2.5f, l * 20);
                 _mazeList.Add(g.GetComponent<MazeId>());
                 _mazeList[_mazeList.Count - 1].placeLocation = g.transform.position;
+            }
+        }
+        if(_plainChunk.Count > 0){  // Creates a key
+            if(key != null){
+                Instantiate(key, _plainChunk[Random.Range(0, _plainChunk.Count)].position, Quaternion.identity);
             }
         }
         _psm._spawnPoints.AddRange(FindObjectsOfType<PlayerSpawnpoint>());
