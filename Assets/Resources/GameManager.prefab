@@ -47,10 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   completeLevelUI: {fileID: 0}
   lastCheckpointPos: {x: 0, y: 0, z: 0}
-  playerPrefab: {fileID: 260854731515951132, guid: 87f6d1db45d895c408ab31392285fe1c,
+  playerPrefab: {fileID: 1416359710976390386, guid: 9ef5d6ef5157a2046a44d517992b5455,
     type: 3}
   levelTransitionDelay: 1
-  player: {fileID: 0}
+  player: {fileID: 1416359710976390386, guid: 9ef5d6ef5157a2046a44d517992b5455, type: 3}
 --- !u!114 &5409999063586750185
 MonoBehaviour:
   m_ObjectHideFlags: 0
