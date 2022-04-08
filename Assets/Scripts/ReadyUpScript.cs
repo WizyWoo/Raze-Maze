@@ -13,7 +13,7 @@ namespace Com.MyCompany.MyGame
 
         public GameObject chunkGenerator;
         private bool locked;
-        private int readyCounter = 4;
+        private int readyCounter = 3;
 
         public TextMesh readyText;
 
