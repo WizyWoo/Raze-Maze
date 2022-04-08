@@ -20,23 +20,8 @@ public class DoorScript : MonoBehaviourPunCallbacks, IInteractable
         keycheck = doorKey;
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        //TODO: check if it's the player
-        if(other.CompareTag("Player"))
-            inTrigger = true;
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("Player"))
-            inTrigger = false;
-    }
-
     public void Activate(Transform _player)
     {
-        if (inTrigger)
-        {
             if (close)
             {
                 if (doorKey)
@@ -54,8 +39,7 @@ public class DoorScript : MonoBehaviourPunCallbacks, IInteractable
             if (open)
             {
               photonView.RPC("OpenDoor", RpcTarget.All);
-            }                  
-        }
+            }                    
     }
 
     [PunRPC]
