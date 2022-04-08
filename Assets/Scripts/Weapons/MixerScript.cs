@@ -5,12 +5,12 @@ using Com.MyCompany.MyGame;
 
 public class MixerScript : GenericGun
 {
-    private GameObject mixerObject, mixerBlades;
+    public GameObject mixerObject, mixerBlades;
 
     private void Start()
     {
-        mixerObject = GameObject.Find("handMixer");
-        mixerBlades = mixerObject.transform.GetChild(1).gameObject;
+        // mixerObject = GameObject.FindObjectOfType<MixerScript>().gameObject;
+        // mixerBlades = mixerObject.transform.GetChild(1).gameObject;
     }
 
     public override void Shoot()

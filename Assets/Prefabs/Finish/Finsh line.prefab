@@ -321,9 +321,10 @@ GameObject:
   - component: {fileID: 3114149574901460167}
   - component: {fileID: 2318940553835961965}
   - component: {fileID: 2884048929814565666}
+  - component: {fileID: 862987479899035851}
   m_Layer: 0
   m_Name: Hinge
-  m_TagString: Untagged
+  m_TagString: FinishDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -356,10 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4bef8449dacae047913baaf34932724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keycheck: 0
   open: 0
-  close: 1
-  inTrigger: 0
 --- !u!65 &2318940553835961965
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -368,7 +366,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3894574537298490867}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 7.7790985, y: 0.6646363, z: 7.4080706}
@@ -383,11 +381,34 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 2e8233fabd27b1f40a77bc1da88e49c2, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: 2e8233fabd27b1f40a77bc1da88e49c2, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &862987479899035851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894574537298490867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &7364628735841499750
 GameObject:
   m_ObjectHideFlags: 0
