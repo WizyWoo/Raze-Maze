@@ -11,12 +11,9 @@ public class DoorScript : MonoBehaviour
         anim = gameObject.GetComponent<Animation>();
     }
 
-    void OnCollisionEnter(Collision other)
+    public void DoorOpen()
     {
-        if(other.gameObject.tag == "Key")
-        {
-            if (anim != null)
-                anim.Play();
-        }
+        if (anim != null)
+            anim.Play();
     }
 }
