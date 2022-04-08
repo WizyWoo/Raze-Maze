@@ -11,7 +11,7 @@ TagManager:
   - Trap
   - NotMe
   - GM
-  - FinishDoor
+  - Key
   layers:
   - Default
   - TransparentFX
