@@ -1,15 +1,19 @@
 using UnityEngine;
 using System.Collections;
-using Photon.Pun;
 
-public class DoorScript : MonoBehaviourPunCallbacks, IInteractable
+public class DoorScript : MonoBehaviour
 {
     public bool open;
     private Animation anim;
 
+    void Start()
+    {
+        anim = gameObject.GetComponent<Animation>();
+    }
+
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.TryGetComponent<KeyScript>(out KeyScript key))
+        if(other.gameObject.tag == "Key")
         {
             if (anim != null)
                 anim.Play();
