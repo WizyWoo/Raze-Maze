@@ -12,8 +12,9 @@ public class RandomPickup : MonoBehaviour , IInteractable
     private void OnTriggerEnter(Collider col)
     {
 
-        if(col.tag == "Player")
-            Activate(col.transform.root);
+        if(col.transform.root.tag == "Player")
+            if(col.transform.root.GetComponentInChildren<PlayerItemController>().CurrentItemID == 0)
+                Activate(col.transform.root);
 
     }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Linq;
 using UnityEngine.XR;
-using UnityEngine.InputSystem.XR.Haptics;
 
 public class VrHandsController : MonoBehaviour
 {
