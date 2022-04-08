@@ -110,11 +110,9 @@ public class PlayerItemController : MonoBehaviour
     public void PickedUpItem(int _itemID)
     {
 
-        if(CurrentItemID != 0 || EquippedWeaponID != 0)
+        if(CurrentItemID != 0)
         {
-
-            if(activeWeapon)
-                PhotonNetwork.Destroy(activeWeapon);
+            
             GameObject temp = PhotonNetwork.Instantiate(pickupFolderName + droppedWeaponPrefab.name, transform.position, Quaternion.identity);
             temp.GetComponent<WeaponPickup>().WeaponID = CurrentItemID;
             temp.name = "Dropped Weapon ^ " + CurrentItemID;

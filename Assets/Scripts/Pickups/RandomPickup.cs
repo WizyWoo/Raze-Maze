@@ -13,7 +13,7 @@ public class RandomPickup : MonoBehaviour , IInteractable
     {
 
         if(col.transform.root.tag == "Player")
-            if(col.transform.root.GetComponentInChildren<PlayerItemController>().CurrentItemID == 0)
+            if(col.transform.root.GetComponentInChildren<PlayerItemController>().EquippedWeaponID == 0 && col.transform.root.GetComponentInChildren<PlayerItemController>().CurrentItemID == 0)
                 Activate(col.transform.root);
 
     }
