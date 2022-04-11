@@ -294,6 +294,7 @@ namespace Com.MyCompany.MyGame
                     if (photonView.IsMine)
                     {                  
                         GameManager.gameManager.Invoke("Respawn", 2f);
+                        GetComponentInChildren<PlayerItemController>().DropItem(0);
 
                         DamageLocked = true;
 
@@ -313,7 +314,6 @@ namespace Com.MyCompany.MyGame
         public void UnlockDamage()
         {
             DamageLocked = false;
-            GetComponentInChildren<PlayerItemController>().DropItem(0);
             vrController.OnRespawned();
         }
 
