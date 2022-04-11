@@ -32,6 +32,7 @@ public class KeyScript : MonoBehaviourPunCallbacks, IInteractable
     [PunRPC]
     void CallDoor()
     {
+        Debug.Log("IT ENTERED THE METHOD");
         door.DoorOpen();
     }
 }
