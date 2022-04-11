@@ -6,24 +6,14 @@ public class KeyScript : MonoBehaviourPunCallbacks, IInteractable
 {
     private DoorScript door;
 
-     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            if (stream.IsWriting)
-            {
-                // We own this player: send the others our data
-                stream.SendNext(door);
-            }
-            else
-            {
-                // Network player, receive data
-                this.door = (DoorScript)stream.ReceiveNext();
-            }
-        }
-
+    private void Start() 
+    {
+        door = FindObjectOfType<DoorScript>();
+    }
 
     void OnCollisionEnter(Collision other)
     {
-       if(other.gameObject.TryGetComponent<DoorScript>(out door))
+       if(other.gameObject.TryGetComponent<DoorScript>(out DoorScript kevin))
        {
            photonView.RPC("CallDoor", RpcTarget.All);
        }
