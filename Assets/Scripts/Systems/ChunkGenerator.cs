@@ -17,7 +17,7 @@ public class ChunkGenerator : MonoBehaviour
     [Tooltip("Consider this a cordinate system, 0 means no change, 1 means removed, 2 means spawnpoint, 3 means end")]
     public List<MazeTemplate> mazeTemplates;
     public GameObject key;
-    private List<Transform> _plainChunk;
+    private List<Transform> _plainChunk = new List<Transform>();
     
     
     // Start is called before the first frame update
