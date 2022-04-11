@@ -15,5 +15,7 @@ public class DoorScript : MonoBehaviour
     {
         if (anim != null)
             anim.Play();
+
+            open = true;
     }
 }
