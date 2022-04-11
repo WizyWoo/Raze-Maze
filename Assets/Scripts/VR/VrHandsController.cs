@@ -25,6 +25,7 @@ public class VrHandsController : MonoBehaviour
     public VRPlayerInputs PlayerInputs;
     public Transform DisplayTransform;
     public float HapticAmp, HapticDur;
+    public bool HandInteractionEnabled;
     [SerializeField]
     private float grabRadius, grabDistance;
     private LayerMask grabMask;
@@ -80,6 +81,7 @@ public class VrHandsController : MonoBehaviour
 
         grabMask = 1 << LayerMask.NameToLayer("Interactables");
         itemController = transform.root.GetComponent<PlayerItemController>();
+        HandInteractionEnabled = true;
 
         switch(HandLR)
         {
@@ -102,78 +104,12 @@ public class VrHandsController : MonoBehaviour
         
     }
 
-    private void Update()
+    public void SetInteractionState(bool _on)
     {
 
-        Collider[] _hits = Physics.OverlapSphere(transform.position, grabRadius, grabMask, QueryTriggerInteraction.Collide);
+        HandInteractionEnabled = _on;
 
-        if(_hits.Length > 0)
-        {
-
-            Collider _closestHit = _hits[0];
-            float[] _distances = new float[_hits.Length];
-            float _closest = 0;
-
-            for (int i = 0; i < _hits.Length; i++)
-            {
-
-                _distances[i] = Vector3.Distance(_hits[i].transform.position, transform.position);
-
-                if(_distances[i] == _distances.Min())
-                {
-
-                    _closestHit = _hits[i];
-
-                }
-                
-            }
-
-            if(_closest <= grabDistance && _closestHit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor))
-            {
-
-                if(!closestAnchor.IsHeld)
-                {
-
-                    if(deviceHaptics.supportsImpulse)
-                    {
-                        
-                        device.SendHapticImpulse(0u, HapticAmp, HapticDur);
-                    
-                    }
-                    else if(deviceHaptics.supportsBuffer)
-                    {
-
-                        Debug.Log("Buffer supported, but not implemented...");
-
-                    }
-                    else
-                        Debug.Log("No Haptics");
-
-                }
-
-            }
-
-        }
-
-        if(GrabButton.WasPressedThisFrame())
-        {
-
-            if(!closestAnchor.IsHeld)
-            {
-
-                holding = closestAnchor.Grabbed(transform);
-
-            }
-            else
-            {
-
-                holding = null;
-
-            }
-
-        }
-
-        if(GrabButton.WasReleasedThisFrame() && holding)
+        if(!_on)
         {
 
             holding.Released();
@@ -181,39 +117,126 @@ public class VrHandsController : MonoBehaviour
 
         }
 
-        if(TriggerButton.WasPressedThisFrame())
+    }
+
+    private void Update()
+    {
+
+        if(HandInteractionEnabled)
         {
-            
-            if(holding)
+
+            Collider[] _hits = Physics.OverlapSphere(transform.position, grabRadius, grabMask, QueryTriggerInteraction.Collide);
+
+            if(_hits.Length > 0)
             {
 
-                if(holding.TryGetComponent<HoldingAnchorActivatable>(out HoldingAnchorActivatable _activatable))
+                Collider _closestHit = _hits[0];
+                float[] _distances = new float[_hits.Length];
+                float _closest = 0;
+
+                for (int i = 0; i < _hits.Length; i++)
                 {
+
+                    _distances[i] = Vector3.Distance(_hits[i].transform.position, transform.position);
+
+                    if(_distances[i] == _distances.Min())
+                    {
+
+                        _closestHit = _hits[i];
+
+                    }
                     
-                    _activatable.ActivateInteractableOnObject(transform, true);
+                }
+
+                if(_closest <= grabDistance && _closestHit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor))
+                {
+
+                    if(!closestAnchor.IsHeld)
+                    {
+
+                        if(deviceHaptics.supportsImpulse)
+                        {
+                            
+                            device.SendHapticImpulse(0u, HapticAmp, HapticDur);
+                        
+                        }
+                        else if(deviceHaptics.supportsBuffer)
+                        {
+
+                            Debug.Log("Buffer supported, but not implemented...");
+
+                        }
+                        else
+                            Debug.Log("No Haptics");
+
+                    }
 
                 }
 
             }
-            else if(itemController.PlacingTrap)
+
+            if(GrabButton.WasPressedThisFrame())
             {
 
-                itemController.StartPlacingTrap();
+                if(!closestAnchor.IsHeld)
+                {
+
+                    holding = closestAnchor.Grabbed(transform);
+
+                }
+                else
+                {
+
+                    holding = null;
+
+                }
+
+            }
+
+            if(GrabButton.WasReleasedThisFrame() && holding)
+            {
+
+                holding.Released();
+                holding = null;
+
+            }
+
+            if(TriggerButton.WasPressedThisFrame())
+            {
+                
+                if(holding)
+                {
+
+                    if(holding.TryGetComponent<HoldingAnchorActivatable>(out HoldingAnchorActivatable _activatable))
+                    {
+                        
+                        _activatable.ActivateInteractableOnObject(transform, true);
+
+                    }
+
+                }
+                else if(itemController.PlacingTrap)
+                {
+
+                    itemController.StartPlacingTrap();
+
+                }
+
+            }
+            else if(TriggerButton.WasReleasedThisFrame() && holding)
+            {
+
+                if(holding.TryGetComponent<HoldingAnchorActivatable>(out HoldingAnchorActivatable _activatable))
+                {
+
+                    _activatable.ActivateInteractableOnObject(transform, false);
+
+                }
 
             }
 
         }
-        else if(TriggerButton.WasReleasedThisFrame() && holding)
-        {
 
-            if(holding.TryGetComponent<HoldingAnchorActivatable>(out HoldingAnchorActivatable _activatable))
-            {
-
-                _activatable.ActivateInteractableOnObject(transform, false);
-
-            }
-
-        }
 
     }
     

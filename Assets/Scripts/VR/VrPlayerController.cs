@@ -12,6 +12,7 @@ public class VrPlayerController : MonoBehaviour
     private InputAction move, look;
     private Rigidbody rb;
     public Vector2 tempV2;
+    public VrHandsController[] Hands;
 
     private void Awake()
     {
@@ -58,6 +59,8 @@ public class VrPlayerController : MonoBehaviour
     {
 
         move.Disable();
+        Hands[0].SetInteractionState(false);
+        Hands[1].SetInteractionState(false);
 
     }
 
@@ -65,6 +68,8 @@ public class VrPlayerController : MonoBehaviour
     {
 
         move.Enable();
+        Hands[0].SetInteractionState(true);
+        Hands[1].SetInteractionState(true);
 
     }
 
