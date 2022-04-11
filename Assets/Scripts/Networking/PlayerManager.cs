@@ -313,6 +313,7 @@ namespace Com.MyCompany.MyGame
         public void UnlockDamage()
         {
             DamageLocked = false;
+            GetComponentInChildren<PlayerItemController>().DropItem(0);
             vrController.OnRespawned();
         }
 
