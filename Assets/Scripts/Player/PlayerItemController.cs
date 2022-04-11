@@ -95,7 +95,7 @@ public class PlayerItemController : MonoBehaviour
     public void UpdateItemRefs(int _itemID, GameObject _weaponPrefab, GameObject _trapPrefab, ItemManager.ScalingMode _scalingMode, ItemManager.WeaponUseMode _weaponUseMode, float _activationDelay)
     {
 
-        PickedUpItem(_itemID);
+        DropItem(_itemID);
 
         CurrentWeaponPrefab = _weaponPrefab;
         CurrentTrapPrefab = _trapPrefab;
@@ -107,7 +107,7 @@ public class PlayerItemController : MonoBehaviour
 
     }
 
-    public void PickedUpItem(int _itemID)
+    public void DropItem(int _itemID)
     {
 
         if(CurrentItemID != 0)
