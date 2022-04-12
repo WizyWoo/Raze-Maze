@@ -182,7 +182,7 @@ public class VrHandsController : MonoBehaviour
 
             }
 
-            if(GrabButton.WasPressedThisFrame())
+            if(GrabButton.WasPressedThisFrame() && closestAnchor)
             {
 
                 if(!closestAnchor.IsHeld)
