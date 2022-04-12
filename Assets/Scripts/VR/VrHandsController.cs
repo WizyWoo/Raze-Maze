@@ -112,7 +112,8 @@ public class VrHandsController : MonoBehaviour
         if(!_on)
         {
 
-            holding.Released();
+            if(holding)
+                holding.Released();
             holding = null;
 
         }
