@@ -298,7 +298,7 @@ namespace Com.MyCompany.MyGame
 
                         DamageLocked = true;
 
-                        Invoke("UnlockDamage", 2f);
+                        Invoke("UnlockDamage", 4f);
 
                         if (lives <= 0)
                             GameManager.gameManager.Invoke("GameOver", 2f);

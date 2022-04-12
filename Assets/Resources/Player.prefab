@@ -139,6 +139,7 @@ MonoBehaviour:
   DisplayTransform: {fileID: 7151013509513800276}
   HapticAmp: 0.2
   HapticDur: 0.2
+  HandInteractionEnabled: 0
   grabRadius: 0.1
   grabDistance: 0.5
   holding: {fileID: 0}
@@ -351,6 +352,9 @@ MonoBehaviour:
   RotateAround: {fileID: 260854732712247036}
   CameraTransform: {fileID: 260854732798931688}
   tempV2: {x: 0, y: 0}
+  Hands:
+  - {fileID: 1145741916898583857}
+  - {fileID: 2236391011774727389}
 --- !u!114 &3833835234458933234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,6 +612,7 @@ MonoBehaviour:
   DisplayTransform: {fileID: 7151013509543507911}
   HapticAmp: 0.2
   HapticDur: 0.2
+  HandInteractionEnabled: 0
   grabRadius: 0.1
   grabDistance: 0.5
   holding: {fileID: 0}
