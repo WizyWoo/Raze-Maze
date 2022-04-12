@@ -24,6 +24,8 @@ public class HoldingAnchorThrowable : HoldingAnchor
         IsHeld = true;
         handTransform = _grabbedBy;
 
+        
+
         return this;
 
     }
