@@ -174,6 +174,12 @@ public class VrHandsController : MonoBehaviour
                 }
 
             }
+            else
+            {
+
+                closestAnchor = null;
+
+            }
 
             if(GrabButton.WasPressedThisFrame())
             {
