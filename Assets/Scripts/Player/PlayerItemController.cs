@@ -388,6 +388,7 @@ public class PlayerItemController : MonoBehaviour
             Destroy(ghostTrap.GetComponent<TrapController>());
             trapBounds = ghostTrap.GetComponent<BoxCollider>().bounds.extents;
             boundsOffset = ghostTrap.GetComponent<BoxCollider>().bounds.center;
+            ghostTrap.GetComponent<Collider>().isTrigger = true;
 
         }
         else if(validLocation)

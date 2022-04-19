@@ -47,8 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   completeLevelUI: {fileID: 0}
   lastCheckpointPos: {x: 0, y: 0, z: 0}
-  playerPrefab: {fileID: 260854731515951132, guid: 9ef5d6ef5157a2046a44d517992b5455,
-    type: 3}
+  playerPrefabName: Player
   levelTransitionDelay: 1
   player: {fileID: 260854731515951132, guid: 9ef5d6ef5157a2046a44d517992b5455, type: 3}
 --- !u!114 &5409999063586750185
@@ -71,7 +70,7 @@ MonoBehaviour:
   - Nuclear
   - Bricks
   - Jello
-  - HandMixer
+  - Mixer
   TrapPrefabs:
   - {fileID: 0}
   - {fileID: 7145331574180486927, guid: fe3a0847096e61c4a8938bdf79b4cb01, type: 3}
@@ -101,7 +100,7 @@ MonoBehaviour:
   - 0
   - 0
   AttackMode: 0000000001000000020000000200000002000000010000000100000002000000
-  ItemRarity: 0000000000000000020000000000000003000000010000000000000000000000
+  ItemRarity: 0000000000000000020000000000000003000000010000000000000001000000
   ItemTheme: 0000000000000000000000000000000000000000000000000000000000000000
   DroppedWeaponPrefab: {fileID: 6547683528349419031, guid: 32d2f056fe3544b41816ae9d280674f8,
     type: 3}
