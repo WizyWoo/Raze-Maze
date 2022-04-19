@@ -16,7 +16,7 @@ namespace Com.MyCompany.MyGame
         public static GameManager Instance;
 
         [Tooltip("The prefab to use for representing the player")]
-        public GameObject playerPrefab;
+        public string playerPrefabName;
         
         #endregion
 
@@ -103,7 +103,7 @@ namespace Com.MyCompany.MyGame
         {
             Instance = this;
 
-            if (playerPrefab == null)
+            if (playerPrefabName == null)
             {
                 Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
             }
@@ -113,7 +113,7 @@ namespace Com.MyCompany.MyGame
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
                     // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                    PhotonNetwork.Instantiate(this.playerPrefab.name,this.transform.position /*new Vector3(0f, 5f, 0f)*/, Quaternion.identity, 0);
+                    PhotonNetwork.Instantiate(this.playerPrefabName,this.transform.position /*new Vector3(0f, 5f, 0f)*/, Quaternion.identity, 0);
                 }
                 else
                 {
