@@ -21,7 +21,7 @@ public class ExplosiveWeaponDamage : WeaponController
 
             Debug.Log(_col.transform.name + " was inside the radius");
 
-            if(Physics.Linecast(transform.position, _col.transform.position, out RaycastHit _hit, ~(1 << LayerMask.NameToLayer("Interactables")), QueryTriggerInteraction.Collide))
+            if(Physics.Linecast(transform.position, _col.transform.position, out RaycastHit _hit, WeaponMask, QueryTriggerInteraction.Collide))
             {
 
                 Debug.Log(_hit.transform.name);

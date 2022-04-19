@@ -28,7 +28,7 @@ public class MixerScript : GenericGun
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0); //Just add spread to last direction
 
         RaycastHit hit;
-        if (Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, rayLength, ~(1 << LayerMask.NameToLayer("Interactables")), QueryTriggerInteraction.Collide))
+        if (Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, rayLength, WeaponMask, QueryTriggerInteraction.Collide))
         {
 
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))

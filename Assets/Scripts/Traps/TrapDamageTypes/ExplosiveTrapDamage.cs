@@ -21,7 +21,7 @@ public class ExplosiveTrapDamage : TrapController
 
             Debug.Log(_col.transform.name + " was inside the radius");
 
-            if(Physics.Linecast(transform.position, _col.transform.position, out RaycastHit _hit, ~(1 << LayerMask.NameToLayer("Traps")), QueryTriggerInteraction.Collide))
+            if(Physics.Linecast(transform.position, _col.transform.position, out RaycastHit _hit, TrapMask, QueryTriggerInteraction.Collide))
             {
 
                 Debug.Log(_hit.transform.name);

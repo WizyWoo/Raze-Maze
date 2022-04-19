@@ -15,6 +15,7 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
     public bool Firing;
     public bool Used, ExplosiveUsed;
     public HoldingAnchor MainAnchor;
+    public LayerMask WeaponMask = ~(1 << LayerMask.NameToLayer("Interactables"));
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
