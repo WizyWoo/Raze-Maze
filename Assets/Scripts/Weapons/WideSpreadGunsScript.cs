@@ -22,7 +22,7 @@ public class WideSpreadGunsScript : GenericGun
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0); //Just add spread to last direction
 
         RaycastHit hit;
-        if (Physics.SphereCast(attackPoint.position, rayWideness, attackPoint.forward, out hit, rayLength, ~(1 << LayerMask.NameToLayer("Interactables")), QueryTriggerInteraction.Ignore))
+        if (Physics.SphereCast(attackPoint.position, rayWideness, attackPoint.forward, out hit, rayLength, ~(1 << LayerMask.NameToLayer("Interactables")), QueryTriggerInteraction.Collide))
         {
 
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))

@@ -14,14 +14,14 @@ public class ExplosiveTrapDamage : TrapController
 
         Collider[] _colHits;
 
-        _colHits = Physics.OverlapSphere(transform.position, ExplosionRadius, 1 << LayerMask.NameToLayer("Player"), QueryTriggerInteraction.Ignore);
+        _colHits = Physics.OverlapSphere(transform.position, ExplosionRadius, 1 << LayerMask.NameToLayer("Player"), QueryTriggerInteraction.Collide);
 
         foreach(Collider _col in _colHits)
         {
 
             Debug.Log(_col.transform.name + " was inside the radius");
 
-            if(Physics.Linecast(transform.position, _col.transform.position, out RaycastHit _hit, ~(1 << LayerMask.NameToLayer("Traps")), QueryTriggerInteraction.Ignore))
+            if(Physics.Linecast(transform.position, _col.transform.position, out RaycastHit _hit, ~(1 << LayerMask.NameToLayer("Traps")), QueryTriggerInteraction.Collide))
             {
 
                 Debug.Log(_hit.transform.name);
