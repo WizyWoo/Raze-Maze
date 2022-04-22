@@ -53,8 +53,6 @@ public class PlayerInteraction : VRInputManager
         if(Physics.Raycast(transform.position, transform.forward, out hit, interactionDistance, interactMask))
         {
 
-            Debug.Log(hit.transform.gameObject.name);
-
             if(hit.transform.TryGetComponent<IInteractable>(out IInteractable _inter))
             {
 

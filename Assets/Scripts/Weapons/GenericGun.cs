@@ -38,11 +38,12 @@ public class GenericGun : WeaponController, IPunObservable
 
     protected LayerMask layerMask;
 
-    private void Awake()
+    private void Start()
     {
-        //make sure magazine is full
+        
         bulletsLeft = magazineSize;
         readyToShoot = true;
+
     }
 
     private void Update()

@@ -25,7 +25,7 @@ public class WideSpreadGunsScript : GenericGun
         if (Physics.SphereCast(attackPoint.position, rayWideness, attackPoint.forward, out hit, rayLength, WeaponMask, QueryTriggerInteraction.Collide))
         {
 
-            Debug.Log(hit.transform.name);
+            Debug.Log("hit smth" + hit.transform.name);
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
 
@@ -35,6 +35,8 @@ public class WideSpreadGunsScript : GenericGun
             }
 
         }
+        else
+        {Debug.Log("No hit");}
 
         Debug.DrawRay(attackPoint.position, attackPoint.forward, Color.green, 10);
 
