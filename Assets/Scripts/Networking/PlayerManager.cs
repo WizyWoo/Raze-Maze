@@ -3,6 +3,8 @@ using UnityEngine.EventSystems;
 using Photon.Pun;
 using System.Collections;
 using Photon.Pun.Demo.PunBasics;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 namespace Com.MyCompany.MyGame
 {
@@ -32,6 +34,12 @@ namespace Com.MyCompany.MyGame
         public static PlayerManager playerManager;
 
         public float trapDamage;
+
+        private float takingDamageCounter;
+
+        private Vignette vignette;
+
+        private VolumeProfile postFX;
 
         private VrPlayerController vrController;
 
@@ -127,6 +135,9 @@ namespace Com.MyCompany.MyGame
                 Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
             }
 
+            postFX = gameObject.GetComponent<Volume>().profile;
+
+            postFX.TryGet(out vignette);
 
             Invoke("SetInitialPos", 0.5f);
             //CameraWork _cameraWork = this.gameObject.GetComponentInChildren<CameraWork>();
@@ -155,6 +166,14 @@ namespace Com.MyCompany.MyGame
             {
                 ProcessInputs();
             }
+
+            if(takingDamageCounter > 0)
+            {
+                vignette.intensity.Override(takingDamageCounter);
+
+                takingDamageCounter -= Time.deltaTime;
+            }
+                
 
             // trigger Beams active state
             //if (beams != null && IsFiring != beams.activeInHierarchy)
@@ -279,10 +298,9 @@ namespace Com.MyCompany.MyGame
 
         public void Damage(float damage = 0)
         {
-
             if(!DamageLocked)
             {
-
+                takingDamageCounter = 1;
                 Health -= damage;
 
                 if (Health <= 0)
@@ -292,7 +310,7 @@ namespace Com.MyCompany.MyGame
 
                     //StartCoroutine(GameManager.gameManager.Respawn());
                     if (photonView.IsMine)
-                    {                  
+                    {                                  
                         GameManager.gameManager.Invoke("Respawn", 2f);
                         GetComponentInChildren<PlayerItemController>().DropItem(0);
 
