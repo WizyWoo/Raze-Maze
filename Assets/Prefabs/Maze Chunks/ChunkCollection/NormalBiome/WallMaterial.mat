@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2357933332470095945
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!114 &-932919234568272180
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -21,7 +34,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WallMaterial
-  m_Shader: {fileID: 4800000, guid: 75563b1a854397246b29ebd8feee6c11, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 81c4b6f9778dd4246b49ee35720b7b88,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -88,6 +102,18 @@ Material:
         m_Texture: {fileID: 2800000, guid: 03204b99f4ebc3a42a8ec0e01ee54b98, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
@@ -103,6 +129,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _Scale: 0.2
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
