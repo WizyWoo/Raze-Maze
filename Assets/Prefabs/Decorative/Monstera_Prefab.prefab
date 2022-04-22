@@ -104,6 +104,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monstera_Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 3950926632828818892, guid: d375e6020cc998a488f9b2240bb1ceae,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aa4c8b0d7baa79f46b4cf60ba0fd22f0, type: 2}
+    - target: {fileID: 4984162171622303677, guid: d375e6020cc998a488f9b2240bb1ceae,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aa4c8b0d7baa79f46b4cf60ba0fd22f0, type: 2}
     - target: {fileID: 7219169149204552706, guid: d375e6020cc998a488f9b2240bb1ceae,
         type: 3}
       propertyPath: m_LocalPosition.y
