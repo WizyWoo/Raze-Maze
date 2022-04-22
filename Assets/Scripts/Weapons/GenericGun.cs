@@ -94,6 +94,7 @@ public class GenericGun : WeaponController, IPunObservable
         if(Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, rayLength, WeaponMask, QueryTriggerInteraction.Collide))
         {
 
+            Debug.Log(hit.transform.name);
             if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
 
@@ -102,7 +103,6 @@ public class GenericGun : WeaponController, IPunObservable
 
             }
 
-            Debug.Log(hit.transform.name);
 
         }
 
