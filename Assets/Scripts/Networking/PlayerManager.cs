@@ -135,7 +135,7 @@ namespace Com.MyCompany.MyGame
                 Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
             }
 
-            postFX = gameObject.GetComponent<Volume>().profile;
+            postFX = gameObject.GetComponentInChildren<Volume>().profile;
 
             postFX.TryGet(out vignette);
 
