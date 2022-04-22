@@ -83,11 +83,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Top_Normals:
-        m_Texture: {fileID: 2800000, guid: 8f9cc0a1bb2d58a47b0222c39c31ee80, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Top_Texture:
-        m_Texture: {fileID: 2800000, guid: 20a5ef9850fc9954baffe9f9d7814b5e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 39e0439814581884786b83ee44461c81, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WallTex:
@@ -141,7 +141,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Top_Metallic: 0
-    - _Top_Smoothness: 0.555
+    - _Top_Smoothness: 0.03
     - _Top_Tiling: 0.2
     - _UVSec: 0
     - _Wall_Metallic: 0
