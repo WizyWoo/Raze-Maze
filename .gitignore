@@ -5,3 +5,4 @@ Assets/*.meta
 !ProjectSettings/*
 !.gitignore
 !RazeMazeSound/
+Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
