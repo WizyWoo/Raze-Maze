@@ -3,24 +3,38 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Movable
+  - MazeDoor
+  - Hud
+  - Weapon
+  - Trap
+  - NotMe
+  - GM
+  - Key
+  - FinishDoor
+<<<<<<< Updated upstream
+  - VFX
+=======
+  - Jungle
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
+  - Traps
+  - Interactables
+  - Movable
+  - DangerInteractables
+  - PostProcessing
+  - Ground
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - MazeParent
   - 
   - 
   - 
