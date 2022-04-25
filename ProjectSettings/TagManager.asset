@@ -13,11 +13,7 @@ TagManager:
   - GM
   - Key
   - FinishDoor
-<<<<<<< Updated upstream
   - VFX
-=======
-  - Jungle
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

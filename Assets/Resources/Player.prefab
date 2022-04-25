@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1416359710976354512}
   - component: {fileID: 1416359710976849618}
+  - component: {fileID: 1416359710970751730}
   - component: {fileID: 4621191464674350207}
   - component: {fileID: 8997337419611332550}
   - component: {fileID: 7064740562728103971}
@@ -82,6 +83,14 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!81 &1416359710970751730
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416359710976390384}
+  m_Enabled: 1
 --- !u!114 &4621191464674350207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,9 +267,6 @@ GameObject:
   - component: {fileID: 7156812334643756261}
   - component: {fileID: -1044827381268234742}
   - component: {fileID: 2100795671}
-  - component: {fileID: 801944641768820225}
-  - component: {fileID: 8421301352970494278}
-  - component: {fileID: -6763813544282211795}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -474,65 +480,6 @@ MonoBehaviour:
   groundCheckV3: {x: 0, y: 0, z: 0}
   groundCheckDirV3: {x: 0, y: -0.5, z: 0}
   groundCheckDist: 0.1
---- !u!114 &801944641768820225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416359710976390386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 276698a355674334cb31adf8fd56b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audio: {fileID: 0}
---- !u!114 &8421301352970494278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416359710976390386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 223587555
-      Data2: 1337007888
-      Data3: -97564766
-      Data4: 1372936243
-    Path: event:/Footsteps/LoopedWalk
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params:
-  - Name: Terrain
-    Value: 0
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &-6763813544282211795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416359710976390386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
-  ListenerNumber: -1
 --- !u!1 &3120648513725273668
 GameObject:
   m_ObjectHideFlags: 0

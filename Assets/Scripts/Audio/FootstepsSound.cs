@@ -2,30 +2,25 @@ using UnityEngine;
 
 public class FootstepsSound : MonoBehaviour
 {
-    public FMODUnity.StudioEventEmitter _audio;
-    private void Start()
-    {
-        _audio = GetComponent<FMODUnity.StudioEventEmitter>();
-    }
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        if(Input.GetKeyDown(KeyCode.W))
         {
-            _audio.Play();
+            PlayFootsteps();
         }
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        if(Input.GetKeyUp(KeyCode.W))
         {
-            _audio.Stop();
+            PlayOff();
         }
     }
-
-    private void OnTriggerEnter(Collider other)
+        
+    void PlayFootsteps()
     {
-        if (other.CompareTag("Jungle"))
-        {
-            _audio.Play();
-            _audio.SetParameter("Terrain", 1);
-        }
+        GetComponent<FMODUnity.StudioEventEmitter>().Play();
+    }
+    void PlayOff()
+    {
+        GetComponent<FMODUnity.StudioEventEmitter>().Stop();
     }
 }
