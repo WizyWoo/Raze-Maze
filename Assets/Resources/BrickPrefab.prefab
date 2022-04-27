@@ -217,6 +217,9 @@ MonoBehaviour:
   Used: 0
   ExplosiveUsed: 0
   MainAnchor: {fileID: 638261895739064238}
+  WeaponMask:
+    serializedVersion: 2
+    m_Bits: 0
   ContinueslyDamage: 0
   CheckVelocity: 1
   VelocityThreshold: 1

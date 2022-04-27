@@ -154,6 +154,8 @@ namespace Com.MyCompany.MyGame
             //{
             //    Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
             //}
+
+             originalColor = ren.material.color;
         }
 
         /// <summary>
@@ -170,8 +172,12 @@ namespace Com.MyCompany.MyGame
             if(takingDamageCounter > 0)
             {
                 vignette.intensity.Override(takingDamageCounter);
+                ren.material.color = Color.red;
 
                 takingDamageCounter -= Time.deltaTime;
+            } else
+            {
+                ren.material.color = originalColor;
             }
                 
 
@@ -296,6 +302,10 @@ namespace Com.MyCompany.MyGame
 
         #endregion
 
+        private float redFlashTime = 1f;
+        private Color originalColor;
+        public Renderer ren;
+
         public void Damage(float damage = 0)
         {
             if(!DamageLocked)
@@ -328,6 +338,8 @@ namespace Com.MyCompany.MyGame
                 Debug.Log(gameObject.name + " was damaged for " + damage);
             }
         }
+
+         
 
         public void UnlockDamage()
         {
