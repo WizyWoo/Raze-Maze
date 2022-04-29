@@ -25,20 +25,16 @@ public class WideSpreadGunsScript : GenericGun
         if (Physics.SphereCast(attackPoint.position, rayWideness, attackPoint.forward, out hit, rayLength, WeaponMask, QueryTriggerInteraction.Collide))
         {
 
-            Debug.Log("hit smth" + hit.transform.name);
-            if (hit.transform.gameObject.layer == HitMask)
+            if (HitMaskCheck(hit.transform.root))
             {
 
                 hit.transform.root.GetComponent<IHit>().Damage(Damage);
-                Debug.Log("hit " + hit.transform.name);
 
                 //change enemy color upon hit
                 //hit.transform.root.GetComponent<Renderer>().material.color = Color.red;
             }
 
         }
-        else
-        {Debug.Log("No hit");}
 
         Debug.DrawRay(attackPoint.position, attackPoint.forward, Color.green, 10);
 
@@ -64,7 +60,6 @@ public class WideSpreadGunsScript : GenericGun
         //Invoke resetShot function (if not already invoked), with your timeBetweenShooting
         if (allowInvoke)
         {
-            Debug.Log("entered");
             Invoke("ResetShot", timeBetweenShooting);
             allowInvoke = false;
         }

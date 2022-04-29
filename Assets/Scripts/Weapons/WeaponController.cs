@@ -19,27 +19,45 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
+
         if(stream.IsWriting)
         {
+            
             stream.SendNext(WeaponID);
             stream.SendNext(Firing);
             stream.SendNext(Used);
+
         }
         else if(stream.IsReading)
         {
+
             WeaponID = (int)stream.ReceiveNext();
             Firing = (bool)stream.ReceiveNext();
             Used = (bool)stream.ReceiveNext();
+
         }
+
     }
 
     private void Awake()
     {
+
         WeaponMask = ~(1 << LayerMask.NameToLayer("Interactables"));
 
         HitMask = ((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("TakesDamage")));
+
     }
 
+    public bool HitMaskCheck(Transform _hit)
+    {
+
+        if(_hit.gameObject.layer == 1 << LayerMask.NameToLayer("Player") || _hit.gameObject.layer == 1 << LayerMask.NameToLayer("TakesDamage"))
+            return true;
+        else
+            return false;
+
+
+    }
     public virtual void Thrown()
     {}
 

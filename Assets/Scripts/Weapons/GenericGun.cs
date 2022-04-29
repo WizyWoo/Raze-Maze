@@ -96,7 +96,7 @@ public class GenericGun : WeaponController, IPunObservable
         {
 
             Debug.Log(hit.transform.name);
-            if(hit.transform.gameObject.layer == HitMask)
+            if(HitMaskCheck(hit.transform.root))
             {
 
                 hit.transform.root.GetComponent<IHit>().Damage(Damage);
@@ -131,7 +131,6 @@ public class GenericGun : WeaponController, IPunObservable
         //Invoke resetShot function (if not already invoked), with your timeBetweenShooting
         if (allowInvoke)
         {
-            Debug.Log("entered");
             Invoke("ResetShot", timeBetweenShooting);
             allowInvoke = false;
         }
@@ -143,7 +142,6 @@ public class GenericGun : WeaponController, IPunObservable
 
     private void ResetShot()
     {
-        Debug.Log("reseting the shot");
         //Allow shooting and invoking again
         readyToShoot = true;
         allowInvoke = true;

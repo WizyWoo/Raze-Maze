@@ -31,14 +31,11 @@ public class MixerScript : GenericGun
         if (Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, rayLength, WeaponMask, QueryTriggerInteraction.Collide))
         {
 
-            if (hit.transform.gameObject.layer == HitMask)
+            if (HitMaskCheck(hit.transform.root))
             {
 
                 hit.transform.root.GetComponent<IHit>().Damage(Damage);
-                Debug.Log("hit " + hit.transform.name);
             }
-
-            Debug.Log(hit.transform.name);
         }
 
         Debug.DrawRay(attackPoint.position, attackPoint.forward, Color.green, 10);
@@ -67,7 +64,6 @@ public class MixerScript : GenericGun
         //Invoke resetShot function (if not already invoked), with your timeBetweenShooting
         if (allowInvoke)
         {
-            Debug.Log("entered");
             Invoke("ResetShot", timeBetweenShooting);
             allowInvoke = false;
         }
