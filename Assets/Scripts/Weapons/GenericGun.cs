@@ -24,7 +24,7 @@ public class GenericGun : WeaponController, IPunObservable
 
     public float rayLength;
 
-    public ParticleSystem particleSystem;
+    public ParticleSystem particleSystemu;
 
     //bools
     protected bool readyToShoot, reloading;
@@ -99,7 +99,7 @@ public class GenericGun : WeaponController, IPunObservable
             if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
 
-                hit.transform.root.GetComponent<PlayerManager>().Damage(Damage);
+                hit.transform.root.GetComponent<IHit>().Damage(Damage);
                 Debug.Log("hit " + hit.transform.name);
 
             }
@@ -109,8 +109,8 @@ public class GenericGun : WeaponController, IPunObservable
 
         Debug.DrawRay(attackPoint.position, attackPoint.forward, Color.green, 10);
 
-        if(particleSystem != null)
-            particleSystem.Play();
+        if(particleSystemu != null)
+            particleSystemu.Play();
 
         if(bullet != null)
         {

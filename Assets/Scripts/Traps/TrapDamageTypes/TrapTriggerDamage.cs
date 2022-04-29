@@ -31,7 +31,7 @@ public class TrapTriggerDamage : TrapController
         if(!ContinueslyDamage)
         {
 
-            if(_other.transform.root.TryGetComponent<PlayerManager>(out PlayerManager _tempPM))
+            if(_other.transform.root.TryGetComponent<IHit>(out IHit _tempPM))
             {
 
                 _tempPM.Damage(Damage);

@@ -32,6 +32,8 @@ public class WideSpreadGunsScript : GenericGun
                 hit.transform.root.GetComponent<PlayerManager>().Damage(Damage);
                 Debug.Log("hit " + hit.transform.name);
 
+                //change enemy color upon hit
+                //hit.transform.root.GetComponent<Renderer>().material.color = Color.red;
             }
 
         }
@@ -40,8 +42,8 @@ public class WideSpreadGunsScript : GenericGun
 
         Debug.DrawRay(attackPoint.position, attackPoint.forward, Color.green, 10);
 
-        if (particleSystem != null)
-            particleSystem.Play();
+        if (particleSystemu != null)
+            particleSystemu.Play();
 
         if (bullet != null)
         {
@@ -71,4 +73,6 @@ public class WideSpreadGunsScript : GenericGun
         if (bulletsShot < bulletsPerTap && bulletsLeft > 0)
             Invoke("Shoot", timeBetweenShots);
     }
+
+
 }

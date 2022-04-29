@@ -30,7 +30,7 @@ public class NukeTrap : TrapController
         //audioSource.PlayOneShot(boomSound);
         Instantiate(explosionParticles, transform.position, Quaternion.identity);
 
-        GameManager.gameManager.player.GetComponent<PlayerManager>().Damage(Damage);
+        GameManager.gameManager.player.GetComponent<IHit>().Damage(Damage);
 
         Destroy(gameObject, boomSound.length);
 

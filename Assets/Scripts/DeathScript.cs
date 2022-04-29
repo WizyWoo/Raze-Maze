@@ -9,6 +9,6 @@ public class DeathScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GetComponent<PlayerManager>().Damage(wP.Damage);
+        GetComponent<IHit>().Damage(wP.Damage);
     }
 }

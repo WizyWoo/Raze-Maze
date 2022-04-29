@@ -26,10 +26,10 @@ public class ExplosiveTrapDamage : TrapController
 
                 Debug.Log(_hit.transform.name);
 
-                if(_hit.transform.root.TryGetComponent<PlayerManager>(out PlayerManager _tempPlayerManager))
+                if(_hit.transform.root.TryGetComponent<IHit>(out IHit _tempHit))
                 {
 
-                    _tempPlayerManager.Damage(Damage / Vector3.Distance(_hit.transform.position, transform.position));
+                    _tempHit.Damage(Damage / Vector3.Distance(_hit.transform.position, transform.position));
 
                 }
 

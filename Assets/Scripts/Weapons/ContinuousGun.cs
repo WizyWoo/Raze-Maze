@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class ContinuousGun : WeaponController, IPunObservable
 {
-    public ParticleSystem particleSystem;
+    public ParticleSystem particleSystemu;
     private bool isFiring  = false;
 
     List<ParticleCollisionEvent> colEvents = new List<ParticleCollisionEvent>();
@@ -14,7 +14,7 @@ public class ContinuousGun : WeaponController, IPunObservable
     {
 
         if(Firing == true)
-            particleSystem.Play();
+            particleSystemu.Play();
     }
 
     private void OnParticleCollision(GameObject other)

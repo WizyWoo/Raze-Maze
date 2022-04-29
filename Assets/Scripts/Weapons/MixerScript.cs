@@ -34,7 +34,7 @@ public class MixerScript : GenericGun
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
 
-                hit.transform.root.GetComponent<PlayerManager>().Damage(Damage);
+                hit.transform.root.GetComponent<IHit>().Damage(Damage);
                 Debug.Log("hit " + hit.transform.name);
             }
 
@@ -43,8 +43,8 @@ public class MixerScript : GenericGun
 
         Debug.DrawRay(attackPoint.position, attackPoint.forward, Color.green, 10);
 
-        if (particleSystem != null)
-            particleSystem.Play();
+        if (particleSystemu != null)
+            particleSystemu.Play();
 
         if (bullet != null)
         {

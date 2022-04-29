@@ -24,7 +24,7 @@ public class WeaponContactDamage : WeaponController
         if(!ContinueslyDamage)
         {
 
-            if(_other.transform.root.TryGetComponent<PlayerManager>(out PlayerManager _tempPM) && (!CheckVelocity || rb.velocity.magnitude >= VelocityThreshold))
+            if(_other.transform.root.TryGetComponent<IHit>(out IHit _tempPM) && (!CheckVelocity || rb.velocity.magnitude >= VelocityThreshold))
             {
 
                 _tempPM.Damage(Damage);
@@ -41,7 +41,7 @@ public class WeaponContactDamage : WeaponController
         if(ContinueslyDamage)
         {
 
-            if(_other.transform.root.TryGetComponent<PlayerManager>(out PlayerManager _tempPM) && (!CheckVelocity || rb.velocity.magnitude >= VelocityThreshold))
+            if(_other.transform.root.TryGetComponent<IHit>(out IHit _tempPM) && (!CheckVelocity || rb.velocity.magnitude >= VelocityThreshold))
             {
 
                 _tempPM.Damage(Damage);
