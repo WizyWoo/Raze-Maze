@@ -14,7 +14,7 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
     public int TrapID;
     public float Damage;
     public bool TrapPlaced, TrapActived, Used;
-    public LayerMask TrapMask;
+    public LayerMask TrapMask, HitMask;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -44,6 +44,7 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
     {
 
         TrapMask = ~(1 << LayerMask.NameToLayer("Interactables"));
+        HitMask = ((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("TakesDamage")));
 
     }
 

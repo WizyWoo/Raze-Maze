@@ -145,7 +145,7 @@ MonoBehaviour:
   canReload: 1
   bulletsLeft: 0
   rayLength: 15
-  particleSystem: {fileID: 7995552860899436711}
+  particleSystemu: {fileID: 7995552860899436711}
   attackPoint: {fileID: 7759999814111758354}
   allowInvoke: 1
   rayWideness: 0.7

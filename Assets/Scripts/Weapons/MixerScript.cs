@@ -31,7 +31,7 @@ public class MixerScript : GenericGun
         if (Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, rayLength, WeaponMask, QueryTriggerInteraction.Collide))
         {
 
-            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
+            if (hit.transform.gameObject.layer == HitMask)
             {
 
                 hit.transform.root.GetComponent<IHit>().Damage(Damage);

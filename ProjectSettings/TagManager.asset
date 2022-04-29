@@ -27,7 +27,7 @@ TagManager:
   - DangerInteractables
   - PostProcessing
   - Ground
-  - 
+  - TakesDamage
   - 
   - 
   - MazeParent

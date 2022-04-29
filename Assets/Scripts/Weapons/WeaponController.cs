@@ -15,35 +15,29 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
     public bool Firing;
     public bool Used, ExplosiveUsed;
     public HoldingAnchor MainAnchor;
-    public LayerMask WeaponMask;
+    public LayerMask WeaponMask, HitMask;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-
         if(stream.IsWriting)
         {
-
             stream.SendNext(WeaponID);
             stream.SendNext(Firing);
             stream.SendNext(Used);
-
         }
         else if(stream.IsReading)
         {
-
             WeaponID = (int)stream.ReceiveNext();
             Firing = (bool)stream.ReceiveNext();
             Used = (bool)stream.ReceiveNext();
-
         }
-
     }
 
     private void Awake()
     {
-
         WeaponMask = ~(1 << LayerMask.NameToLayer("Interactables"));
 
+        HitMask = ((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("TakesDamage")));
     }
 
     public virtual void Thrown()

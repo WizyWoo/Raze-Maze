@@ -267,6 +267,9 @@ MonoBehaviour:
   WeaponMask:
     serializedVersion: 2
     m_Bits: 0
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 0
   bullet: {fileID: 0}
   shootForce: 0
   timeBetweenShooting: 0.1
@@ -279,7 +282,7 @@ MonoBehaviour:
   canReload: 1
   bulletsLeft: 0
   rayLength: 1000
-  particleSystem: {fileID: 8995168545513115497}
+  particleSystemu: {fileID: 8995168545513115497}
   attackPoint: {fileID: 5608596870347650438}
   allowInvoke: 1
   rayWideness: 0.2
@@ -497,6 +500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: lengthInSec
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950938081283854327, guid: d8d9ea8c903cc7a42a8cf771cdcd641d,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8d9ea8c903cc7a42a8cf771cdcd641d, type: 3}

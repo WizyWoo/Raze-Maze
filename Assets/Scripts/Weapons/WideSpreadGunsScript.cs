@@ -26,10 +26,10 @@ public class WideSpreadGunsScript : GenericGun
         {
 
             Debug.Log("hit smth" + hit.transform.name);
-            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
+            if (hit.transform.gameObject.layer == HitMask)
             {
 
-                hit.transform.root.GetComponent<PlayerManager>().Damage(Damage);
+                hit.transform.root.GetComponent<IHit>().Damage(Damage);
                 Debug.Log("hit " + hit.transform.name);
 
                 //change enemy color upon hit

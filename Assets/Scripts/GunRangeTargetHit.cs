@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunRangeTargetHit : MonoBehaviour
+public class GunRangeTargetHit : MonoBehaviour, IHit
 {
-    private void OnCollisionEnter(Collision other) 
+    public void Damage(float damageAmount)
     {
+        Debug.LogError("PApi");
+        StopCoroutine(HitMarkerActive());
+
         StartCoroutine(HitMarkerActive());
     }
 

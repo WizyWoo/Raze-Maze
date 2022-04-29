@@ -14,7 +14,7 @@ public class ExplosiveTrapDamage : TrapController
 
         Collider[] _colHits;
 
-        _colHits = Physics.OverlapSphere(transform.position, ExplosionRadius, 1 << LayerMask.NameToLayer("Player"), QueryTriggerInteraction.Collide);
+        _colHits = Physics.OverlapSphere(transform.position, ExplosionRadius, HitMask, QueryTriggerInteraction.Collide);
 
         foreach(Collider _col in _colHits)
         {
