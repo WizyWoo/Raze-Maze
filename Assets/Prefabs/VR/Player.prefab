@@ -141,7 +141,7 @@ MonoBehaviour:
   HapticDur: 0.2
   HandInteractionEnabled: 0
   grabRadius: 0.1
-  grabDistance: 0.5
+  grabDistance: 3
   holding: {fileID: 0}
   closestAnchor: {fileID: 0}
 --- !u!114 &3342217303096095145
@@ -615,7 +615,7 @@ MonoBehaviour:
   HapticDur: 0.2
   HandInteractionEnabled: 0
   grabRadius: 0.1
-  grabDistance: 0.5
+  grabDistance: 3
   holding: {fileID: 0}
   closestAnchor: {fileID: 0}
 --- !u!114 &4359121699869801370
