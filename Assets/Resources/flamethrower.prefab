@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7805413069392604535}
   - component: {fileID: 692244002853573434}
   - component: {fileID: 9106612111124572924}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: flamethrower
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -133,6 +133,9 @@ MonoBehaviour:
   WeaponMask:
     serializedVersion: 2
     m_Bits: 0
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 0
   bullet: {fileID: 0}
   shootForce: 0
   timeBetweenShooting: 0.1
@@ -190,7 +193,7 @@ GameObject:
   - component: {fileID: 2693497630660937900}
   - component: {fileID: 7704811774779579281}
   - component: {fileID: 7806418308598540382}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: FlamethrowerMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7759999814111758354}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: attackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +308,7 @@ GameObject:
   - component: {fileID: 5664738164538319907}
   - component: {fileID: 3702724288523746793}
   - component: {fileID: 5816304775492585480}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: HoldingAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +376,7 @@ PrefabInstance:
     - target: {fileID: 1809523084760714456, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4264412070949995304, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
@@ -383,7 +386,7 @@ PrefabInstance:
     - target: {fileID: 4669459751264538862, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4714757991461550113, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
@@ -453,7 +456,7 @@ PrefabInstance:
     - target: {fileID: 8519728169229408581, guid: 2693e0d9ff98a244bb8f91d33f203cc8,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2693e0d9ff98a244bb8f91d33f203cc8, type: 3}

@@ -490,6 +490,7 @@ MonoBehaviour:
   readied: 0
   DamageLocked: 0
   trapDamage: 0
+  ren: {fileID: 0}
 --- !u!114 &6976286128122079780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2965,7 +2966,7 @@ GameObject:
   - component: {fileID: 7151013509513800277}
   - component: {fileID: 1864764048367832358}
   - component: {fileID: 7516834300049608230}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: WeaponDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3050,7 +3051,7 @@ GameObject:
   - component: {fileID: 7151013509543507904}
   - component: {fileID: 8095180834846198499}
   - component: {fileID: 7435218399582925648}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: TrapDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}

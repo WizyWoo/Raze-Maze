@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4053363440299617091}
   - component: {fileID: 454097790737998503}
   - component: {fileID: 2735676209764381040}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: mixer_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5356820357721305364}
   - component: {fileID: 723439860229511747}
   - component: {fileID: 1651325540913074150}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: mixer_big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3203638210694207471}
   - component: {fileID: 208434987155431961}
   - component: {fileID: 5907212525105688039}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: stang_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7050052531768342197}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: attackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 7535830989710819642}
   - component: {fileID: 2505043025089675925}
   - component: {fileID: 4725629584451452982}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 8270857593743097322}
   - component: {fileID: 8270857593743097325}
   - component: {fileID: 8270857593743097324}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: mixerAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8270857594716394714}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: mixerBlades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 2774243837039343806}
   - component: {fileID: 1282318435332850767}
   - component: {fileID: 3980628238050834984}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: stang_big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 9109807381526474312}
   - component: {fileID: 9109807381526474315}
   - component: {fileID: 2578606770170842086}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: handMixer
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -678,6 +678,9 @@ MonoBehaviour:
   WeaponMask:
     serializedVersion: 2
     m_Bits: 0
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 0
   bullet: {fileID: 1809724846989947614, guid: 3010be602f456f34ba0048fcf9c7864d, type: 3}
   shootForce: 50
   timeBetweenShooting: 0.1
@@ -690,7 +693,7 @@ MonoBehaviour:
   canReload: 0
   bulletsLeft: 0
   rayLength: 1000
-  particleSystem: {fileID: 0}
+  particleSystemu: {fileID: 0}
   attackPoint: {fileID: 7050052531768342197}
   allowInvoke: 1
   mixerObject: {fileID: 9109807381526474317}

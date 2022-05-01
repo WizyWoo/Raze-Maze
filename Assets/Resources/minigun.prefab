@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 5622669579957892613}
   - component: {fileID: 1494185081001674521}
   - component: {fileID: 6977855550406708124}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: minigun
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 8036724380338668158}
   - component: {fileID: 8342092232593808872}
   - component: {fileID: 698032605614119503}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

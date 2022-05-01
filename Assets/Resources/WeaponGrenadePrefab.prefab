@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8247117411703039367}
   - component: {fileID: 1267378836404157537}
   - component: {fileID: 5649114922184660075}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: GrenadeBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: -8275241348711129893}
   - component: {fileID: 2160615573009962319}
   - component: {fileID: -8774435796993755674}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: WeaponGrenadePrefab
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -171,6 +171,9 @@ MonoBehaviour:
   ExplosiveUsed: 0
   MainAnchor: {fileID: 0}
   WeaponMask:
+    serializedVersion: 2
+    m_Bits: 0
+  HitMask:
     serializedVersion: 2
     m_Bits: 0
   ExplosionRadius: 6
@@ -250,7 +253,7 @@ GameObject:
   - component: {fileID: 2655401383781800872}
   - component: {fileID: 5611605187593980261}
   - component: {fileID: 4109836325494446712}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: GrenadeRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}

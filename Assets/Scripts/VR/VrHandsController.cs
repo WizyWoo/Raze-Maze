@@ -79,7 +79,7 @@ public class VrHandsController : MonoBehaviour
     private void Start()
     {
 
-        grabMask = 1 << LayerMask.NameToLayer("Interactables");
+        grabMask = 1 << LayerMask.NameToLayer("Grabbable");
         itemController = transform.root.GetComponent<PlayerItemController>();
         HandInteractionEnabled = true;
 
@@ -133,7 +133,6 @@ public class VrHandsController : MonoBehaviour
 
                 Collider _closestHit = _hits[0];
                 float[] _distances = new float[_hits.Length];
-                float _closest = 0;
 
                 for (int i = 0; i < _hits.Length; i++)
                 {
@@ -149,36 +148,45 @@ public class VrHandsController : MonoBehaviour
                     
                 }
 
-                if(_closest <= grabDistance && _closestHit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor))
-                {
-
-                    if(!closestAnchor.IsHeld)
-                    {
-
-                        if(deviceHaptics.supportsImpulse)
-                        {
-                            
-                            device.SendHapticImpulse(0u, HapticAmp, HapticDur);
-                        
-                        }
-                        else if(deviceHaptics.supportsBuffer)
-                        {
-
-                            Debug.Log("Buffer supported, but not implemented...");
-
-                        }
-                        else
-                            Debug.Log("No Haptics");
-
-                    }
-
-                }
+                _closestHit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor);
 
             }
             else
             {
 
                 closestAnchor = null;
+
+            }
+
+            if(!closestAnchor)
+            {
+
+                if(Physics.Raycast(transform.position, transform.forward, out RaycastHit _hit, grabDistance, grabMask, QueryTriggerInteraction.Collide))
+                {
+
+                    _hit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor);
+
+                }
+
+            }
+            
+            if(!closestAnchor.IsHeld)
+            {
+
+                if(deviceHaptics.supportsImpulse)
+                {
+                    
+                    device.SendHapticImpulse(0u, HapticAmp, HapticDur);
+                
+                }
+                else if(deviceHaptics.supportsBuffer)
+                {
+
+                    Debug.Log("Buffer supported, but not implemented...");
+
+                }
+                else
+                    Debug.Log("No Haptics");
 
             }
 
