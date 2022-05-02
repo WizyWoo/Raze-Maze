@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12317749, g: 0.12645783, b: 0.16801937, a: 1}
+  m_IndirectSpecularColor: {r: 0.12316003, g: 0.1264383, b: 0.16799375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8103,7 +8103,7 @@ GameObject:
   - component: {fileID: 8603059061157017896}
   - component: {fileID: 8603059061157017903}
   - component: {fileID: 8603059061157017902}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9785,7 +9785,7 @@ GameObject:
   - component: {fileID: 8603059061761257850}
   - component: {fileID: 8603059061761257849}
   - component: {fileID: 8603059061761257848}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11706,7 +11706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8603059062610824514}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HitObject2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12022,7 +12022,7 @@ GameObject:
   - component: {fileID: 8603059062761560542}
   - component: {fileID: 8603059062761560541}
   - component: {fileID: 8603059062761560538}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Target3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
