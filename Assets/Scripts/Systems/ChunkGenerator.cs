@@ -91,6 +91,16 @@ public class ChunkGenerator : MonoBehaviour
                 if(wall.gameObject != item.gameObject){
                     if(!item.gameObject.activeInHierarchy || !wall.gameObject.activeInHierarchy){
                         if(Vector3.Distance(item.transform.position,wall.transform.position) < 0.6f){
+                            for (int i = 0; i < wall.transform.childCount; i++)
+                            {
+                                wall.transform.GetChild(i).gameObject.SetActive(false);
+                                Destroy(wall.transform.GetChild(i).GetComponentInChildren<MeshFilter>());
+                            }
+                            for (int i = 0; i < item.transform.childCount; i++)
+                            {
+                                item.transform.GetChild(i).gameObject.SetActive(false);
+                                Destroy(item.transform.GetChild(i).GetComponentInChildren<MeshFilter>());
+                            }
                             wall.gameObject.SetActive(false);
                             item.gameObject.SetActive(false);
                             Destroy(wall.GetComponent<MeshFilter>());
@@ -105,7 +115,19 @@ public class ChunkGenerator : MonoBehaviour
                 item.gameObject.SetActive(true);
             }
         }
-        
+        foreach (var item in walls){
+            foreach (var wall in walls){
+                for (int i = 0; i < wall.transform.childCount; i++)
+                {
+                    wall.transform.GetChild(i).parent = transform;
+                }               
+                for (int i = 0; i < item.transform.childCount; i++)
+                {
+                    item.transform.GetChild(i).parent = transform;
+                }
+
+            }
+        }
         foreach (var item in placedChunks)
         {
             item.transform.position = Vector3.zero;
