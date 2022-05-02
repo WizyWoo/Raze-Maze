@@ -31,10 +31,10 @@ public class MixerScript : GenericGun
         if (Physics.Raycast(attackPoint.position, attackPoint.forward, out hit, rayLength, WeaponMask, QueryTriggerInteraction.Collide))
         {
 
-            if (HitMaskCheck(hit.transform.root))
+            if (HitMaskCheck(hit.transform))
             {
 
-                hit.transform.root.GetComponent<IHit>().Damage(Damage);
+                hit.transform.GetComponent<IHit>().Damage(Damage);
             }
         }
 

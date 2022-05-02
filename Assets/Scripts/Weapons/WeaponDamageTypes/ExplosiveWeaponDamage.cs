@@ -26,7 +26,7 @@ public class ExplosiveWeaponDamage : WeaponController
 
                 Debug.Log(_hit.transform.name);
 
-                if(_hit.transform.root.TryGetComponent<IHit>(out IHit _tempHit))
+                if(_hit.transform.TryGetComponent<IHit>(out IHit _tempHit))
                 {
 
                     _tempHit.Damage(Damage / Vector3.Distance(_hit.transform.position, transform.position));

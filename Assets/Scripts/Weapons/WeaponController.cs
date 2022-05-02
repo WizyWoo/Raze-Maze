@@ -51,11 +51,10 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
     public bool HitMaskCheck(Transform _hit)
     {
 
-        if(_hit.gameObject.layer == 1 << LayerMask.NameToLayer("Player") || _hit.gameObject.layer == 1 << LayerMask.NameToLayer("TakesDamage"))
+        if(_hit.gameObject.layer == LayerMask.NameToLayer("Player") || _hit.gameObject.layer == LayerMask.NameToLayer("TakesDamage"))
             return true;
         else
             return false;
-
 
     }
     public virtual void Thrown()
