@@ -24,14 +24,12 @@ public class WideSpreadGunsScript : GenericGun
         RaycastHit hit;
         if (Physics.SphereCast(attackPoint.position, rayWideness, attackPoint.forward, out hit, rayLength, WeaponMask, QueryTriggerInteraction.Collide))
         {
-
-            if (HitMaskCheck(hit.transform.root))
+            if (HitMaskCheck(hit.transform))
             {
-
-                hit.transform.root.GetComponent<IHit>().Damage(Damage);
+                hit.transform.GetComponent<IHit>().Damage(Damage);
 
                 //change enemy color upon hit
-                //hit.transform.root.GetComponent<Renderer>().material.color = Color.red;
+                //hit.transform.GetComponent<Renderer>().material.color = Color.red;
             }
 
         }

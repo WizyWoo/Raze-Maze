@@ -96,10 +96,10 @@ public class GenericGun : WeaponController, IPunObservable
         {
 
             Debug.Log(hit.transform.name);
-            if(HitMaskCheck(hit.transform.root))
+            if(HitMaskCheck(hit.transform))
             {
 
-                hit.transform.root.GetComponent<IHit>().Damage(Damage);
+                hit.transform.GetComponent<IHit>().Damage(Damage);
                 Debug.Log("hit " + hit.transform.name);
 
             }
