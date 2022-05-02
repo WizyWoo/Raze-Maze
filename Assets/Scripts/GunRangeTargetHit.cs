@@ -6,7 +6,6 @@ public class GunRangeTargetHit : MonoBehaviour, IHit
 {
     public void Damage(float damageAmount)
     {
-        Debug.LogError("PApi");
         StopCoroutine(HitMarkerActive());
 
         StartCoroutine(HitMarkerActive());
