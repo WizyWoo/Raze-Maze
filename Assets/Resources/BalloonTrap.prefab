@@ -117,6 +117,12 @@ MonoBehaviour:
   TrapPlaced: 0
   TrapActived: 0
   Used: 0
+  TrapMask:
+    serializedVersion: 2
+    m_Bits: 0
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 0
   _objectToSpawn: {fileID: 3084766316945426198, guid: b4003fb8ddf9cac49ba55239e7f1dda8,
     type: 3}
 --- !u!114 &-3902683798680500204

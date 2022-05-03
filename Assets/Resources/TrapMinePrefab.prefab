@@ -5011,6 +5011,12 @@ MonoBehaviour:
   TrapPlaced: 0
   TrapActived: 0
   Used: 0
+  TrapMask:
+    serializedVersion: 2
+    m_Bits: 0
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 0
   ExplosionRadius: 6
   ParticleSys: {fileID: 2427469137226538877}
 --- !u!1001 &2810180651692633707

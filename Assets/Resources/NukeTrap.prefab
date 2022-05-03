@@ -54,6 +54,12 @@ MonoBehaviour:
   TrapPlaced: 0
   TrapActived: 0
   Used: 0
+  TrapMask:
+    serializedVersion: 2
+    m_Bits: 0
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 0
   audioSource: {fileID: 0}
   boomSound: {fileID: 0}
   explosionParticles: {fileID: 2600141172152766777, guid: 4b0292f0adc9788409bbc218da099154,

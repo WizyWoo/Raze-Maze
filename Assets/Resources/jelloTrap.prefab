@@ -157,3 +157,9 @@ MonoBehaviour:
   TrapPlaced: 0
   TrapActived: 0
   Used: 0
+  TrapMask:
+    serializedVersion: 2
+    m_Bits: 0
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 0
