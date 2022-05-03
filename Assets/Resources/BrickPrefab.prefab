@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2222179296310604864}
   - component: {fileID: 5543071003905623449}
   - component: {fileID: 57553233105796145}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: Brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 638261895739064238}
   - component: {fileID: 1377383071693217542}
   - component: {fileID: 2835933253554667886}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: BrickPrefab
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -218,6 +218,9 @@ MonoBehaviour:
   ExplosiveUsed: 0
   MainAnchor: {fileID: 638261895739064238}
   WeaponMask:
+    serializedVersion: 2
+    m_Bits: 0
+  HitMask:
     serializedVersion: 2
     m_Bits: 0
   ContinueslyDamage: 0

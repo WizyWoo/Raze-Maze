@@ -170,24 +170,29 @@ public class VrHandsController : MonoBehaviour
 
             }
             
-            if(!closestAnchor.IsHeld)
+            if(closestAnchor)
             {
 
-                if(deviceHaptics.supportsImpulse)
+                if(!closestAnchor.IsHeld)
                 {
+
+                    if(deviceHaptics.supportsImpulse)
+                    {
+                        
+                        device.SendHapticImpulse(0u, HapticAmp, HapticDur);
                     
-                    device.SendHapticImpulse(0u, HapticAmp, HapticDur);
+                    }
+                    else if(deviceHaptics.supportsBuffer)
+                    {
+
+                        Debug.Log("Buffer supported, but not implemented...");
+
+                    }
+                    else
+                        Debug.Log("No Haptics");
+
+                }
                 
-                }
-                else if(deviceHaptics.supportsBuffer)
-                {
-
-                    Debug.Log("Buffer supported, but not implemented...");
-
-                }
-                else
-                    Debug.Log("No Haptics");
-
             }
 
             if(GrabButton.WasPressedThisFrame() && closestAnchor)

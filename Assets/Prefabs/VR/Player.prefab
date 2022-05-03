@@ -490,7 +490,7 @@ MonoBehaviour:
   readied: 0
   DamageLocked: 0
   trapDamage: 0
-  ren: {fileID: 0}
+  ren: {fileID: 7975640436749696283}
 --- !u!114 &6976286128122079780
 MonoBehaviour:
   m_ObjectHideFlags: 0
