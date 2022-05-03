@@ -57,6 +57,7 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
             return false;
 
     }
+
     public virtual void Thrown()
     {}
 
