@@ -26,6 +26,7 @@ public class VrHandsController : MonoBehaviour
     public Transform DisplayTransform;
     public float HapticAmp, HapticDur;
     public bool HandInteractionEnabled;
+    public LineRenderer LaserPointer;
     [SerializeField]
     private float grabRadius, grabDistance;
     private LayerMask grabMask;
@@ -166,7 +167,24 @@ public class VrHandsController : MonoBehaviour
 
                     _hit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor);
 
+                    LaserPointer.SetPosition(0, transform.position);
+                    LaserPointer.SetPosition(1, _hit.point);
+
                 }
+                else
+                {
+
+                    LaserPointer.SetPosition(0, transform.position);
+                    LaserPointer.SetPosition(1, transform.position);
+                    
+                }
+
+            }
+            else
+            {
+
+                LaserPointer.SetPosition(0, transform.position);
+                LaserPointer.SetPosition(1, transform.position);
 
             }
             
