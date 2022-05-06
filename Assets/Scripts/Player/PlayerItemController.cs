@@ -371,6 +371,8 @@ public class PlayerItemController : MonoBehaviour
         //VR and Desktop
         activeWeapon.GetComponent<WeaponController>().Activate(_fire);
 
+        Debug.Log("pissin'");
+
     }
 
     public void StartPlacingTrap()

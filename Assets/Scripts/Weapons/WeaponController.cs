@@ -61,7 +61,14 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable , IAc
     public virtual void Thrown()
     {}
 
-    public void Activate(bool _OnOff)
+    public virtual void Fire(bool _fire)
     {}
+
+    public void Activate(bool _OnOff)
+    {
+
+        Fire(_OnOff);
+
+    }
 
 }

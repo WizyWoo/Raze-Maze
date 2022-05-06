@@ -27,6 +27,7 @@ public class GenericGun : WeaponController, IPunObservable
     public ParticleSystem particleSystemu;
 
     //bools
+    [SerializeField]
     protected bool readyToShoot, reloading;
 
     //Reference
@@ -160,7 +161,7 @@ public class GenericGun : WeaponController, IPunObservable
         reloading = false;
     }
 
-    public new void Activate(bool _firing)
+    public override void Fire(bool _firing)
     {
         Firing = _firing;
     }

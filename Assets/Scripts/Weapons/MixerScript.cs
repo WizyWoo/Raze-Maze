@@ -7,12 +7,6 @@ public class MixerScript : GenericGun
 {
     public GameObject mixerObject, mixerBlades;
 
-    private void Start()
-    {
-        // mixerObject = GameObject.FindObjectOfType<MixerScript>().gameObject;
-        // mixerBlades = mixerObject.transform.GetChild(1).gameObject;
-    }
-
     public override void Shoot()
     {
         readyToShoot = false;    
