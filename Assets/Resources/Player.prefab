@@ -247,7 +247,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 8259c8e17835de244bcc8fea2e2241d0, type: 2}
+  sharedProfile: {fileID: 11400000, guid: c78168873d3bd3f4f9e2fcb085826957, type: 2}
 --- !u!1 &1416359710976390386
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97958269633d9c94d99f2bd81ec4b69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShaderColorName: 
   PlayerUiPrefab: {fileID: 314649571836468322, guid: 8081fd110696b6e4b974f7ea0f05dbfc,
     type: 3}
   Health: 1

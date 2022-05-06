@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97958269633d9c94d99f2bd81ec4b69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShaderColorName: 
   PlayerUiPrefab: {fileID: 314649571836468322, guid: 8081fd110696b6e4b974f7ea0f05dbfc,
     type: 3}
   Health: 1
@@ -972,11 +973,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsGlobal: 1
+  m_IsGlobal: 0
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 8259c8e17835de244bcc8fea2e2241d0, type: 2}
+  sharedProfile: {fileID: 11400000, guid: c78168873d3bd3f4f9e2fcb085826957, type: 2}
 --- !u!1 &673506793443683171
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,6 +3195,7 @@ MonoBehaviour:
   mainAnchor: 0
   handTransform: {fileID: 0}
   rb: {fileID: 0}
+  Colliders: []
   ItemController: {fileID: 3833835234458933234}
   IsWeaponDisplay: 1
   ItemDisplay: {fileID: 8405654123290525065}
@@ -3279,6 +3281,7 @@ MonoBehaviour:
   mainAnchor: 0
   handTransform: {fileID: 0}
   rb: {fileID: 0}
+  Colliders: []
   ItemController: {fileID: 3833835234458933234}
   IsWeaponDisplay: 0
   ItemDisplay: {fileID: 210448436738088491}
