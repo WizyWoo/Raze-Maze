@@ -13,14 +13,14 @@ public class HoldingAnchorActivatable : HoldingAnchor
         if(ScriptToActivate != null)
         {
 
-            ScriptToActivate.FireWeapon(_active);
+            ScriptToActivate.Activate(_active);
 
         }
         else
         {
 
             ScriptToActivate = gameObject.GetComponent<WeaponController>();
-            ScriptToActivate.FireWeapon(_active);
+            ScriptToActivate.Activate(_active);
 
         }
 
@@ -31,7 +31,7 @@ public class HoldingAnchorActivatable : HoldingAnchor
 
         base.Released();
         
-        ScriptToActivate.FireWeapon(false);
+        ScriptToActivate.Activate(false);
 
     }
 

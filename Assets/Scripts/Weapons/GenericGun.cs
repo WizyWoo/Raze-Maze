@@ -160,7 +160,7 @@ public class GenericGun : WeaponController, IPunObservable
         reloading = false;
     }
 
-    public override void FireWeapon(bool _firing)
+    public new void Activate(bool _firing)
     {
         Firing = _firing;
     }

@@ -28,7 +28,7 @@ public class ContinuousGun : WeaponController, IPunObservable
     }
 
     //[PunRPC]
-    public override void FireWeapon(bool _firing)
+    /*public override void FireWeapon(bool _firing)
     {
         if (photonView.IsMine)
         {
@@ -39,5 +39,5 @@ public class ContinuousGun : WeaponController, IPunObservable
 
         //GameObject effectDefGo = PhotonNetwork.Instantiate(particleSystem.name, hit.point, Quaternion.LookRotation(hit.normal), 0);
         //effectDefGo.GetComponent<ParticleSystem>().Play();
-    }
+    }*/
 }

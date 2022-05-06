@@ -30,7 +30,12 @@ public class HoldingAnchorThrowable : HoldingAnchor
         for(int i = 0; i < _cols.Length; i++)
         {
 
-            Physics.IgnoreCollision(MainCollider, _cols[i], true);
+            for(int j = 0; j < Colliders.Length; j++)
+            {
+
+                Physics.IgnoreCollision(Colliders[j], _cols[i], true);
+
+            }
 
         }
 
@@ -48,7 +53,12 @@ public class HoldingAnchorThrowable : HoldingAnchor
         for(int i = 0; i < _cols.Length; i++)
         {
 
-            Physics.IgnoreCollision(MainCollider, _cols[i], false);
+            for(int j = 0; j < Colliders.Length; j++)
+            {
+
+                Physics.IgnoreCollision(Colliders[j], _cols[i], true);
+
+            }
 
         }
 
@@ -58,6 +68,8 @@ public class HoldingAnchorThrowable : HoldingAnchor
             ScriptToActivate.Thrown();
 
         }
+
+        rb.velocity = rb.velocity * 2;
         
     }
 
