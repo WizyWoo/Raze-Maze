@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637850301831507534
+  lastModified: 637874265157689532
   FileSizes:
   - Name: Desktop
     Value: 108768
@@ -64,7 +64,7 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637848558373681714
+  lastModified: 637874265157270641
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -89,6 +89,35 @@ MonoBehaviour:
   - Name: Desktop
     Value: 916
   Exists: 1
+--- !u!114 &-1643625118728566442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footsteps/Surfaces
+  m_EditorClassIdentifier: 
+  Path: event:/Footsteps/Surfaces
+  Guid:
+    Data1: -1810016434
+    Data2: 1282631918
+    Data3: -1320698187
+    Data4: 1356910444
+  Banks:
+  - {fileID: -8414779164060264526}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2783011575091820832}
+  - {fileID: 5542526463760803956}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-559072466261482599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,12 +185,13 @@ MonoBehaviour:
   - {fileID: -8414779164060264526}
   EditorEvents:
   - {fileID: 2444719357330643557}
+  - {fileID: -1643625118728566442}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2801835283482660052}
   StringsBanks:
   - {fileID: 7137527753874307407}
-  cacheTime: 637850301831507534
+  cacheTime: 637874265157689532
   cacheVersion: 10
 --- !u!114 &2444719357330643557
 MonoBehaviour:
@@ -192,6 +222,59 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2783011575091820832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Surfaces/Terrain
+  m_EditorClassIdentifier: 
+  Name: Terrain
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 1
+  ID:
+    data1: 2261690759
+    data2: 1058512974
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Lobby
+  - Jungle
+  - Chocolate
+  - Door
+  - WinTheme
+  Exists: 1
+--- !u!114 &5542526463760803956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Surfaces/WalkSpeed
+  m_EditorClassIdentifier: 
+  Name: WalkSpeed
+  StudioPath: 
+  Min: 0
+  Max: 20
+  Default: 8
+  ID:
+    data1: 483764945
+    data2: 1843187619
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &7137527753874307407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,10 +290,10 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637848558373691708
+  lastModified: 637874265157300586
   FileSizes:
   - Name: Desktop
-    Value: 916
+    Value: 968
   Exists: 1
 --- !u!114 &7840032201027534859
 MonoBehaviour:

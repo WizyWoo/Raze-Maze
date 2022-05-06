@@ -274,6 +274,8 @@ MonoBehaviour:
   MoveRelativeTo: {fileID: 260854732798931688}
   RotateAround: {fileID: 260854732712247036}
   CameraTransform: {fileID: 260854732798931688}
+  tempV2: {x: 0, y: 0}
+  Hands: []
 --- !u!1 &260854732679865853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2661,3 +2663,35 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   plCamera: {fileID: 260854732798931688}
+--- !u!114 &5672624201852160386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131036766233225457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1810016434
+      Data2: 1282631918
+      Data3: -1320698187
+      Data4: 1356910444
+    Path: event:/Footsteps/Surfaces
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Terrain
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
