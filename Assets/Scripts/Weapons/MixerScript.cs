@@ -55,8 +55,6 @@ public class MixerScript : WideSpreadGunsScript
         bulletsLeft--;
         bulletsShot++;
 
-        Destroy(this);
-
         //Invoke resetShot function (if not already invoked), with your timeBetweenShooting
         if (allowInvoke)
         {
