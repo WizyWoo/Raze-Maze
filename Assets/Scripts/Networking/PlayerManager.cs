@@ -321,7 +321,7 @@ namespace Com.MyCompany.MyGame
                     //StartCoroutine(GameManager.gameManager.Respawn());
                     if (photonView.IsMine)
                     {                                  
-                        GameManager.gameManager.Invoke("Respawn", 2f);
+                        GameManager.gameManager.Invoke("Respawn", 0.5f);
                         GetComponentInChildren<PlayerItemController>().DropItem(0);
 
                         DamageLocked = true;
