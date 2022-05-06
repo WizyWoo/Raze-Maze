@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Com.MyCompany.MyGame;
 
-public class MixerScript : GenericGun
+public class MixerScript : WideSpreadGunsScript
 {
     public GameObject mixerObject, mixerBlades;
 
@@ -54,6 +54,8 @@ public class MixerScript : GenericGun
 
         bulletsLeft--;
         bulletsShot++;
+
+        Destroy(this);
 
         //Invoke resetShot function (if not already invoked), with your timeBetweenShooting
         if (allowInvoke)
