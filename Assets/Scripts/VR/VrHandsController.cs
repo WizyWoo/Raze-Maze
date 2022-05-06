@@ -217,6 +217,13 @@ public class VrHandsController : MonoBehaviour
                 }
 
             }
+            else
+            {
+
+                LaserPointer.SetPosition(0, transform.position);
+                LaserPointer.SetPosition(1, transform.position);
+
+            }
 
             if(GrabButton.WasPressedThisFrame() && closestAnchor)
             {

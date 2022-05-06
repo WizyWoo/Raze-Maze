@@ -110,14 +110,14 @@ public class PlayerItemController : MonoBehaviour
     public void DropItem(int _itemID)
     {
 
-        if(CurrentItemID != 0)
+        /*if(CurrentItemID != 0)
         {
             
             GameObject temp = PhotonNetwork.Instantiate(pickupFolderName + droppedWeaponPrefab.name, transform.position, Quaternion.identity);
             temp.GetComponent<WeaponPickup>().WeaponID = CurrentItemID;
             temp.name = "Dropped Weapon ^ " + CurrentItemID;
 
-        }
+        }*/
         
         PlacingTrap = false;
         UpdateItemID(_itemID);

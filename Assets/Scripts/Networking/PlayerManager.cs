@@ -16,6 +16,7 @@ namespace Com.MyCompany.MyGame
     {
         #region Public Fields
 
+        public string ShaderColorName;
         [Tooltip("The Player's UI GameObject Prefab")]
         [SerializeField]
         public GameObject PlayerUiPrefab;
@@ -155,7 +156,7 @@ namespace Com.MyCompany.MyGame
             //    Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
             //}
 
-             originalColor = ren.material.color;
+             originalColor = ren.material.GetColor(ShaderColorName);
         }
 
         /// <summary>
@@ -172,12 +173,12 @@ namespace Com.MyCompany.MyGame
             if(takingDamageCounter > 0)
             {
                 vignette.intensity.Override(takingDamageCounter);
-                ren.material.color = Color.red;
+                ren.material.SetColor(ShaderColorName, Color.red);
 
                 takingDamageCounter -= Time.deltaTime;
             } else
             {
-                ren.material.color = originalColor;
+                ren.material.SetColor(ShaderColorName, originalColor);
             }
                 
 
