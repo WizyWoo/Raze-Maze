@@ -195,6 +195,8 @@ MonoBehaviour:
   mainAnchor: 1
   handTransform: {fileID: 0}
   rb: {fileID: 5381702360757388189}
+  Colliders:
+  - {fileID: 2835933253554667886}
   ActivateWhenThrown: 0
   FollowSpeedMult: 50
   ScriptToActivate: {fileID: 0}

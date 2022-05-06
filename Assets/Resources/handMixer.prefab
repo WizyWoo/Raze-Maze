@@ -428,6 +428,7 @@ MonoBehaviour:
   mainAnchor: 0
   handTransform: {fileID: 0}
   rb: {fileID: 0}
+  Colliders: []
 --- !u!1 &8270857594716394717
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +657,8 @@ MonoBehaviour:
   mainAnchor: 1
   handTransform: {fileID: 0}
   rb: {fileID: 0}
-  ScriptToActivate: {fileID: 0}
+  Colliders: []
+  ScriptToActivate: {fileID: 2578606770170842086}
 --- !u!114 &2578606770170842086
 MonoBehaviour:
   m_ObjectHideFlags: 0

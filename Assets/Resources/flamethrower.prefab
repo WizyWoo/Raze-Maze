@@ -98,7 +98,8 @@ MonoBehaviour:
   mainAnchor: 1
   handTransform: {fileID: 0}
   rb: {fileID: 0}
-  ScriptToActivate: {fileID: 0}
+  Colliders: []
+  ScriptToActivate: {fileID: 692244002853573434}
 --- !u!65 &7805413069392604535
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -348,6 +349,7 @@ MonoBehaviour:
   mainAnchor: 0
   handTransform: {fileID: 0}
   rb: {fileID: 0}
+  Colliders: []
 --- !u!65 &5816304775492585480
 BoxCollider:
   m_ObjectHideFlags: 0

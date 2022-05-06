@@ -526,7 +526,13 @@ MonoBehaviour:
   AttachedMainAnchor: {fileID: 0}
   mainAnchor: 0
   handTransform: {fileID: 0}
-  rb: {fileID: 0}
+  rb: {fileID: 6232740817924233373}
+  Colliders:
+  - {fileID: 178447576903116685}
+  - {fileID: 8671202932166386542}
+  - {fileID: 4328617268797624074}
+  - {fileID: 8877294414949453512}
+  - {fileID: 3892114300947197013}
   ActivateWhenThrown: 0
   FollowSpeedMult: 50
   ScriptToActivate: {fileID: 0}
