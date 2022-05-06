@@ -56,7 +56,7 @@ public class HoldingAnchorThrowable : HoldingAnchor
             for(int j = 0; j < Colliders.Length; j++)
             {
 
-                Physics.IgnoreCollision(Colliders[j], _cols[i], true);
+                Physics.IgnoreCollision(Colliders[j], _cols[i], false);
 
             }
 

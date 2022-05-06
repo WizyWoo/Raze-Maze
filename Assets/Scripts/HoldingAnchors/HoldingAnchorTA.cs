@@ -29,7 +29,12 @@ public class HoldingAnchorTA : HoldingAnchorActivatable
         for(int i = 0; i < _cols.Length; i++)
         {
 
-            Physics.IgnoreCollision(MainCollider, _cols[i], true);
+            for(int j = 0; j < Colliders.Length; j++)
+            {
+
+                Physics.IgnoreCollision(Colliders[j], _cols[i], true);
+
+            }
 
         }
 
@@ -47,7 +52,12 @@ public class HoldingAnchorTA : HoldingAnchorActivatable
         for(int i = 0; i < _cols.Length; i++)
         {
 
-            Physics.IgnoreCollision(MainCollider, _cols[i], false);
+            for(int j = 0; j < Colliders.Length; j++)
+            {
+
+                Physics.IgnoreCollision(Colliders[j], _cols[i], false);
+
+            }
 
         }
 

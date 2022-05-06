@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 5787422257912688968}
   - component: {fileID: -8275241348711129893}
   - component: {fileID: 2160615573009962319}
+  - component: {fileID: 3403609693572851023}
   m_Layer: 13
   m_Name: WeaponGrenadePrefab
   m_TagString: Weapon
@@ -219,6 +220,30 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &3403609693572851023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5693970041408951150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f09bed706f25b948843118d101312b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LinkedAnchorTransform: {fileID: 0}
+  IsHeld: 0
+  AttachedMainAnchor: {fileID: 0}
+  mainAnchor: 0
+  handTransform: {fileID: 0}
+  rb: {fileID: 4922112481516964309}
+  Colliders:
+  - {fileID: 4922112481516964310}
+  ScriptToActivate: {fileID: 5787422257912688968}
+  ActivateWhenThrown: 0
+  FollowSpeedMult: 50
+  MainCollider: {fileID: 4922112481516964310}
 --- !u!1 &6077126029100609789
 GameObject:
   m_ObjectHideFlags: 0
