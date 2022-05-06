@@ -401,8 +401,8 @@ GameObject:
   - component: {fileID: 1859551303210488469}
   - component: {fileID: -3882531351655671070}
   - component: {fileID: -185253994298745433}
-  - component: {fileID: 3580152886521876969}
   - component: {fileID: 6232740817924233373}
+  - component: {fileID: 230061457163689387}
   m_Layer: 13
   m_Name: Key
   m_TagString: Key
@@ -493,24 +493,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &3580152886521876969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8236253458146780771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94a5bb9388f38a54e850802a23b30a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LinkedAnchorTransform: {fileID: 0}
-  IsHeld: 0
-  AttachedMainAnchor: {fileID: 0}
-  mainAnchor: 1
-  handTransform: {fileID: 0}
-  rb: {fileID: 0}
 --- !u!54 &6232740817924233373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -527,3 +509,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &230061457163689387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236253458146780771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34572b72c74a2f4ebc828e183a9bfef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LinkedAnchorTransform: {fileID: 0}
+  IsHeld: 0
+  AttachedMainAnchor: {fileID: 0}
+  mainAnchor: 0
+  handTransform: {fileID: 0}
+  rb: {fileID: 0}
+  ActivateWhenThrown: 0
+  FollowSpeedMult: 50
+  ScriptToActivate: {fileID: 0}
+  MainCollider: {fileID: 0}
