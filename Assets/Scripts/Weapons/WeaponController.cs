@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
+public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable , IActivatable
 {
 
     //When making a weapon script make sure that you Inherit from this script, you can use the Thrown and FireWeapon functions as an on use event, however they are not needed for it to work
@@ -61,7 +61,7 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable
     public virtual void Thrown()
     {}
 
-    public virtual void FireWeapon(bool _firing)
+    public void Activate(bool _OnOff)
     {}
 
 }

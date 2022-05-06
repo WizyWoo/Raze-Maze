@@ -127,48 +127,60 @@ public class VrHandsController : MonoBehaviour
         if(HandInteractionEnabled)
         {
 
-            Collider[] _hits = Physics.OverlapSphere(transform.position, grabRadius, grabMask, QueryTriggerInteraction.Collide);
-
-            if(_hits.Length > 0)
+            if(!holding)
             {
 
-                Collider _closestHit = _hits[0];
-                float[] _distances = new float[_hits.Length];
+                Collider[] _hits = Physics.OverlapSphere(transform.position, grabRadius, grabMask, QueryTriggerInteraction.Collide);
 
-                for (int i = 0; i < _hits.Length; i++)
+                if(_hits.Length > 0)
                 {
 
-                    _distances[i] = Vector3.Distance(_hits[i].transform.position, transform.position);
+                    Collider _closestHit = _hits[0];
+                    float[] _distances = new float[_hits.Length];
 
-                    if(_distances[i] == _distances.Min())
+                    for (int i = 0; i < _hits.Length; i++)
                     {
 
-                        _closestHit = _hits[i];
+                        _distances[i] = Vector3.Distance(_hits[i].transform.position, transform.position);
 
+                        if(_distances[i] == _distances.Min())
+                        {
+
+                            _closestHit = _hits[i];
+
+                        }
+                        
                     }
-                    
+
+                    _closestHit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor);
+
                 }
-
-                _closestHit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor);
-
-            }
-            else
-            {
-
-                closestAnchor = null;
-
-            }
-
-            if(!closestAnchor)
-            {
-
-                if(Physics.Raycast(transform.position, transform.forward, out RaycastHit _hit, grabDistance, grabMask, QueryTriggerInteraction.Collide))
+                else
                 {
 
-                    _hit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor);
+                    closestAnchor = null;
 
-                    LaserPointer.SetPosition(0, transform.position);
-                    LaserPointer.SetPosition(1, _hit.point);
+                }
+
+                if(!closestAnchor)
+                {
+
+                    if(Physics.Raycast(transform.position, transform.forward, out RaycastHit _hit, grabDistance, grabMask, QueryTriggerInteraction.Collide))
+                    {
+
+                        _hit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor);
+
+                        LaserPointer.SetPosition(0, transform.position);
+                        LaserPointer.SetPosition(1, _hit.point);
+
+                    }
+                    else
+                    {
+
+                        LaserPointer.SetPosition(0, transform.position);
+                        LaserPointer.SetPosition(1, transform.position);
+                        
+                    }
 
                 }
                 else
@@ -176,41 +188,34 @@ public class VrHandsController : MonoBehaviour
 
                     LaserPointer.SetPosition(0, transform.position);
                     LaserPointer.SetPosition(1, transform.position);
-                    
-                }
-
-            }
-            else
-            {
-
-                LaserPointer.SetPosition(0, transform.position);
-                LaserPointer.SetPosition(1, transform.position);
-
-            }
-            
-            if(closestAnchor)
-            {
-
-                if(!closestAnchor.IsHeld)
-                {
-
-                    if(deviceHaptics.supportsImpulse)
-                    {
-                        
-                        device.SendHapticImpulse(0u, HapticAmp, HapticDur);
-                    
-                    }
-                    else if(deviceHaptics.supportsBuffer)
-                    {
-
-                        Debug.Log("Buffer supported, but not implemented...");
-
-                    }
-                    else
-                        Debug.Log("No Haptics");
 
                 }
                 
+                if(closestAnchor)
+                {
+
+                    if(!closestAnchor.IsHeld)
+                    {
+
+                        if(deviceHaptics.supportsImpulse)
+                        {
+                            
+                            device.SendHapticImpulse(0u, HapticAmp, HapticDur);
+                        
+                        }
+                        else if(deviceHaptics.supportsBuffer)
+                        {
+
+                            Debug.Log("Buffer supported, but not implemented...");
+
+                        }
+                        else
+                            Debug.Log("No Haptics");
+
+                    }
+                    
+                }
+
             }
 
             if(GrabButton.WasPressedThisFrame() && closestAnchor)

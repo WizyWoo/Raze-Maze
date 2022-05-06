@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DangerHoldingAnchorThrowable : HoldingAnchor
+public class HoldingAnchorThrowable : HoldingAnchor
 {
 
     public bool ActivateWhenThrown;
     public float FollowSpeedMult = 50;
     public WeaponController ScriptToActivate;
     public Collider MainCollider;
+    private Transform grabbedBy;
 
     private void Start()
     {
@@ -23,7 +24,20 @@ public class DangerHoldingAnchorThrowable : HoldingAnchor
 
         IsHeld = true;
         handTransform = _grabbedBy;
-        MainCollider.isTrigger = true;
+
+        Collider[] _cols = _grabbedBy.root.GetComponentsInChildren<Collider>();
+
+        for(int i = 0; i < _cols.Length; i++)
+        {
+
+            for(int j = 0; j < Colliders.Length; j++)
+            {
+
+                Physics.IgnoreCollision(Colliders[j], _cols[i], true);
+
+            }
+
+        }
 
         return this;
 
@@ -33,8 +47,20 @@ public class DangerHoldingAnchorThrowable : HoldingAnchor
     {
         
         IsHeld = false;
+        Collider[] _cols = handTransform.root.GetComponentsInChildren<Collider>();
         handTransform = null;
-        MainCollider.isTrigger = false;
+
+        for(int i = 0; i < _cols.Length; i++)
+        {
+
+            for(int j = 0; j < Colliders.Length; j++)
+            {
+
+                Physics.IgnoreCollision(Colliders[j], _cols[i], false);
+
+            }
+
+        }
 
         if(ActivateWhenThrown)
         {
@@ -42,6 +68,8 @@ public class DangerHoldingAnchorThrowable : HoldingAnchor
             ScriptToActivate.Thrown();
 
         }
+
+        rb.velocity = rb.velocity * 2;
         
     }
 

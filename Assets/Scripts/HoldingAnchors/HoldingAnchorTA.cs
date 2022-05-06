@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoldingAnchorThrowable : HoldingAnchor
+public class HoldingAnchorTA : HoldingAnchorActivatable
 {
 
     public bool ActivateWhenThrown;
     public float FollowSpeedMult = 50;
-    public WeaponController ScriptToActivate;
     public Collider MainCollider;
     private Transform grabbedBy;
 
@@ -30,7 +29,12 @@ public class HoldingAnchorThrowable : HoldingAnchor
         for(int i = 0; i < _cols.Length; i++)
         {
 
-            Physics.IgnoreCollision(MainCollider, _cols[i], true);
+            for(int j = 0; j < Colliders.Length; j++)
+            {
+
+                Physics.IgnoreCollision(Colliders[j], _cols[i], true);
+
+            }
 
         }
 
@@ -48,7 +52,12 @@ public class HoldingAnchorThrowable : HoldingAnchor
         for(int i = 0; i < _cols.Length; i++)
         {
 
-            Physics.IgnoreCollision(MainCollider, _cols[i], false);
+            for(int j = 0; j < Colliders.Length; j++)
+            {
+
+                Physics.IgnoreCollision(Colliders[j], _cols[i], false);
+
+            }
 
         }
 
@@ -58,6 +67,8 @@ public class HoldingAnchorThrowable : HoldingAnchor
             ScriptToActivate.Thrown();
 
         }
+
+        rb.velocity = rb.velocity * 2;
         
     }
 

@@ -14,6 +14,7 @@ public class HoldingAnchor : MonoBehaviour
     private bool mainAnchor;
     public Transform handTransform;
     public Rigidbody rb;
+    public Collider[] Colliders;
     private Vector3 originPos;
 
     private void Awake()
