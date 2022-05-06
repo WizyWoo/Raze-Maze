@@ -109,12 +109,12 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Top_Metallic: 0.454
-    - _Top_Smoothness: 0.521
+    - _Top_Metallic: 0
+    - _Top_Smoothness: 0
     - _Top_Tiling: 0.2
     - _UVSec: 0
-    - _Wall_Metallic: 1
-    - _Wall_Smoothness: 1
+    - _Wall_Metallic: 0.2
+    - _Wall_Smoothness: 0.2
     - _Wall_Tiling: 0.2
     - _ZWrite: 1
     m_Colors:
