@@ -5,11 +5,8 @@ using UnityEngine;
 public class HoldingAnchorThrowable : HoldingAnchor
 {
 
-    public bool ActivateWhenThrown;
     public float FollowSpeedMult = 50;
-    public WeaponController ScriptToActivate;
     public Collider MainCollider;
-    private Transform grabbedBy;
 
     private void Start()
     {
@@ -25,7 +22,7 @@ public class HoldingAnchorThrowable : HoldingAnchor
         IsHeld = true;
         handTransform = _grabbedBy;
 
-        Collider[] _cols = _grabbedBy.root.GetComponentsInChildren<Collider>();
+        Collider[] _cols = handTransform.root.GetComponentsInChildren<Collider>();
 
         for(int i = 0; i < _cols.Length; i++)
         {
@@ -59,13 +56,6 @@ public class HoldingAnchorThrowable : HoldingAnchor
                 Physics.IgnoreCollision(Colliders[j], _cols[i], false);
 
             }
-
-        }
-
-        if(ActivateWhenThrown)
-        {
-
-            ScriptToActivate.Thrown();
 
         }
 

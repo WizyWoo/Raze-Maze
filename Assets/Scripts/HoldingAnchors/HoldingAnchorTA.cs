@@ -24,7 +24,7 @@ public class HoldingAnchorTA : HoldingAnchorActivatable
         IsHeld = true;
         handTransform = _grabbedBy;
 
-        Collider[] _cols = _grabbedBy.root.GetComponentsInChildren<Collider>();
+        Collider[] _cols = handTransform.root.GetComponentsInChildren<Collider>();
 
         for(int i = 0; i < _cols.Length; i++)
         {
@@ -47,7 +47,6 @@ public class HoldingAnchorTA : HoldingAnchorActivatable
         
         IsHeld = false;
         Collider[] _cols = handTransform.root.GetComponentsInChildren<Collider>();
-        handTransform = null;
 
         for(int i = 0; i < _cols.Length; i++)
         {
@@ -64,15 +63,17 @@ public class HoldingAnchorTA : HoldingAnchorActivatable
         if(ActivateWhenThrown)
         {
 
-            ScriptToActivate.Activate(true);
+            ActivateInteractableOnObject(handTransform, true);
 
         }
         else
         {
 
-            ScriptToActivate.Activate(false);
+            ActivateInteractableOnObject(handTransform, false);
 
         }
+
+        handTransform = null;
 
         rb.velocity = rb.velocity * 2;
         
