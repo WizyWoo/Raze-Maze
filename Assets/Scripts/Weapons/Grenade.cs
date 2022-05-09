@@ -10,13 +10,6 @@ public class Grenade : ExplosiveWeaponDamage
     public GameObject ExplosionParticle;
     private float fuseTime;
 
-    public override void Thrown()
-    {
-
-        fuseTime = FuseLenght;
-
-    }
-
     private void Update()
     {
 
@@ -58,6 +51,14 @@ public class Grenade : ExplosiveWeaponDamage
     {
 
         PhotonNetwork.Destroy(gameObject);
+
+    }
+
+    public override void Fire(bool _fire)
+    {
+        
+        if(_fire)
+            fuseTime = FuseLenght;
 
     }
 

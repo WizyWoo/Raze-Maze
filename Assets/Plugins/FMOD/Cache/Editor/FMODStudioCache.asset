@@ -1,6 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8997744245610589180
+--- !u!114 &-8414779164060264526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: RazeMazeSound/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 637876610555465263
+  FileSizes:
+  - Name: Desktop
+    Value: 108768
+  Exists: 1
+--- !u!114 &-6411920874410145214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,7 +30,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Surfaces/Terrain
+  m_Name: parameter:/LoopedWalk/Terrain
   m_EditorClassIdentifier: 
   Name: Terrain
   StudioPath: 
@@ -29,101 +49,6 @@ MonoBehaviour:
   - Door
   - WinTheme
   Exists: 1
---- !u!114 &-8414779164060264526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: RazeMazeSound/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 637876871343708620
-  FileSizes:
-  - Name: Desktop
-    Value: 164736
-  Exists: 1
---- !u!114 &-8181971323740856014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Impact
-  m_EditorClassIdentifier: 
-  Path: event:/Player/Impact
-  Guid:
-    Data1: -1037504425
-    Data2: 1168073748
-    Data3: 881892506
-    Data4: 190277989
-  Banks:
-  - {fileID: -8414779164060264526}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-7642275934122446181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/LoopedWalk/WalkSpeed
-  m_EditorClassIdentifier: 
-  Name: WalkSpeed
-  StudioPath: 
-  Min: 0
-  Max: 20
-  Default: 8
-  ID:
-    data1: 483764945
-    data2: 1843187619
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-4837222317516428176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Surfaces/WalkSpeed
-  m_EditorClassIdentifier: 
-  Name: WalkSpeed
-  StudioPath: 
-  Min: 0
-  Max: 20
-  Default: 8
-  ID:
-    data1: 483764945
-    data2: 1843187619
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-2801835283482660052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +64,7 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637876871342064974
+  lastModified: 637848558373681714
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -164,6 +89,35 @@ MonoBehaviour:
   - Name: Desktop
     Value: 916
   Exists: 1
+--- !u!114 &-1643625118728566442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footsteps/Surfaces
+  m_EditorClassIdentifier: 
+  Path: event:/Footsteps/Surfaces
+  Guid:
+    Data1: -1810016434
+    Data2: 1282631918
+    Data3: -1320698187
+    Data4: 1356910444
+  Banks:
+  - {fileID: -8414779164060264526}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2783011575091820832}
+  - {fileID: 5542526463760803956}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-559072466261482599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,18 +184,16 @@ MonoBehaviour:
   - {fileID: -2801835283482660052}
   - {fileID: -8414779164060264526}
   EditorEvents:
-  - {fileID: 6795914632086920509}
-  - {fileID: -8181971323740856014}
-  - {fileID: 4471016816737578214}
-  - {fileID: 8398801411235260957}
+  - {fileID: 2444719357330643557}
+  - {fileID: -1643625118728566442}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2801835283482660052}
   StringsBanks:
   - {fileID: 7137527753874307407}
-  cacheTime: 637876871343708620
+  cacheTime: 637876610555465263
   cacheVersion: 10
---- !u!114 &4471016816737578214
+--- !u!114 &2444719357330643557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,9 +203,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Footsteps/LoopedWalk
+  m_Name: event:/Footsteps/LoopedWalk
   m_EditorClassIdentifier: 
-  Path: event:/Player/Footsteps/LoopedWalk
+  Path: event:/Footsteps/LoopedWalk
   Guid:
     Data1: 223587555
     Data2: 1337007888
@@ -265,12 +217,12 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -7642275934122446181}
-  - {fileID: 8321326233958805176}
+  - {fileID: -6411920874410145214}
+  - {fileID: 7840032201027534859}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6795914632086920509
+--- !u!114 &2783011575091820832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,26 +231,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Footsteps/Surfaces
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Surfaces/Terrain
   m_EditorClassIdentifier: 
-  Path: event:/Player/Footsteps/Surfaces
-  Guid:
-    Data1: -1810016434
-    Data2: 1282631918
-    Data3: -1320698187
-    Data4: 1356910444
-  Banks:
-  - {fileID: -8414779164060264526}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -8997744245610589180}
-  - {fileID: -4837222317516428176}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Name: Terrain
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 1
+  ID:
+    data1: 2261690759
+    data2: 1058512974
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Lobby
+  - Jungle
+  - Chocolate
+  - Door
+  - WinTheme
+  Exists: 1
+--- !u!114 &5542526463760803956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Surfaces/WalkSpeed
+  m_EditorClassIdentifier: 
+  Name: WalkSpeed
+  StudioPath: 
+  Min: 0
+  Max: 20
+  Default: 8
+  ID:
+    data1: 483764945
+    data2: 1843187619
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &7137527753874307407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,10 +290,34 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637876871342084921
+  lastModified: 637876610555455259
   FileSizes:
   - Name: Desktop
-    Value: 1082
+    Value: 968
+  Exists: 1
+--- !u!114 &7840032201027534859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LoopedWalk/WalkSpeed
+  m_EditorClassIdentifier: 
+  Name: WalkSpeed
+  StudioPath: 
+  Min: 0
+  Max: 20
+  Default: 8
+  ID:
+    data1: 483764945
+    data2: 1843187619
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &7985665949245405350
 MonoBehaviour:
@@ -343,62 +343,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &8321326233958805176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/LoopedWalk/Terrain
-  m_EditorClassIdentifier: 
-  Name: Terrain
-  StudioPath: 
-  Min: 0
-  Max: 4
-  Default: 1
-  ID:
-    data1: 2261690759
-    data2: 1058512974
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Lobby
-  - Jungle
-  - Chocolate
-  - Door
-  - WinTheme
-  Exists: 1
---- !u!114 &8398801411235260957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Weapons/Grenade
-  m_EditorClassIdentifier: 
-  Path: event:/Weapons/Grenade
-  Guid:
-    Data1: 1998997994
-    Data2: 1084676733
-    Data3: -2099366249
-    Data4: -176894423
-  Banks:
-  - {fileID: -8414779164060264526}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 898
 --- !u!114 &8609521291760157201
 MonoBehaviour:
   m_ObjectHideFlags: 0

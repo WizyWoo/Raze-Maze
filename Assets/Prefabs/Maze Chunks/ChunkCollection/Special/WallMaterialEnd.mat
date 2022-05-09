@@ -113,7 +113,7 @@ Material:
     - _Top_Smoothness: 0
     - _Top_Tiling: 0.2
     - _UVSec: 0
-    - _Wall_Metallic: 0.2
+    - _Wall_Metallic: 0.3
     - _Wall_Smoothness: 0.2
     - _Wall_Tiling: 0.2
     - _ZWrite: 1

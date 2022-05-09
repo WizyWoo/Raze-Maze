@@ -690,12 +690,14 @@ MonoBehaviour:
   reloadTime: 0
   timeBetweenShots: 0
   magazineSize: 1
-  bulletsPerTap: 0
+  bulletsPerTap: 1
   allowButtonHold: 0
   canReload: 0
-  bulletsLeft: 0
+  bulletsLeft: 1
   rayLength: 1000
   particleSystemu: {fileID: 0}
+  readyToShoot: 0
+  reloading: 0
   attackPoint: {fileID: 7050052531768342197}
   allowInvoke: 1
   mixerObject: {fileID: 9109807381526474317}

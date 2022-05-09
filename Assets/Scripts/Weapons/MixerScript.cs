@@ -3,15 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Com.MyCompany.MyGame;
 
-public class MixerScript : GenericGun
+public class MixerScript : WideSpreadGunsScript
 {
     public GameObject mixerObject, mixerBlades;
-
-    private void Start()
-    {
-        // mixerObject = GameObject.FindObjectOfType<MixerScript>().gameObject;
-        // mixerBlades = mixerObject.transform.GetChild(1).gameObject;
-    }
 
     public override void Shoot()
     {
