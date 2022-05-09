@@ -64,7 +64,13 @@ public class HoldingAnchorTA : HoldingAnchorActivatable
         if(ActivateWhenThrown)
         {
 
-            ScriptToActivate.Thrown();
+            ScriptToActivate.Activate(true);
+
+        }
+        else
+        {
+
+            ScriptToActivate.Activate(false);
 
         }
 

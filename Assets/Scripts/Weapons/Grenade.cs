@@ -7,7 +7,7 @@ public class Grenade : ExplosiveWeaponDamage
 {
 
     public float FuseLenght;
-    public GameObject ExplosionParticle;
+    public GameObject ExplosionParticle, Pin, Body;
     private float fuseTime;
 
     private void Update()
@@ -31,6 +31,8 @@ public class Grenade : ExplosiveWeaponDamage
 
             ExplosiveUsed = true;
             Explode();
+
+            Destroy(Body);
 
             Invoke("DestroyMe", 10);
 
@@ -58,7 +60,12 @@ public class Grenade : ExplosiveWeaponDamage
     {
         
         if(_fire)
+        {
+
             fuseTime = FuseLenght;
+            Destroy(Pin);
+
+        }
 
     }
 

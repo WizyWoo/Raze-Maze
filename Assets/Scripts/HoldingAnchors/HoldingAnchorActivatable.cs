@@ -5,7 +5,7 @@ using UnityEngine;
 public class HoldingAnchorActivatable : HoldingAnchor
 {
 
-    public WeaponController ScriptToActivate;
+    public IActivatable ScriptToActivate;
 
     public void ActivateInteractableOnObject(Transform _activatedBy, bool _active)
     {
@@ -19,7 +19,7 @@ public class HoldingAnchorActivatable : HoldingAnchor
         else
         {
 
-            ScriptToActivate = gameObject.GetComponent<WeaponController>();
+            ScriptToActivate = gameObject.GetComponent<IActivatable>();
             ScriptToActivate.Activate(_active);
 
         }

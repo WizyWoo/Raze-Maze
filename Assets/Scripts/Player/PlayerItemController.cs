@@ -332,6 +332,9 @@ public class PlayerItemController : MonoBehaviour
         else if(!PlacingTrap)
         {
 
+            if(activeWeapon)
+                PhotonNetwork.Destroy(activeWeapon);
+
             EquippedWeaponID = CurrentItemID;
             CurrentItemID = 0;
             activeWeapon = PhotonNetwork.Instantiate(CurrentWeaponPrefab.name, _vrHand.position, _vrHand.rotation);

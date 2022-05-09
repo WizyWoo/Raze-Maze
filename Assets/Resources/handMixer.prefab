@@ -658,7 +658,6 @@ MonoBehaviour:
   handTransform: {fileID: 0}
   rb: {fileID: 0}
   Colliders: []
-  ScriptToActivate: {fileID: 2578606770170842086}
 --- !u!114 &2578606770170842086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,5 +699,6 @@ MonoBehaviour:
   reloading: 0
   attackPoint: {fileID: 7050052531768342197}
   allowInvoke: 1
+  rayWideness: 0
   mixerObject: {fileID: 9109807381526474317}
   mixerBlades: {fileID: 8270857594716394717}

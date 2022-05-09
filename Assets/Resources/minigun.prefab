@@ -307,7 +307,6 @@ MonoBehaviour:
   handTransform: {fileID: 0}
   rb: {fileID: 0}
   Colliders: []
-  ScriptToActivate: {fileID: 5622669579957892613}
 --- !u!65 &6977855550406708124
 BoxCollider:
   m_ObjectHideFlags: 0
