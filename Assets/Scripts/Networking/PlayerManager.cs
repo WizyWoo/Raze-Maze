@@ -178,6 +178,7 @@ namespace Com.MyCompany.MyGame
                 takingDamageCounter -= Time.deltaTime;
             } else
             {
+                vignette.intensity.Override(0);
                 ren.material.SetColor(ShaderColorName, originalColor);
             }
                 
@@ -313,6 +314,7 @@ namespace Com.MyCompany.MyGame
             {
                 takingDamageCounter = 1;
                 Health -= damage;
+
 
                 if (Health <= 0)
                 {
