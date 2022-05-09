@@ -4313,7 +4313,7 @@ MonoBehaviour:
       Data2: 1282631918
       Data3: -1320698187
       Data4: 1356910444
-    Path: event:/Footsteps/Surfaces
+    Path: event:/Player/Footsteps/Surfaces
   Event: 
   PlayEvent: 0
   StopEvent: 0
