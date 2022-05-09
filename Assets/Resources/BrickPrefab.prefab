@@ -197,9 +197,7 @@ MonoBehaviour:
   rb: {fileID: 5381702360757388189}
   Colliders:
   - {fileID: 2835933253554667886}
-  ActivateWhenThrown: 0
   FollowSpeedMult: 50
-  ScriptToActivate: {fileID: 0}
   MainCollider: {fileID: 2835933253554667886}
 --- !u!114 &1377383071693217542
 MonoBehaviour:

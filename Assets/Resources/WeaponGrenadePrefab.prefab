@@ -242,6 +242,7 @@ MonoBehaviour:
   rb: {fileID: 4922112481516964309}
   Colliders:
   - {fileID: 4922112481516964310}
+  ActivateWhenThrown: 0
   FollowSpeedMult: 50
   MainCollider: {fileID: 4922112481516964310}
 --- !u!1 &6077126029100609789

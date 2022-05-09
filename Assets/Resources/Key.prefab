@@ -533,7 +533,5 @@ MonoBehaviour:
   - {fileID: 4328617268797624074}
   - {fileID: 8877294414949453512}
   - {fileID: 3892114300947197013}
-  ActivateWhenThrown: 0
   FollowSpeedMult: 50
-  ScriptToActivate: {fileID: 0}
   MainCollider: {fileID: 0}
