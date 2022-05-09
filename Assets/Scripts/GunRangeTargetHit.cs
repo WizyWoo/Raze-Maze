@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class GunRangeTargetHit : MonoBehaviour, IHit
 {
+
+    public Material DummyMat;
+    private Color originColor;
+
+    private void Start()
+    {
+
+        originColor = DummyMat.GetColor("_DiffuseColor");
+
+    }
+
     public void Damage(float damageAmount)
     {
-        StopCoroutine(HitMarkerActive());
+        StopAllCoroutines();
 
         StartCoroutine(HitMarkerActive());
     }
@@ -14,9 +25,11 @@ public class GunRangeTargetHit : MonoBehaviour, IHit
     IEnumerator HitMarkerActive()
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        DummyMat.SetColor("_DiffuseColor", Color.white);
 
         yield return new WaitForSeconds(1f);
 
-         gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        DummyMat.SetColor("_DiffuseColor", originColor);
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 }

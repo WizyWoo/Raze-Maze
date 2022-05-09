@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97958269633d9c94d99f2bd81ec4b69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShaderColorName: 
+  ShaderColorName: _DiffuseColor
   PlayerUiPrefab: {fileID: 314649571836468322, guid: 8081fd110696b6e4b974f7ea0f05dbfc,
     type: 3}
   Health: 1

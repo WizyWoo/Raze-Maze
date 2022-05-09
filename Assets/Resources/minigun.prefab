@@ -283,6 +283,8 @@ MonoBehaviour:
   bulletsLeft: 0
   rayLength: 1000
   particleSystemu: {fileID: 8995168545513115497}
+  readyToShoot: 0
+  reloading: 0
   attackPoint: {fileID: 5608596870347650438}
   allowInvoke: 1
   rayWideness: 0.2
