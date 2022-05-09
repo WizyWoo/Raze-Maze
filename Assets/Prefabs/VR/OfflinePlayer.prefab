@@ -2645,24 +2645,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7265832858198137388}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6444639294895550164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5131036766233225457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adba36170406e3e419afd125ad159fdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCol: {fileID: 7151013509243420385}
-  grounded: 0
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 2048
-  plCamera: {fileID: 260854732798931688}
 --- !u!114 &5672624201852160386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2682,7 +2664,7 @@ MonoBehaviour:
       Data2: 1282631918
       Data3: -1320698187
       Data4: 1356910444
-    Path: event:/Footsteps/Surfaces
+    Path: event:/Player/Footsteps/Surfaces
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -2695,3 +2677,21 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &6444639294895550164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131036766233225457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adba36170406e3e419afd125ad159fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCol: {fileID: 7151013509243420385}
+  grounded: 0
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  plCamera: {fileID: 260854732798931688}

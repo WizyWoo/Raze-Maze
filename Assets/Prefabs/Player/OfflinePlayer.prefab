@@ -402,7 +402,7 @@ MonoBehaviour:
       Data2: 1337007888
       Data3: -97564766
       Data4: 1372936243
-    Path: event:/Footsteps/LoopedWalk
+    Path: event:/Player/Footsteps/LoopedWalk
   Event: 
   PlayEvent: 0
   StopEvent: 0

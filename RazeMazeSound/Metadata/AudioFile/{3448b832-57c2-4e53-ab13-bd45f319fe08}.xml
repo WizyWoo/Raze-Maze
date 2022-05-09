@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3448b832-57c2-4e53-ab13-bd45f319fe08}">
+		<property name="assetPath">
+			<value>HitSound.aiff</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.55204166666666665</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6ce56b24-ad70-4b81-a7f4-85b769292a5c}</destination>
+		</relationship>
+	</object>
+</objects>
