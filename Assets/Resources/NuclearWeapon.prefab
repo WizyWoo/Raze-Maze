@@ -50,3 +50,9 @@ MonoBehaviour:
   Used: 0
   ExplosiveUsed: 0
   MainAnchor: {fileID: 0}
+  WeaponMask:
+    serializedVersion: 2
+    m_Bits: 0
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 0
