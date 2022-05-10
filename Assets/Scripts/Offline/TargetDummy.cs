@@ -7,7 +7,7 @@ public class TargetDummy : MonoBehaviour , IHit
 
     public MeshRenderer Ren;
     public Material HitMat;
-    private float timer;
+    public float timer;
     private Material originMat;
 
     private void Start()

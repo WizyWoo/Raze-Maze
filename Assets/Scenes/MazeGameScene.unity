@@ -5457,6 +5457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ren: {fileID: 8603059060816317857}
   HitMat: {fileID: 2100000, guid: 196ad3edaf63c154cb0f73339d341d38, type: 2}
+  timer: 0
 --- !u!65 &8603059060855265680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7280,8 +7281,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff5a3e1a77730c4eb1d2785a1c13c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ren: {fileID: 8603059060816317857}
+  Ren: {fileID: 8603059061653034177}
   HitMat: {fileID: 2100000, guid: 196ad3edaf63c154cb0f73339d341d38, type: 2}
+  timer: 0
 --- !u!65 &8603059061761257848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8154,8 +8156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff5a3e1a77730c4eb1d2785a1c13c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ren: {fileID: 8603059060816317857}
+  Ren: {fileID: 8603059062051347143}
   HitMat: {fileID: 2100000, guid: 196ad3edaf63c154cb0f73339d341d38, type: 2}
+  timer: 0
 --- !u!23 &8603059062096789280
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8884,8 +8887,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff5a3e1a77730c4eb1d2785a1c13c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ren: {fileID: 8603059060816317857}
+  Ren: {fileID: 8603059062389436579}
   HitMat: {fileID: 2100000, guid: 196ad3edaf63c154cb0f73339d341d38, type: 2}
+  timer: 0
 --- !u!23 &8603059062424810109
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9015,8 +9019,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff5a3e1a77730c4eb1d2785a1c13c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ren: {fileID: 8603059060816317857}
+  Ren: {fileID: 8603059062424810109}
   HitMat: {fileID: 2100000, guid: 196ad3edaf63c154cb0f73339d341d38, type: 2}
+  timer: 0
 --- !u!23 &8603059062457551016
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9420,8 +9425,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff5a3e1a77730c4eb1d2785a1c13c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ren: {fileID: 8603059060816317857}
+  Ren: {fileID: 8603059062642244081}
   HitMat: {fileID: 2100000, guid: 196ad3edaf63c154cb0f73339d341d38, type: 2}
+  timer: 0
 --- !u!1 &8603059062701349732
 GameObject:
   m_ObjectHideFlags: 0
@@ -9681,5 +9687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff5a3e1a77730c4eb1d2785a1c13c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ren: {fileID: 8603059060816317857}
+  Ren: {fileID: 8603059062761560543}
   HitMat: {fileID: 2100000, guid: 196ad3edaf63c154cb0f73339d341d38, type: 2}
+  timer: 0
