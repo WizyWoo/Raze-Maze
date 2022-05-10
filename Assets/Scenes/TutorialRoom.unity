@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12317749, g: 0.12645783, b: 0.16801937, a: 1}
+  m_IndirectSpecularColor: {r: 0.12316003, g: 0.1264383, b: 0.16799375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -383,7 +383,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 51e33c50b97768645b9a79dd2fa33029, type: 2}
+  - {fileID: 2100000, guid: fd7c30bd55940b547bb7d3381f520763, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -674,7 +674,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e5acdd4282637cb4293354879b7a39d3, type: 2}
+  - {fileID: 2100000, guid: 059412aa74bd7834d894673cf7b6eb8d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1346,7 +1346,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3fba4c6a61cd3d644a0e219a843b2b01, type: 2}
+  - {fileID: 2100000, guid: 045049e22ca27b74da7d50a284a923bc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3219,7 +3219,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 873fd49912ba9c3419a40112ebc673e8, type: 2}
+  - {fileID: 2100000, guid: 90bbd10acaa9b144fa221926d2c9b192, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3599,7 +3599,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 511d2159210b62a438152e417a4f7635, type: 2}
+  - {fileID: 2100000, guid: 51fc25371212da74ea46d576b10128d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7286,7 +7286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b4e8b50f0158d459bab22d8108ba15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: 0
+  SceneIndex: 0
 --- !u!1 &3489479728602275243
 GameObject:
   m_ObjectHideFlags: 0
