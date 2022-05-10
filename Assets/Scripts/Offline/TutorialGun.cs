@@ -7,7 +7,6 @@ public class TutorialGun : MonoBehaviour , IActivatable
 
     public Transform RaycastPoint;
     public float Damage;
-    private bool firing;
     private LayerMask weaponMask;
 
     private void Start()
@@ -20,14 +19,7 @@ public class TutorialGun : MonoBehaviour , IActivatable
     public void Activate(bool _OnOff)
     {
 
-        firing = _OnOff;
-
-    }
-
-    private void Update()
-    {
-
-        if(firing)
+        if(_OnOff)
         {
 
             if(Physics.Raycast(RaycastPoint.position, RaycastPoint.forward, out RaycastHit _hit, Mathf.Infinity, weaponMask, QueryTriggerInteraction.Collide))
