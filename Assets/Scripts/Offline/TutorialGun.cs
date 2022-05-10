@@ -6,6 +6,7 @@ public class TutorialGun : MonoBehaviour , IActivatable
 {
 
     public Transform RaycastPoint;
+    public ParticleSystem ParticleSys;
     public float Damage;
     private LayerMask weaponMask;
 
@@ -21,6 +22,8 @@ public class TutorialGun : MonoBehaviour , IActivatable
 
         if(_OnOff)
         {
+
+            ParticleSys.Play();
 
             if(Physics.Raycast(RaycastPoint.position, RaycastPoint.forward, out RaycastHit _hit, Mathf.Infinity, weaponMask, QueryTriggerInteraction.Collide))
             {

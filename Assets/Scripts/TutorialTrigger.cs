@@ -17,13 +17,13 @@ public class TutorialTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.tag == "Player" && tutorialText != null)
+        if(other.transform.root.tag == "Player" && tutorialText != null)
             tutorialText.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other) 
     {
-        if(other.tag == "Player")
+        if(other.transform.root.tag == "Player")
         {   
             if(blockingWall != null && tutorialText != null)
             {

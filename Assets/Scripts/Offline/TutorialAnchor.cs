@@ -13,7 +13,7 @@ public class TutorialAnchor : HoldingAnchorActivatable
         if(!pickedUp)
         {
 
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
             transform.parent = null;
 
         }

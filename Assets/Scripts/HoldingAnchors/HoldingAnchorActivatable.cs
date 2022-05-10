@@ -31,7 +31,10 @@ public class HoldingAnchorActivatable : HoldingAnchor
 
         base.Released();
         
-        ScriptToActivate.Activate(false);
+        if(ScriptToActivate != null)
+            ScriptToActivate.Activate(false);
+        else
+            ScriptToActivate = gameObject.GetComponent<IActivatable>();
 
     }
 

@@ -165,10 +165,8 @@ public class VrHandsController : MonoBehaviour
                 if(!closestAnchor)
                 {
 
-                    if(Physics.Raycast(transform.position, transform.forward, out RaycastHit _hit, grabDistance, grabMask, QueryTriggerInteraction.Collide))
+                    if(Physics.Raycast(transform.position, transform.forward, out RaycastHit _hit, grabDistance, grabMask, QueryTriggerInteraction.Collide) && _hit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor) && !closestAnchor.IsHeld)
                     {
-
-                        _hit.transform.TryGetComponent<HoldingAnchor>(out closestAnchor);
 
                         LaserPointer.SetPosition(0, transform.position);
                         LaserPointer.SetPosition(1, _hit.point);

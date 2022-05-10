@@ -534,4 +534,4 @@ MonoBehaviour:
   - {fileID: 8877294414949453512}
   - {fileID: 3892114300947197013}
   FollowSpeedMult: 50
-  MainCollider: {fileID: 0}
+  MainCollider: {fileID: 178447576903116685}
