@@ -70,6 +70,7 @@ public class HoldingAnchorThrowable : HoldingAnchor
         {
 
             rb.velocity = (handTransform.position - transform.position) * FollowSpeedMult;
+            transform.rotation = handTransform.rotation;
 
         }
         

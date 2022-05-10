@@ -484,7 +484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97958269633d9c94d99f2bd81ec4b69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShaderColorName: _DiffuseColor
   PlayerUiPrefab: {fileID: 314649571836468322, guid: 8081fd110696b6e4b974f7ea0f05dbfc,
     type: 3}
   Health: 1
@@ -492,7 +491,7 @@ MonoBehaviour:
   gameOver: {fileID: 0}
   readied: 0
   DamageLocked: 0
-  trapDamage: 0
+  HitMat: {fileID: 2100000, guid: 196ad3edaf63c154cb0f73339d341d38, type: 2}
   ren: {fileID: 7975640436749696283}
 --- !u!114 &6976286128122079780
 MonoBehaviour:

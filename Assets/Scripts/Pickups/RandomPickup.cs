@@ -7,6 +7,7 @@ public class RandomPickup : MonoBehaviour , IInteractable
 
     public ItemManager.Theme PickupTheme;
     public bool LockAfterUse;
+    public Material UsedMat;
     private bool locked;
 
     private void OnTriggerEnter(Collider col)
@@ -30,7 +31,7 @@ public class RandomPickup : MonoBehaviour , IInteractable
             {
 
                 locked = true;
-                gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+                gameObject.GetComponent<MeshRenderer>().material = UsedMat;
 
             }
         

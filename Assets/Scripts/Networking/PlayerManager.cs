@@ -16,7 +16,6 @@ namespace Com.MyCompany.MyGame
     {
         #region Public Fields
 
-        public string ShaderColorName;
         [Tooltip("The Player's UI GameObject Prefab")]
         [SerializeField]
         public GameObject PlayerUiPrefab;
@@ -34,7 +33,7 @@ namespace Com.MyCompany.MyGame
 
         public static PlayerManager playerManager;
 
-        public float trapDamage;
+        public Material HitMat;
 
         private float takingDamageCounter;
 
@@ -156,7 +155,7 @@ namespace Com.MyCompany.MyGame
             //    Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
             //}
 
-             originalColor = ren.material.GetColor(ShaderColorName);
+             originalColor = ren.material;
         }
 
         /// <summary>
@@ -172,14 +171,14 @@ namespace Com.MyCompany.MyGame
 
             if(takingDamageCounter > 0)
             {
+                ren.material = HitMat;
                 vignette.intensity.Override(takingDamageCounter);
-                ren.material.SetColor(ShaderColorName, Color.red);
 
                 takingDamageCounter -= Time.deltaTime;
             } else
             {
+                ren.material = originalColor;
                 vignette.intensity.Override(0);
-                ren.material.SetColor(ShaderColorName, originalColor);
             }
                 
 
@@ -305,14 +304,14 @@ namespace Com.MyCompany.MyGame
         #endregion
 
         private float redFlashTime = 1f;
-        private Color originalColor;
+        private Material originalColor;
         public Renderer ren;
 
         public void Damage(float damage = 0)
         {
             if(!DamageLocked)
             {
-                takingDamageCounter = 1;
+                takingDamageCounter = 0.4f;
                 Health -= damage;
 
 
@@ -324,7 +323,7 @@ namespace Com.MyCompany.MyGame
                     //StartCoroutine(GameManager.gameManager.Respawn());
                     if (photonView.IsMine)
                     {                                  
-                        GameManager.gameManager.Invoke("Respawn", 0.5f);
+                        GameManager.gameManager.Invoke("Respawn", 3f);
                         GetComponentInChildren<PlayerItemController>().DropItem(0);
 
                         DamageLocked = true;

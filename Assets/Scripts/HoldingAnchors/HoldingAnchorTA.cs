@@ -86,6 +86,7 @@ public class HoldingAnchorTA : HoldingAnchorActivatable
         {
 
             rb.velocity = (handTransform.position - transform.position) * FollowSpeedMult;
+            transform.rotation = handTransform.rotation;
 
         }
         
