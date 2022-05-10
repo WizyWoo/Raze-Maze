@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Old/Launcher.unity
     guid: b7f0e9e6dbcad6c45a1ded5a1b2d7693
   - enabled: 1
-    path: Assets/Scenes/OfflineWaitingRoom.unity
+    path: Assets/Scenes/TutorialRoom.unity
     guid: 28c9e64b14f94ea458e66a80b82fad43
   - enabled: 0
     path: Assets/Scenes/waitingRoomScene.unity
