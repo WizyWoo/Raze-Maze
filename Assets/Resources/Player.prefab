@@ -806,6 +806,7 @@ GameObject:
   - component: {fileID: 383310166694716958}
   - component: {fileID: 1913524856119444659}
   - component: {fileID: 7646438927676730289}
+  - component: {fileID: 2727860133250811714}
   m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -976,7 +977,19 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 8259c8e17835de244bcc8fea2e2241d0, type: 2}
+  sharedProfile: {fileID: 11400000, guid: c78168873d3bd3f4f9e2fcb085826957, type: 2}
+--- !u!114 &2727860133250811714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260854732798931693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fffb0ff7d125544ca48469a3a12a151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &673506793443683171
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,6 +3104,7 @@ GameObject:
   - component: {fileID: 7151013509243420391}
   - component: {fileID: 7151013509243420385}
   - component: {fileID: 7151013509243420384}
+  - component: {fileID: 2919982471163298937}
   m_Layer: 3
   m_Name: GroundCollisions
   m_TagString: Untagged
@@ -3141,6 +3155,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CapCol: {fileID: 7151013509243420385}
   CamTransform: {fileID: 260854732798931688}
+--- !u!114 &2919982471163298937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151013509243420390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fffb0ff7d125544ca48469a3a12a151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7151013509513800283
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,6 +3853,7 @@ GameObject:
   - component: {fileID: 3864162739258807314}
   - component: {fileID: 1349582398288728883}
   - component: {fileID: 4761758440281769094}
+  - component: {fileID: 7182418321178581089}
   m_Layer: 3
   m_Name: HitDetectionCollider
   m_TagString: Untagged
@@ -3877,6 +3904,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CapCol: {fileID: 1349582398288728883}
   CamTransform: {fileID: 260854732798931688}
+--- !u!114 &7182418321178581089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8188691711994854402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fffb0ff7d125544ca48469a3a12a151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8352998869433852050
 GameObject:
   m_ObjectHideFlags: 0

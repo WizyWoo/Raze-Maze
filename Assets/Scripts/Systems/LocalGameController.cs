@@ -7,6 +7,10 @@ public class LocalGameController : MonoBehaviour
 
     public static LocalGameController main { get; private set; }
     public bool PlayerHasWon;
+    public SaveAndLoad SavingAndLoading;
+
+    //Settings
+    public bool SnapTurning, MovementVignette;
 
     private void Awake()
     {
@@ -18,6 +22,22 @@ public class LocalGameController : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
+        RazeMazeSettings _settings = SavingAndLoading.LoadSettings();
+
+        if(_settings == null)
+        {
+
+            SavingAndLoading.SaveSettings(false, false);
+
+        }
+        else
+        {
+
+            SnapTurning = _settings.SnapTurning;
+            MovementVignette = _settings.MovementVignette;
+
+        }
+
     }
 
     public bool WinCheck()
@@ -28,6 +48,14 @@ public class LocalGameController : MonoBehaviour
         PlayerHasWon = false;
 
         return _temp;
+
+    }
+
+    public void SaveCurrentSettings()
+    {
+
+        SavingAndLoading.SaveSettings(SnapTurning, MovementVignette);
+        Debug.Log("Settings saved!");
 
     }
 

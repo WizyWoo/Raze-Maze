@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 161682592709941343}
   - component: {fileID: 741969098610106054}
+  - component: {fileID: 7501518056111385167}
   m_Layer: 0
   m_Name: LocalGameController
   m_TagString: Untagged
@@ -44,3 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e13ab39d93e8b4e8f27445c0c4d2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerHasWon: 0
+  SnapTurning: 0
+  MovementVignette: 0
+--- !u!114 &7501518056111385167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942682684638105044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eca8be75a29ad045adfcb3f62b67d4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FileName: Cettings.darja
