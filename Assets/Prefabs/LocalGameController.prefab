@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHasWon: 0
+  SavingAndLoading: {fileID: 7501518056111385167}
   SnapTurning: 0
   MovementVignette: 0
 --- !u!114 &7501518056111385167
