@@ -91,8 +91,6 @@ namespace Com.MyCompany.MyGame
 
         public void LeaveRoom()
         {
-
-            Debug.Log("piss");
             PhotonNetwork.LeaveRoom();
         }
 
