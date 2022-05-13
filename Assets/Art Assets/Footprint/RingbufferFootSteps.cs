@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
 
 public class RingbufferFootSteps : MonoBehaviour
 {
     public ParticleSystem system;
+    public StudioEventEmitter SoundEmitter;
     public Material activeMat;
 
     Vector3 lastEmit;
@@ -32,6 +34,7 @@ public class RingbufferFootSteps : MonoBehaviour
                 ep.rotation = transform.rotation.eulerAngles.y;
                 system.Emit(ep, 1);
                 lastEmit = transform.position;
+                SoundEmitter.Play();
             }
         }
 
