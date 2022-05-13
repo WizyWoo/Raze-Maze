@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12316003, g: 0.1264383, b: 0.16799375, a: 1}
+  m_IndirectSpecularColor: {r: 0.12294218, g: 0.12618057, b: 0.167751, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3825,7 +3825,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: LocalGameController
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7501518056111385167, guid: a8332b03a17598240b695d6d9f16637e,
+        type: 3}
+      propertyPath: FileName
+      value: Pisser.pisslord
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7501518056111385167, guid: a8332b03a17598240b695d6d9f16637e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a8332b03a17598240b695d6d9f16637e, type: 3}
 --- !u!1 &8410825285599184394
 GameObject:

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHasWon: 0
-  SavingAndLoading: {fileID: 7501518056111385167}
+  FileName: Cettings.darja
   SnapTurning: 0
   MovementVignette: 0
 --- !u!114 &7501518056111385167
@@ -61,4 +61,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eca8be75a29ad045adfcb3f62b67d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FileName: Cettings.darja

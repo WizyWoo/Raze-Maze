@@ -7,9 +7,10 @@ public class LocalGameController : MonoBehaviour
 
     public static LocalGameController main { get; private set; }
     public bool PlayerHasWon;
-    public SaveAndLoad SavingAndLoading;
+    public string FileName;
 
     //Settings
+    public float RotationSpeed;
     public bool SnapTurning, MovementVignette;
 
     private void Awake()
@@ -22,12 +23,13 @@ public class LocalGameController : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
-        RazeMazeSettings _settings = SavingAndLoading.LoadSettings();
+        RazeMazeSettings _settings = null;
+        _settings = SaveAndLoad.LoadSettings(FileName);
 
         if(_settings == null)
         {
 
-            SavingAndLoading.SaveSettings(false, false);
+            SaveAndLoad.SaveSettings(FileName, RotationSpeed, false, false);
 
         }
         else
@@ -54,7 +56,7 @@ public class LocalGameController : MonoBehaviour
     public void SaveCurrentSettings()
     {
 
-        SavingAndLoading.SaveSettings(SnapTurning, MovementVignette);
+        SaveAndLoad.SaveSettings(FileName, RotationSpeed, SnapTurning, MovementVignette);
         Debug.Log("Settings saved!");
 
     }
