@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8376783409142404794}
   - component: {fileID: 8376783409142404790}
   - component: {fileID: -8808945334094484980}
-  - component: {fileID: 3411609212772741729}
+  - component: {fileID: 1163824606910092698}
   m_Layer: 6
   m_Name: jelloTrap
   m_TagString: Trap
@@ -120,7 +120,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -8808945334094484980}
-  - {fileID: 3411609212772741729}
+  - {fileID: 1163824606910092698}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
---- !u!114 &3411609212772741729
+--- !u!114 &1163824606910092698
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
