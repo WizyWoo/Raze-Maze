@@ -27,7 +27,6 @@ public class VrPlayerController : MonoBehaviour
         SnapTurning = gc.SnapTurning;
         MovementVignette = gc.MovementVignette;
 
-
     }
 
     private void OnEnable()

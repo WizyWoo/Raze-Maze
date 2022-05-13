@@ -8,6 +8,7 @@ public class ExplosiveWeaponDamage : WeaponController
 
     [Tooltip("If you want the player to die instantly, set damage => than radius")]
     public float ExplosionRadius;
+    public bool SoundOnExplode;
 
     public virtual void Explode()
     {
