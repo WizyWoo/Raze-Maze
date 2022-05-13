@@ -4848,6 +4848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   system: {fileID: 2451728627913979779}
+  SoundEmitter: {fileID: 7253794308703326114}
   activeMat: {fileID: 2100000, guid: 20084a3856baf594ba3616e1486fb16d, type: 2}
   delta: 0.7
   gap: 0.3
