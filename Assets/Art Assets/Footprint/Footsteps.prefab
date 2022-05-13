@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2451728627913979779}
   - component: {fileID: 6278205864317257568}
   - component: {fileID: 1179394686961864873}
+  - component: {fileID: 7253794308703326114}
   m_Layer: 0
   m_Name: Footsteps
   m_TagString: Untagged
@@ -4850,3 +4851,33 @@ MonoBehaviour:
   activeMat: {fileID: 2100000, guid: 20084a3856baf594ba3616e1486fb16d, type: 2}
   delta: 0.7
   gap: 0.3
+--- !u!114 &7253794308703326114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585196744166748893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1810016434
+      Data2: 1282631918
+      Data3: -1320698187
+      Data4: 1356910444
+    Path: event:/Player/Footsteps/Surfaces
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
