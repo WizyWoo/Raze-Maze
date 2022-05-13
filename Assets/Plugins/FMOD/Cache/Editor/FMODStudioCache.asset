@@ -1,35 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8462067261465607244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Footsteps/LoopedWalk
-  m_EditorClassIdentifier: 
-  Path: event:/Player/Footsteps/LoopedWalk
-  Guid:
-    Data1: 223587555
-    Data2: 1337007888
-    Data3: -97564766
-    Data4: 1372936243
-  Banks:
-  - {fileID: -8414779164060264526}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -2450620505898799763}
-  - {fileID: -7091092923044889172}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-8455534289956224279
+--- !u!114 &-8651031494894555862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +29,83 @@ MonoBehaviour:
   - Door
   - WinTheme
   Exists: 1
---- !u!114 &-8414779164060264526
+--- !u!114 &-8619908011519992285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: RazeMazeSound/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637880382639930160
+  FileSizes:
+  - Name: Desktop
+    Value: 1184
+  Exists: 1
+--- !u!114 &-5210289710337779783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Footsteps/LoopedWalk
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Footsteps/LoopedWalk
+  Guid:
+    Data1: 223587555
+    Data2: 1337007888
+    Data3: -97564766
+    Data4: 1372936243
+  Banks:
+  - {fileID: -4246736650879503728}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3171832466205150652}
+  - {fileID: -1466201255717688957}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4359515145424126568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Impact
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Impact
+  Guid:
+    Data1: -1037504425
+    Data2: 1168073748
+    Data3: 881892506
+    Data4: 190277989
+  Banks:
+  - {fileID: -4246736650879503728}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4246736650879503728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,12 +120,41 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637876942016984670
+  lastModified: 637880382639950427
   FileSizes:
   - Name: Desktop
-    Value: 164736
+    Value: 572256
   Exists: 1
---- !u!114 &-7091092923044889172
+--- !u!114 &-1644124454926914287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Footsteps/Surfaces
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Footsteps/Surfaces
+  Guid:
+    Data1: -1810016434
+    Data2: 1282631918
+    Data3: -1320698187
+    Data4: 1356910444
+  Banks:
+  - {fileID: -4246736650879503728}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8651031494894555862}
+  - {fileID: 2824218772188993798}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1466201255717688957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +183,7 @@ MonoBehaviour:
   - Door
   - WinTheme
   Exists: 1
---- !u!114 &-5565998373586835284
+--- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,25 +192,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Weapons/Grenade
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  Path: event:/Weapons/Grenade
-  Guid:
-    Data1: 1998997994
-    Data2: 1084676733
-    Data3: -2099366249
-    Data4: -176894423
-  Banks:
-  - {fileID: -8414779164060264526}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 898
---- !u!114 &-2801835283482660052
+  EditorBanks:
+  - {fileID: -8619908011519992285}
+  - {fileID: 2143822500771482356}
+  - {fileID: -4246736650879503728}
+  EditorEvents:
+  - {fileID: 6640942278779614837}
+  - {fileID: -1644124454926914287}
+  - {fileID: -4359515145424126568}
+  - {fileID: 5693569092829745871}
+  - {fileID: -5210289710337779783}
+  - {fileID: 5708874136603040423}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 2143822500771482356}
+  StringsBanks:
+  - {fileID: -8619908011519992285}
+  cacheTime: 637880382639950427
+  cacheVersion: 10
+--- !u!114 &2143822500771482356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,12 +228,12 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637848558373681714
+  lastModified: 637849373076407119
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
---- !u!114 &-2690642013833421368
+--- !u!114 &2824218772188993798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +257,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-2450620505898799763
+--- !u!114 &3171832466205150652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,27 +281,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-2157596021587593590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: RazeMazeSound/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 637848558373691708
-  FileSizes:
-  - Name: Desktop
-    Value: 916
-  Exists: 1
---- !u!114 &-559072466261482599
+--- !u!114 &5693569092829745871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,93 +291,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Footsteps/LoopedWalk
+  m_Name: event:/Weapons/Explosion
   m_EditorClassIdentifier: 
-  Path: event:/Footsteps/LoopedWalk
+  Path: event:/Weapons/Explosion
   Guid:
-    Data1: 223587555
-    Data2: 1337007888
-    Data3: -97564766
-    Data4: 1372936243
+    Data1: -797264707
+    Data2: 1256326598
+    Data3: -1850197074
+    Data4: 1013827976
   Banks:
-  - {fileID: 8768952186267221933}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 7985665949245405350}
-  - {fileID: 8609521291760157201}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-457658533509759353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: RazeMazeSound/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637848558373681714
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 7137527753874307407}
-  - {fileID: -2801835283482660052}
-  - {fileID: -8414779164060264526}
-  EditorEvents:
-  - {fileID: 6908670101239758957}
-  - {fileID: 875080912734822051}
-  - {fileID: -8462067261465607244}
-  - {fileID: -5565998373586835284}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -2801835283482660052}
-  StringsBanks:
-  - {fileID: 7137527753874307407}
-  cacheTime: 637876942016984670
-  cacheVersion: 10
---- !u!114 &875080912734822051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Impact
-  m_EditorClassIdentifier: 
-  Path: event:/Player/Impact
-  Guid:
-    Data1: -1037504425
-    Data2: 1168073748
-    Data3: 881892506
-    Data4: 190277989
-  Banks:
-  - {fileID: -8414779164060264526}
+  - {fileID: -4246736650879503728}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -326,7 +308,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6908670101239758957
+--- !u!114 &5708874136603040423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -336,26 +318,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Footsteps/Surfaces
+  m_Name: event:/Weapons/GrenadeClick
   m_EditorClassIdentifier: 
-  Path: event:/Player/Footsteps/Surfaces
+  Path: event:/Weapons/GrenadeClick
   Guid:
-    Data1: -1810016434
-    Data2: 1282631918
-    Data3: -1320698187
-    Data4: 1356910444
+    Data1: 1998997994
+    Data2: 1084676733
+    Data3: -2099366249
+    Data4: -176894423
   Banks:
-  - {fileID: -8414779164060264526}
+  - {fileID: -4246736650879503728}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
-  Parameters:
-  - {fileID: -8455534289956224279}
-  - {fileID: -2690642013833421368}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &7137527753874307407
+  Length: 898
+--- !u!114 &6640942278779614837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -364,87 +344,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Misc/KeyJingle
   m_EditorClassIdentifier: 
-  Path: RazeMazeSound/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 637876942016954650
-  FileSizes:
-  - Name: Desktop
-    Value: 1082
-  Exists: 1
---- !u!114 &7985665949245405350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/LoopedWalk/WalkSpeed
-  m_EditorClassIdentifier: 
-  Name: WalkSpeed
-  StudioPath: 
-  Min: 0
-  Max: 20
-  Default: 8
-  ID:
-    data1: 483764945
-    data2: 1843187619
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &8609521291760157201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/LoopedWalk/Terrain
-  m_EditorClassIdentifier: 
-  Name: Terrain
-  StudioPath: 
-  Min: 0
-  Max: 4
-  Default: 1
-  ID:
-    data1: 2261690759
-    data2: 1058512974
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Lobby
-  - Jungle
-  - Chocolate
-  - Door
-  - WinTheme
-  Exists: 1
---- !u!114 &8768952186267221933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: RazeMazeSound/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 637850301831507534
-  FileSizes:
-  - Name: Desktop
-    Value: 108768
-  Exists: 1
+  Path: event:/Misc/KeyJingle
+  Guid:
+    Data1: -1779929554
+    Data2: 1139609252
+    Data3: 1626760605
+    Data4: -336138436
+  Banks:
+  - {fileID: -4246736650879503728}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 44500

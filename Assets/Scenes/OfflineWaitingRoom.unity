@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12316003, g: 0.1264383, b: 0.16799375, a: 1}
+  m_IndirectSpecularColor: {r: 0.12294218, g: 0.12618057, b: 0.167751, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -222,6 +222,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &129443271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232,7 +233,7 @@ PrefabInstance:
     - target: {fileID: 3973109002172136001, guid: 3739b096dbd56674ba6d7b54043bbc65,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3973109002172136001, guid: 3739b096dbd56674ba6d7b54043bbc65,
         type: 3}
@@ -291,6 +292,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3739b096dbd56674ba6d7b54043bbc65, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &259992494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,6 +2027,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260902095}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< Updated upstream
+=======
 --- !u!1001 &1363677037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2049,7 +2054,7 @@ PrefabInstance:
     - target: {fileID: 260854731515951134, guid: 451f501a753f5ba4296cfc7b870ac55b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.154
+      value: 3.84
       objectReference: {fileID: 0}
     - target: {fileID: 260854731515951134, guid: 451f501a753f5ba4296cfc7b870ac55b,
         type: 3}
@@ -2093,6 +2098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 451f501a753f5ba4296cfc7b870ac55b, type: 3}
+>>>>>>> Stashed changes
 --- !u!1 &1367623111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,7 +2926,7 @@ Transform:
   m_Children:
   - {fileID: 1427995873}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1855460933
 GameObject:

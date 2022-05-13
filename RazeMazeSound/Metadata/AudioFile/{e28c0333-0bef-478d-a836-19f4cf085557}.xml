@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e28c0333-0bef-478d-a836-19f4cf085557}">
+		<property name="assetPath">
+			<value>Chime.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>25.962698412698412</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6ce56b24-ad70-4b81-a7f4-85b769292a5c}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -39,7 +39,12 @@ namespace Com.MyCompany.MyGame
 
         private Vignette vignette;
 
-        private VolumeProfile postFX;
+        public Volume volume;
+
+        //postProcessing info
+        // public float intensity = 0.75f, duration = 0.5f;
+        // public Volume volume = null;
+        // private Vignette vignette = null;
 
         private VrPlayerController vrController;
 
@@ -105,6 +110,10 @@ namespace Com.MyCompany.MyGame
 
             playerManager = this;
 
+            //getting the vignette
+            // if(volume.profile.TryGet(out Vignette vignette))
+            //     this.vignette = vignette;
+
             //if (beams == null)
             //{
             //    Debug.LogError("<Color=Red><a>Missing</a></Color> Beams Reference.", this);
@@ -135,9 +144,12 @@ namespace Com.MyCompany.MyGame
                 Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
             }
 
-            postFX = gameObject.GetComponentInChildren<Volume>().profile;
+            //postFX = gameObject.GetComponentInChildren<Volume>().profile;
+            //volume = LocalGameController.main.GetComponentInChildren<Volume>();
 
-            postFX.TryGet(out vignette);
+            
+
+            volume.profile.TryGet(out vignette);
 
             Invoke("SetInitialPos", 0.5f);
             //CameraWork _cameraWork = this.gameObject.GetComponentInChildren<CameraWork>();
@@ -311,9 +323,9 @@ namespace Com.MyCompany.MyGame
         {
             if(!DamageLocked)
             {
-                takingDamageCounter = 0.4f;
+                takingDamageCounter = 0.8f;
                 Health -= damage;
-
+                //FadeIn();
 
                 if (Health <= 0)
                 {
@@ -338,10 +350,47 @@ namespace Com.MyCompany.MyGame
                     }
                 }
                 Debug.Log(gameObject.name + " was damaged for " + damage);
+
+                // FadeOut();
             }
         }
 
-         
+        //vignette fade in
+        // public void FadeIn()
+        // {
+        //     StartCoroutine(Fade(0, intensity));
+        // }
+
+        // //vignette fade out
+        // public void FadeOut()
+        // {
+        //     StartCoroutine(Fade(intensity, 0));
+        // }
+
+        // //vignette Fade
+        // private IEnumerator Fade(float startValue, float endValue)
+        // {
+        //     float elapsedTime = 0f;
+
+        //     while(elapsedTime <= duration)
+        //     {
+        //         //blend value 
+        //         float blend = elapsedTime / duration;
+        //         elapsedTime += Time.deltaTime;
+
+        //         //apply intensity
+        //         float intensity = Mathf.Lerp(startValue, endValue, blend);
+        //         ApplyValue(intensity);
+
+        //         yield return null;
+        //     }
+        // }
+
+        // //apply vignette intensity
+        // private void ApplyValue(float value)
+        // {
+        //     vignette.intensity.Override(value);
+        // }
 
         public void UnlockDamage()
         {

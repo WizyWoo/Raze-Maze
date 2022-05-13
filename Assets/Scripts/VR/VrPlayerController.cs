@@ -7,18 +7,26 @@ public class VrPlayerController : MonoBehaviour
 {
 
     public VRPlayerInputs PlayerInputs;
+    public bool SnapTurning, MovementVignette;
     public float MovementSpeed, TurnSpeed;
     public Transform MoveRelativeTo, RotateAround, CameraTransform;
+    public VrHandsController[] Hands;
     private InputAction move, look;
     private Rigidbody rb;
-    public Vector2 tempV2;
-    public VrHandsController[] Hands;
+    private Vector2 tempV2;
+    private LocalGameController gc;
 
     private void Awake()
     {
 
         PlayerInputs = new VRPlayerInputs();
         rb = gameObject.GetComponent<Rigidbody>();
+
+        gc = LocalGameController.main;
+
+        SnapTurning = gc.SnapTurning;
+        MovementVignette = gc.MovementVignette;
+
 
     }
 
@@ -51,7 +59,18 @@ public class VrPlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(moveDir.x, rb.velocity.y, moveDir.z);
 
-        RotateAround.RotateAround(CameraTransform.position, Vector3.up, TurnSpeed * Time.deltaTime * look.ReadValue<Vector2>().x);
+        if(!SnapTurning)
+        {
+
+            RotateAround.RotateAround(CameraTransform.position, Vector3.up, TurnSpeed * Time.deltaTime * look.ReadValue<Vector2>().x);
+
+        }
+        else
+        {
+
+            Debug.Log("Nope not done");
+
+        }
 
     }
 
