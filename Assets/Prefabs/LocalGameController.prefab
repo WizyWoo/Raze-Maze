@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHasWon: 0
-<<<<<<< Updated upstream
   SavingAndLoading: {fileID: 7501518056111385167}
   SnapTurning: 0
   MovementVignette: 0
@@ -63,5 +62,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FileName: Cettings.darja
-=======
->>>>>>> Stashed changes
