@@ -45,7 +45,9 @@ public class ChunkGenerator : MonoBehaviour
                         int biomeId = mazeTemplates[generateMazeId].x[w].biome[l];
                         int r = Random.Range(0, biomeChunks[biomeId].chunks.Count);
                         g = Instantiate(biomeChunks[biomeId].chunks[r]);
-                        _plainChunk.Add(g.transform);
+                        if(biomeId == 2){
+                            _plainChunk.Add(g.transform);
+                        }
                     break;
                     case 1: // Creates an empty chunk
                         g = Instantiate(nullChunk);
