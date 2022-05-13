@@ -73,4 +73,16 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable , IAc
 
     }
 
+    public void PlaySound()
+    {
+
+        if(SoundEmitter)
+        {
+
+            SoundEmitter.Play();
+
+        }
+
+    }
+
 }

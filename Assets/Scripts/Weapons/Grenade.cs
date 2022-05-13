@@ -31,6 +31,7 @@ public class Grenade : ExplosiveWeaponDamage
 
             ExplosiveUsed = true;
             Explode();
+            PlaySound();
 
             Destroy(Body);
 

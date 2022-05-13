@@ -67,13 +67,15 @@ public class GenericGun : WeaponController, IPunObservable
             //Set bullets shot to 0
             bulletsShot = 0;
 
-            Shoot();            
+            Shoot();
+            PlaySound();
         }
 
         if(!photonView.IsMine && Firing)
         {
 
             Shoot();
+            PlaySound();
 
         }
     }
