@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using FMODUnity;
 
 public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable , IActivatable
 {
@@ -16,6 +17,7 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable , IAc
     public bool Used, ExplosiveUsed;
     public HoldingAnchor MainAnchor;
     public LayerMask WeaponMask, HitMask;
+    public StudioEventEmitter SoundEmitter;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
