@@ -319,6 +319,14 @@ namespace Com.MyCompany.MyGame
         private Material originalColor;
         public Renderer ren;
 
+        public void Heal()
+        {
+
+            Health = 1;
+            lives = 3;
+
+        }
+
         public void Damage(float damage = 0)
         {
             if(!DamageLocked)

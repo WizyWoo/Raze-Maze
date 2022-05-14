@@ -11,10 +11,9 @@ namespace Com.MyCompany.MyGame
         [SerializeField]
         private int playersInRoom, playerReadied;
 
-        public GameObject chunkGenerator;
+        public GameObject chunkGenerator, Player;
         private bool locked;
         private int readyCounter = 3;
-
         public TextMesh readyText;
 
         // Update is called once per frame
@@ -33,6 +32,7 @@ namespace Com.MyCompany.MyGame
 
                 locked = true;
                 readyText.text = "WAITING FOR OTHERS";
+                Player = _player.root.gameObject;
             }        
         }
 
@@ -62,7 +62,13 @@ namespace Com.MyCompany.MyGame
             if (readyCounter >= 0)
                 StartCoroutine(PissBabyIsPooping());
             else
+            {
+
+                Player.GetComponent<PlayerItemController>().DropItem(0);
+                Player.GetComponent<PlayerManager>().Heal();
                 chunkGenerator.SetActive(true);
+
+            }
         }
     }
 }

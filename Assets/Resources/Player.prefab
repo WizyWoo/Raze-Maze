@@ -489,7 +489,7 @@ MonoBehaviour:
   PlayerUiPrefab: {fileID: 314649571836468322, guid: 8081fd110696b6e4b974f7ea0f05dbfc,
     type: 3}
   Health: 1
-  lives: 3
+  lives: 10000
   gameOver: {fileID: 0}
   readied: 0
   DamageLocked: 0
