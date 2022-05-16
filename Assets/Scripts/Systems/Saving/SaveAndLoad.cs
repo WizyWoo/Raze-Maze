@@ -35,7 +35,7 @@ public class SaveAndLoad : MonoBehaviour
 
     }
 
-    public static void SaveSettings(string _path, float _rotationSpeed, bool _snapTurning, bool _movementVignette)
+    public static void SaveSettings(string _path, float _rotationSpeed = 200, int _degreesPerRotate = 45, bool _snapTurning = false, bool _movementVignette = false)
     {
 
         string _savePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), _path);
@@ -43,7 +43,7 @@ public class SaveAndLoad : MonoBehaviour
         BinaryFormatter _formatter = new BinaryFormatter();
         FileStream _stream = new FileStream(_savePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
-        RazeMazeSettings _data = new RazeMazeSettings(_rotationSpeed, _snapTurning, _movementVignette);
+        RazeMazeSettings _data = new RazeMazeSettings(_rotationSpeed, _degreesPerRotate, _snapTurning, _movementVignette);
 
         _formatter.Serialize(_stream, _data);
         _stream.Close();

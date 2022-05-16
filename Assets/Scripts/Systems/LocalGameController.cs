@@ -11,7 +11,9 @@ public class LocalGameController : MonoBehaviour
 
     //Settings
     public float RotationSpeed;
+    public int DegreesPerRotate;
     public bool SnapTurning, MovementVignette;
+    public VrPlayerController PlayerController;
 
     private void Awake()
     {
@@ -23,22 +25,29 @@ public class LocalGameController : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
+    }
+
+    public void LoadSettings()
+    {
+
         RazeMazeSettings _settings = null;
         _settings = SaveAndLoad.LoadSettings(FileName);
 
         if(_settings == null)
         {
 
-            SaveAndLoad.SaveSettings(FileName, RotationSpeed, false, false);
+            SaveAndLoad.SaveSettings(FileName);
+            _settings = SaveAndLoad.LoadSettings(FileName);
 
         }
-        else
-        {
 
-            SnapTurning = _settings.SnapTurning;
-            MovementVignette = _settings.MovementVignette;
+        RotationSpeed = _settings.RotationSpeed;
+        DegreesPerRotate = _settings.DegreesPerRotate;
+        SnapTurning = _settings.SnapTurning;
+        MovementVignette = _settings.MovementVignette;
 
-        }
+        if(PlayerController)
+            PlayerController.UpdatePlayerController();
 
     }
 
@@ -56,7 +65,7 @@ public class LocalGameController : MonoBehaviour
     public void SaveCurrentSettings()
     {
 
-        SaveAndLoad.SaveSettings(FileName, RotationSpeed, SnapTurning, MovementVignette);
+        SaveAndLoad.SaveSettings(FileName, RotationSpeed, DegreesPerRotate, SnapTurning, MovementVignette);
         Debug.Log("Settings saved!");
 
     }
