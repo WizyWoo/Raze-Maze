@@ -8,6 +8,9 @@ using System;
 public class SaveAndLoad : MonoBehaviour
 {
 
+    ///<Summary>
+    /// Tries to find a RazeMazeSettings file by the specified FileName (_path) in the Appdata folder (not sure what it's called on mac but works there too :3)
+    ///</Summary>
     public static RazeMazeSettings LoadSettings(string _path)
     {
 
@@ -35,15 +38,25 @@ public class SaveAndLoad : MonoBehaviour
 
     }
 
-    public static void SaveSettings(string _path, float _rotationSpeed = 200, int _degreesPerRotate = 45, bool _snapTurning = false, bool _movementVignette = false)
+    ///<Summary>
+    /// Input _settings as null if you want to revert the saved settings back to the Standard values
+    ///</Summary>
+    public static void SaveSettings(string _path, RazeMazeSettings _settings)
     {
+
+        if(_settings == null)
+        {
+
+            _settings = new RazeMazeSettings(200, 45, false, false);
+
+        }
 
         string _savePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), _path);
 
         BinaryFormatter _formatter = new BinaryFormatter();
         FileStream _stream = new FileStream(_savePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
-        RazeMazeSettings _data = new RazeMazeSettings(_rotationSpeed, _degreesPerRotate, _snapTurning, _movementVignette);
+        RazeMazeSettings _data = new RazeMazeSettings(_settings.RotationSpeed, _settings.DegreesPerRotate, _settings.SnapTurning, _settings.MovementVignette);
 
         _formatter.Serialize(_stream, _data);
         _stream.Close();

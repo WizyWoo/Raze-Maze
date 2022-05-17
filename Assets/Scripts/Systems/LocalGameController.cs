@@ -10,9 +10,7 @@ public class LocalGameController : MonoBehaviour
     public string FileName;
 
     //Settings
-    public float RotationSpeed;
-    public int DegreesPerRotate;
-    public bool SnapTurning, MovementVignette;
+    public RazeMazeSettings SettingsData;
     public VrPlayerController PlayerController;
 
     private void Awake()
@@ -27,27 +25,28 @@ public class LocalGameController : MonoBehaviour
 
     }
 
-    public void LoadSettings()
+    public RazeMazeSettings LoadSettings()
     {
 
-        RazeMazeSettings _settings = null;
-        _settings = SaveAndLoad.LoadSettings(FileName);
+        SettingsData = SaveAndLoad.LoadSettings(FileName);
 
-        if(_settings == null)
+        if(SettingsData == null)
         {
 
-            SaveAndLoad.SaveSettings(FileName);
-            _settings = SaveAndLoad.LoadSettings(FileName);
+            SaveAndLoad.SaveSettings(FileName, null);
+            SettingsData = SaveAndLoad.LoadSettings(FileName);
 
         }
 
-        RotationSpeed = _settings.RotationSpeed;
-        DegreesPerRotate = _settings.DegreesPerRotate;
-        SnapTurning = _settings.SnapTurning;
-        MovementVignette = _settings.MovementVignette;
+        return SettingsData;
 
-        if(PlayerController)
-            PlayerController.UpdatePlayerController();
+    }
+
+    public void SaveCurrentSettings()
+    {
+
+        SaveAndLoad.SaveSettings(FileName, SettingsData);
+        PlayerController.Vals = SettingsData;
 
     }
 
@@ -62,12 +61,9 @@ public class LocalGameController : MonoBehaviour
 
     }
 
-    public void SaveCurrentSettings()
-    {
-
-        SaveAndLoad.SaveSettings(FileName, RotationSpeed, DegreesPerRotate, SnapTurning, MovementVignette);
-        Debug.Log("Settings saved!");
-
-    }
+    public void RotationSpeed(float _speed) => SettingsData.RotationSpeed = _speed;
+    public void DegreesPerRotate(int _degrees) => SettingsData.DegreesPerRotate = _degrees;
+    public void SnapTurning(bool _onOff) => SettingsData.SnapTurning = _onOff;
+    public void MovementVignette(bool _onOff) => SettingsData.MovementVignette = _onOff;
 
 }

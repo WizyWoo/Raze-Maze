@@ -7,9 +7,8 @@ public class VrPlayerController : MonoBehaviour
 {
 
     public VRPlayerInputs PlayerInputs;
-    public bool SnapTurning, MovementVignette;
-    public float MovementSpeed, TurnSpeed, SnapTurnDeadzone;
-    public int DegreesPerRotate;
+    public RazeMazeSettings Vals;
+    public float MovementSpeed, SnapTurnDeadzone;
     public Transform MoveRelativeTo, RotateAround, CameraTransform;
     public VrHandsController[] Hands;
     private InputAction move, look;
@@ -27,16 +26,6 @@ public class VrPlayerController : MonoBehaviour
         gc = LocalGameController.main;
         gc.PlayerController = this;
         gc.LoadSettings();
-
-    }
-
-    public void UpdatePlayerController()
-    {
-
-        SnapTurning = gc.SnapTurning;
-        MovementVignette = gc.MovementVignette;
-        TurnSpeed = gc.RotationSpeed;
-        DegreesPerRotate = gc.DegreesPerRotate;
 
     }
 
@@ -70,10 +59,10 @@ public class VrPlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(moveDir.x, rb.velocity.y, moveDir.z);
 
-        if(!SnapTurning)
+        if(!Vals.SnapTurning)
         {
 
-            RotateAround.RotateAround(CameraTransform.position, Vector3.up, TurnSpeed * Time.deltaTime * lookV2.x);
+            RotateAround.RotateAround(CameraTransform.position, Vector3.up, Vals.RotationSpeed * Time.deltaTime * lookV2.x);
 
         }
         else if(!snapRotLock && Mathf.Abs(lookV2.x) > SnapTurnDeadzone)
@@ -82,13 +71,13 @@ public class VrPlayerController : MonoBehaviour
             if(lookV2.x > 0)
             {
 
-                RotateAround.RotateAround(CameraTransform.position, Vector3.up, DegreesPerRotate);
+                RotateAround.RotateAround(CameraTransform.position, Vector3.up, Vals.DegreesPerRotate);
 
             }
             else if(lookV2.x < 0)
             {
 
-                RotateAround.RotateAround(CameraTransform.position, Vector3.up, -DegreesPerRotate);
+                RotateAround.RotateAround(CameraTransform.position, Vector3.up, -Vals.DegreesPerRotate);
 
             }
 
