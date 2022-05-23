@@ -23,9 +23,14 @@ public class VrPlayerController : MonoBehaviour
         PlayerInputs = new VRPlayerInputs();
         rb = gameObject.GetComponent<Rigidbody>();
 
+    }
+
+    private void Start()
+    {
+
         gc = LocalGameController.main;
         gc.PlayerController = this;
-        gc.LoadSettings();
+        Vals = gc.LoadSettings();
 
     }
 
@@ -72,12 +77,14 @@ public class VrPlayerController : MonoBehaviour
             {
 
                 RotateAround.RotateAround(CameraTransform.position, Vector3.up, Vals.DegreesPerRotate);
+                snapRotLock = true;
 
             }
             else if(lookV2.x < 0)
             {
 
                 RotateAround.RotateAround(CameraTransform.position, Vector3.up, -Vals.DegreesPerRotate);
+                snapRotLock = true;
 
             }
 

@@ -16,7 +16,7 @@ public class PlayerInteraction : VRInputManager
     private void Start()
     {
 
-        interactMask = ((1 << LayerMask.NameToLayer("Interactables")) + (1 << LayerMask.NameToLayer("Default")));
+        interactMask = ((1 << LayerMask.NameToLayer("Interactables")));
 
         if(DesktopMode)
             UpdateUIRefs();
@@ -53,13 +53,15 @@ public class PlayerInteraction : VRInputManager
         if(Physics.Raycast(transform.position, transform.forward, out hit, interactionDistance, interactMask))
         {
 
+            Debug.Log(hit.transform.name);
+
             if(hit.transform.TryGetComponent<IInteractable>(out IInteractable _inter))
             {
 
-                if((Input.GetKeyDown(KeyCode.E) || TriggerButton.WasPressedThisFrame()) && hit.transform.TryGetComponent<IInteractable>(out IInteractable _IInteractable))
+                if((Input.GetKeyDown(KeyCode.E) || TriggerButton.WasPressedThisFrame())) //Woah xD
                 {
 
-                    _IInteractable.Activate(transform);
+                    _inter.Activate(transform);
 
                 }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3901184575525083771}
   - component: {fileID: 4363355044631258127}
   - component: {fileID: 2376090715404379020}
+  - component: {fileID: 2396873456687443891}
   m_Layer: 7
   m_Name: Save&Apply Settings
   m_TagString: Untagged
@@ -110,6 +111,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d808f3aa521744da892936966bae7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &2396873456687443891
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458899522791258121}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2680723985956810821
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +138,7 @@ GameObject:
   - component: {fileID: 1768914344926136617}
   - component: {fileID: 4909054741850564254}
   - component: {fileID: 4401575683853892681}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MenuBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2694210894378819975}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MenuItems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +257,8 @@ GameObject:
   - component: {fileID: 5791561822313820185}
   - component: {fileID: 4916044321171268320}
   - component: {fileID: 2961865898847960597}
-  - component: {fileID: 4826829580327905530}
+  - component: {fileID: 7061976530502863119}
+  - component: {fileID: 8695426171855356606}
   m_Layer: 7
   m_Name: Revert Changes
   m_TagString: Untagged
@@ -326,7 +344,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4826829580327905530
+--- !u!54 &7061976530502863119
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6810053095231218780}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &8695426171855356606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -335,7 +369,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6810053095231218780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88d808f3aa521744da892936966bae7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a0b06fa055abfc4e8cd179a84395fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7872170561965808870
@@ -351,7 +385,8 @@ GameObject:
   - component: {fileID: 1991731710272033699}
   - component: {fileID: 2388206327743239552}
   - component: {fileID: 8505308959564456068}
-  m_Layer: 0
+  - component: {fileID: 857753451745575319}
+  m_Layer: 7
   m_Name: Snap Turning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,6 +490,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentValue: 0
   SettingToChange: 0
+--- !u!54 &857753451745575319
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7872170561965808870}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7917582162971899410
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6977007364875474284}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VRUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +552,8 @@ GameObject:
   - component: {fileID: 1007862028098109559}
   - component: {fileID: 5846046414409044312}
   - component: {fileID: 6989619734052204571}
-  m_Layer: 0
+  - component: {fileID: 3621625852838689982}
+  m_Layer: 7
   m_Name: Movement Comfort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,3 +657,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentValue: 0
   SettingToChange: 1
+--- !u!54 &3621625852838689982
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8664023383017126286}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
