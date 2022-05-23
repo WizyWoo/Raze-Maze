@@ -50,6 +50,14 @@ public class LocalGameController : MonoBehaviour
 
     }
 
+    public void RevertChanges()
+    {
+
+        SettingsData = SaveAndLoad.LoadSettings(FileName);
+        PlayerController.Vals = SettingsData;
+
+    }
+
     public bool WinCheck()
     {
 
