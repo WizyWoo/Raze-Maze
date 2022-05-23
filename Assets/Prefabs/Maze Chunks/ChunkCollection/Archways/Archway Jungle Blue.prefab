@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7423051464589778361}
   m_Layer: 0
-  m_Name: Archway Jungle
+  m_Name: Archway Jungle Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,8 +392,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 5561349426305759274, guid: 0fcf5104cd26ac449a43b79fe7b84416,
-        type: 3}
+      objectReference: {fileID: 2100000, guid: c0cb87b721a5df5489d91c694ec45979, type: 2}
     - target: {fileID: 919132149155446097, guid: 0fcf5104cd26ac449a43b79fe7b84416,
         type: 3}
       propertyPath: m_Name
