@@ -277,7 +277,7 @@ MonoBehaviour:
     SnapTurning: 0
     MovementVignette: 0
   MovementSpeed: 8
-  SnapTurnDeadzone: 0
+  SnapTurnDeadzone: 0.2
   MoveRelativeTo: {fileID: 260854732798931688}
   RotateAround: {fileID: 260854732712247036}
   CameraTransform: {fileID: 260854732798931688}

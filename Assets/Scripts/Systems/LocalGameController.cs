@@ -71,7 +71,7 @@ public class LocalGameController : MonoBehaviour
 
     public void RotationSpeed(float _speed) => SettingsData.RotationSpeed = _speed;
     public void DegreesPerRotate(int _degrees) => SettingsData.DegreesPerRotate = _degrees;
-    public void SnapTurning(bool _onOff) => SettingsData.SnapTurning = _onOff;
-    public void MovementVignette(bool _onOff) => SettingsData.MovementVignette = _onOff;
+    public void SnapTurning() => SettingsData.SnapTurning = !SettingsData.SnapTurning;
+    public void MovementVignette() => SettingsData.MovementVignette = !SettingsData.MovementVignette;
 
 }

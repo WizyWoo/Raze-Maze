@@ -682,6 +682,7 @@ MonoBehaviour:
   HitMask:
     serializedVersion: 2
     m_Bits: 0
+  SoundEmitter: {fileID: 0}
   bullet: {fileID: 1809724846989947614, guid: 3010be602f456f34ba0048fcf9c7864d, type: 3}
   shootForce: 50
   timeBetweenShooting: 0.1

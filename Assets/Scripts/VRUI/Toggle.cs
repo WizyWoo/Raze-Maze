@@ -20,17 +20,15 @@ public class Toggle : MonoBehaviour , IInteractable
     public void Activate(Transform _player)
     {
 
-        CurrentValue = !CurrentValue;
-
         switch (SettingToChange)
         {
             
             case SettingValue.SnapTurning:
-            LocalGameController.main.SnapTurning(CurrentValue);
+            LocalGameController.main.SnapTurning();
             break;
 
             case SettingValue.MovementVignette:
-            LocalGameController.main.MovementVignette(CurrentValue);
+            LocalGameController.main.MovementVignette();
             break;
 
         }
