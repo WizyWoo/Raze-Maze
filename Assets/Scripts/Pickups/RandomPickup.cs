@@ -34,6 +34,8 @@ public class RandomPickup : MonoBehaviour , IInteractable
             if(_handLR == PlayerInteraction.Hand.Left)
             {
 
+                Debug.Log("1");
+
                 _player.root.GetComponent<PlayerItemController>().StartPlacingTrap();
 
             }

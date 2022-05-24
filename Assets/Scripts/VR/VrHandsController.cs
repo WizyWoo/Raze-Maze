@@ -258,7 +258,7 @@ public class VrHandsController : MonoBehaviour
                     }
 
                 }
-                else if(itemController.PlacingTrap)
+                else if(itemController.PlacingTrap && HandLR == Hand.Right)
                 {
 
                     itemController.StartPlacingTrap();

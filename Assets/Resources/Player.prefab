@@ -399,7 +399,7 @@ MonoBehaviour:
   WeaponIDText: {fileID: 0}
   FeedbackText: {fileID: 0}
   Parent: {fileID: 260854732712247036}
-  PlaceTrapFrom: {fileID: 260854731484014344}
+  PlaceTrapFrom: {fileID: 260854732679865854}
   PlacingTrap: 0
   droppedWeaponPrefab: {fileID: 0}
   activeWeapon: {fileID: 0}
