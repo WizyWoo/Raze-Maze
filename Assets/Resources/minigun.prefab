@@ -271,6 +271,7 @@ MonoBehaviour:
   HitMask:
     serializedVersion: 2
     m_Bits: 0
+  SoundEmitter: {fileID: 0}
   bullet: {fileID: 0}
   shootForce: 0
   timeBetweenShooting: 0.1
