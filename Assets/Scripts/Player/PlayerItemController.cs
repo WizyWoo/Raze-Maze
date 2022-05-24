@@ -379,8 +379,6 @@ public class PlayerItemController : MonoBehaviour
     public void StartPlacingTrap()
     {
 
-        Debug.Log("2");
-
         EquippedWeaponID = CurrentItemID;
         CurrentItemID = 0;
         string tempFeedback = "";

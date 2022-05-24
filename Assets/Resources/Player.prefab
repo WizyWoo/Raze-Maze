@@ -357,7 +357,7 @@ MonoBehaviour:
     SnapTurning: 0
     MovementVignette: 0
   MovementSpeed: 8
-  SnapTurnDeadzone: 0.2
+  SnapTurnDeadzone: 0.4
   MoveRelativeTo: {fileID: 260854732798931688}
   RotateAround: {fileID: 260854732712247036}
   CameraTransform: {fileID: 260854732798931688}
@@ -4547,6 +4547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VRUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8664023383017126286, guid: 20df2aeb8c7592c478373888020b29a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20df2aeb8c7592c478373888020b29a0, type: 3}
