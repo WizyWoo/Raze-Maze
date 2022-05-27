@@ -416,7 +416,6 @@ namespace Com.MyCompany.MyGame
         [PunRPC]
         private void SomeoneWon()
         {
-            panel.SetActive(false);
             timerObj.SetActive(true);
             currentTime = duration;
             timeText.text = currentTime.ToString();
