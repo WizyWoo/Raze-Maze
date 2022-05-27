@@ -1,41 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class VRUIManager : MonoBehaviour
 {
 
-    public InputAction MenuToggle, SliderControl;
     public GameObject VRMenu;
+    public VrPlayerController MovementController;
     private bool menuOpen;
 
-    private void OnEnable()
+    public void ToggleUIMode()
     {
 
-        MenuToggle.Enable();
-        SliderControl.Enable();
+        menuOpen = !menuOpen;
 
-    }
-
-    private void OnDisable()
-    {
-
-        MenuToggle.Disable();
-        SliderControl.Disable();
-
-    }
-
-    private void Update()
-    {
-
-        if(MenuToggle.WasPressedThisFrame())
-        {
-
-            menuOpen = !menuOpen;
-            VRMenu.SetActive(menuOpen);
-
-        }
+        VRMenu.SetActive(menuOpen);
+        MovementController.enabled = !menuOpen;
 
     }
 
