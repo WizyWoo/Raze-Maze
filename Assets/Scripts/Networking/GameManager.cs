@@ -139,8 +139,14 @@ namespace Com.MyCompany.MyGame
         //[PUNRPC]
         public void WinLevel()
         {
+            photonView.RPC("SomeoneWon", RpcTarget.All);
             LeaveRoom();
-            //Invoke("LoadNextLevel", levelTransitionDelay);
+            //Invoke("LoadNextLevel", levelTransitionDelay);       
+        }
+
+        [PunRPC]
+        private void SomeoneWon()
+        {
             PlayerManager.playerManager.someoneHasWon = true;
         }
 
