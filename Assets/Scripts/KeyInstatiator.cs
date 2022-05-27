@@ -8,6 +8,6 @@ public class KeyInstatiator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PhotonNetwork.Instantiate("Key", transform.position, transform.rotation);
+        PhotonNetwork.InstantiateRoomObject("Key", transform.position, transform.rotation);
     }
 }

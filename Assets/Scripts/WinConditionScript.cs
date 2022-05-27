@@ -10,7 +10,7 @@ public class WinConditionScript : MonoBehaviour
         if(other.transform.root.tag == "Player")
         {
             LocalGameController.main.PlayerHasWon = true;
-            GameManager.gameManager.WinLevel();
+            PlayerManager.playerManager.WinLevel();
         }
     }
 }

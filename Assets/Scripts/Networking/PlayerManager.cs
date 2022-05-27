@@ -207,16 +207,6 @@ namespace Com.MyCompany.MyGame
             //}
 
             //Damage();
-
-            if(someoneHasWon == true)
-             {
-                someoneHasWon = false;
-                panel.SetActive(false);
-                timerObj.SetActive(true);
-                currentTime = duration;
-                timeText.text = currentTime.ToString();
-                StartCoroutine(CountdownTimer());      
-             }
         }
 
         #if UNITY_5_4_OR_NEWER
@@ -415,6 +405,23 @@ namespace Com.MyCompany.MyGame
         // {
         //     vignette.intensity.Override(value);
         // }
+
+         public void WinLevel()
+        {
+            photonView.RPC("SomeoneWon", RpcTarget.All);
+            GameManager.gameManager.LeaveRoom();
+            //Invoke("LoadNextLevel", levelTransitionDelay);       
+        }
+
+        [PunRPC]
+        private void SomeoneWon()
+        {
+            panel.SetActive(false);
+            timerObj.SetActive(true);
+            currentTime = duration;
+            timeText.text = currentTime.ToString();
+            StartCoroutine(CountdownTimer());   
+        }
 
         public void UnlockDamage()
         {

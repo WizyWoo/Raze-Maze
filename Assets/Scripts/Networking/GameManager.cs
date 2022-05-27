@@ -136,20 +136,8 @@ namespace Com.MyCompany.MyGame
             PhotonNetwork.LoadLevel("mazeTestScene" /*  "mazeTestScene"  + PhotonNetwork.CurrentRoom.PlayerCount*/);
         }
 
-        //[PUNRPC]
-        public void WinLevel()
-        {
-            photonView.RPC("SomeoneWon", RpcTarget.All);
-            LeaveRoom();
-            //Invoke("LoadNextLevel", levelTransitionDelay);       
-        }
-
-        [PunRPC]
-        private void SomeoneWon()
-        {
-            PlayerManager.playerManager.someoneHasWon = true;
-        }
-
+        
+       
         //public IEnumerator Respawn()
         //{
         //    yield return new WaitForSeconds(0.5f);
