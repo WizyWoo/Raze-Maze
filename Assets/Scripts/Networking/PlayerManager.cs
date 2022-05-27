@@ -423,6 +423,7 @@ namespace Com.MyCompany.MyGame
             timerObj.SetActive(true);
             currentTime = duration;
             timeText.text = currentTime.ToString();
+            StopAllCoroutines();
             StartCoroutine(CountdownTimer());   
         }
 
@@ -443,7 +444,7 @@ namespace Com.MyCompany.MyGame
         }
         OpenPanel();
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         panel.SetActive(false);
         GameManager.gameManager.LeaveRoom();
     }
