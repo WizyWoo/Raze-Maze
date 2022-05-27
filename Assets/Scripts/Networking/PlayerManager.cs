@@ -107,14 +107,14 @@ namespace Com.MyCompany.MyGame
             if (photonView.IsMine)
             {
                 PlayerManager.LocalPlayerInstance = this.gameObject;
+                playerManager = this;
             }
             // #Critical
             // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
             DontDestroyOnLoad(this.gameObject);
 
             gameObject.name = photonView.Owner.NickName;
-
-            playerManager = this;
+          
 
             //getting the vignette
             // if(volume.profile.TryGet(out Vignette vignette))
