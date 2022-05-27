@@ -136,6 +136,7 @@ namespace Com.MyCompany.MyGame
             PhotonNetwork.LoadLevel("mazeTestScene" /*  "mazeTestScene"  + PhotonNetwork.CurrentRoom.PlayerCount*/);
         }
 
+        //[PUNRPC]
         public void WinLevel()
         {
             LeaveRoom();

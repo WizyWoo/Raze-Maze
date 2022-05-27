@@ -174,15 +174,6 @@ namespace Com.MyCompany.MyGame
             //}
 
              originalColor = ren.material;
-
-             if(someoneHasWon == true)
-             {
-                panel.SetActive(false);
-                timerObj.SetActive(true);
-                currentTime = duration;
-                timeText.text = currentTime.ToString();
-                StartCoroutine(CountdownTimer());
-             }
         }
 
         /// <summary>
@@ -216,6 +207,16 @@ namespace Com.MyCompany.MyGame
             //}
 
             //Damage();
+
+            if(someoneHasWon == true)
+             {
+                someoneHasWon = false;
+                panel.SetActive(false);
+                timerObj.SetActive(true);
+                currentTime = duration;
+                timeText.text = currentTime.ToString();
+                StartCoroutine(CountdownTimer());      
+             }
         }
 
         #if UNITY_5_4_OR_NEWER
