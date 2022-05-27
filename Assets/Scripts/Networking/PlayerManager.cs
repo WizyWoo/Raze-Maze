@@ -107,14 +107,14 @@ namespace Com.MyCompany.MyGame
             if (photonView.IsMine)
             {
                 PlayerManager.LocalPlayerInstance = this.gameObject;
+                playerManager = this;
             }
             // #Critical
             // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
             DontDestroyOnLoad(this.gameObject);
 
             gameObject.name = photonView.Owner.NickName;
-
-            playerManager = this;
+          
 
             //getting the vignette
             // if(volume.profile.TryGet(out Vignette vignette))
@@ -153,7 +153,7 @@ namespace Com.MyCompany.MyGame
             //postFX = gameObject.GetComponentInChildren<Volume>().profile;
             //volume = LocalGameController.main.GetComponentInChildren<Volume>();
 
-            
+            GameManager.gameManager.AddPlayerManagers(this);
 
             volume.profile.TryGet(out vignette);
 
@@ -174,15 +174,6 @@ namespace Com.MyCompany.MyGame
             //}
 
              originalColor = ren.material;
-
-             if(someoneHasWon == true)
-             {
-                panel.SetActive(false);
-                timerObj.SetActive(true);
-                currentTime = duration;
-                timeText.text = currentTime.ToString();
-                StartCoroutine(CountdownTimer());
-             }
         }
 
         /// <summary>
@@ -415,13 +406,37 @@ namespace Com.MyCompany.MyGame
         //     vignette.intensity.Override(value);
         // }
 
+         public void WinLevel()
+        {
+            if(!photonView.IsMine)
+            {
+                photonView.RPC("SomeoneWon", RpcTarget.All);
+                //GameManager.gameManager.LeaveRoom();
+                //Invoke("LoadNextLevel", levelTransitionDelay);       
+            }
+        }
+
+        [PunRPC]
+        private void SomeoneWon()
+        {
+            if(photonView.IsMine)
+            {
+                Debug.Log(gameObject.name);
+                timerObj.SetActive(true);
+                currentTime = duration;
+                timeText.text = currentTime.ToString();
+                StopAllCoroutines();
+                StartCoroutine(CountdownTimer());
+            }   
+        }
+
         public void UnlockDamage()
         {
             DamageLocked = false;
             vrController.OnRespawned();
         }
 
-        public IEnumerator CountdownTimer()
+    public IEnumerator CountdownTimer()
     {
         while(currentTime >= 0)
         {
@@ -432,7 +447,7 @@ namespace Com.MyCompany.MyGame
         }
         OpenPanel();
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         panel.SetActive(false);
         GameManager.gameManager.LeaveRoom();
     }
