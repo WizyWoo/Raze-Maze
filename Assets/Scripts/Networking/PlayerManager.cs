@@ -153,7 +153,7 @@ namespace Com.MyCompany.MyGame
             //postFX = gameObject.GetComponentInChildren<Volume>().profile;
             //volume = LocalGameController.main.GetComponentInChildren<Volume>();
 
-            
+            GameManager.gameManager.AddPlayerManagers(this);
 
             volume.profile.TryGet(out vignette);
 
@@ -408,10 +408,10 @@ namespace Com.MyCompany.MyGame
 
          public void WinLevel()
         {
-            if(photonView.IsMine)
+            if(!photonView.IsMine)
             {
                 photonView.RPC("SomeoneWon", RpcTarget.All);
-                GameManager.gameManager.LeaveRoom();
+                //GameManager.gameManager.LeaveRoom();
                 //Invoke("LoadNextLevel", levelTransitionDelay);       
             }
         }
@@ -432,7 +432,7 @@ namespace Com.MyCompany.MyGame
             vrController.OnRespawned();
         }
 
-        public IEnumerator CountdownTimer()
+    public IEnumerator CountdownTimer()
     {
         while(currentTime >= 0)
         {

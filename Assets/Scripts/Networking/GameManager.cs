@@ -1,5 +1,5 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
@@ -23,6 +23,8 @@ namespace Com.MyCompany.MyGame
         [SerializeField] private float levelTransitionDelay = 1f;
         public GameObject player;
 
+        private List<PlayerManager> playerManagers;
+
         #region Photon Callbacks
 
 
@@ -32,6 +34,7 @@ namespace Com.MyCompany.MyGame
         private void Awake()
         {
             gameManager = this;
+            playerManagers = new List<PlayerManager>();
         }
 
         /// <summary>
@@ -164,6 +167,22 @@ namespace Com.MyCompany.MyGame
                          
                SceneManager.LoadScene("MazeGameScene");
             //}
+        }
+
+        public void AddPlayerManagers(PlayerManager p)
+        {
+            playerManagers.Add(p);
+        }
+
+        public void HasFinished()
+        {
+            foreach (PlayerManager p in playerManagers)
+            {
+                if(p)
+                {
+                    p.WinLevel();
+                }
+            }
         }
     }
 
