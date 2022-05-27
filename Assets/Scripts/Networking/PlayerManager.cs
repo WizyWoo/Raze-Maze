@@ -419,12 +419,15 @@ namespace Com.MyCompany.MyGame
         [PunRPC]
         private void SomeoneWon()
         {
-            Debug.Log(gameObject.name);
-            timerObj.SetActive(true);
-            currentTime = duration;
-            timeText.text = currentTime.ToString();
-            StopAllCoroutines();
-            StartCoroutine(CountdownTimer());   
+            if(photonView.IsMine)
+            {
+                Debug.Log(gameObject.name);
+                timerObj.SetActive(true);
+                currentTime = duration;
+                timeText.text = currentTime.ToString();
+                StopAllCoroutines();
+                StartCoroutine(CountdownTimer());
+            }   
         }
 
         public void UnlockDamage()
