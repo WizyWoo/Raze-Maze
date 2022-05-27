@@ -419,13 +419,11 @@ namespace Com.MyCompany.MyGame
         [PunRPC]
         private void SomeoneWon()
         {
-            if(photonView.IsMine)
-            {
-                timerObj.SetActive(true);
-                currentTime = duration;
-                timeText.text = currentTime.ToString();
-                StartCoroutine(CountdownTimer());   
-            }
+            Debug.Log(gameObject.name);
+            timerObj.SetActive(true);
+            currentTime = duration;
+            timeText.text = currentTime.ToString();
+            StartCoroutine(CountdownTimer());   
         }
 
         public void UnlockDamage()
