@@ -183,6 +183,7 @@ namespace Com.MyCompany.MyGame
                     p.WinLevel();
                 }
             }
+            LeaveRoom();
         }
     }
 
