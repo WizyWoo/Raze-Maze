@@ -64,7 +64,7 @@ namespace Com.MyCompany.MyGame
             else
             {
 
-                Player.GetComponent<PlayerItemController>().DropItem(0);
+                Player.GetComponentInChildren<PlayerItemController>().DropItem(0);
                 Player.GetComponent<PlayerManager>().Heal();
                 chunkGenerator.SetActive(true);
 
