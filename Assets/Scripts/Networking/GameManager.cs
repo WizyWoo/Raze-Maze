@@ -92,6 +92,7 @@ namespace Com.MyCompany.MyGame
         public void LeaveRoom()
         {
             PhotonNetwork.LeaveRoom();
+            PlayerManager.playerManager.someoneHasWon = false;
         }
 
 
@@ -139,6 +140,7 @@ namespace Com.MyCompany.MyGame
         {
             LeaveRoom();
             //Invoke("LoadNextLevel", levelTransitionDelay);
+            PlayerManager.playerManager.someoneHasWon = true;
         }
 
         //public IEnumerator Respawn()

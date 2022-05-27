@@ -5,6 +5,7 @@ using System.Collections;
 using Photon.Pun.Demo.PunBasics;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 namespace Com.MyCompany.MyGame
 {
@@ -29,7 +30,7 @@ namespace Com.MyCompany.MyGame
         public int lives = 3;
         public GameOverScreenScript gameOver;
 
-        public bool readied = false, DamageLocked;
+        public bool readied = false, DamageLocked, someoneHasWon = false;
 
         public static PlayerManager playerManager;
 
@@ -40,6 +41,11 @@ namespace Com.MyCompany.MyGame
         private Vignette vignette;
 
         public Volume volume;
+
+        [SerializeField] GameObject panel, timerObj;
+        [SerializeField] Image timeImage;
+        [SerializeField] Text timeText;
+        [SerializeField] float duration, currentTime;
 
         //postProcessing info
         // public float intensity = 0.75f, duration = 0.5f;
@@ -168,6 +174,15 @@ namespace Com.MyCompany.MyGame
             //}
 
              originalColor = ren.material;
+
+             if(someoneHasWon == true)
+             {
+                panel.SetActive(false);
+                timerObj.SetActive(true);
+                currentTime = duration;
+                timeText.text = currentTime.ToString();
+                StartCoroutine(CountdownTimer());
+             }
         }
 
         /// <summary>
@@ -405,6 +420,29 @@ namespace Com.MyCompany.MyGame
             DamageLocked = false;
             vrController.OnRespawned();
         }
+
+        public IEnumerator CountdownTimer()
+    {
+        while(currentTime >= 0)
+        {
+            timeImage.fillAmount = Mathf.InverseLerp(0, duration, currentTime);
+            timeText.text = currentTime.ToString();
+            yield return new WaitForSeconds(1f);
+            currentTime--;
+        }
+        OpenPanel();
+
+        yield return new WaitForSeconds(0.5f);
+        panel.SetActive(false);
+        GameManager.gameManager.LeaveRoom();
+    }
+
+    void OpenPanel()
+    {
+        timerObj.SetActive(false);
+        timeText.text = "";
+        panel.SetActive(true);
+    }
 
     }
 }
