@@ -29,6 +29,12 @@ public class VRUIManager : MonoBehaviour
             transform.rotation = new Quaternion(transform.rotation.x, MenuSpawnFrom.rotation.y, transform.rotation.z, MenuSpawnFrom.rotation.w);
             
         }
+        else
+        {
+
+            LocalGameController.main.SaveCurrentSettings();
+            
+        }
 
     }
 

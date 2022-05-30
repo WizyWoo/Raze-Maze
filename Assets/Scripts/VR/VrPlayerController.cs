@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class VrPlayerController : MonoBehaviour
 {
 
     public VRPlayerInputs PlayerInputs;
+    public Volume MovementVignetteVolume;
     public RazeMazeSettings Vals;
     public float MovementSpeed, SnapTurnDeadzone;
     public Transform MoveRelativeTo, RotateAround, CameraTransform;
     public VrHandsController[] Hands;
+    private Vignette movementVignette;
     private InputAction move, look;
     private Rigidbody rb;
     private Vector2 moveV2, lookV2;
@@ -31,6 +35,8 @@ public class VrPlayerController : MonoBehaviour
         gc = LocalGameController.main;
         gc.PlayerController = this;
         Vals = gc.LoadSettings();
+
+        MovementVignetteVolume.profile.TryGet<Vignette>(out movementVignette);
 
     }
 
@@ -62,12 +68,20 @@ public class VrPlayerController : MonoBehaviour
         Vector3 rightDir = new Vector3(MoveRelativeTo.right.x, 0, MoveRelativeTo.right.z).normalized;
         Vector3 moveDir = ((new Vector3(forwardDir.x, 0, forwardDir.z) * moveV2.y) + (new Vector3(rightDir.x, 0, rightDir.z) * moveV2.x)) * MovementSpeed;
 
+        float _vignetteStrenght = moveV2.magnitude;
+
         rb.velocity = new Vector3(moveDir.x, rb.velocity.y, moveDir.z);
 
         if(!Vals.SnapTurning)
         {
 
             RotateAround.RotateAround(CameraTransform.position, Vector3.up, Vals.RotationSpeed * Time.deltaTime * lookV2.x);
+            if(Mathf.Abs(lookV2.x) > _vignetteStrenght)
+            {
+
+                _vignetteStrenght = Mathf.Abs(lookV2.x);
+
+            }
 
         }
         else if(!snapRotLock && Mathf.Abs(lookV2.x) > SnapTurnDeadzone)
@@ -78,6 +92,7 @@ public class VrPlayerController : MonoBehaviour
 
                 RotateAround.RotateAround(CameraTransform.position, Vector3.up, Vals.DegreesPerRotate);
                 snapRotLock = true;
+                _vignetteStrenght = 1;
 
             }
             else if(lookV2.x < 0)
@@ -85,6 +100,7 @@ public class VrPlayerController : MonoBehaviour
 
                 RotateAround.RotateAround(CameraTransform.position, Vector3.up, -Vals.DegreesPerRotate);
                 snapRotLock = true;
+                _vignetteStrenght = 1;
 
             }
 
@@ -93,6 +109,13 @@ public class VrPlayerController : MonoBehaviour
         {
 
             snapRotLock = false;
+
+        }
+
+        if(Vals.MovementVignette)
+        {
+
+            movementVignette.intensity.Override(_vignetteStrenght);
 
         }
 

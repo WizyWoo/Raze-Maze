@@ -9,6 +9,7 @@ public class LeaveOnlineButton : MonoBehaviour , IInteractable
     public void Activate(Transform _player)
     {
 
+        LocalGameController.main.SaveCurrentSettings();
         GameManager.gameManager.LeaveRoom();
 
     }
