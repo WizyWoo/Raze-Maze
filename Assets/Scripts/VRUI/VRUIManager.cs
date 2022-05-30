@@ -5,6 +5,7 @@ using UnityEngine;
 public class VRUIManager : MonoBehaviour
 {
 
+    public Transform MenuSpawnPoint;
     public GameObject VRMenu;
     public VrPlayerController MovementController;
     private bool menuOpen;
@@ -16,6 +17,13 @@ public class VRUIManager : MonoBehaviour
 
         VRMenu.SetActive(menuOpen);
         MovementController.enabled = !menuOpen;
+
+        if(menuOpen)
+        {
+
+            transform.position = MenuSpawnPoint.position;
+            
+        }
 
     }
 
