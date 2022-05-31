@@ -1,40 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class VRUIManager : MonoBehaviour
 {
 
-    public InputAction MenuToggle, SliderControl;
+    public float YOffset, ForwardOffset;
+    public Transform MenuSpawnFrom;
     public GameObject VRMenu;
+    public VrPlayerController MovementController;
     private bool menuOpen;
 
-    private void OnEnable()
+    public void ToggleUIMode()
     {
 
-        MenuToggle.Enable();
-        SliderControl.Enable();
+        menuOpen = !menuOpen;
 
-    }
+        VRMenu.SetActive(menuOpen);
+        MovementController.enabled = !menuOpen;
 
-    private void OnDisable()
-    {
-
-        MenuToggle.Disable();
-        SliderControl.Disable();
-
-    }
-
-    private void Update()
-    {
-
-        if(MenuToggle.WasPressedThisFrame())
+        if(menuOpen)
         {
 
-            menuOpen = !menuOpen;
-            VRMenu.SetActive(menuOpen);
+            Vector3 _tempSpawnPos = MenuSpawnFrom.forward;
+            _tempSpawnPos = new Vector3(_tempSpawnPos.x, 0, _tempSpawnPos.z).normalized * ForwardOffset;
+            _tempSpawnPos = new Vector3(_tempSpawnPos.x, YOffset, _tempSpawnPos.z) + MenuSpawnFrom.position;
+            transform.position = _tempSpawnPos;
+            transform.rotation = new Quaternion(transform.rotation.x, MenuSpawnFrom.rotation.y, transform.rotation.z, MenuSpawnFrom.rotation.w);
+            
+        }
+        else
+        {
 
+            LocalGameController.main.SaveCurrentSettings();
+            
         }
 
     }
