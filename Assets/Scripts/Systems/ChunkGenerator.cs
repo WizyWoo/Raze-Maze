@@ -134,6 +134,11 @@ public class ChunkGenerator : MonoBehaviour
         {
             item.transform.position = Vector3.zero;
         }
+        foreach (var item in _mazeList)
+        {
+            item.CheckArchways();
+        }
+
         // moves the players to their respective spawnpoints
         _psm.Invoke("SpawnPlayers", 0.1f);
     }
