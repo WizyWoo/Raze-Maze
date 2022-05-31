@@ -63,11 +63,10 @@ namespace Com.MyCompany.MyGame
                 StartCoroutine(PissBabyIsPooping());
             else
             {
-
+                readyText.gameObject.SetActive(false);
                 Player.GetComponentInChildren<PlayerItemController>().DropItem(0);
                 Player.GetComponent<PlayerManager>().Heal();
                 chunkGenerator.SetActive(true);
-
             }
         }
     }
