@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{5b16abd1-ed53-4281-915a-9aa7339e8e5f}">
+		<property name="name">
+			<value>TrapSoundControl</value>
+		</property>
+		<relationship name="folder">
+			<destination>{eab5eee4-e41c-4e55-bcef-339bab9d1e8b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f95f8832-d710-4566-a9f1-4d55ee672e39}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f95f8832-d710-4566-a9f1-4d55ee672e39}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Place</value>
+			<value>Activate</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

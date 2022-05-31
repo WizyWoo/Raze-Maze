@@ -44,10 +44,10 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637880382639930160
+  lastModified: 637895975108805891
   FileSizes:
   - Name: Desktop
-    Value: 1184
+    Value: 1282
   Exists: 1
 --- !u!114 &-5210289710337779783
 MonoBehaviour:
@@ -120,11 +120,39 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637880382639950427
+  lastModified: 637895975108845902
   FileSizes:
   - Name: Desktop
-    Value: 572256
+    Value: 700000
   Exists: 1
+--- !u!114 &-2265763637080757270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Traps/Mine
+  m_EditorClassIdentifier: 
+  Path: event:/Traps/Mine
+  Guid:
+    Data1: 1307887775
+    Data2: 1290333554
+    Data3: 238728590
+    Data4: 399516315
+  Banks:
+  - {fileID: -4246736650879503728}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3213706159933056476}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1644124454926914287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,12 +234,13 @@ MonoBehaviour:
   - {fileID: 5693569092829745871}
   - {fileID: -5210289710337779783}
   - {fileID: 5708874136603040423}
+  - {fileID: -2265763637080757270}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2143822500771482356}
   StringsBanks:
   - {fileID: -8619908011519992285}
-  cacheTime: 637880382639950427
+  cacheTime: 637895975108845902
   cacheVersion: 10
 --- !u!114 &2143822500771482356
 MonoBehaviour:
@@ -228,7 +257,7 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637849373076407119
+  lastModified: 637848558373681714
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -280,6 +309,32 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Labels: []
+  Exists: 1
+--- !u!114 &3213706159933056476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Mine/TrapSoundControl
+  m_EditorClassIdentifier: 
+  Name: TrapSoundControl
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4137768051
+    data2: 2487610485
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Place
+  - Activate
   Exists: 1
 --- !u!114 &5693569092829745871
 MonoBehaviour:

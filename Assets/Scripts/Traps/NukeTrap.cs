@@ -28,7 +28,8 @@ public class NukeTrap : TrapController
 
         GameManager.gameManager.player.GetComponent<IHit>().Damage(Damage);
 
-        Destroy(gameObject);
+        Destroy(gameObject, 10);
+        PlaySound(1);
 
     }
 
