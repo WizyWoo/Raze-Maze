@@ -379,10 +379,10 @@ public class PlayerItemController : MonoBehaviour
     public void StartPlacingTrap()
     {
 
-        if(PlacingTrap && CurrentItemID != 0)
+        if(CurrentItemID != 0 && ghostTrap)
         {
 
-            DropItem(CurrentItemID);
+            Destroy(ghostTrap.gameObject);
 
         }
 

@@ -1529,6 +1529,8 @@ MonoBehaviour:
   HitMask:
     serializedVersion: 2
     m_Bits: 0
+  SoundEmitter: {fileID: 0}
+  SoundParamater: 
   ContinueslyDamage: 1
 --- !u!1 &9176398720531996095
 GameObject:

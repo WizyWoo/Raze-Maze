@@ -163,3 +163,5 @@ MonoBehaviour:
   HitMask:
     serializedVersion: 2
     m_Bits: 0
+  SoundEmitter: {fileID: 0}
+  SoundParamater: 

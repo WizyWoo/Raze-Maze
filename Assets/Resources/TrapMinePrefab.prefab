@@ -5018,6 +5018,8 @@ MonoBehaviour:
   HitMask:
     serializedVersion: 2
     m_Bits: 0
+  SoundEmitter: {fileID: 0}
+  SoundParamater: 
   ExplosionRadius: 6
   ParticleSys: {fileID: 2427469137226538877}
 --- !u!114 &4310032290629275943

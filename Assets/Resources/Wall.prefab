@@ -72,6 +72,8 @@ MonoBehaviour:
   HitMask:
     serializedVersion: 2
     m_Bits: 0
+  SoundEmitter: {fileID: 0}
+  SoundParamater: 
 --- !u!114 &954209387583591939
 MonoBehaviour:
   m_ObjectHideFlags: 0
