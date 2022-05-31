@@ -53,7 +53,7 @@ public class PlayerInteraction : VRInputManager
         if(Physics.Raycast(transform.position, transform.forward, out hit, interactionDistance, interactMask))
         {
 
-            if(hit.transform.TryGetComponent<IInteractable>(out IInteractable _inter))
+            if(hit.collider.transform.TryGetComponent<IInteractable>(out IInteractable _inter))
             {
 
                 if((Input.GetKeyDown(KeyCode.E) || TriggerButton.WasPressedThisFrame())) //Woah xD

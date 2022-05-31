@@ -5,7 +5,8 @@ using UnityEngine;
 public class Toggle : MonoBehaviour , IInteractable
 {
 
-    public bool CurrentValue;
+    public GameObject CheckMark;
+    private bool settingOnOff;
 
     public enum SettingValue
     {
@@ -32,6 +33,29 @@ public class Toggle : MonoBehaviour , IInteractable
             break;
 
         }
+
+        settingOnOff = !settingOnOff;
+        CheckMark.SetActive(settingOnOff);
+
+    }
+
+    private void Start()
+    {
+
+        switch (SettingToChange)
+        {
+            
+            case SettingValue.SnapTurning:
+            settingOnOff = LocalGameController.main.SettingsData.SnapTurning;
+            break;
+
+            case SettingValue.MovementVignette:
+            settingOnOff = LocalGameController.main.SettingsData.MovementVignette;
+            break;
+
+        }
+
+        CheckMark.SetActive(settingOnOff);
 
     }
 

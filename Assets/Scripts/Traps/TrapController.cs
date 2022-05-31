@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using FMODUnity;
 
 public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
 {
@@ -15,6 +16,8 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
     public float Damage;
     public bool TrapPlaced, TrapActived, Used;
     public LayerMask TrapMask, HitMask;
+    public StudioEventEmitter SoundEmitter;
+    public string SoundParamater;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -61,6 +64,26 @@ public class TrapController : MonoBehaviourPunCallbacks , IPunObservable
     {
 
         TrapActived = true;
+        PlaySound(0);
+
+    }
+
+    public void PlaySound(float _parameterValue)
+    {
+
+        if(SoundEmitter)
+        {
+
+            SoundEmitter.SetParameter(SoundParamater, _parameterValue);
+
+        }
+
+    }
+
+    public void StopSound()
+    {
+
+        SoundEmitter.Stop();
 
     }
 

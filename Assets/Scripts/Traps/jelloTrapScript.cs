@@ -15,6 +15,7 @@ public class JelloTrapScript : TrapController
         //other.GetComponent<PlayerController>()._speedMultiplier = jelloMultiplier;
 
         other.transform.root.GetComponent<VrPlayerController>().MovementSpeed = movSpeed / 3f;
+        PlaySound(1);
     }
 
     private void OnTriggerExit(Collider other)
@@ -24,6 +25,7 @@ public class JelloTrapScript : TrapController
         //other.GetComponent<PlayerController>()._speedMultiplier = jelloMultiplier;
 
         other.transform.root.GetComponent<VrPlayerController>().MovementSpeed = movSpeed;
+        StopSound();
     }
 
     //bool started;

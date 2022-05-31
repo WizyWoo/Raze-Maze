@@ -35,6 +35,7 @@ public class TrapTriggerDamage : TrapController
             {
 
                 _tempPM.Damage(Damage);
+                PlaySound(1);
 
             }
 
