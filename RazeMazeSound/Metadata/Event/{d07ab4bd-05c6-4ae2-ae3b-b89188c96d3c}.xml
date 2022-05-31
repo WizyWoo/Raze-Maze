@@ -92,7 +92,7 @@
 	</object>
 	<object class="MultiSound" id="{3dfdf509-32a7-4882-9be5-6786712813f7}">
 		<relationship name="sounds">
-			<destination>{d8b2d097-16f7-4648-a61d-6c0ce842a0cf}</destination>
+			<destination>{b01fbd08-e572-4bf7-9d1e-e50ca8729dd1}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{3d812167-37b6-4a1a-a64e-5346f0ce543b}">
@@ -122,9 +122,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2bc01ee2-8fca-4e8b-9eea-88d9971d6f07}" />
-	<object class="SingleSound" id="{d8b2d097-16f7-4648-a61d-6c0ce842a0cf}">
-		<relationship name="audioFile">
-			<destination>{21c37840-d058-4d3d-91b3-168c043cf720}</destination>
+	<object class="MultiSound" id="{b01fbd08-e572-4bf7-9d1e-e50ca8729dd1}">
+		<relationship name="sounds">
+			<destination>{520188bd-4e06-4cdd-8cb0-03a2d36f2205}</destination>
+			<destination>{8a831149-ecd1-4804-a93d-2258b172425d}</destination>
+			<destination>{9dfce8e5-a1ed-4faf-b362-1554f8fea4b1}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{3380d55a-c181-4101-8b0f-847399c764f4}" />
@@ -136,5 +138,20 @@
 	<object class="MixerBusPanner" id="{523417c5-d9bf-4d1d-a0e8-a78b63ad0255}" />
 	<object class="MixerBusFader" id="{33c61a58-239b-4185-a600-a01a029f208d}" />
 	<object class="SpatialiserEffect" id="{40779ec3-4eeb-4599-b13e-6eb1434ff099}" />
+	<object class="SingleSound" id="{520188bd-4e06-4cdd-8cb0-03a2d36f2205}">
+		<relationship name="audioFile">
+			<destination>{21c37840-d058-4d3d-91b3-168c043cf720}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{8a831149-ecd1-4804-a93d-2258b172425d}">
+		<relationship name="audioFile">
+			<destination>{46d1f30a-6de9-47a2-bcfb-20d0931f75e2}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{9dfce8e5-a1ed-4faf-b362-1554f8fea4b1}">
+		<relationship name="audioFile">
+			<destination>{b5a4aa18-ad25-4e0c-98b6-4699ce64bf8b}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{0abc36c3-f6a9-40db-a9e7-6e15936003a6}" />
 </objects>
