@@ -21,14 +21,30 @@ public class MazeId : MonoBehaviour
                 switch (item.gameObject.name.ToString())
                 {
                     case "R":
+                        for (int i = 0; i < arch.transform.childCount; i++)
+                        {
+                            arch.transform.GetChild(i).transform.position += new Vector3(0,0,0.5f);
+                        }
                     break;
                     case "L":
+                        for (int i = 0; i < arch.transform.childCount; i++)
+                        {
+                            arch.transform.GetChild(i).transform.position += new Vector3(0,0,-0.5f);
+                        }
                     break;
                     case "B":
                         arch.transform.Rotate(new Vector3(0,90,0));
+                        for (int i = 0; i < arch.transform.childCount; i++)
+                        {
+                            arch.transform.GetChild(i).transform.position += new Vector3(0.5f,0,0);
+                        }
                     break;
                     case "T":
                         arch.transform.Rotate(new Vector3(0,90,0));
+                        for (int i = 0; i < arch.transform.childCount; i++)
+                        {
+                            arch.transform.GetChild(i).transform.position += new Vector3(-0.5f,0,0);
+                        }
                     break;
                 }
             }
