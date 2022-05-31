@@ -6614,13 +6614,13 @@ TextMesh:
   m_Anchor: 1
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 100
+  m_FontSize: 70
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: fe8db3775483180438f39a42062890b3, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
 --- !u!4 &5994692876421910343
 Transform:
   m_ObjectHideFlags: 0
@@ -6704,7 +6704,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6080273633086740926}
   m_LocalRotation: {x: 0.000000007450581, y: 0.92948484, z: -0.3688605, w: 0}
-  m_LocalPosition: {x: -0, y: 0.79, z: -1.35}
+  m_LocalPosition: {x: -0, y: 0.718, z: -1.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
