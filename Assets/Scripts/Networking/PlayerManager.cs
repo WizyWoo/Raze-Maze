@@ -190,13 +190,13 @@ namespace Com.MyCompany.MyGame
             if(takingDamageCounter > 0)
             {
                 ren.material = HitMat;
-                vignette.intensity.Override(takingDamageCounter);
+                volume.weight = takingDamageCounter;
 
                 takingDamageCounter -= Time.deltaTime;
             } else
             {
                 ren.material = originalColor;
-                vignette.intensity.Override(0);
+                volume.weight = 0;
             }
                 
 
