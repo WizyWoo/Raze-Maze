@@ -37,6 +37,8 @@ public class Toggle : MonoBehaviour , IInteractable
         settingOnOff = !settingOnOff;
         CheckMark.SetActive(settingOnOff);
 
+        LocalGameController.main.SaveCurrentSettings();
+
     }
 
     private void Start()
