@@ -8,10 +8,6 @@ public class NukeTrap : TrapController
 {
 
     [SerializeField]
-    private AudioSource audioSource;
-    [SerializeField]
-    private AudioClip boomSound;
-    [SerializeField]
     private GameObject explosionParticles;
     private bool used;
 
@@ -32,7 +28,7 @@ public class NukeTrap : TrapController
 
         GameManager.gameManager.player.GetComponent<IHit>().Damage(Damage);
 
-        Destroy(gameObject, boomSound.length);
+        Destroy(gameObject);
 
     }
 

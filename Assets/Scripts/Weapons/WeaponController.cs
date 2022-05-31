@@ -8,7 +8,7 @@ public class WeaponController : MonoBehaviourPunCallbacks , IPunObservable , IAc
 {
 
     //When making a weapon script make sure that you Inherit from this script, you can use the Thrown and FireWeapon functions as an on use event, however they are not needed for it to work
-    //The ID is set automatically based on where the prefab is located in the PlayerWeaponControllers prefab array
+    //The ID is set automatically based on where the prefab is located in the ItemManager prefab array
 
     public int WeaponID;
     [Tooltip("Keep in mind, the player has 1 health")]

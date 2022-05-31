@@ -30,6 +30,7 @@ public class ExplosiveTrapDamage : TrapController
                 {
 
                     _tempHit.Damage(Damage / Vector3.Distance(_hit.transform.position, transform.position));
+                    PlaySound();
 
                 }
 
