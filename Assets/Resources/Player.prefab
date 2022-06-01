@@ -597,7 +597,16 @@ MonoBehaviour:
   timeText: {fileID: 7904119858023846010}
   duration: 30
   currentTime: 0
-  ren: {fileID: 0}
+  playerColors:
+  - {fileID: 2100000, guid: b6396f9d26f6bd746ad6cddcf05b72f9, type: 2}
+  - {fileID: 2100000, guid: 7bbb05e81d06cb34295e93c9df748acf, type: 2}
+  - {fileID: 2100000, guid: 1477829f2111b4d489133435a6c11697, type: 2}
+  - {fileID: 2100000, guid: 9ac2c7e2d7e479241afe0054ed6c77cf, type: 2}
+  rends:
+  - {fileID: 703135099961325528}
+  - {fileID: 1578217438722740491}
+  - {fileID: 8889809261689201067}
+  - {fileID: 3652208895376718965}
 --- !u!114 &6976286128122079780
 MonoBehaviour:
   m_ObjectHideFlags: 0
