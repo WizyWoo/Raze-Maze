@@ -54,6 +54,11 @@ namespace Com.MyCompany.MyGame
 
         private VrPlayerController vrController;
 
+        private float redFlashTime = 1f;
+        public Material[] playerColors;
+        public Renderer[] rends;
+
+        private int colorId;
         #endregion
 
         #region Private Fields
@@ -73,12 +78,14 @@ namespace Com.MyCompany.MyGame
                 // We own this player: send the others our data
                 //stream.SendNext(IsFiring);
                 stream.SendNext(Health);
+                stream.SendNext(colorId);
             }
             else
             {
                 // Network player, receive data
                 // this.IsFiring = (bool)stream.ReceiveNext();
                 this.Health = (float)stream.ReceiveNext();
+                this.colorId = (int)stream.ReceiveNext();
             }
         }
 
@@ -172,8 +179,6 @@ namespace Com.MyCompany.MyGame
             //{
             //    Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
             //}
-
-             originalColor = ren.material;
         }
 
         /// <summary>
@@ -189,13 +194,21 @@ namespace Com.MyCompany.MyGame
 
             if(takingDamageCounter > 0)
             {
-                ren.material = HitMat;
+                for (int i = 0; i < rends.Length; i++)
+                {
+                    rends[i].material = HitMat;
+                }
+                
                 volume.weight = takingDamageCounter;
 
                 takingDamageCounter -= Time.deltaTime;
             } else
             {
-                ren.material = originalColor;
+                for (int i = 0; i < rends.Length; i++)
+                {
+                    rends[i].material = playerColors[colorId];
+                }
+                
                 volume.weight = 0;
             }
                 
@@ -281,6 +294,10 @@ namespace Com.MyCompany.MyGame
                 GameManager.gameManager.lastCheckpointPos = transform.position;
         }
 
+        public void ChangeColorId(int id)
+        {
+            colorId = id;
+        }
 
         void CalledOnLevelWasLoaded(int level)
         {
@@ -321,9 +338,7 @@ namespace Com.MyCompany.MyGame
 
         #endregion
 
-        private float redFlashTime = 1f;
-        private Material originalColor;
-        public Renderer ren;
+       
 
         public void Heal()
         {
