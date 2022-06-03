@@ -8,6 +8,7 @@ public class RandomPickup : MonoBehaviour , IInteractable
     public ItemManager.Theme PickupTheme;
     public bool LockAfterUse;
     public Material UsedMat;
+    public Animator BoxAnimator;
     private bool locked;
 
     //Using weapon displays
@@ -28,6 +29,7 @@ public class RandomPickup : MonoBehaviour , IInteractable
         if(!locked)
         {
 
+            BoxAnimator.SetTrigger("BoxOpened");
             ItemManager.main.GiveRandomFilteredID(PickupTheme, _player.root.GetComponentInChildren<PlayerItemController>());
 
             //New stuff
