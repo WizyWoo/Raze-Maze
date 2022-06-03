@@ -9857,6 +9857,7 @@ MonoBehaviour:
   PickupTheme: 0
   LockAfterUse: 1
   UsedMat: {fileID: 2100000, guid: 196ad3edaf63c154cb0f73339d341d38, type: 2}
+  BoxAnimator: {fileID: 6114327969767311393}
 --- !u!114 &147800291655030514
 MonoBehaviour:
   m_ObjectHideFlags: 0
