@@ -6,13 +6,15 @@ public class KeyInput : MonoBehaviour , IInteractable
 {
 
     public char Letter;
+    public TextMesh KeyTextMesh;
     private KeyboardController keyboard;
 
     private void Start()
     {
 
         keyboard = transform.GetComponentInParent<KeyboardController>();
-        gameObject.name = Letter.ToString();
+        Letter = (char)gameObject.name[0];
+        KeyTextMesh.text = Letter.ToString();
 
     }
 
