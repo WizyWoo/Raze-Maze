@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{2c0ed187-5763-4225-953d-b3ffa2075971}">
+	<object class="AudioFile" id="{a5877aa6-8bda-4b4d-bfcb-bab0b1d8eab8}">
 		<property name="assetPath">
-			<value>GrenadeClick-02.wav</value>
+			<value>Expl-03.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>96</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.89761904761904765</value>
+			<value>3.2744166666666668</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{6ce56b24-ad70-4b81-a7f4-85b769292a5c}</destination>
