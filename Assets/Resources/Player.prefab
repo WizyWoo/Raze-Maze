@@ -641,7 +641,6 @@ MonoBehaviour:
   RotationRestraint: 0
   PlayerMaxSpeed: 0
   RB: {fileID: 6419574095196934569}
-  TestVector: {x: 0, y: 0}
   AnimationSpeedMult: 0
   FeetAnimator: {fileID: 3165467654100624155}
 --- !u!1 &260854732679865853
