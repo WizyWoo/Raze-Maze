@@ -400,6 +400,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b6396f9d26f6bd746ad6cddcf05b72f9, type: 2}
+    - target: {fileID: 4434516420665137942, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
+        type: 3}
+      propertyPath: playerColor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286893372145225235, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6396f9d26f6bd746ad6cddcf05b72f9, type: 2}
     - target: {fileID: 5446139379904577776, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -417,6 +427,34 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b6396f9d26f6bd746ad6cddcf05b72f9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55ebd9e443bc8d4428816ed0efc20fdf, type: 3}
+--- !u!1 &495506587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2106707382313427753, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 495506586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &495506588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495506587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 14
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &606507497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1323,8 +1361,13 @@ PrefabInstance:
     - target: {fileID: 4434516420665137942, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
         type: 3}
       propertyPath: playerColor
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5286893372145225235, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1477829f2111b4d489133435a6c11697, type: 2}
     - target: {fileID: 5446139379904577776, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1342,6 +1385,34 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1477829f2111b4d489133435a6c11697, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55ebd9e443bc8d4428816ed0efc20fdf, type: 3}
+--- !u!1 &1180898546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2106707382313427753, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1180898545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1180898547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180898546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 17
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1263505085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1586,8 +1657,13 @@ PrefabInstance:
     - target: {fileID: 4434516420665137942, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
         type: 3}
       propertyPath: playerColor
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5286893372145225235, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7bbb05e81d06cb34295e93c9df748acf, type: 2}
     - target: {fileID: 5446139379904577776, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1605,6 +1681,34 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7bbb05e81d06cb34295e93c9df748acf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55ebd9e443bc8d4428816ed0efc20fdf, type: 3}
+--- !u!1 &1410366116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2106707382313427753, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1410366115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1410366117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410366116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 16
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1442258332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2219,6 +2323,11 @@ PrefabInstance:
       propertyPath: playerColor
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5286893372145225235, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ac2c7e2d7e479241afe0054ed6c77cf, type: 2}
     - target: {fileID: 5446139379904577776, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2236,6 +2345,34 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9ac2c7e2d7e479241afe0054ed6c77cf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55ebd9e443bc8d4428816ed0efc20fdf, type: 3}
+--- !u!1 &1832062723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2106707382313427753, guid: 55ebd9e443bc8d4428816ed0efc20fdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1832062722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1832062724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832062723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 15
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1864617490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8358,7 +8495,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8603059061814852160}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -6.959999, y: 9.32, z: -30.557045}
+  m_LocalPosition: {x: -6.959999, y: 9.09, z: -30.557045}
   m_LocalScale: {x: 63.19848, y: 2.717555, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

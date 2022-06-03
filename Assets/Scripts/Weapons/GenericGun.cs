@@ -32,7 +32,7 @@ public class GenericGun : WeaponController, IPunObservable
 
     //Reference
     //public Camera myCamera;
-    public Transform attackPoint;
+    public Transform attackPoint, ObstructedCheckPoint;
 
     //bug fixing 
     public bool allowInvoke = true;
@@ -165,6 +165,13 @@ public class GenericGun : WeaponController, IPunObservable
 
     public override void Fire(bool _firing)
     {
-        Firing = _firing;
+        if(Physics.Linecast(attackPoint.position, ObstructedCheckPoint.position, HitMask, QueryTriggerInteraction.Ignore))
+        {
+
+            Firing = false;
+
+        }
+        else
+            Firing = _firing;
     }
 }

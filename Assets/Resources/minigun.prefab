@@ -288,6 +288,7 @@ MonoBehaviour:
   readyToShoot: 0
   reloading: 0
   attackPoint: {fileID: 5608596870347650438}
+  ObstructedCheckPoint: {fileID: 2426210915533573821}
   allowInvoke: 1
   rayWideness: 0.2
 --- !u!114 &1494185081001674521
