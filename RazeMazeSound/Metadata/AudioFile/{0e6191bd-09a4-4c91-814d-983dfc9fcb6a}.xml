@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{e28c0333-0bef-478d-a836-19f4cf085557}">
+	<object class="AudioFile" id="{0e6191bd-09a4-4c91-814d-983dfc9fcb6a}">
 		<property name="assetPath">
-			<value>Chime.wav</value>
+			<value>BalloonDeflate.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>25.962698412698412</value>
+			<value>4.2295464852607711</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{6ce56b24-ad70-4b81-a7f4-85b769292a5c}</destination>
