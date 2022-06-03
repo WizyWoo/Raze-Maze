@@ -8,7 +8,6 @@ public class VRBodyController : MonoBehaviour
     public Transform PlayerHead, PlayerBody, PlayerFeet;
     public float RotationRestraint, PlayerMaxSpeed;
     public Rigidbody RB;
-    public Vector2 TestVector;
     public float AnimationSpeedMult;
     public Animator FeetAnimator;
 
@@ -17,21 +16,9 @@ public class VRBodyController : MonoBehaviour
 
         //FeetAnimator.SetFloat("PlayerSpeed", RB.velocity.magnitude / PlayerMaxSpeed);
 
-        Vector2 _feetForward = new Vector2(PlayerFeet.forward.x, PlayerFeet.forward.z).normalized;
-        Vector2 _velocityForward = new Vector2(RB.velocity.x, RB.velocity.z).normalized;
+        Vector3 _velocityForward = new Vector3(RB.velocity.x, 0, RB.velocity.z).normalized;
 
-        PlayerFeet.rotation = new Quaternion(0, PlayerFeet.rotation.y + Dot(_feetForward, _velocityForward), 0, PlayerFeet.rotation.w);
-
-    }
-
-    public float Dot(Vector2 _a, Vector2 _b)
-    {
-
-        float _returnVal;
-
-        _returnVal = (_a.x * _b.x) + (_a.y * _b.y);
-
-        return _returnVal;
+        PlayerFeet.LookAt(_velocityForward + PlayerFeet.position, Vector3.up);
 
     }
 
