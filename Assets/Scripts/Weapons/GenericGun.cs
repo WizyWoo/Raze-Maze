@@ -165,7 +165,7 @@ public class GenericGun : WeaponController, IPunObservable
 
     public override void Fire(bool _firing)
     {
-        if(Physics.Linecast(attackPoint.position, ObstructedCheckPoint.position, HitMask, QueryTriggerInteraction.Ignore))
+        if(Physics.Linecast(attackPoint.position, ObstructedCheckPoint.position, WeaponMask, QueryTriggerInteraction.Ignore))
         {
 
             Firing = false;
