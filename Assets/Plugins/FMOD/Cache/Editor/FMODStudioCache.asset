@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9190701939749674500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Traps/BalloonDeflating
+  m_EditorClassIdentifier: 
+  Path: event:/Traps/BalloonDeflating
+  Guid:
+    Data1: 710997444
+    Data2: 1233890663
+    Data3: 1384682156
+    Data4: 445235497
+  Banks:
+  - {fileID: -4246736650879503728}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -5781598581054466084}
+  MinDistance: 0
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8651031494894555862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,10 +72,10 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637898441335656408
+  lastModified: 637898599610332766
   FileSizes:
   - Name: Desktop
-    Value: 1282
+    Value: 1434
   Exists: 1
 --- !u!114 &-8427374646278815471
 MonoBehaviour:
@@ -77,6 +105,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5781598581054466084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BalloonDeflating/TrapSoundControl
+  m_EditorClassIdentifier: 
+  Name: TrapSoundControl
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4137768051
+    data2: 2487610485
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Place
+  - Activate
+  Exists: 1
 --- !u!114 &-5210289710337779783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +157,33 @@ MonoBehaviour:
   Parameters:
   - {fileID: 3171832466205150652}
   - {fileID: -1466201255717688957}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4694948840983685662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Misc/DoorUnlocking
+  m_EditorClassIdentifier: 
+  Path: event:/Misc/DoorUnlocking
+  Guid:
+    Data1: 724710382
+    Data2: 1092651546
+    Data3: -1803265884
+    Data4: 1740253193
+  Banks:
+  - {fileID: -4246736650879503728}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -148,10 +229,64 @@ MonoBehaviour:
   Path: RazeMazeSound/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637898441335725738
+  lastModified: 637898599610440257
   FileSizes:
   - Name: Desktop
-    Value: 700000
+    Value: 813184
+  Exists: 1
+--- !u!114 &-4091985498528021247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Traps/Icicle
+  m_EditorClassIdentifier: 
+  Path: event:/Traps/Icicle
+  Guid:
+    Data1: 1680563039
+    Data2: 1268761406
+    Data3: 2037733287
+    Data4: -230765711
+  Banks:
+  - {fileID: -4246736650879503728}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2556290183961630482}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2556290183961630482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Icicle/TrapSoundControl
+  m_EditorClassIdentifier: 
+  Name: TrapSoundControl
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4137768051
+    data2: 2487610485
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Place
+  - Activate
   Exists: 1
 --- !u!114 &-2265763637080757270
 MonoBehaviour:
@@ -263,12 +398,15 @@ MonoBehaviour:
   - {fileID: -5210289710337779783}
   - {fileID: 5708874136603040423}
   - {fileID: -8427374646278815471}
+  - {fileID: -4091985498528021247}
+  - {fileID: -9190701939749674500}
+  - {fileID: -4694948840983685662}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2143822500771482356}
   StringsBanks:
   - {fileID: -8619908011519992285}
-  cacheTime: 637898441335725738
+  cacheTime: 637898599610440257
   cacheVersion: 10
 --- !u!114 &2143822500771482356
 MonoBehaviour:
@@ -443,7 +581,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 898
+  Length: 281
 --- !u!114 &6640942278779614837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,7 +602,7 @@ MonoBehaviour:
     Data4: -336138436
   Banks:
   - {fileID: -4246736650879503728}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []

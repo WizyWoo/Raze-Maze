@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12316003, g: 0.1264383, b: 0.16799375, a: 1}
+  m_IndirectSpecularColor: {r: 0.12294218, g: 0.12618057, b: 0.167751, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2481,8 +2481,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975947520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.85, y: 2.0409, z: 0.28827}
-  m_LocalScale: {x: 3.2332146, y: 0.22894831, z: 3.5924802}
+  m_LocalPosition: {x: 7.6, y: 2.0409, z: 0.28827}
+  m_LocalScale: {x: 7.0097575, y: 0.22894831, z: 8.723979}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -7242,6 +7242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   open: 0
+  anim: {fileID: 0}
 --- !u!114 &3164607824588793312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12139,6 +12140,8 @@ MonoBehaviour:
   HitMask:
     serializedVersion: 2
     m_Bits: 0
+  SoundEmitter: {fileID: 0}
+  SoundParamater: 
 --- !u!1 &3476446405246429724
 GameObject:
   m_ObjectHideFlags: 0
@@ -12270,6 +12273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e3bd7d15dc5c94d9b53cf22339c4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovementVignetteVolume: {fileID: 6016876681705406548}
   Vals:
     SettingFileVersion: 0
     RotationSpeed: 0
@@ -12277,7 +12281,7 @@ MonoBehaviour:
     SnapTurning: 0
     MovementVignette: 0
   MovementSpeed: 8
-  SnapTurnDeadzone: 0
+  SnapTurnDeadzone: 0.4
   MoveRelativeTo: {fileID: 7665520059737592718}
   RotateAround: {fileID: 7665520059757174682}
   CameraTransform: {fileID: 7665520059737592718}
@@ -13905,7 +13909,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 13bf5a71415c9cb4aa0f2f4f44801dbb, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 8259c8e17835de244bcc8fea2e2241d0, type: 2}
 --- !u!1 &6016876681705406549
 GameObject:
   m_ObjectHideFlags: 0
@@ -19720,7 +19724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7665520058554325370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4, y: 2.99, z: 0}
+  m_LocalPosition: {x: 7.65, y: 2.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
