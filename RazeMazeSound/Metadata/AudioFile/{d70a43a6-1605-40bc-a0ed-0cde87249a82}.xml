@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d70a43a6-1605-40bc-a0ed-0cde87249a82}">
+		<property name="assetPath">
+			<value>GrenadeClick-08.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.69811791383219957</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6ce56b24-ad70-4b81-a7f4-85b769292a5c}</destination>
+		</relationship>
+	</object>
+</objects>

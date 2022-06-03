@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{46d1f30a-6de9-47a2-bcfb-20d0931f75e2}">
+	<object class="AudioFile" id="{9fa0cab9-eebf-4c25-9b99-ea3db9c53aa6}">
 		<property name="assetPath">
-			<value>Expl-02.wav</value>
+			<value>BalloonRub.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>96</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>7.3247499999999999</value>
+			<value>0.57399092970521537</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{6ce56b24-ad70-4b81-a7f4-85b769292a5c}</destination>
