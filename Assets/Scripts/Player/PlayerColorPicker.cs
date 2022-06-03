@@ -7,6 +7,8 @@ using Photon.Pun;
 public class PlayerColorPicker : MonoBehaviourPunCallbacks, IInteractable
 {
     public int playerColor;
+    public Renderer[] rends;
+    public Material usedMat;
 
     public void Activate(Transform player)
     {
@@ -20,7 +22,11 @@ public class PlayerColorPicker : MonoBehaviourPunCallbacks, IInteractable
     [PunRPC]
     public void ColorChecker()
     {
-        this.gameObject.GetComponent<Renderer>().material.color = Color.grey;
+        for (int i = 0; i < rends.Length; i++)
+        {
+            rends[i].material = usedMat;
+        }
+        
         this.enabled = false;
     }
 }
