@@ -15,9 +15,12 @@ public class VRBodyController : MonoBehaviour
     private void Update()
     {
 
-        FeetAnimator.SetFloat("PlayerSpeed", RB.velocity.magnitude / PlayerMaxSpeed);
+        //FeetAnimator.SetFloat("PlayerSpeed", RB.velocity.magnitude / PlayerMaxSpeed);
 
-        PlayerFeet.rotation = new Quaternion(0, Dot((Vector2)PlayerFeet.position, TestVector), 0, PlayerFeet.rotation.w);
+        Vector2 _feetForward = new Vector2(PlayerFeet.forward.x, PlayerFeet.forward.z).normalized;
+        Vector2 _velocityForward = new Vector2(RB.velocity.x, RB.velocity.z).normalized;
+
+        PlayerFeet.rotation = new Quaternion(0, PlayerFeet.rotation.y + Dot(_feetForward, _velocityForward), 0, PlayerFeet.rotation.w);
 
     }
 
