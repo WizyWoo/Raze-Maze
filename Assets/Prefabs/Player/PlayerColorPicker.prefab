@@ -64,6 +64,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerColor: 0
+  rends:
+  - {fileID: 2678679581307285584}
+  - {fileID: 7844468098708843918}
+  - {fileID: 6318672506388637219}
+  - {fileID: 5446139379904577776}
+  - {fileID: 5286893372145225235}
+  usedMat: {fileID: 2100000, guid: 7ba37c2e6e7d6ad4284ee2cc09bc7c92, type: 2}
 --- !u!1 &4971519611914742214
 GameObject:
   m_ObjectHideFlags: 0
