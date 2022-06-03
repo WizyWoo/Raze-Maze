@@ -26,13 +26,25 @@ namespace Com.MyCompany.MyGame
         {
             if (!locked)
             {
-                PhotonView photonView = gameObject.GetPhotonView();
+                if(_player.root.GetComponent<PlayerManager>().colorId != 0)
+                {
+                    PhotonView photonView = gameObject.GetPhotonView();
 
-                photonView.RPC("ClickedByPlayer", RpcTarget.MasterClient);
+                    photonView.RPC("ClickedByPlayer", RpcTarget.MasterClient);
 
-                locked = true;
-                readyText.text = "WAITING FOR OTHERS";
-                Player = _player.root.gameObject;
+                    locked = true;
+                    readyText.text = "WAITING FOR OTHERS";
+                    Player = _player.root.gameObject;
+                }
+                else
+                {   
+                    for (int i = 0; i < _player.root.GetComponent<PlayerManager>().usedColors.Count; i++)
+                    {   
+                        int colorToAssign = Random.Range(1, 4);
+                        if(_player.root.GetComponent<PlayerManager>().usedColors[i] != colorToAssign)
+                           _player.root.GetComponent<PlayerManager>().colorId = colorToAssign;
+                    }               
+                }          
             }        
         }
 

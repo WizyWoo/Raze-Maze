@@ -27,12 +27,16 @@
 		</relationship>
 		<relationship name="groupTracks">
 			<destination>{f2585df4-d52b-4f22-a14b-985d8169b8c2}</destination>
+			<destination>{8367874c-98dc-4943-82da-02101e9ab29a}</destination>
 		</relationship>
 		<relationship name="timeline">
 			<destination>{e67a9e01-9f73-45a9-89f9-4c475542c1b9}</destination>
 		</relationship>
 		<relationship name="parameters">
 			<destination>{d6b0cdc1-5388-46af-a2c6-0e4b18e6af9c}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{9ed9c028-9eae-45f2-be43-2e2a0a11b2cb}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{c6fc5223-3a84-4ed8-9822-2ec2a531202d}">
@@ -66,6 +70,11 @@
 			<destination>{dcccdd1d-605d-4feb-a509-f5c62e9a8510}</destination>
 		</relationship>
 	</object>
+	<object class="GroupTrack" id="{8367874c-98dc-4943-82da-02101e9ab29a}">
+		<relationship name="mixerGroup">
+			<destination>{029536f3-4483-433a-8605-94c5f129a671}</destination>
+		</relationship>
+	</object>
 	<object class="Timeline" id="{e67a9e01-9f73-45a9-89f9-4c475542c1b9}">
 		<property name="isProxyEnabled">
 			<value>false</value>
@@ -80,6 +89,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{510c34d6-35c0-4444-9564-4376b779e872}">
+		<property name="pitch">
+			<value>-0.600000024</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{235e5f7b-c233-4f36-a590-2d90adf6de9c}</destination>
 		</relationship>
@@ -102,6 +114,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{dcccdd1d-605d-4feb-a509-f5c62e9a8510}">
+		<property name="volume">
+			<value>-6.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -115,9 +130,24 @@
 			<destination>{510c34d6-35c0-4444-9564-4376b779e872}</destination>
 		</relationship>
 	</object>
+	<object class="EventMixerGroup" id="{029536f3-4483-433a-8605-94c5f129a671}">
+		<property name="name">
+			<value>Audio 2</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{7ca8bae9-c3c7-479a-92de-0f38c9741262}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{af72b699-f152-4dd2-b930-5709f25fc082}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{510c34d6-35c0-4444-9564-4376b779e872}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{235e5f7b-c233-4f36-a590-2d90adf6de9c}">
 		<relationship name="effects">
 			<destination>{724cd228-1bd6-4de3-9ef6-4a8fffcc983a}</destination>
+			<destination>{ebe5fd1e-dae5-4b47-ba19-054159ee1fc6}</destination>
 			<destination>{3d087177-8237-462c-99e2-e47261b8cbcb}</destination>
 		</relationship>
 	</object>
@@ -126,10 +156,28 @@
 	<object class="MixerBusEffectChain" id="{71c52e69-9091-493f-ac76-52838af09994}">
 		<relationship name="effects">
 			<destination>{c71b9169-0328-4333-b1ce-9e8fa357a1c1}</destination>
+			<destination>{4437016c-ef22-4241-b2ef-b58c194d7b03}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{439e4b1f-f5f9-44b8-8314-7537ff4e57b0}" />
+	<object class="MixerBusEffectChain" id="{7ca8bae9-c3c7-479a-92de-0f38c9741262}">
+		<relationship name="effects">
+			<destination>{266705e9-a0e6-4197-922d-1b74accb1f03}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{af72b699-f152-4dd2-b930-5709f25fc082}" />
 	<object class="MixerBusFader" id="{724cd228-1bd6-4de3-9ef6-4a8fffcc983a}" />
+	<object class="DistortionEffect" id="{ebe5fd1e-dae5-4b47-ba19-054159ee1fc6}">
+		<property name="level">
+			<value>0.0549999997</value>
+		</property>
+	</object>
 	<object class="SpatialiserEffect" id="{3d087177-8237-462c-99e2-e47261b8cbcb}" />
 	<object class="MixerBusFader" id="{c71b9169-0328-4333-b1ce-9e8fa357a1c1}" />
+	<object class="DistortionEffect" id="{4437016c-ef22-4241-b2ef-b58c194d7b03}">
+		<property name="level">
+			<value>0.0599999987</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{266705e9-a0e6-4197-922d-1b74accb1f03}" />
 </objects>

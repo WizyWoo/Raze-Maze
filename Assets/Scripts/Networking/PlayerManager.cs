@@ -6,6 +6,7 @@ using Photon.Pun.Demo.PunBasics;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 namespace Com.MyCompany.MyGame
 {
@@ -27,7 +28,7 @@ namespace Com.MyCompany.MyGame
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
-        public int lives = 3;
+        public int lives = 3; 
         public GameOverScreenScript gameOver;
 
         public bool readied = false, DamageLocked, someoneHasWon = false;
@@ -58,7 +59,10 @@ namespace Com.MyCompany.MyGame
         public Material[] playerColors;
         public Renderer[] rends;
 
-        private int colorId;
+        [HideInInspector]
+        public List<int> usedColors;
+
+        public int colorId = 0;
         #endregion
 
         #region Private Fields
@@ -295,10 +299,11 @@ namespace Com.MyCompany.MyGame
         }
 
         public void ChangeColorId(int id)
-        {
+        {   
             colorId = id;
+            usedColors.Add(colorId);
         }
-
+        
         void CalledOnLevelWasLoaded(int level)
         {
             // check if we are outside the Arena and if it's the case, spawn around the center of the arena in a safe zone
@@ -338,7 +343,7 @@ namespace Com.MyCompany.MyGame
 
         #endregion
 
-       
+
 
         public void Heal()
         {
