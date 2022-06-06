@@ -8,14 +8,6 @@ public class VRCamPos : MonoBehaviour
     public CapsuleCollider CapCol;
     public Transform CamTransform;
 
-    private void Start()
-    {
-
-        if(!CapCol)
-            CapCol = gameObject.GetComponent<CapsuleCollider>();
-
-    }
-
     private void Update()
     {
 

@@ -638,7 +638,7 @@ MonoBehaviour:
   PlayerHead: {fileID: 2504786041528216299}
   PlayerBody: {fileID: 1662433663197204960}
   PlayerFeet: {fileID: 5189608090937567336}
-  RotationRestraint: 0
+  RotationRestraint: 30
   PlayerMaxSpeed: 0
   RB: {fileID: 6419574095196934569}
   AnimationSpeedMult: 0
