@@ -6,7 +6,6 @@ using Photon.Pun;
 public class ContinuousGun : WeaponController, IPunObservable
 {
     public ParticleSystem particleSystemu;
-    private bool isFiring  = false;
 
     List<ParticleCollisionEvent> colEvents = new List<ParticleCollisionEvent>();
 

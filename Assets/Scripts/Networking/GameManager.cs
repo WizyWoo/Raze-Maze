@@ -20,7 +20,6 @@ namespace Com.MyCompany.MyGame
         
         #endregion
 
-        [SerializeField] private float levelTransitionDelay = 1f;
         public GameObject player;
 
         private List<PlayerManager> playerManagers;
