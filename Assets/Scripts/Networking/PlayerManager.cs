@@ -55,7 +55,6 @@ namespace Com.MyCompany.MyGame
 
         private VrPlayerController vrController;
 
-        private float redFlashTime = 1f;
         public Material[] playerColors;
         public Renderer[] rends;
 
