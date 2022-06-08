@@ -569,6 +569,7 @@ MonoBehaviour:
   - {fileID: 260854732679865855}
   - {fileID: 260854731484014345}
   CamPos: {fileID: 7151013509243420384}
+  FmodListener: {fileID: 3967168470478122949}
 --- !u!114 &8268114991359721830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,7 +943,6 @@ GameObject:
   m_Component:
   - component: {fileID: 260854732798931688}
   - component: {fileID: 260854732798931695}
-  - component: {fileID: 260854732798931694}
   - component: {fileID: 260854732798931689}
   - component: {fileID: 383310166694716958}
   - component: {fileID: 1913524856119444659}
@@ -1013,14 +1013,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &260854732798931694
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260854732798931693}
-  m_Enabled: 1
 --- !u!114 &260854732798931689
 MonoBehaviour:
   m_ObjectHideFlags: 0
