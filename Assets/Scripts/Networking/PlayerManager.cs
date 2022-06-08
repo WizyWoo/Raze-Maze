@@ -194,7 +194,6 @@ namespace Com.MyCompany.MyGame
             if (photonView.IsMine)
             {
                 ProcessInputs();
-            }
 
             if(takingDamageCounter > 0)
             {
@@ -214,9 +213,9 @@ namespace Com.MyCompany.MyGame
                 }
                 
                 volume.weight = 0;
+            }          
             }
                 
-
             // trigger Beams active state
             //if (beams != null && IsFiring != beams.activeInHierarchy)
             //{
