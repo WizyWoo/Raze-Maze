@@ -639,7 +639,7 @@ MonoBehaviour:
   PlayerBody: {fileID: 1662433663197204960}
   PlayerFeet: {fileID: 5189608090937567336}
   RotationRestraint: 30
-  PlayerMaxSpeed: 0
+  PlayerMaxSpeed: 8
   RB: {fileID: 6419574095196934569}
   AnimationSpeedMult: 0
   FeetAnimator: {fileID: 3165467654100624155}
@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: fe8db3775483180438f39a42062890b3, type: 3}
   m_Color: {r: 1, g: 0, b: 0.14117622, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1432,7 +1432,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: fe8db3775483180438f39a42062890b3, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0

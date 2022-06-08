@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -315,8 +315,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217477066}
-  m_LocalRotation: {x: -0, y: -0.34449312, z: -0, w: 0.9387889}
-  m_LocalPosition: {x: 1.009, y: 0.283, z: -0.586}
+  m_LocalRotation: {x: 0.31457898, y: 0.6499377, z: -0.3398636, w: 0.60258925}
+  m_LocalPosition: {x: -0.31503245, y: 0.4645898, z: -0.15098007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -644,9 +644,19 @@ MonoBehaviour:
   gameOver: {fileID: 0}
   readied: 0
   DamageLocked: 0
+  someoneHasWon: 0
   HitMat: {fileID: 2100000, guid: 196ad3edaf63c154cb0f73339d341d38, type: 2}
   volume: {fileID: 7595873828237889512}
-  ren: {fileID: 0}
+  panel: {fileID: 0}
+  timerObj: {fileID: 0}
+  timeImage: {fileID: 0}
+  timeText: {fileID: 0}
+  duration: 0
+  currentTime: 0
+  playerColors: []
+  rends: []
+  usedColors: 
+  colorId: 0
 --- !u!120 &710069079932258443
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1712,6 +1722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e3bd7d15dc5c94d9b53cf22339c4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovementVignetteVolume: {fileID: 0}
   Vals:
     SettingFileVersion: 0
     RotationSpeed: 0
