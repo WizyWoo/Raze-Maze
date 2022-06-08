@@ -10,27 +10,32 @@ public class VRBodyController : MonoBehaviour
     public Rigidbody RB;
     public float AnimationSpeedMult;
     public Animator FeetAnimator;
+    public float Head, Body, Feet;
 
-    private void FixedUpdate()
+    private void Update()
     {
 
-        float _headRot = PlayerHead.rotation.y;
-        float _bodyRot = PlayerBody.rotation.y;
-        float _feetRot = PlayerFeet.rotation.y;
+        Debug.Log("Hello I do work");
 
-        if(Mathf.Abs(_bodyRot - _headRot) > RotationRestraint)
+        Head = PlayerHead.rotation.y;
+        Body = PlayerBody.rotation.y;
+        Feet = PlayerFeet.rotation.y;
+
+        if(Mathf.Abs(Body - Head) > RotationRestraint)
         {
 
-            PlayerBody.rotation = new Quaternion(0, _bodyRot + (_bodyRot - _headRot), 0, PlayerBody.rotation.w);
+            PlayerBody.rotation = new Quaternion(0, PlayerHead.rotation.y, 0, PlayerBody.rotation.w);
             
-            _bodyRot = PlayerBody.rotation.y;
+            Body = PlayerBody.rotation.y;
+            
+            Debug.Log("Rotating body");
 
         }
 
-        if(Mathf.Abs(_feetRot - _bodyRot) > RotationRestraint)
+        if(Mathf.Abs(Feet - Body) > RotationRestraint)
         {
 
-            PlayerFeet.rotation = new Quaternion(0, _feetRot + (_feetRot - _bodyRot), 0, PlayerFeet.rotation.w);
+            PlayerFeet.rotation = new Quaternion(0, (Feet + (Feet - Body)) * 360, 0, PlayerFeet.rotation.w);
 
         }
 
