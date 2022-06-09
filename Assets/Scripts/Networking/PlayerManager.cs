@@ -195,6 +195,12 @@ namespace Com.MyCompany.MyGame
             {
                 ProcessInputs();
 
+                if(takingDamageCounter > 0)
+                    volume.weight = takingDamageCounter;
+                else
+                     volume.weight = 0;           
+            }
+            
             if(takingDamageCounter > 0)
             {
                 for (int i = 0; i < rends.Length; i++)
@@ -202,7 +208,6 @@ namespace Com.MyCompany.MyGame
                     rends[i].material = HitMat;
                 }
                 
-                volume.weight = takingDamageCounter;
 
                 takingDamageCounter -= Time.deltaTime;
             } else
@@ -210,12 +215,8 @@ namespace Com.MyCompany.MyGame
                 for (int i = 0; i < rends.Length; i++)
                 {
                     rends[i].material = playerColors[colorId];
-                }
-                
-                volume.weight = 0;
-            }          
-            }
-                
+                }         
+            } 
             // trigger Beams active state
             //if (beams != null && IsFiring != beams.activeInHierarchy)
             //{
