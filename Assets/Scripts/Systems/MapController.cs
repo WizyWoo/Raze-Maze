@@ -20,7 +20,7 @@ public class MapController : MonoBehaviour
         
     }
     IEnumerator Drawer(){
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.65f);
         Texture2D texture = new Texture2D(_mapWidth, _mapWidth);
         GetComponent<Renderer>().material.mainTexture = texture;
         Vector3 width = transform.lossyScale;

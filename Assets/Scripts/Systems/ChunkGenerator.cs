@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChunkGenerator : MonoBehaviour
 {
     [SerializeField]
-    private int _seed = 69420;
+    public int _seed = 69420;
     public List<ChunkAllegiance> biomeChunks = new List<ChunkAllegiance>();
     public GameObject exitChunk, startChunk, nullChunk;
     public List<GameObject> placedChunks = new List<GameObject>();

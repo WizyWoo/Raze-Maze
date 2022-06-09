@@ -51,7 +51,6 @@ public class MazeId : MonoBehaviour
         }
     }
     public void CheckArchways(){
-        Debug.Log(_archways.Count);
         foreach (var item in wallDoors)
         {
             if(item.gameObject.activeInHierarchy){

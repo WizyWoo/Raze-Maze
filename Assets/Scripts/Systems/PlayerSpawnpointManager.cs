@@ -18,6 +18,11 @@ public class PlayerSpawnpointManager : MonoBehaviour
         this.transform.parent = null;
 
     }
+    private void Start() {
+        //Invoke("SpawnPlayers", 0.01f);
+        SpawnPlayers();
+        
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -53,13 +58,13 @@ public class PlayerSpawnpointManager : MonoBehaviour
         {
             _players[i].transform.position = _spawnPoints[i].transform.position;
         }*/
-        playerId = PhotonNetwork.LocalPlayer.ActorNumber;
+        ///playerId = PhotonNetwork.LocalPlayer.ActorNumber;
         // Set local player to spawnpoint
         GameObject playa = GameObject.FindGameObjectWithTag("Player");
-        player = playa.GetComponent<Com.MyCompany.MyGame.PlayerManager>();
+        //player = playa.GetComponent<Com.MyCompany.MyGame.PlayerManager>();
 
 
-        player.transform.position = _spawnPoints[(playerId % (_spawnPoints.Count))].transform.position;
+        playa.transform.position = _spawnPoints[0].transform.position;
         Debug.Log("" + playerId % (_spawnPoints.Count));
         
         List<Com.MyCompany.MyGame.PlayerManager> pl = new List<Com.MyCompany.MyGame.PlayerManager>();
