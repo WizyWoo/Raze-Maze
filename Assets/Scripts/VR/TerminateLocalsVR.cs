@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEditor.XR.LegacyInputHelpers;
 using UnityEngine.SpatialTracking;
+using FMODUnity;
 
 public class TerminateLocalsVR : MonoBehaviourPunCallbacks
 {
@@ -14,6 +15,7 @@ public class TerminateLocalsVR : MonoBehaviourPunCallbacks
     public LineRenderer Line1, Line2;
     public TrackedPoseDriver[] PoseDrivers;
     public VRCamPos CamPos;
+    public StudioListener FmodListener;
 
 
     private void Awake()
@@ -40,6 +42,7 @@ public class TerminateLocalsVR : MonoBehaviourPunCallbacks
             Destroy(Line1);
             Destroy(Line2);
             Destroy(CamPos);
+            Destroy(FmodListener);
 
 
             foreach (TrackedPoseDriver _driver in PoseDrivers)

@@ -6,11 +6,6 @@ public class DoorScript : MonoBehaviour
     public bool open;
     public Animation anim;
 
-    void Start()
-    {
-        anim = gameObject.GetComponent<Animation>();
-    }
-
     public void DoorOpen()
     {
         if (anim != null)
