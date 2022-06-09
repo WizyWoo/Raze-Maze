@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class HoldingAnchor : MonoBehaviour
+public class HoldingAnchor : MonoBehaviourPunCallbacks
 {
 
     [Tooltip("If this is not the main anchor, do not link an anchor here")]
     public Transform LinkedAnchorTransform;
+    public PhotonView PView;
     public bool IsHeld;
     [Tooltip("Don't assign this field")]
     public HoldingAnchor AttachedMainAnchor;
@@ -46,6 +48,8 @@ public class HoldingAnchor : MonoBehaviour
 
     public virtual HoldingAnchor Grabbed(Transform _grabbedBy)
     {
+
+        PView.TransferOwnership(_grabbedBy.transform.root.GetComponent<PhotonView>().ViewID);
 
         IsHeld = true;
         handTransform = _grabbedBy;
