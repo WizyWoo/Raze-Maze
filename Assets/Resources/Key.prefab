@@ -470,7 +470,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 1
   OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
@@ -518,7 +518,7 @@ MonoBehaviour:
   - {fileID: 4328617268797624074}
   - {fileID: 8877294414949453512}
   FollowSpeedMult: 50
-  MainCollider: {fileID: 3892114300947197013}
+  MainCollider: {fileID: 0}
   PView: {fileID: -3882531351655671070}
 --- !u!54 &6232740817924233373
 Rigidbody:
