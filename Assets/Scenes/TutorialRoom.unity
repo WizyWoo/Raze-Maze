@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12316003, g: 0.1264383, b: 0.16799375, a: 1}
+  m_IndirectSpecularColor: {r: 0.12317749, g: 0.12645783, b: 0.16801937, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,17 +150,17 @@ PrefabInstance:
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.26638004
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.26638
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.26638
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
@@ -170,47 +170,47 @@ PrefabInstance:
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.961
+      value: 3.21
       objectReference: {fileID: 0}
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.695
+      value: 5.466
       objectReference: {fileID: 0}
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.87284493
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.076768786
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.4317832
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.21403629
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 2.913
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -51.966
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8240672197010037516, guid: 2cf46ec5cefb41a47b3422c2df549af6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 26.136
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf46ec5cefb41a47b3422c2df549af6, type: 3}
@@ -7489,6 +7489,7 @@ MonoBehaviour:
     m_Flags: 0
   interactionDistance: 10
   DesktopMode: 0
+  InteractionOn: 0
   HoverText: {fileID: 0}
   HoverTextMesh: {fileID: 8630609929963349299}
 --- !u!1 &3068268799350954138
@@ -13743,6 +13744,7 @@ MonoBehaviour:
     m_Flags: 0
   interactionDistance: 10
   DesktopMode: 0
+  InteractionOn: 0
   HoverText: {fileID: 0}
   HoverTextMesh: {fileID: 4102223413085332734}
 --- !u!4 &5118227587600423592
@@ -20045,6 +20047,7 @@ MonoBehaviour:
   HapticDur: 0.2
   HandInteractionEnabled: 0
   LaserPointer: {fileID: 2761564194843188968}
+  InteractionScript: {fileID: 0}
   grabRadius: 0.1
   grabDistance: 3
   holding: {fileID: 0}
@@ -21196,6 +21199,7 @@ MonoBehaviour:
   HapticDur: 0.2
   HandInteractionEnabled: 0
   LaserPointer: {fileID: 7751237861109720489}
+  InteractionScript: {fileID: 0}
   grabRadius: 0.1
   grabDistance: 3
   holding: {fileID: 0}
