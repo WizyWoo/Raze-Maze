@@ -7489,7 +7489,7 @@ MonoBehaviour:
     m_Flags: 0
   interactionDistance: 10
   DesktopMode: 0
-  InteractionOn: 0
+  InteractionOn: 1
   HoverText: {fileID: 0}
   HoverTextMesh: {fileID: 8630609929963349299}
 --- !u!1 &3068268799350954138
@@ -12826,7 +12826,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: a62d6ed0124910543afe6608d3845681, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!33 &3868322643552499099
@@ -13744,7 +13744,7 @@ MonoBehaviour:
     m_Flags: 0
   interactionDistance: 10
   DesktopMode: 0
-  InteractionOn: 0
+  InteractionOn: 1
   HoverText: {fileID: 0}
   HoverTextMesh: {fileID: 4102223413085332734}
 --- !u!4 &5118227587600423592
