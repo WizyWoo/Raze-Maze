@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class HoldingAnchorThrowable : HoldingAnchor
 {
@@ -18,6 +19,8 @@ public class HoldingAnchorThrowable : HoldingAnchor
 
     public override HoldingAnchor Grabbed(Transform _grabbedBy)
     {
+
+        PView.TransferOwnership(_grabbedBy.transform.root.GetComponent<PhotonView>().ViewID);
 
         IsHeld = true;
         handTransform = _grabbedBy;
