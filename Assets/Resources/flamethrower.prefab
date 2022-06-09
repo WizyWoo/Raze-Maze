@@ -56,7 +56,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2912974027692373104}
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LinkedAnchorTransform: {fileID: 5664738164538319907}
+  PView: {fileID: 2264151836297016115}
   IsHeld: 0
   AttachedMainAnchor: {fileID: 0}
   mainAnchor: 1
@@ -347,6 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LinkedAnchorTransform: {fileID: 0}
+  PView: {fileID: 0}
   IsHeld: 0
   AttachedMainAnchor: {fileID: 0}
   mainAnchor: 0

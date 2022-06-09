@@ -8,7 +8,6 @@ public class HoldingAnchor : MonoBehaviourPunCallbacks
 
     [Tooltip("If this is not the main anchor, do not link an anchor here")]
     public Transform LinkedAnchorTransform;
-    public PhotonView PView;
     public bool IsHeld;
     [Tooltip("Don't assign this field")]
     public HoldingAnchor AttachedMainAnchor;
@@ -48,8 +47,6 @@ public class HoldingAnchor : MonoBehaviourPunCallbacks
 
     public virtual HoldingAnchor Grabbed(Transform _grabbedBy)
     {
-
-        PView.TransferOwnership(_grabbedBy.transform.root.GetComponent<PhotonView>().ViewID);
 
         IsHeld = true;
         handTransform = _grabbedBy;

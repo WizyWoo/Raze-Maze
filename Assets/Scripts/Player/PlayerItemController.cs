@@ -333,7 +333,7 @@ public class PlayerItemController : MonoBehaviour
         {
 
             if(activeWeapon)
-                PhotonNetwork.Destroy(activeWeapon);
+                PhotonNetwork.Destroy(activeWeapon.GetPhotonView());
 
             EquippedWeaponID = CurrentItemID;
             CurrentItemID = 0;

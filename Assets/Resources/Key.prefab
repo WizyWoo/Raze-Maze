@@ -401,8 +401,8 @@ GameObject:
   - component: {fileID: 1859551303210488469}
   - component: {fileID: -3882531351655671070}
   - component: {fileID: -185253994298745433}
+  - component: {fileID: 7542478443904515791}
   - component: {fileID: 6232740817924233373}
-  - component: {fileID: 230061457163689387}
   - component: {fileID: 1645210519282778061}
   m_Layer: 13
   m_Name: Key
@@ -441,8 +441,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.49, y: 0.33, z: 0.9897593}
-  m_Center: {x: -0.5731487, y: 0.08607358, z: -0.005120337}
+  m_Size: {x: 1.8095165, y: 0.33, z: 0.9897593}
+  m_Center: {x: -0.2566026, y: 0.08607356, z: -0.005120317}
 --- !u!114 &1859551303210488469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +494,32 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &7542478443904515791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236253458146780771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cfdb6feb9a9ed48ad9bf9e8e0c3a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LinkedAnchorTransform: {fileID: 0}
+  IsHeld: 0
+  AttachedMainAnchor: {fileID: 0}
+  mainAnchor: 1
+  handTransform: {fileID: 0}
+  rb: {fileID: 6232740817924233373}
+  Colliders:
+  - {fileID: 178447576903116685}
+  - {fileID: 8671202932166386542}
+  - {fileID: 4328617268797624074}
+  - {fileID: 8877294414949453512}
+  FollowSpeedMult: 50
+  MainCollider: {fileID: 3892114300947197013}
+  PView: {fileID: -3882531351655671070}
 --- !u!54 &6232740817924233373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -510,33 +536,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &230061457163689387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8236253458146780771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a34572b72c74a2f4ebc828e183a9bfef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LinkedAnchorTransform: {fileID: 0}
-  PView: {fileID: 0}
-  IsHeld: 0
-  AttachedMainAnchor: {fileID: 0}
-  mainAnchor: 0
-  handTransform: {fileID: 0}
-  rb: {fileID: 6232740817924233373}
-  Colliders:
-  - {fileID: 178447576903116685}
-  - {fileID: 8671202932166386542}
-  - {fileID: 4328617268797624074}
-  - {fileID: 8877294414949453512}
-  - {fileID: 3892114300947197013}
-  FollowSpeedMult: 50
-  MainCollider: {fileID: 178447576903116685}
 --- !u!114 &1645210519282778061
 MonoBehaviour:
   m_ObjectHideFlags: 0
