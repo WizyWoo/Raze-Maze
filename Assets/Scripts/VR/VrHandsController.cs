@@ -22,6 +22,7 @@ public class VrHandsController : MonoBehaviour
     public float HapticAmp, HapticDur;
     public bool HandInteractionEnabled;
     public LineRenderer LaserPointer;
+    public PlayerInteraction InteractionScript;
     [SerializeField]
     private float grabRadius, grabDistance;
     private LayerMask grabMask;
@@ -104,6 +105,7 @@ public class VrHandsController : MonoBehaviour
     {
 
         HandInteractionEnabled = _on;
+        InteractionScript.InteractionOn = _on;
 
         if(!_on)
         {
@@ -277,6 +279,19 @@ public class VrHandsController : MonoBehaviour
                 }
 
             }
+
+        }
+
+        if(holding && HandInteractionEnabled)
+        {
+
+            InteractionScript.InteractionOn = false;
+
+        }
+        else
+        {
+
+            InteractionScript.InteractionOn = true;
 
         }
 

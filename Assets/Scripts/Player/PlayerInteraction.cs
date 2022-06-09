@@ -7,7 +7,7 @@ public class PlayerInteraction : VRInputManager
 {
 
     public float interactionDistance;
-    public bool DesktopMode;
+    public bool DesktopMode, InteractionOn;
     public Text HoverText;
     public TextMesh HoverTextMesh;
     private LayerMask interactMask;
@@ -50,7 +50,7 @@ public class PlayerInteraction : VRInputManager
 
         RaycastHit hit;
 
-        if(Physics.Raycast(transform.position, transform.forward, out hit, interactionDistance, interactMask))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, interactionDistance, interactMask) && InteractionOn)
         {
 
             if(hit.collider.transform.TryGetComponent<IInteractable>(out IInteractable _inter))
