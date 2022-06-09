@@ -16,7 +16,7 @@ public class PlayerInteraction : VRInputManager
     private void Start()
     {
 
-        interactMask = ((1 << LayerMask.NameToLayer("Interactables") + 1 << LayerMask.NameToLayer("Default")));
+        interactMask = ((1 << LayerMask.NameToLayer("Interactables")) + (1 << LayerMask.NameToLayer("Default")));
 
         if(DesktopMode)
             UpdateUIRefs();

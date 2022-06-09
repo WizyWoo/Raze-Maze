@@ -87,6 +87,7 @@ MonoBehaviour:
     m_Flags: 0
   interactionDistance: 10
   DesktopMode: 0
+  InteractionOn: 1
   HoverText: {fileID: 0}
   HoverTextMesh: {fileID: 5841694745151276440}
 --- !u!120 &8277404662736753514
@@ -370,6 +371,7 @@ MonoBehaviour:
     m_Flags: 0
   interactionDistance: 10
   DesktopMode: 0
+  InteractionOn: 1
   HoverText: {fileID: 0}
   HoverTextMesh: {fileID: 2177998528344966229}
 --- !u!120 &5401502530660306271

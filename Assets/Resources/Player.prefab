@@ -206,6 +206,7 @@ MonoBehaviour:
     m_Flags: 0
   interactionDistance: 10
   DesktopMode: 0
+  InteractionOn: 1
   HoverText: {fileID: 0}
   HoverTextMesh: {fileID: 5841694745151276440}
 --- !u!114 &2236391011774727389
@@ -226,6 +227,7 @@ MonoBehaviour:
   HapticDur: 0.2
   HandInteractionEnabled: 0
   LaserPointer: {fileID: 175136647883457743}
+  InteractionScript: {fileID: 3390003008388670589}
   grabRadius: 0.1
   grabDistance: 3
   holding: {fileID: 0}
@@ -739,6 +741,7 @@ MonoBehaviour:
     m_Flags: 0
   interactionDistance: 10
   DesktopMode: 0
+  InteractionOn: 1
   HoverText: {fileID: 0}
   HoverTextMesh: {fileID: 2177998528344966229}
 --- !u!114 &1145741916898583857
@@ -759,6 +762,7 @@ MonoBehaviour:
   HapticDur: 0.2
   HandInteractionEnabled: 0
   LaserPointer: {fileID: 5741196854049062798}
+  InteractionScript: {fileID: 4883060188735341366}
   grabRadius: 0.1
   grabDistance: 3
   holding: {fileID: 0}
