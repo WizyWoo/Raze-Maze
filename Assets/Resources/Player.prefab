@@ -3143,7 +3143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: fe8db3775483180438f39a42062890b3, type: 3}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -4966,6 +4966,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3072697365806571387, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: fe8db3775483180438f39a42062890b3, type: 3}
     - target: {fileID: 3389022918048685599, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -4981,6 +4986,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5743804006942280710, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6470949744881490545, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5121,11 +5131,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8577895172666603810, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: fe8db3775483180438f39a42062890b3, type: 3}
     - target: {fileID: 8731400780206855912, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9182778579886565999, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dfd6e32aff46f9439ba5c4c79648c27, type: 3}
 --- !u!224 &2222548789793805680 stripped

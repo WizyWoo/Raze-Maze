@@ -15000,49 +15000,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8967966353669708711}
   m_Mesh: {fileID: -1120971793077124694, guid: e48d18018a0ba46c283d9fd9c227e578, type: 3}
---- !u!114 &6686540100462114452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7665520058554325370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df33944c881c0654ca7791ae30011441, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ExstensivePlacementChecks: 0
-  UseUIFeedback: 0
-  DesktopMode: 0
-  WeaponDisplay: {fileID: 0}
-  TrapDisplay: {fileID: 0}
-  CurrentWeaponPrefab: {fileID: 0}
-  CurrentTrapPrefab: {fileID: 0}
-  TrapDisplayObj: {fileID: 0}
-  WeaponDisplayObj: {fileID: 0}
-  CurrentTrapScaleMode: 0
-  CurrentWeaponUseMode: 0
-  EquippedWeaponID: 0
-  TrapActivationDelay: 0
-  TrapPlaceDistance: 10
-  PlacementCheckRange: 0
-  ScaleMaxLenght: 5
-  ScaleMinLenght: 1
-  MeleeReach: 0
-  ThrowVelocity: 15
-  ShotRange: 0
-  WeaponIDText: {fileID: 0}
-  FeedbackText: {fileID: 0}
-  Parent: {fileID: 7665520059757174682}
-  PlaceTrapFrom: {fileID: 7665520058561087086}
-  PlacingTrap: 0
-  droppedWeaponPrefab: {fileID: 0}
-  activeWeapon: {fileID: 0}
-  handTransform: {fileID: 0}
-  weaponFolderName: 
-  trapFolderName: 
-  pickupFolderName: 
 --- !u!1 &6751556790934641854
 GameObject:
   m_ObjectHideFlags: 0
@@ -20193,7 +20150,7 @@ MonoBehaviour:
   HapticDur: 0.2
   HandInteractionEnabled: 0
   LaserPointer: {fileID: 2761564194843188968}
-  InteractionScript: {fileID: 0}
+  InteractionScript: {fileID: 3043242854493446736}
   grabRadius: 0.1
   grabDistance: 3
   holding: {fileID: 0}
@@ -20304,7 +20261,6 @@ GameObject:
   - component: {fileID: 7665520058554325371}
   - component: {fileID: 3524401779028308175}
   - component: {fileID: 3524401779028308168}
-  - component: {fileID: 6686540100462114452}
   - component: {fileID: 661861313521929026}
   m_Layer: 3
   m_Name: HeloPoggies
@@ -21330,7 +21286,7 @@ MonoBehaviour:
   HapticDur: 0.2
   HandInteractionEnabled: 0
   LaserPointer: {fileID: 7751237861109720489}
-  InteractionScript: {fileID: 0}
+  InteractionScript: {fileID: 5112832252723381531}
   grabRadius: 0.1
   grabDistance: 3
   holding: {fileID: 0}
