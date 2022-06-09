@@ -560,6 +560,7 @@ MonoBehaviour:
   - {fileID: 1271890811005014330}
   - {fileID: 1966751260097841603}
   - {fileID: 8030881738855746692}
+  - {fileID: 9120651690303941492}
   PI1: {fileID: 4883060188735341366}
   PI2: {fileID: 3390003008388670589}
   Hand1: {fileID: 2236391011774727389}
@@ -916,7 +917,6 @@ Transform:
   - {fileID: 260854731484014344}
   - {fileID: 7151013509243420391}
   - {fileID: 3864162739258807314}
-  - {fileID: 2222548789793805680}
   - {fileID: 5189608090937567336}
   m_Father: {fileID: 260854731515951134}
   m_RootOrder: 0
@@ -971,6 +971,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2504786041528216299}
+  - {fileID: 2222548789793805680}
   m_Father: {fileID: 260854732712247036}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3212,7 +3213,7 @@ Transform:
   - {fileID: 9193523963234659876}
   - {fileID: 1132403394886282723}
   m_Father: {fileID: 260854732712247036}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3165467654100624155
 Animator:
@@ -4958,12 +4959,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 260854732712247036}
+    m_TransformParent: {fileID: 260854732798931688}
     m_Modifications:
     - target: {fileID: 2270100053201827848, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389022918048685599, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
@@ -4974,6 +4975,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasTimer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145117849709667445, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6470949744881490545, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
@@ -4988,7 +4994,7 @@ PrefabInstance:
     - target: {fileID: 6470949744881490545, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6470949744881490545, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
@@ -5058,17 +5064,17 @@ PrefabInstance:
     - target: {fileID: 6470949744881490545, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6470949744881490545, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6470949744881490545, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6470949744881490545, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
@@ -5113,6 +5119,11 @@ PrefabInstance:
     - target: {fileID: 8510523775147001640, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731400780206855912, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5159,6 +5170,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &9120651690303941492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4145117849709667445, guid: 7dfd6e32aff46f9439ba5c4c79648c27,
+    type: 3}
+  m_PrefabInstance: {fileID: 5122135233842548481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7265832858198137388
 PrefabInstance:
   m_ObjectHideFlags: 0
